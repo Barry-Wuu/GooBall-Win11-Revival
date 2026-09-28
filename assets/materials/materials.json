@@ -1,0 +1,9689 @@
+[
+ {
+  "pathID": 2,
+  "name": " assignable",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 27,
+    "texName": "underwater2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 10,
+  "name": "map_hvidstreg",
+  "shaderPathID": 32,
+  "shaderName": "MapScreen line",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 9,
+    "texName": "map_hvidstreg"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.898,
+     0.8533,
+     0.8334,
+     0.48
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 11,
+  "name": "skybox_newmex",
+  "shaderPathID": 3,
+  "shaderName": "Skybox shader",
+  "textures": [
+   {
+    "prop": "_FrontTex",
+    "texPathID": 13,
+    "texName": "skybox0001"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.1671,
+     0.5091,
+     0.5524,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 28,
+  "name": "leveldot selected",
+  "shaderPathID": 18,
+  "shaderName": "MapScreen dot 1",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 20,
+    "texName": "map_stjerne"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.7056,
+     0.3485,
+     0.3485,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 29,
+  "name": "leveldot selectable",
+  "shaderPathID": 5,
+  "shaderName": "MapScreen dot",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 20,
+    "texName": "map_stjerne"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.6367,
+     0.6282,
+     0.6411,
+     0.82
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 30,
+  "name": "addglow1",
+  "shaderPathID": 7,
+  "shaderName": "AddGlow1",
+  "textures": [],
+  "properties": []
+ },
+ {
+  "pathID": 31,
+  "name": "map screen txt",
+  "shaderPathID": 14,
+  "shaderName": "Masked text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.251,
+     0.7373,
+     1.0,
+     0.25
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.84
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.3451,
+     0.6863,
+     0.8039,
+     0.1
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 34,
+  "name": "leveldot completed",
+  "shaderPathID": 5,
+  "shaderName": "MapScreen dot",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 16,
+    "texName": "map_completed"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.5444,
+     0.1008,
+     0.254,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.3319,
+     0.5524,
+     0.3524,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 37,
+  "name": "leveldot start",
+  "shaderPathID": 5,
+  "shaderName": "MapScreen dot",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 20,
+    "texName": "map_stjerne"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.5444,
+     0.1008,
+     0.254,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.3558,
+     0.5033,
+     0.2869,
+     0.72
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 40,
+  "name": "nmex3",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 39,
+    "texName": "nmex3"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 44,
+  "name": "nmex2",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 55,
+    "texName": "nmex2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 45,
+  "name": "scream1",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 56,
+    "texName": "scream1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 46,
+  "name": "scream2",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 57,
+    "texName": "scream2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 47,
+  "name": "space1",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 58,
+    "texName": "space1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 48,
+  "name": "space2",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 59,
+    "texName": "space2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 49,
+  "name": "underwater1",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 60,
+    "texName": "underwater2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 50,
+  "name": "monster1",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 51,
+    "texName": "monster1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 61,
+  "name": "monster2",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 52,
+    "texName": "monster2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 62,
+  "name": "montezuma",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 53,
+    "texName": "montezuma"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 64,
+  "name": "chapterselector txt",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.251,
+     0.7373,
+     1.0,
+     0.25
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.84
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.3451,
+     0.6863,
+     0.8039,
+     0.1
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 65,
+  "name": "nmex1",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 54,
+    "texName": "nmex1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9641,
+     0.9751,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 73,
+  "name": "intro text",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.237,
+     0.4718,
+     0.75,
+     0.27
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     0.994,
+     1.0,
+     0.988,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.75,
+     0.0664,
+     0.1641,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 77,
+  "name": "slope1a",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 91,
+    "texName": "slope1a"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.8434,
+     0.8434,
+     0.8434,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 78,
+  "name": "checker2-start1",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 88,
+    "texName": "checker2-start1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 79,
+  "name": "sign",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 112,
+    "texName": "sign"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_AlphaScale",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Threshold",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_SourceBrightness",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 80,
+  "name": "wood2",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 94,
+    "texName": "wood2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 81,
+  "name": "checker1-cactus",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 111,
+    "texName": "checker1-cactus"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.9663,
+     0.9663,
+     0.9663,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.6039,
+     0.5456,
+     0.016,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 83,
+  "name": "ufo",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 93,
+    "texName": "UFO"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 64.0
+   },
+   {
+    "prop": "_Amb",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Diff",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_CausticColor",
+    "type": "color",
+    "value": [
+     0.8,
+     0.8,
+     0.8,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 84,
+  "name": "sten",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 92,
+    "texName": "sten"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 85,
+  "name": "flowers",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 89,
+    "texName": "flowers"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 86,
+  "name": "ocean",
+  "shaderPathID": 117,
+  "shaderName": "nm introocean",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 107,
+    "texName": "Water02"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_bScale",
+    "type": "float",
+    "value": 0.10377
+   },
+   {
+    "prop": "_bTwirl",
+    "type": "float",
+    "value": 0.01462
+   },
+   {
+    "prop": "_BumpPeturb",
+    "type": "float",
+    "value": 256.0
+   },
+   {
+    "prop": "_BumpPeturb2",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_BumpScale",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_BumpSpeed",
+    "type": "float",
+    "value": 0.10377
+   },
+   {
+    "prop": "_CausticColor",
+    "type": "color",
+    "value": [
+     0.8,
+     0.8,
+     0.8,
+     1.0
+    ]
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     0.4912,
+     0.0684,
+     0.9824,
+     0.9824
+    ]
+   },
+   {
+    "prop": "_RefTex_0",
+    "type": "color",
+    "value": [
+     169.0863,
+     -20.479,
+     122.566,
+     1315.0333
+    ]
+   },
+   {
+    "prop": "_RefTex_1",
+    "type": "color",
+    "value": [
+     2.0512,
+     -239.3256,
+     90.8573,
+     5407.0713
+    ]
+   },
+   {
+    "prop": "_RefTex_2",
+    "type": "color",
+    "value": [
+     0.0223,
+     -0.16,
+     0.987,
+     45.8022
+    ]
+   },
+   {
+    "prop": "_RefTex_3",
+    "type": "color",
+    "value": [
+     0.0223,
+     -0.16,
+     0.9869,
+     45.8976
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 87,
+  "name": "plants",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 90,
+    "texName": "plants"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.4414,
+     1.0,
+     0.613,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 97,
+  "name": "area51sign",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 142,
+    "texName": "area51sign"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 109,
+  "name": "foam offset 2",
+  "shaderPathID": 136,
+  "shaderName": "VertexLit foam",
+  "textures": [
+   {
+    "prop": "_Tex",
+    "texPathID": 0,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     -0.7999,
+     0.0729,
+     0.8786,
+     0.4
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 115,
+  "name": "foam offset",
+  "shaderPathID": 136,
+  "shaderName": "VertexLit foam",
+  "textures": [
+   {
+    "prop": "_Tex",
+    "texPathID": 0,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.99
+    ]
+   },
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     -0.2129,
+     -0.9372,
+     -0.7999,
+     1.4
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 116,
+  "name": "-star red",
+  "shaderPathID": 138,
+  "shaderName": "diamond shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 110,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 20.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.0,
+     0.0167,
+     0.5
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.961,
+     0.973,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.2,
+     0.2,
+     0.2,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.9,
+     0.9,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 137,
+  "name": "nm_islands2",
+  "shaderPathID": 140,
+  "shaderName": "Background Billboard",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 169,
+    "texName": "nm_islands2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 145,
+  "name": "pickup particle mat",
+  "shaderPathID": 144,
+  "shaderName": "pickup aura shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 146,
+    "texName": "?"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.4714,
+     0.5992,
+     0.663,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 159,
+  "name": "ocean noref",
+  "shaderPathID": 155,
+  "shaderName": "nm introocean norref",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 107,
+    "texName": "Water02"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_bScale",
+    "type": "float",
+    "value": 0.10377
+   },
+   {
+    "prop": "_bTwirl",
+    "type": "float",
+    "value": 0.01462
+   },
+   {
+    "prop": "_BumpPeturb",
+    "type": "float",
+    "value": 256.0
+   },
+   {
+    "prop": "_BumpPeturb2",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_BumpScale",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_BumpSpeed",
+    "type": "float",
+    "value": 0.10377
+   },
+   {
+    "prop": "_CausticColor",
+    "type": "color",
+    "value": [
+     0.8,
+     0.8,
+     0.8,
+     1.0
+    ]
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     0.4546,
+     0.0409,
+     0.9092,
+     0.9092
+    ]
+   },
+   {
+    "prop": "_RefTex_0",
+    "type": "color",
+    "value": [
+     -69.8762,
+     7.4647,
+     -145.2227,
+     3963.334
+    ]
+   },
+   {
+    "prop": "_RefTex_1",
+    "type": "color",
+    "value": [
+     -0.8627,
+     -224.008,
+     -123.9191,
+     1141.2506
+    ]
+   },
+   {
+    "prop": "_RefTex_2",
+    "type": "color",
+    "value": [
+     0.2002,
+     -0.0304,
+     -0.9794,
+     -2.3541
+    ]
+   },
+   {
+    "prop": "_RefTex_3",
+    "type": "color",
+    "value": [
+     0.2002,
+     -0.0304,
+     -0.9793,
+     -2.2539
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 165,
+  "name": "nm_islands1",
+  "shaderPathID": 140,
+  "shaderName": "Background Billboard",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 154,
+    "texName": "nm_islands1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 166,
+  "name": "sky",
+  "shaderPathID": 141,
+  "shaderName": "VertexLit Nofog",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 100,
+    "texName": "scream_clouds"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.6528,
+     0.5982,
+     0.4654,
+     0.29
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.2239,
+     0.2239,
+     0.2239,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 177,
+  "name": "newmex_arrow",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 99,
+    "texName": "newmex_arrow"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 178,
+  "name": "fadein shader",
+  "shaderPathID": 113,
+  "shaderName": "fadein",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 0,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 180,
+  "name": "nm_planet1",
+  "shaderPathID": 157,
+  "shaderName": "NoFog blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 176,
+    "texName": "nm_planet1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 186,
+  "name": "nm_introsand",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 183,
+    "texName": "nm_introsand"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 187,
+  "name": "nm_canyon",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 174,
+    "texName": "nm_canyon"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 215,
+  "name": "intro3 water nonref",
+  "shaderPathID": 225,
+  "shaderName": "norref water",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 107,
+    "texName": "Water02"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_bScale",
+    "type": "float",
+    "value": 0.14151
+   },
+   {
+    "prop": "_bTwirl",
+    "type": "float",
+    "value": 0.05
+   },
+   {
+    "prop": "_BumpPeturb",
+    "type": "float",
+    "value": 234.90567
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     0.69,
+     0.7175,
+     0.38,
+     0.38
+    ]
+   },
+   {
+    "prop": "_RefTex_0",
+    "type": "color",
+    "value": [
+     14.1565,
+     -6.4062,
+     163.7855,
+     5222.208
+    ]
+   },
+   {
+    "prop": "_RefTex_1",
+    "type": "color",
+    "value": [
+     -65.309,
+     -227.8309,
+     96.7669,
+     3878.9729
+    ]
+   },
+   {
+    "prop": "_RefTex_2",
+    "type": "color",
+    "value": [
+     -0.5588,
+     -0.0501,
+     0.8279,
+     29.4299
+    ]
+   },
+   {
+    "prop": "_RefTex_3",
+    "type": "color",
+    "value": [
+     -0.5587,
+     -0.05,
+     0.8278,
+     29.527
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 218,
+  "name": "checker2-start1-extra",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 213,
+    "texName": "checker2-start1-extra"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 223,
+  "name": "nm_sunreflect",
+  "shaderPathID": 228,
+  "shaderName": "LightFlare",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 229,
+    "texName": "lightglow"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.3,
+     0.3,
+     0.3,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 226,
+  "name": "intro3 water",
+  "shaderPathID": 227,
+  "shaderName": "texture ref water",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 107,
+    "texName": "Water02"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_bScale",
+    "type": "float",
+    "value": 0.04717
+   },
+   {
+    "prop": "_bTwirl",
+    "type": "float",
+    "value": 0.05
+   },
+   {
+    "prop": "_BumpPeturb",
+    "type": "float",
+    "value": 300.0
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     0.9641,
+     0.4231,
+     0.9283,
+     0.9283
+    ]
+   },
+   {
+    "prop": "_RefTex_0",
+    "type": "color",
+    "value": [
+     -24.5782,
+     3.0917,
+     232.7057,
+     10276.7344
+    ]
+   },
+   {
+    "prop": "_RefTex_1",
+    "type": "color",
+    "value": [
+     -107.7521,
+     -262.8668,
+     62.5182,
+     3932.4224
+    ]
+   },
+   {
+    "prop": "_RefTex_2",
+    "type": "color",
+    "value": [
+     -0.8898,
+     -0.0137,
+     0.4563,
+     17.0154
+    ]
+   },
+   {
+    "prop": "_RefTex_3",
+    "type": "color",
+    "value": [
+     -0.8897,
+     -0.0137,
+     0.4563,
+     17.1137
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 230,
+  "name": "sand underwater",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 231,
+    "texName": "sand"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.1655,
+     0.3148,
+     0.4909,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 232,
+  "name": "slope5",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 234,
+    "texName": "slope5"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 233,
+  "name": "staengel",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 235,
+    "texName": "staengel"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 237,
+  "name": "sand",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 231,
+    "texName": "sand"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 238,
+  "name": "sten dark",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 92,
+    "texName": "sten"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.6534,
+     0.6534,
+     0.6534,
+     0.02
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 240,
+  "name": "sten darker",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 92,
+    "texName": "sten"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.6902,
+     0.6902,
+     0.6902,
+     0.02
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 241,
+  "name": "rocketburn",
+  "shaderPathID": 269,
+  "shaderName": "RocketBurn",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 296,
+    "texName": "rocketburn"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 270,
+  "name": "area51sign dark",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 142,
+    "texName": "area51sign"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.7945,
+     0.7945,
+     0.7945,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 271,
+  "name": "area51sign darker",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 142,
+    "texName": "area51sign"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.6104,
+     0.6104,
+     0.6104,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 272,
+  "name": "newmex_gateplane",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 267,
+    "texName": "newmex_gateplane"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 273,
+  "name": "newmex_black",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 278,
+    "texName": "newmex_black"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 282,
+  "name": "ufo trail",
+  "shaderPathID": 286,
+  "shaderName": "Particle Add",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 9,
+    "texName": "map_hvidstreg"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.4264,
+     0.0114,
+     0.3913,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 287,
+  "name": "newmex_gatebut",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 239,
+    "texName": "-greentexture"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.51887
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.4818,
+     0.4818,
+     0.4818,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 288,
+  "name": "newmex_gatefoot",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 277,
+    "texName": "newmex_gatefoot"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0088,
+     0.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 298,
+  "name": "cliffsides",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 297,
+    "texName": "cliffsides"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 305,
+  "name": "newmexgate",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 325,
+    "texName": "newmexGate"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 321,
+  "name": "ufo 1",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 93,
+    "texName": "UFO"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.68868
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 27.16981
+   },
+   {
+    "prop": "_Amb",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Diff",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.4994,
+     0.7705,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_CausticColor",
+    "type": "color",
+    "value": [
+     0.8,
+     0.8,
+     0.8,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 323,
+  "name": " exit light",
+  "shaderPathID": 334,
+  "shaderName": "exitlight",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 302,
+    "texName": "lightemission 1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.3636,
+     0.1848,
+     0.1907,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 324,
+  "name": "darkufo",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 93,
+    "texName": "UFO"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_Amb",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Diff",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.1767,
+     0.1767,
+     0.1767,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_CausticColor",
+    "type": "color",
+    "value": [
+     0.8,
+     0.8,
+     0.8,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 326,
+  "name": "flicker",
+  "shaderPathID": 306,
+  "shaderName": "spacewarp",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 320,
+    "texName": "spacewarp"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_distort",
+    "type": "float",
+    "value": 0.06604
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     0.0767,
+     0.0472,
+     0.0082,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 346,
+  "name": " exit warp",
+  "shaderPathID": 306,
+  "shaderName": "spacewarp",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 320,
+    "texName": "spacewarp"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_distort",
+    "type": "float",
+    "value": 0.38679
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.6576,
+     0.2055,
+     0.29
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     0.2607,
+     0.1714,
+     0.0536,
+     0.43
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 347,
+  "name": "ufogirder",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 341,
+    "texName": "UFOgirder"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.41
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.3294,
+     0.3823,
+     0.4816,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 348,
+  "name": " exit alien",
+  "shaderPathID": 368,
+  "shaderName": "Hologram",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 367,
+    "texName": "lightemission 2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.202,
+     0.4877,
+     0.2021,
+     0.9
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.1,
+     0.0,
+     0.1
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 361,
+  "name": "newmex_crashstart",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 364,
+    "texName": "newmex_crashstart"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 362,
+  "name": "alien trail",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 9,
+    "texName": "map_hvidstreg"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.9567,
+     0.9464,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 371,
+  "name": "fire add",
+  "shaderPathID": null,
+  "shaderName": null,
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 373,
+    "texName": "fire3"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.4956,
+     0.4253,
+     0.4263,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 372,
+  "name": "fire smoke",
+  "shaderPathID": null,
+  "shaderName": null,
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 350,
+    "texName": "smokepuff1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.0766,
+     0.0766,
+     0.0912,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_MainColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 374,
+  "name": "smoke",
+  "shaderPathID": null,
+  "shaderName": null,
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 351,
+    "texName": "smoketest2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.51
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_MainColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     1.0,
+     0.71
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 409,
+  "name": "checker2-step9",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 410,
+    "texName": "checker2-step9"
+   }
+  ],
+  "properties": []
+ },
+ {
+  "pathID": 442,
+  "name": "slowmo pickup aura",
+  "shaderPathID": 144,
+  "shaderName": "pickup aura shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 433,
+    "texName": "pickup aura"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.3622,
+     0.3622,
+     0.3622,
+     0.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 443,
+  "name": "slowmo material",
+  "shaderPathID": 138,
+  "shaderName": "diamond shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 110,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.36
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 444,
+  "name": "checker2-step7",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 445,
+    "texName": "checker2-step7"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 474,
+  "name": "checker2-step6",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 472,
+    "texName": "checker2-step6"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 501,
+  "name": "nm_level14_bridge",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 505,
+    "texName": "NM_level14_bridge"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.26
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 503,
+  "name": "slope4a",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 502,
+    "texName": "slope4a_Color"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 504,
+  "name": "bigChunk",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 475,
+    "texName": "NM_bigCHUNK"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 506,
+  "name": "monte_rim",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 587,
+    "texName": "monte_pyramide"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_AlphaScale",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.982,
+     0.9281,
+     0.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 507,
+  "name": "monte_mushroom1",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 517,
+    "texName": "monte_mushroom1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.63
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 508,
+  "name": "monte_waterlily",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 529,
+    "texName": "monte_waterlily"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 20.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 509,
+  "name": "monte_trunkbigsway",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 528,
+    "texName": "monte_trunkBIGsway"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 513,
+  "name": " steampart",
+  "shaderPathID": 523,
+  "shaderName": "Particle AddMult",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 351,
+    "texName": "smoketest2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.3978,
+     0.0,
+     0.1277,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 514,
+  "name": "monte_water noref",
+  "shaderPathID": 225,
+  "shaderName": "norref water",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 518,
+    "texName": "monte_water"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 33.20755
+   },
+   {
+    "prop": "_distort",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_bScale",
+    "type": "float",
+    "value": 0.06604
+   },
+   {
+    "prop": "_bTwirl",
+    "type": "float",
+    "value": 0.05
+   },
+   {
+    "prop": "_BumpPeturb",
+    "type": "float",
+    "value": 200.94339
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0277,
+     0.0337,
+     0.03,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.4
+    ]
+   },
+   {
+    "prop": "_RefTex_0",
+    "type": "color",
+    "value": [
+     -106.9528,
+     -57.2372,
+     -106.3625,
+     7405.1509
+    ]
+   },
+   {
+    "prop": "_RefTex_1",
+    "type": "color",
+    "value": [
+     -1.2144,
+     -255.5393,
+     -15.3039,
+     6428.4321
+    ]
+   },
+   {
+    "prop": "_RefTex_2",
+    "type": "color",
+    "value": [
+     -0.0708,
+     -0.4472,
+     -0.8917,
+     55.4062
+    ]
+   },
+   {
+    "prop": "_RefTex_3",
+    "type": "color",
+    "value": [
+     -0.0708,
+     -0.4472,
+     -0.8916,
+     55.5006
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 519,
+  "name": "ramp1-bigtree",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 530,
+    "texName": "ramp1-bigtree"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   }
+  ]
+ },
+ {
+  "pathID": 520,
+  "name": "monte_treetrunks_test",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 527,
+    "texName": "monte_treetrunks_test"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 521,
+  "name": " fireflies",
+  "shaderPathID": null,
+  "shaderName": null,
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 589,
+    "texName": "firefly"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.0706,
+     0.1411,
+     0.0267,
+     0.23
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 522,
+  "name": "monte_diamondeye",
+  "shaderPathID": 515,
+  "shaderName": "monte eye",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 516,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 100.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.0109,
+     0.0274,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 525,
+  "name": "skybox_monte",
+  "shaderPathID": 3,
+  "shaderName": "Skybox shader",
+  "textures": [
+   {
+    "prop": "_FrontTex",
+    "texPathID": 526,
+    "texName": "skyboxKIM0005"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.502,
+     0.502,
+     0.502,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 581,
+  "name": "monte_goldtower",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 586,
+    "texName": "monte_goldtower"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 582,
+  "name": "monte_pyramide",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 587,
+    "texName": "monte_pyramide"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_AlphaScale",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 583,
+  "name": "monte_runway",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 588,
+    "texName": "monte_runway"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 584,
+  "name": "monte_water",
+  "shaderPathID": 227,
+  "shaderName": "texture ref water",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 518,
+    "texName": "monte_water"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 33.20755
+   },
+   {
+    "prop": "_distort",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_bScale",
+    "type": "float",
+    "value": 0.06604
+   },
+   {
+    "prop": "_bTwirl",
+    "type": "float",
+    "value": 0.05
+   },
+   {
+    "prop": "_BumpPeturb",
+    "type": "float",
+    "value": 200.94339
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0277,
+     0.0337,
+     0.03,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.4
+    ]
+   },
+   {
+    "prop": "_RefTex_0",
+    "type": "color",
+    "value": [
+     -160.8323,
+     -3.5399,
+     -34.4612,
+     -421.7401
+    ]
+   },
+   {
+    "prop": "_RefTex_1",
+    "type": "color",
+    "value": [
+     -76.6387,
+     -225.1859,
+     -94.6246,
+     -919.6129
+    ]
+   },
+   {
+    "prop": "_RefTex_2",
+    "type": "color",
+    "value": [
+     -0.6288,
+     -0.0279,
+     -0.7772,
+     -10.6415
+    ]
+   },
+   {
+    "prop": "_RefTex_3",
+    "type": "color",
+    "value": [
+     -0.6287,
+     -0.0279,
+     -0.7771,
+     -10.5405
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 590,
+  "name": "monte_purplestump",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 512,
+    "texName": "monte_purplestump"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.99057
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.4731,
+     0.4374,
+     0.6291,
+     0.49
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9977,
+     0.0197,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 594,
+  "name": "monte_bigtree",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 591,
+    "texName": "monte_bigtree"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 595,
+  "name": "monte_diamondeye",
+  "shaderPathID": 515,
+  "shaderName": "monte eye",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 516,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 100.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.0109,
+     0.0274,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 596,
+  "name": "monte_end",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 593,
+    "texName": "monte_end"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 597,
+  "name": "monte_mushroom1",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 517,
+    "texName": "monte_mushroom1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 598,
+  "name": "monte_purplestump",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 512,
+    "texName": "monte_purplestump"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.16
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.6938,
+     0.5202,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 599,
+  "name": "monte_treetrunks_test",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 527,
+    "texName": "monte_treetrunks_test"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 600,
+  "name": "monte_trunkbigsway",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 528,
+    "texName": "monte_trunkBIGsway"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 601,
+  "name": "monte_waterlily",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 529,
+    "texName": "monte_waterlily"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.9
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.9621,
+     1.0,
+     0.9832,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.2242,
+     0.2415,
+     0.2455,
+     0.57
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 627,
+  "name": "monte_bgtower_tex",
+  "shaderPathID": 630,
+  "shaderName": "Particle Blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 0,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.4967,
+     0.4967,
+     0.4967,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 631,
+  "name": "monte_head",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 628,
+    "texName": "monte_Head"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.6967,
+     0.6967,
+     0.6967,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 682,
+  "name": " spaceparticles",
+  "shaderPathID": 699,
+  "shaderName": "Particle Blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 711,
+    "texName": "monte_spaceparticl"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.1384,
+     0.3781,
+     0.8509,
+     0.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.1737,
+     0.6173,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 684,
+  "name": "monte_goldtower",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 691,
+    "texName": "monte_goldtower copy"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.2618,
+     0.2027,
+     0.5048,
+     0.2
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 686,
+  "name": "monte_spacecircle",
+  "shaderPathID": 685,
+  "shaderName": "NoFog glow",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 703,
+    "texName": "monte_spacecircle_yellow"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9761,
+     0.0694,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.4217,
+     0.4217,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 687,
+  "name": " exit light space",
+  "shaderPathID": 334,
+  "shaderName": "exitlight",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 302,
+    "texName": "lightemission 1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.1384,
+     0.3781,
+     0.8509,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 689,
+  "name": "monte_goldtower_cagestar",
+  "shaderPathID": 685,
+  "shaderName": "NoFog glow",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 688,
+    "texName": "monte_goldtower cagestar"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 24.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.315,
+     0.2439,
+     0.6075,
+     0.2
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.7724,
+     0.752,
+     0.0824,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.6174,
+     0.906,
+     0.9364,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 690,
+  "name": "-diamond white",
+  "shaderPathID": 138,
+  "shaderName": "diamond shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 110,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 20.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.8695,
+     0.936,
+     1.0,
+     0.5
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.961,
+     0.973,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.2,
+     0.2,
+     0.2,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.9,
+     0.9,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 701,
+  "name": "monte_pyramide2",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 704,
+    "texName": "monte_pyramide2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.3581,
+     0.9284,
+     0.8785,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 702,
+  "name": "monte_goldtower copy",
+  "shaderPathID": 685,
+  "shaderName": "NoFog glow",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 691,
+    "texName": "monte_goldtower copy"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.9345,
+     0.0096,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 706,
+  "name": "monte_spaceexit_ears",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 705,
+    "texName": "monte_spaceexit_ears"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.3337,
+     0.2501,
+     0.6775,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.83,
+     0.6943,
+     0.113,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 710,
+  "name": "skybox_monte space",
+  "shaderPathID": 3,
+  "shaderName": "Skybox shader",
+  "textures": [
+   {
+    "prop": "_FrontTex",
+    "texPathID": 526,
+    "texName": "skyboxKIM0005"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.502,
+     0.502,
+     0.502,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 713,
+  "name": "monte_runway",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 707,
+    "texName": "monte_runway3"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 120.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 716,
+  "name": "monte_runway3",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 707,
+    "texName": "monte_runway3"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.3749,
+     0.7036,
+     0.9155,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 722,
+  "name": "monte_hand",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 723,
+    "texName": "monte_hand2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 733,
+  "name": "monte_goldtower_cage_pillar",
+  "shaderPathID": 685,
+  "shaderName": "NoFog glow",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 691,
+    "texName": "monte_goldtower copy"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 24.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.315,
+     0.2439,
+     0.6075,
+     0.2
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.9135,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 737,
+  "name": "monte_space_deathstar",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 739,
+    "texName": "monte_space_deathstar"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 742,
+  "name": "monte_spacecircle_solid",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 741,
+    "texName": "monte_spacecircle"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9761,
+     0.0694,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.7372,
+     0.1249,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 750,
+  "name": "scream_deadnobelman1_watercolor",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 819,
+    "texName": "scream_deadnobelman1_watercolor"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.1
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 751,
+  "name": "scream_larm",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 747,
+    "texName": "scream_larm"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.06
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 752,
+  "name": "scream_rarm",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 748,
+    "texName": "scream_rarm"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.06
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 753,
+  "name": "scream_eye",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 746,
+    "texName": "scream_eye"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 754,
+  "name": "scream_glossstar",
+  "shaderPathID": 792,
+  "shaderName": "Decal",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 743,
+    "texName": "REDtexture 1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.07
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 755,
+  "name": "tooniOutline_balls",
+  "shaderPathID": 795,
+  "shaderName": "Toony outline",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 779,
+    "texName": "scream_ball"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.6111,
+     0.6111,
+     0.6111,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.6331,
+     0.6331,
+     0.6331,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0574,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 782,
+  "name": " exit light scream",
+  "shaderPathID": 334,
+  "shaderName": "exitlight",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 302,
+    "texName": "lightemission 1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.2778,
+     0.9028,
+     1.0,
+     0.03
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 787,
+  "name": "scream_tent",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 824,
+    "texName": "scream_tent"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 788,
+  "name": "scream_exitdrapes",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 820,
+    "texName": "scream_exitdrapes"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.29
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 789,
+  "name": "scream_platformrec",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 821,
+    "texName": "scream_platformrec"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.9001,
+     0.9001,
+     0.9001,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 790,
+  "name": "scream_particlegoal1",
+  "shaderPathID": 796,
+  "shaderName": "Particle Alpha Blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 835,
+    "texName": "scream_alphastar"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.06
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.8737,
+     1.0,
+     0.1472,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 791,
+  "name": "scream_box",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 780,
+    "texName": "scream_box"
+   }
+  ],
+  "properties": []
+ },
+ {
+  "pathID": 793,
+  "name": "tooniOutline_candy",
+  "shaderPathID": 795,
+  "shaderName": "Toony outline",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 781,
+    "texName": "scream_candy1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.7558,
+     0.7558,
+     0.7558,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.6331,
+     0.6331,
+     0.6331,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0574,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 794,
+  "name": "scream_starter",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 823,
+    "texName": "scream_starter"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.9028,
+     0.9028,
+     0.9028,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 830,
+  "name": "scream_particlegoal3",
+  "shaderPathID": 796,
+  "shaderName": "Particle Alpha Blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 835,
+    "texName": "scream_alphastar"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.06
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.0,
+     0.5719,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 831,
+  "name": "scream_siblingwheel",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 822,
+    "texName": "scream_siblingwheel"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 832,
+  "name": "scream_ball",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 779,
+    "texName": "scream_ball"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.8983,
+     0.8983,
+     0.8983,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 833,
+  "name": "scream_particlegoal2",
+  "shaderPathID": 796,
+  "shaderName": "Particle Alpha Blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 835,
+    "texName": "scream_alphastar"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.06
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.1472,
+     0.8676,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 837,
+  "name": "scream_banner",
+  "shaderPathID": 157,
+  "shaderName": "NoFog blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 836,
+    "texName": "scream_banner"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 838,
+  "name": "scream_entrancearc",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 828,
+    "texName": "scream_entrancearc"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 839,
+  "name": "scream_entrancecircle",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 829,
+    "texName": "scream_entrancecircle"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 840,
+  "name": "tooniOutline_ballon",
+  "shaderPathID": 795,
+  "shaderName": "Toony outline",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 818,
+    "texName": "balloon_red"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.7564,
+     0.7564,
+     0.7564,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.6331,
+     0.6331,
+     0.6331,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.2399,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 845,
+  "name": "scream_kerub_down",
+  "shaderPathID": 157,
+  "shaderName": "NoFog blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 841,
+    "texName": "scream_kerub_down"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 847,
+  "name": "scream_gapbridge",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 846,
+    "texName": "scream_gapbridge"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 848,
+  "name": "balloon_red",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 818,
+    "texName": "balloon_red"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.9361,
+     0.9361,
+     0.9361,
+     0.12
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     0.6825,
+     1.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 858,
+  "name": "scream_kerub_right",
+  "shaderPathID": 157,
+  "shaderName": "NoFog blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 842,
+    "texName": "scream_kerub_right"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 859,
+  "name": "scream_womanwheel",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 861,
+    "texName": "scream_womanwheel"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 894,
+  "name": "scream_kerub",
+  "shaderPathID": 157,
+  "shaderName": "NoFog blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 841,
+    "texName": "scream_kerub_down"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 895,
+  "name": "scream_candy1",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 781,
+    "texName": "scream_candy1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 961,
+  "name": "scream_leapofface_watercolor",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 981,
+    "texName": "scream_leapofface_watercolor"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 989,
+  "name": "scream_gapbridge_blue",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 988,
+    "texName": "scream_gapbridge_blue"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 991,
+  "name": "scream_teethalley",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1032,
+    "texName": "scream_teethalley"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 992,
+  "name": "scream_babyarm",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1026,
+    "texName": "scream_babyarm"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.9482,
+     0.9482,
+     0.9482,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 993,
+  "name": "scream_teethandgums",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1033,
+    "texName": "scream_teethandgums"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1003,
+  "name": "scream_platform_square",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1029,
+    "texName": "scream_platform_square"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1004,
+  "name": "scream_levl8rail",
+  "shaderPathID": 157,
+  "shaderName": "NoFog blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1049,
+    "texName": "scream_rails"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1005,
+  "name": "scream_sibling",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1031,
+    "texName": "scream_sibling"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1006,
+  "name": "scream_ear",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1027,
+    "texName": "scream_ear"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1007,
+  "name": "scream_hat",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1028,
+    "texName": "scream_hat"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1008,
+  "name": "scream_propel",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1030,
+    "texName": "scream_propel"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1057,
+  "name": "scream_baseplat copy",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1055,
+    "texName": "scream_baseplat copy"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.13
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1084,
+  "name": "scream_clownpusher",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1095,
+    "texName": "scream_clownPusher"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1096,
+  "name": "scream_tongue",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1097,
+    "texName": "scream_tongue"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1122,
+  "name": "underwater_platform3_light",
+  "shaderPathID": 334,
+  "shaderName": "exitlight",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1166,
+    "texName": "lightemission"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1125,
+  "name": "underwater_platform3",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1121,
+    "texName": "underwater_platform3"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1131,
+  "name": "underwater_seabed1",
+  "shaderPathID": 1144,
+  "shaderName": "prelighted detail",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1142,
+    "texName": "underwater_seabed1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_FCol",
+    "type": "color",
+    "value": [
+     0.062,
+     0.1423,
+     0.2153,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1132,
+  "name": "bubbles",
+  "shaderPathID": 286,
+  "shaderName": "Particle Add",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1129,
+    "texName": "bubble"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.2621,
+     0.2621,
+     0.2621,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1137,
+  "name": "water-pearl",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1146,
+    "texName": "underwater_platform1"
+   }
+  ],
+  "properties": []
+ },
+ {
+  "pathID": 1143,
+  "name": "underwater surface",
+  "shaderPathID": 1163,
+  "shaderName": "Underwater",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1159,
+    "texName": "Comp 2 small"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_CausticColor",
+    "type": "color",
+    "value": [
+     0.2178,
+     0.2301,
+     0.2301,
+     0.57
+    ]
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     0.1134,
+     0.0351,
+     0.2269,
+     0.2269
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1148,
+  "name": "underwater_animal1",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1141,
+    "texName": "underwater_animal1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 20.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1151,
+  "name": "underwater_platform2",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1136,
+    "texName": "underwater_platform2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.48113
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1154,
+  "name": "light UW skybox",
+  "shaderPathID": 3,
+  "shaderName": "Skybox shader",
+  "textures": [
+   {
+    "prop": "_FrontTex",
+    "texPathID": 1160,
+    "texName": "skybox"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.4939,
+     0.4939,
+     0.4939,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1155,
+  "name": "underwater_ramp1",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1142,
+    "texName": "underwater_seabed1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1157,
+  "name": "platform aura",
+  "shaderPathID": 1170,
+  "shaderName": "LightFlare NOZ",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1162,
+    "texName": "lightglow 1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.1284,
+     0.1864,
+     0.2299,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1167,
+  "name": "nav beacon",
+  "shaderPathID": 228,
+  "shaderName": "LightFlare",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1133,
+    "texName": "lightglow2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.1284,
+     0.1864,
+     0.2299,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.6227,
+     0.0571,
+     0.0,
+     0.18
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1182,
+  "name": "underwater_seabed3",
+  "shaderPathID": 1144,
+  "shaderName": "prelighted detail",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1142,
+    "texName": "underwater_seabed1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_FCol",
+    "type": "color",
+    "value": [
+     0.0474,
+     0.0693,
+     0.1642,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1185,
+  "name": "platform1-greenish",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1146,
+    "texName": "underwater_platform1"
+   }
+  ],
+  "properties": []
+ },
+ {
+  "pathID": 1188,
+  "name": "underwater_platform3a",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1187,
+    "texName": "underwater_platform3a"
+   }
+  ],
+  "properties": []
+ },
+ {
+  "pathID": 1191,
+  "name": "pillar",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1190,
+    "texName": "pillar"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1192,
+  "name": "crystal",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1181,
+    "texName": "crystal 1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.49
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1195,
+  "name": "jellyfish",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1197,
+    "texName": "jellyfish"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.26
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.3098,
+     0.3098,
+     0.3098,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1196,
+  "name": "med UW skybox",
+  "shaderPathID": 3,
+  "shaderName": "Skybox shader",
+  "textures": [
+   {
+    "prop": "_FrontTex",
+    "texPathID": 1160,
+    "texName": "skybox"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.316,
+     0.316,
+     0.316,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1212,
+  "name": "tilabletexture1",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1211,
+    "texName": "tilabletexture1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1213,
+  "name": "platform_top_tilable",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1209,
+    "texName": "platform_top_tilable"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1215,
+  "name": "ramp1",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1214,
+    "texName": "ramp1"
+   }
+  ],
+  "properties": []
+ },
+ {
+  "pathID": 1220,
+  "name": "genericplatform",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1219,
+    "texName": "genericplatform"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1221,
+  "name": "platform_top_tilable2",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1210,
+    "texName": "platform_top_tilable2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1222,
+  "name": "genericplatform",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1219,
+    "texName": "genericplatform"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1224,
+  "name": "buildingblocks",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1223,
+    "texName": "buildingblocks"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1232,
+  "name": "underwater_seabed2",
+  "shaderPathID": 1144,
+  "shaderName": "prelighted detail",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1142,
+    "texName": "underwater_seabed1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_FCol",
+    "type": "color",
+    "value": [
+     0.0801,
+     0.1977,
+     0.2853,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1238,
+  "name": "underwater_platform1",
+  "shaderPathID": 1139,
+  "shaderName": "Water-Pearl",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1146,
+    "texName": "underwater_platform1"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1239,
+  "name": "floor",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 231,
+    "texName": "sand"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1245,
+  "name": "underwater surface 2",
+  "shaderPathID": 1163,
+  "shaderName": "Underwater",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1159,
+    "texName": "Comp 2 small"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_CausticColor",
+    "type": "color",
+    "value": [
+     0.2933,
+     0.3098,
+     0.3098,
+     0.59
+    ]
+   },
+   {
+    "prop": "_waveTime",
+    "type": "color",
+    "value": [
+     0.6641,
+     0.4481,
+     0.3283,
+     0.3283
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1247,
+  "name": "monte_pyramide2_a",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1246,
+    "texName": "monte_pyramide2_a"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.5487,
+     0.9284,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1250,
+  "name": "monte_goldtower_cage",
+  "shaderPathID": 685,
+  "shaderName": "NoFog glow",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 691,
+    "texName": "monte_goldtower copy"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 24.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.315,
+     0.2439,
+     0.6075,
+     0.2
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.0264,
+     0.8994,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1255,
+  "name": "monster_tree",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1321,
+    "texName": "monster_tree"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.36
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1256,
+  "name": "monster_greenball",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1316,
+    "texName": "monster_greenball"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.28
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1257,
+  "name": "monster_hair2",
+  "shaderPathID": 1278,
+  "shaderName": "Hair",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1317,
+    "texName": "monster_hair2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1258,
+  "name": "skybox_monster",
+  "shaderPathID": 3,
+  "shaderName": "Skybox shader",
+  "textures": [
+   {
+    "prop": "_FrontTex",
+    "texPathID": 1254,
+    "texName": "skybox_monsterbot"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Tint",
+    "type": "color",
+    "value": [
+     0.502,
+     0.502,
+     0.502,
+     0.12
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1259,
+  "name": "monster_rail",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1319,
+    "texName": "monster_rail"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.8538,
+     1.0,
+     0.1976,
+     0.12
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1262,
+  "name": "monster_pattern2a",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1318,
+    "texName": "monster_pattern2a"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.46
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1263,
+  "name": "monster_tongue",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1320,
+    "texName": "monster_tongue"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.5
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1275,
+  "name": "-star green",
+  "shaderPathID": 138,
+  "shaderName": "diamond shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 110,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 45.0
+   },
+   {
+    "prop": "_reflection",
+    "type": "float",
+    "value": 0.4
+   },
+   {
+    "prop": "_GizmoColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.961,
+     0.973,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.2,
+     0.2,
+     0.2,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.9,
+     0.9,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1277,
+  "name": "monster_platform1true",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1261,
+    "texName": "monster_platform1true"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.51
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1535,
+  "name": "monster_black_rain",
+  "shaderPathID": 796,
+  "shaderName": "Particle Alpha Blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1260,
+    "texName": "monster_blacksnow"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Specular",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.2195,
+     0.2439,
+     0.2,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1280,
+  "name": "monstereyes",
+  "shaderPathID": 106,
+  "shaderName": "Normal-Glossy",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1315,
+    "texName": "monster_eye"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 10.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.4234,
+     0.4234,
+     0.4234,
+     0.22
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.961,
+     0.973,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.2,
+     0.2,
+     0.2,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.9,
+     0.9,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1294,
+  "name": "monster_exitgreen",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1314,
+    "texName": "monster_exitgreen"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1296,
+  "name": "monster_pattern2b",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1295,
+    "texName": "monster_pattern2b"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.2853,
+     0.2853,
+     0.2853,
+     0.2
+    ]
+   },
+   {
+    "prop": "_SpecColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.4325,
+     0.4325,
+     0.4325,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1322,
+  "name": "monster_black",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 0,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Specular",
+    "type": "float",
+    "value": 0.5
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.2195,
+     0.2439,
+     0.2,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1324,
+  "name": "monster_eye",
+  "shaderPathID": 76,
+  "shaderName": "VertexLit",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1315,
+    "texName": "monster_eye"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   {
+    "prop": "_Emission",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1334,
+  "name": "monster_patternroad2",
+  "shaderPathID": 1,
+  "shaderName": "Self-illumination",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1333,
+    "texName": "monster_patternroad2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.5
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1454,
+  "name": "monster_pattern2a_cubes",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1453,
+    "texName": "monster_pattern2a_cubes"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1464,
+  "name": "monster_platformcircles",
+  "shaderPathID": 105,
+  "shaderName": "Normal-Diffuse",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1463,
+    "texName": "monster_platformcircles"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1487,
+  "name": "gui star shader",
+  "shaderPathID": 1581,
+  "shaderName": "gui ball shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1506,
+    "texName": "diamond_HUD"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.5578,
+     0.8271,
+     0.837,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1495,
+  "name": "normal text",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.3277,
+     0.6516,
+     0.7633,
+     0.19
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     0.9942,
+     1.0,
+     0.9885,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.3451,
+     0.6863,
+     0.8039,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1499,
+  "name": "ball-hard norref",
+  "shaderPathID": 1776,
+  "shaderName": "Ball surface shader norref",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1717,
+    "texName": " milky"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 95.58748
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_SelfIllumin",
+    "type": "float",
+    "value": 0.25472
+   },
+   {
+    "prop": "_FrontAlpha",
+    "type": "float",
+    "value": 0.99057
+   },
+   {
+    "prop": "_BackAlpha",
+    "type": "float",
+    "value": 0.57547
+   },
+   {
+    "prop": "_Emissions",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Alpha",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Amb",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Diff",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     0.9322,
+     0.9322,
+     0.49
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.1727,
+     0.1662,
+     0.003,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emissions",
+    "type": "color",
+    "value": [
+     0.1,
+     0.1,
+     0.1,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0111,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1504,
+  "name": "OTElogo",
+  "shaderPathID": 14,
+  "shaderName": "Masked text",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1465,
+    "texName": "OTELogo"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1553,
+  "name": "level name",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.383,
+     0.3877,
+     0.8182,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.1137,
+     0.4549,
+     0.7451,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1561,
+  "name": "splat mat",
+  "shaderPathID": 144,
+  "shaderName": "pickup aura shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1588,
+    "texName": "particle spark"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.199,
+     0.2176,
+     0.663,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1564,
+  "name": "inactive",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.7551,
+     0.7016,
+     0.6592,
+     0.63
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     0.9773,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.7725,
+     0.1294,
+     0.75
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1575,
+  "name": "timer text",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.383,
+     0.3877,
+     0.8182,
+     0.49
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.9804,
+     0.1647,
+     0.1137,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1587,
+  "name": "ball-hard",
+  "shaderPathID": 1516,
+  "shaderName": "Ball surface shader ref",
+  "textures": [
+   {
+    "prop": "_GrabTexture",
+    "texPathID": 0,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 95.58748
+   },
+   {
+    "prop": "_Highlight",
+    "type": "float",
+    "value": 30.0
+   },
+   {
+    "prop": "_SelfIllumin",
+    "type": "float",
+    "value": 0.19811
+   },
+   {
+    "prop": "_FrontAlpha",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_BackAlpha",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Emissions",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Alpha",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Amb",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Diff",
+    "type": "float",
+    "value": 0.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.9953,
+     0.9328,
+     0.9327,
+     0.3
+    ]
+   },
+   {
+    "prop": "_SpecCol",
+    "type": "color",
+    "value": [
+     0.1727,
+     0.1662,
+     0.003,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Emissions",
+    "type": "color",
+    "value": [
+     0.1,
+     0.1,
+     0.1,
+     1.0
+    ]
+   },
+   {
+    "prop": "_EdgeColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Specular",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0111,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1589,
+  "name": "spark mat",
+  "shaderPathID": 144,
+  "shaderName": "pickup aura shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1588,
+    "texName": "particle spark"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.663,
+     0.5056,
+     0.0553,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1643,
+  "name": "unselected",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.7209,
+     0.5569,
+     0.0933,
+     0.23
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     0.994,
+     1.0,
+     0.988,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.7725,
+     0.1294,
+     0.75
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1650,
+  "name": "algae light",
+  "shaderPathID": 1733,
+  "shaderName": "Particle AddSmooth",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1740,
+    "texName": "UW algae 2"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.1758,
+     0.1871,
+     0.1498,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1651,
+  "name": "thecritter",
+  "shaderPathID": 1486,
+  "shaderName": "Critter",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1640,
+    "texName": "thecritter"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1652,
+  "name": "zipper",
+  "shaderPathID": 1486,
+  "shaderName": "Critter",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1641,
+    "texName": "zipper"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1655,
+  "name": "selected",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.6227,
+     0.1662,
+     0.1662,
+     0.16
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     0.994,
+     1.0,
+     0.988,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     1.0,
+     0.4039,
+     0.1294,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1671,
+  "name": "shadow material",
+  "shaderPathID": 1656,
+  "shaderName": "ShadowProjection",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 0,
+    "texName": null
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_ProjectorClip_0",
+    "type": "color",
+    "value": [
+     -0.0003,
+     -0.0008,
+     0.0005,
+     0.0044
+    ]
+   },
+   {
+    "prop": "_ProjectorClip_1",
+    "type": "color",
+    "value": [
+     -0.0004,
+     0.0006,
+     0.0007,
+     0.0055
+    ]
+   },
+   {
+    "prop": "_ProjectorClip_2",
+    "type": "color",
+    "value": [
+     -0.0003,
+     -0.0008,
+     0.0005,
+     0.0044
+    ]
+   },
+   {
+    "prop": "_ProjectorClip_3",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_ProjectorDistance_0",
+    "type": "color",
+    "value": [
+     -0.0003,
+     -0.0008,
+     0.0005,
+     0.0045
+    ]
+   },
+   {
+    "prop": "_ProjectorDistance_1",
+    "type": "color",
+    "value": [
+     -0.0004,
+     0.0006,
+     0.0007,
+     0.0056
+    ]
+   },
+   {
+    "prop": "_ProjectorDistance_2",
+    "type": "color",
+    "value": [
+     -0.0003,
+     -0.0008,
+     0.0005,
+     0.0045
+    ]
+   },
+   {
+    "prop": "_ProjectorDistance_3",
+    "type": "color",
+    "value": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_Projector_0",
+    "type": "color",
+    "value": [
+     4.7516,
+     -0.2739,
+     3.2029,
+     0.0766
+    ]
+   },
+   {
+    "prop": "_Projector_1",
+    "type": "color",
+    "value": [
+     -2.5967,
+     2.9457,
+     4.1823,
+     34.5025
+    ]
+   },
+   {
+    "prop": "_Projector_2",
+    "type": "color",
+    "value": [
+     -0.2866,
+     -0.8099,
+     0.5121,
+     4.2593
+    ]
+   },
+   {
+    "prop": "_Projector_3",
+    "type": "color",
+    "value": [
+     -0.2866,
+     -0.8098,
+     0.512,
+     4.4584
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1691,
+  "name": "dust clouds",
+  "shaderPathID": 796,
+  "shaderName": "Particle Alpha Blend",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1731,
+    "texName": "NM dustclouds"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.4291,
+     0.4387,
+     0.2328,
+     0.15
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1695,
+  "name": "masked text",
+  "shaderPathID": 14,
+  "shaderName": "Masked text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1696,
+  "name": "gui ball shader",
+  "shaderPathID": 1581,
+  "shaderName": "gui ball shader",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1726,
+    "texName": "GooBall app icon"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1697,
+  "name": "life counter",
+  "shaderPathID": 42,
+  "shaderName": "outlined text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     0.383,
+     0.3877,
+     0.8182,
+     0.43
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.1137,
+     0.4549,
+     0.7451,
+     1.0
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1732,
+  "name": "algae",
+  "shaderPathID": 1569,
+  "shaderName": "Particle MultiplyDouble",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1467,
+    "texName": "UW algae"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.5868,
+     1.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1747,
+  "name": "lap record text",
+  "shaderPathID": 1199,
+  "shaderName": "help text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     0.9882,
+     0.78
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.3451,
+     0.6863,
+     0.8039,
+     0.1
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1748,
+  "name": "transition_screen",
+  "shaderPathID": null,
+  "shaderName": null,
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1765,
+    "texName": "transition_screen"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1749,
+  "name": "crittereye",
+  "shaderPathID": 1486,
+  "shaderName": "Critter",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1609,
+    "texName": "critterEye"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 1.0
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1763,
+  "name": "help text",
+  "shaderPathID": 1199,
+  "shaderName": "help text",
+  "textures": [
+   {
+    "prop": "_TextTex",
+    "texPathID": 35,
+    "texName": "gootxt_body"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.62
+    ]
+   },
+   {
+    "prop": "_OutlineColor",
+    "type": "color",
+    "value": [
+     0.3451,
+     0.6863,
+     0.8039,
+     0.1
+    ]
+   },
+   {
+    "prop": "_color",
+    "type": "color",
+    "value": [
+     0.5,
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1766,
+  "name": "eyelid",
+  "shaderPathID": 1486,
+  "shaderName": "Critter",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1608,
+    "texName": "eyelid"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1770,
+  "name": "hud particles",
+  "shaderPathID": 1693,
+  "shaderName": "hud particles",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 146,
+    "texName": "?"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     0.4714,
+     0.5992,
+     0.663,
+     1.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1771,
+  "name": "critterspike",
+  "shaderPathID": 1486,
+  "shaderName": "Critter",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1610,
+    "texName": "critterSpike"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+    ]
+   }
+  ]
+ },
+ {
+  "pathID": 1772,
+  "name": "AMBlogo",
+  "shaderPathID": 14,
+  "shaderName": "Masked text",
+  "textures": [
+   {
+    "prop": "_MainTex",
+    "texPathID": 1465,
+    "texName": "OTELogo"
+   }
+  ],
+  "properties": [
+   {
+    "prop": "_Shininess",
+    "type": "float",
+    "value": 0.1
+   },
+   {
+    "prop": "_Color",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TintColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "prop": "_TextColor",
+    "type": "color",
+    "value": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  ]
+ }
+]

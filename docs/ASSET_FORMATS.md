@@ -111,3 +111,63 @@ u32 BE                          # m_CollisionVertexCount
 ## 4. Texture2D（classID 28）—— 218 个
 
 格式含 DXT1/DXT5 压缩与未压缩 RGB(A)，解码为 PNG。详见 `tools/extract_textures.py`。
+
+---
+
+## 5. Shader（classID 48）—— 50 个
+
+对象内直接存储**完整 shader 源码文本**：
+
+```
+u32 BE   name_len
+u8[]     name
+u32 BE   src_len
+u8[]     src            # 即 .shader 文本（如 `Shader "RendererFX/Skybox" { ... }`）
+```
+
+产物：`assets/shaders/*.shader`。
+
+---
+
+## 6. Material（classID 21）—— 250 个
+
+```
+u32 BE   name_len
+u8[]     name
+PPtr     m_Shader        # u32 fileID + u32 pathID
+u32 BE   texCount
+  { u32 BE name_len, u8[] propName, PPtr texture, Vector4 scaleOffset } × texCount
+# 紧随标量/颜色属性（量不定）：
+  { u32 BE name_len, u8[] propName, f32 value }            # float
+  { u32 BE name_len, u8[] propName, f32 r,g,b,a }          # color
+```
+
+- 纹理绑定：`_MainTex` 等属性名 → Texture2D pathID。
+- 产物：`assets/materials/materials.json`（含 shader 名、纹理名、颜色/浮点属性）。
+
+---
+
+## 7. AnimationClip（classID 74）—— 157 个
+
+体积极小（178–235 B），多为空/极简剪辑。含属性名（`minSize`/`maxSize` 等）与关键帧 float 序列。
+
+```
+u32 BE name_len, name | … 头 | 关键帧 float 序列 | 属性名字符串
+```
+
+产物：`assets/animations/*.bin`（原始对象）+ `animations.json`（名称/属性名/浮点）。
+
+---
+
+## 8. 场景（GameObject / Transform / Renderer）
+
+对象分散于 **69 个 level 文件 + mainData + sharedassets.assets**。
+
+| 类 | 字段 |
+|---|---|
+| GameObject | `m_Name`、`m_Component[]` |
+| Transform | `m_LocalPosition`、`m_LocalRotation`(四元数)、`m_LocalScale`、`m_Father`、`m_Children` |
+| MeshRenderer / SkinnedMeshRenderer | `m_GameObject`、`m_Materials[]` |
+| MeshFilter | `m_GameObject`、`m_Mesh` |
+
+产物：`assets/scenes/levels_scene.json`（69 关 + mainData）、`assets/scenes/sharedassets_scene.json`。

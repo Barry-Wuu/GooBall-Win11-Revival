@@ -27,8 +27,11 @@
 | Texture2D | classID 28 | ✅ 218/218 | `assets/textures/` 229 张 PNG（35 MB） |
 | AudioClip | classID 83 | ✅ 55/55 | `assets/audio/` 9 首 Ogg BGM + 46 个 PCM 音效（48 MB） |
 | Mesh | classID 43 | ✅ 809/823 | `assets/meshes/` 809 个 OBJ，146,638 三角形（9 MB） |
-| 关卡数据 | — | ✅ | `assets/levels/` 65 个 level 转储 |
-| Material/Shader/Animation | — | ⏳ | 待提取 |
+| Shader | classID 48 | ✅ 50/50 | `assets/shaders/` 完整 shader 源码 |
+| Material | classID 21 | ✅ 250/250 | `assets/materials/materials.json`（纹理/shader 绑定 + 属性） |
+| AnimationClip | classID 74 | ✅ 157 | `assets/animations/`（原始 + JSON） |
+| 场景层级 | GameObject/Transform | ✅ | `assets/scenes/`（69 关 + mainData + sharedassets） |
+| 关卡数据 | — | ✅ | `assets/levels/` 65 个 level 名称列表 |
 | 游戏逻辑 | MonoBehaviour | 🚧 | `docs/il_*.txt`（IL）、`docs/GooBall_logic_recovery.md` |
 
 预览：`proof/mesh_preview.png`
@@ -89,8 +92,9 @@ python tools/extract_textures.py
 ## Roadmap
 
 - [x] 对象表解析（SerializedFile v5）
-- [x] Texture2D / AudioClip / Mesh 全量提取
-- [ ] Material / Shader / Animation 提取
+- [x] Texture2D / AudioClip / Mesh / Shader / Material / AnimationClip 全量提取
+- [x] 场景层级（69 关 + sharedassets）导出
+- [ ] Material/Shader → Godot 材质转换
 - [ ] Mesh 剩余 14 个退化网格
 - [ ] 在 Godot 4 重建物理 / 输入 / 存档 / 消息契约
 - [ ] Win11 可玩版本发布

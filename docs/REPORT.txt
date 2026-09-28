@@ -1,0 +1,135 @@
+GooBall 资产提取报告 (UnityPy 1.25.3, Unity 1.x fmt v5)
+============================================================
+
+== 类型直方图 ==
+GameObject                 6822
+Transform                  6820
+Pipeline                   4588
+Animation                  4309
+MeshRenderer               3861
+MeshFilter                 3842
+MeshCollider               2982
+MonoBehaviour              1447
+Mesh                       823
+Light                      692
+BoxCollider                610
+Unknown (69)               501
+LensFlare                  359
+AnimationClip              357
+ParticleRenderer           340
+AudioSource                317
+EllipsoidParticleEmitter   310
+Material                   253
+Halo                       224
+Texture2D                  218
+Rigidbody                  213
+ParticleAnimator           194
+MonoScript                 105
+TextMesh                   76
+HaloManager                70
+RenderSettings             70
+Unknown (31)               70
+Unknown (63)               70
+Unknown (35)               70
+Unknown (46)               70
+Unknown (7)                70
+OcclusionCullingSettings   70
+Camera                     56
+AudioClip                  55
+Shader                     50
+WorldParticleCollider      48
+Skybox                     36
+MeshParticleEmitter        30
+EdgeCollider2D             24
+HaloLayer                  24
+LineRenderer               15
+Cubemap                    14
+GUILayer                   9
+Unknown (32)               5
+RenderTexture              5
+Flare                      5
+TrailRenderer              3
+FlareLayer                 3
+GUITexture                 3
+AudioListener              2
+PlayerSettings             1
+InputManager               1
+TagManager                 1
+AudioManager               1
+ScriptMapper               1
+MonoManager                1
+GraphicsSettings           1
+TimeManager                1
+Unknown (71)               1
+DelayedCallManager         1
+
+贴图: 0 OK / 218 fail
+网格: 0 OK / 823 fail
+音频: 0 OK / 55 fail
+
+关卡数: 65
+  level0: 22 GameObjects
+  level1: 11 GameObjects
+  level2: 1 GameObjects
+  level3: 24 GameObjects
+  level4: 19 GameObjects
+  level5: 40 GameObjects
+  level6: 24 GameObjects
+  level7: 16 GameObjects
+  level8: 19 GameObjects
+  level9: 14 GameObjects
+  level10: 26 GameObjects
+  level11: 7 GameObjects
+  level12: 5 GameObjects
+  level13: 21 GameObjects
+  level17: 16 GameObjects
+  level18: 15 GameObjects
+  level19: 34 GameObjects
+  level20: 11 GameObjects
+  level21: 16 GameObjects
+  level22: 15 GameObjects
+  level23: 13 GameObjects
+  level24: 16 GameObjects
+  level25: 16 GameObjects
+  level26: 33 GameObjects
+  level27: 8 GameObjects
+  level28: 17 GameObjects
+  level29: 7 GameObjects
+  level30: 8 GameObjects
+  level31: 12 GameObjects
+  level32: 5 GameObjects
+  level33: 27 GameObjects
+  level34: 45 GameObjects
+  level35: 35 GameObjects
+  level36: 55 GameObjects
+  level37: 31 GameObjects
+  level38: 20 GameObjects
+  level39: 41 GameObjects
+  level40: 26 GameObjects
+  level41: 23 GameObjects
+  level42: 39 GameObjects
+  level43: 41 GameObjects
+  level44: 31 GameObjects
+  level45: 20 GameObjects
+  level46: 25 GameObjects
+  level47: 33 GameObjects
+  level48: 31 GameObjects
+  level49: 30 GameObjects
+  level50: 48 GameObjects
+  level51: 61 GameObjects
+  level53: 11 GameObjects
+  level54: 5 GameObjects
+  level55: 4 GameObjects
+  level56: 5 GameObjects
+  level57: 25 GameObjects
+  level58: 27 GameObjects
+  level59: 30 GameObjects
+  level60: 32 GameObjects
+  level61: 29 GameObjects
+  level62: 29 GameObjects
+  level63: 25 GameObjects
+  level64: 42 GameObjects
+  level65: 90 GameObjects
+  level66: 13 GameObjects
+  level67: 42 GameObjects
+  level68: 26 GameObjects

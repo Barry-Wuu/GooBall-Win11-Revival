@@ -1,0 +1,13 @@
+FalloutHeight
+ exit
+flare
+startplatform
+startplatform
+polySurface19
+start
+start
+start
+flare
+flare
+flare
+persp

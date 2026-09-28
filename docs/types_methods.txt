@@ -1,0 +1,1046 @@
+# TypeDef=143 MethodDef=759 Field=1089
+
+=== [1] <Module>  (methods=0 fields=0)
+
+=== [2] DemoCameraAnimator  (methods=2 fields=10)
+    M .ctor  rva=0x0020ec flags=0xfffe sig=200001
+    M Update  rva=0x0020f4 flags=0xfffe sig=200001
+
+=== [3] Grabber  (methods=3 fields=5)
+    M .ctor  rva=0x0020f8 flags=0xfffe sig=200001
+    M Setup  rva=0x002124 flags=0xfffe sig=200001
+    M Render  rva=0x0021b0 flags=0xfffe sig=200001
+
+=== [4] Shadow  (methods=3 fields=4)
+    M .ctor  rva=0x00240c flags=0xfffe sig=200001
+    M Start  rva=0x00242c flags=0xfffe sig=200001
+    M LateUpdate  rva=0x002478 flags=0xfffe sig=200001
+
+=== [5] QualityDisabler  (methods=5 fields=0)
+    M .ctor  rva=0x0024dc flags=0xfffe sig=200001
+    M Awake  rva=0x0024e4 flags=0xfffe sig=200001
+    M Update  rva=0x002504 flags=0xfffe sig=200001
+    M SetChildrenActive  rva=0x002510 flags=0xfffe sig=20010102
+    M GraphicsChanged  rva=0x002588 flags=0xfffe sig=20010108
+
+=== [6] QualityMaterialSwitcher  (methods=4 fields=4)
+    M .ctor  rva=0x0025bc flags=0xfffe sig=200001
+    M Awake  rva=0x0025cc flags=0xfffe sig=200001
+    M Update  rva=0x0025ec flags=0xfffe sig=200001
+    M GraphicsChanged  rva=0x0025f8 flags=0xfffe sig=20010108
+
+=== [7] CloudRotator  (methods=2 fields=2)
+    M .ctor  rva=0x002680 flags=0xfffe sig=200001
+    M Update  rva=0x0026a0 flags=0xfffe sig=200001
+
+=== [8] CloudMover  (methods=4 fields=4)
+    M .ctor  rva=0x0026f4 flags=0xfffe sig=200001
+    M Reset  rva=0x002724 flags=0xfffe sig=200001
+    M Start  rva=0x002760 flags=0xfffe sig=200001
+    M Update  rva=0x002798 flags=0xfffe sig=200001
+
+=== [9] HUDCountDown  (methods=7 fields=1)
+    M .ctor  rva=0x0027f0 flags=0xfffe sig=200001
+    M FormatTime  rva=0x0027f8 flags=0xfffe sig=00010e0c
+    M FormatTimeDeciseconds  rva=0x002898 flags=0xfffe sig=00010e0c
+    M SetFinishTime  rva=0x002928 flags=0xfffe sig=2001010c
+    M Update  rva=0x002964 flags=0xfffe sig=200001
+    M StopPlay  rva=0x0029b4 flags=0xfffe sig=200001
+    M StartPlay  rva=0x0029c0 flags=0xfffe sig=200001
+
+=== [10] HUDGooMeter  (methods=1 fields=0)
+    M .ctor  rva=0x0029cc flags=0xfffe sig=200001
+
+=== [11] HUDLapRecordText  (methods=3 fields=1)
+    M .ctor  rva=0x0029d4 flags=0xfffe sig=200001
+    M LevelStart  rva=0x0029dc flags=0xfffe sig=200001
+    M GetReady  rva=0x002a44 flags=0xfffe sig=200001
+
+=== [12] HUDLevelName  (methods=2 fields=0)
+    M .ctor  rva=0x002a6c flags=0xfffe sig=200001
+    M Awake  rva=0x002a74 flags=0xfffe sig=200001
+
+=== [13] HUDLifeCounter  (methods=2 fields=0)
+    M .ctor  rva=0x002a98 flags=0xfffe sig=200001
+    M SetLifeCounter  rva=0x002aa0 flags=0xfffe sig=20010108
+
+=== [14] HUDLifeJump  (methods=2 fields=0)
+    M .ctor  rva=0x002ad0 flags=0xfffe sig=200001
+    M ExtraLife  rva=0x002ad8 flags=0xfffe sig=200001
+
+=== [15] HUDPivot  (methods=4 fields=2)
+    M .ctor  rva=0x002b18 flags=0xfffe sig=200001
+    M Update  rva=0x002b20 flags=0xfffe sig=200001
+    M GetReady  rva=0x002b94 flags=0xfffe sig=200001
+    M StopPlay  rva=0x002c4c flags=0xfffe sig=20010102
+
+=== [16] HUDScreenWidth  (methods=2 fields=1)
+    M .ctor  rva=0x002cb8 flags=0xfffe sig=200001
+    M Awake  rva=0x002cc0 flags=0xfffe sig=200001
+
+=== [17] HUDStarCounter  (methods=2 fields=0)
+    M .ctor  rva=0x002d3c flags=0xfffe sig=200001
+    M SetStars  rva=0x002d44 flags=0xfffe sig=20010108
+
+=== [18] HUDStarJump  (methods=2 fields=0)
+    M .ctor  rva=0x002d68 flags=0xfffe sig=200001
+    M AddStar  rva=0x002d70 flags=0xfffe sig=20010108
+
+=== [19] HUDStateText  (methods=12 fields=0)
+    M .ctor  rva=0x002dcc flags=0xfffe sig=200001
+    M PlayTextAnimation  rva=0x002dd4 flags=0xfffe sig=2001010e
+    M RemoveText  rva=0x002e10 flags=0xfffe sig=200001
+    M InsertText  rva=0x002e24 flags=0xfffe sig=2001010e
+    M GetReady  rva=0x002e60 flags=0xfffe sig=200001
+    M ExtraLife  rva=0x002e80 flags=0xfffe sig=200001
+    M Go  rva=0x002e90 flags=0xfffe sig=200001
+    M TimeOut  rva=0x002eb4 flags=0xfffe sig=200001
+    M FallOut  rva=0x002ec4 flags=0xfffe sig=200001
+    M LevelStart  rva=0x002ed4 flags=0xfffe sig=2001010e
+    M StartPlay  rva=0x002f10 flags=0xfffe sig=200001
+    M FadeOut  rva=0x002f18 flags=0xfffe sig=200001
+
+=== [20] Rotator  (methods=2 fields=1)
+    M .ctor  rva=0x002f20 flags=0xfffe sig=200001
+    M FixedUpdate  rva=0x002f34 flags=0xfffe sig=200001
+
+=== [21] FaceForward  (methods=3 fields=2)
+    M .ctor  rva=0x002f7c flags=0xfffe sig=200001
+    M Awake  rva=0x002f90 flags=0xfffe sig=200001
+    M Update  rva=0x002fa4 flags=0xfffe sig=200001
+
+=== [22] GodrayGenerator  (methods=3 fields=4)
+    M .ctor  rva=0x003020 flags=0xfffe sig=200001
+    M Awake  rva=0x003034 flags=0xfffe sig=200001
+    M Spawn  rva=0x003048 flags=0xfffe sig=200001
+
+=== [23] PlatformMover  (methods=4 fields=6)
+    M .ctor  rva=0x0030e8 flags=0xfffe sig=200001
+    M Start  rva=0x003138 flags=0xfffe sig=200001
+    M FixedUpdate  rva=0x00317c flags=0xfffe sig=200001
+    M DoActivateTrigger  rva=0x0031ec flags=0xfffe sig=200001
+
+=== [24] WaterPlatformHit  (methods=6 fields=7)
+    M .ctor  rva=0x00322c flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x00326c flags=0xfffe sig=200102128091
+    M OnCollisionEnter  rva=0x0032cc flags=0xfffe sig=200101128095
+    M OnTriggerEnter  rva=0x0032dc flags=0xfffe sig=200101128091
+    M Awake  rva=0x0032e8 flags=0xfffe sig=200001
+    M Update  rva=0x0032fc flags=0xfffe sig=200001
+
+=== [25] FoamController  (methods=2 fields=8)
+    M .ctor  rva=0x003390 flags=0xfffe sig=200001
+    M Update  rva=0x0033fc flags=0xfffe sig=200001
+
+=== [26] WaterControl  (methods=2 fields=8)
+    M .ctor  rva=0x00348c flags=0xfffe sig=200001
+    M Update  rva=0x0034f8 flags=0xfffe sig=200001
+
+=== [27] WaterPlacer  (methods=2 fields=2)
+    M .ctor  rva=0x003590 flags=0xfffe sig=200001
+    M LateUpdate  rva=0x003598 flags=0xfffe sig=200001
+
+=== [28] VerticalLine  (methods=3 fields=3)
+    M .ctor  rva=0x0036b4 flags=0xfffe sig=200001
+    M Awake  rva=0x003708 flags=0xfffe sig=200001
+    M Update  rva=0x00370c flags=0xfffe sig=200001
+
+=== [29] BackgroundLevelCamera  (methods=14 fields=17)
+    M .ctor  rva=0x003710 flags=0xfffe sig=200001
+    M Enable  rva=0x003730 flags=0xfffe sig=200001
+    M Disable  rva=0x003770 flags=0xfffe sig=200001
+    M Awake  rva=0x003788 flags=0xfffe sig=200001
+    M RebuildCameraInfo  rva=0x003814 flags=0xfffe sig=200001
+    M FadeinBackgroundImage  rva=0x003910 flags=0xfffe sig=200001
+    M FadeoutBackgroundImage  rva=0x00391c flags=0xfffe sig=200001
+    M UpdateFade  rva=0x003928 flags=0xfffe sig=200001
+    M Update  rva=0x0039f0 flags=0xfffe sig=200001
+    M OnLevelWasLoaded  rva=0x003ae8 flags=0xfffe sig=20010108
+    M Repeat  rva=0x003af8 flags=0xfffe sig=00020c0c0c
+    M PingPong  rva=0x003b08 flags=0xfffe sig=00020c0c0c
+    M UnitPingPong  rva=0x003b24 flags=0xfffe sig=00020c0c0c
+    M SmoothUnitPingPong  rva=0x003b30 flags=0xfffe sig=00020c0c0c
+
+=== [30] ChapterItem  (methods=8 fields=6)
+    M .ctor  rva=0x003b6c flags=0xfffe sig=200001
+    M .cctor  rva=0x003b94 flags=0xfffe sig=000001
+    M Awake  rva=0x003ba0 flags=0xfffe sig=200001
+    M Enter  rva=0x003bac flags=0xfffe sig=200001
+    M MouseEnter  rva=0x003c34 flags=0xfffe sig=200001
+    M Exit  rva=0x003c3c flags=0xfffe sig=200001
+    M MouseExit  rva=0x003ca4 flags=0xfffe sig=200001
+    M Update  rva=0x003cac flags=0xfffe sig=200001
+
+=== [31] MouseClickable  (methods=4 fields=6)
+    M .ctor  rva=0x003f28 flags=0xfffe sig=200001
+    M MouseEnter  rva=0x003f3c flags=0xfffe sig=200001
+    M MouseExit  rva=0x003f40 flags=0xfffe sig=200001
+    M MouseClick  rva=0x003f44 flags=0xfffe sig=200001
+
+=== [32] MouseGUI  (methods=12 fields=5)
+    M .ctor  rva=0x003fd4 flags=0xfffe sig=200001
+    M MouseOver  rva=0x003fdc flags=0xfffe sig=200001
+    M MouseEnter  rva=0x003fe0 flags=0xfffe sig=200001
+    M MouseExit  rva=0x003fe4 flags=0xfffe sig=200001
+    M MouseOverPressed  rva=0x003fe8 flags=0xfffe sig=200001
+    M MouseOverUnpressed  rva=0x003fec flags=0xfffe sig=200001
+    M MouseClick  rva=0x003ff0 flags=0xfffe sig=200001
+    M OnMouseUp  rva=0x003ff4 flags=0xfffe sig=200001
+    M OnMouseEnter  rva=0x003ffc flags=0xfffe sig=200001
+    M OnMouseExit  rva=0x004004 flags=0xfffe sig=200001
+    M OnMouseOver  rva=0x00400c flags=0xfffe sig=200001
+    M Update  rva=0x00403c flags=0xfffe sig=200001
+
+=== [33] Type  (methods=0 fields=4)
+
+=== [34] ChapterSelector  (methods=6 fields=14)
+    M .ctor  rva=0x004040 flags=0xfffe sig=200001
+    M Awake  rva=0x004048 flags=0xfffe sig=200001
+    M Clicked  rva=0x00432c flags=0xfffe sig=20010108
+    M ProcessChapter  rva=0x004350 flags=0xfffe sig=200101125d
+    M Treat  rva=0x004410 flags=0xfffe sig=200201125d08
+    M Update  rva=0x004454 flags=0xfffe sig=200001
+
+=== [35] ChapterWelcome  (methods=4 fields=17)
+    M .ctor  rva=0x00447c flags=0xfffe sig=200001
+    M Awake  rva=0x004490 flags=0xfffe sig=200001
+    M AssignTexture  rva=0x004694 flags=0xfffe sig=2001011221
+    M Update  rva=0x0046ac flags=0xfffe sig=200001
+
+=== [36] KeyboardNavigation  (methods=3 fields=6)
+    M .ctor  rva=0x004720 flags=0xfffe sig=200001
+    M Start  rva=0x004728 flags=0xfffe sig=200001
+    M Update  rva=0x004780 flags=0xfffe sig=200001
+
+=== [37] DemoFinishedLoop  (methods=2 fields=5)
+    M .ctor  rva=0x004784 flags=0xfffe sig=200001
+    M Update  rva=0x0047c8 flags=0xfffe sig=200001
+
+=== [38] DemoLoop  (methods=2 fields=0)
+    M .ctor  rva=0x0048cc flags=0xfffe sig=200001
+    M Update  rva=0x0048d4 flags=0xfffe sig=200001
+
+=== [39] DemoLoopText  (methods=7 fields=11)
+    M .ctor  rva=0x004914 flags=0xfffe sig=200001
+    M Start  rva=0x004924 flags=0xfffe sig=200001
+    M DisableAll  rva=0x00492c flags=0xfffe sig=200001
+    M Begin  rva=0x00499c flags=0xfffe sig=200201125d0c
+    M SwitchLevel  rva=0x0049c8 flags=0xfffe sig=200001
+    M SwitchTitle  rva=0x0049d0 flags=0xfffe sig=200001
+    M Update  rva=0x0049d8 flags=0xfffe sig=200001
+
+=== [40] GameEndedHighScore  (methods=11 fields=10)
+    M .ctor  rva=0x004b9c flags=0xfffe sig=200001
+    M Reset  rva=0x004bb8 flags=0xfffe sig=200001
+    M EnterHighScore  rva=0x004bc4 flags=0xfffe sig=20010108
+    M Show  rva=0x004bdc flags=0xfffe sig=200001
+    M DisplayGameOver  rva=0x004bec flags=0xfffe sig=200001
+    M DisplayDemoEnded  rva=0x004bf8 flags=0xfffe sig=200001
+    M DisplayGameCompleted  rva=0x004c04 flags=0xfffe sig=200001
+    M CoroutineUpdate  rva=0x004c10 flags=0xfffe sig=20001259
+    M HighscoreInputUpdate  rva=0x004c38 flags=0xfffe sig=200002
+    M ModifyStringWithInput  rva=0x004c8c flags=0xfffe sig=000202100e08
+    M Blink  rva=0x004d24 flags=0xfffe sig=00010e0e
+
+=== [41] <>c__CompilerGenerated1  (methods=5 fields=6)
+    M .ctor  rva=0x004d58 flags=0xfffe sig=200201081280a0
+    M System.Collections.IEnumerator.get_Current  rva=0x004d74 flags=0xfffe sig=20001c
+    M MoveNext  rva=0x004d98 flags=0xfffe sig=200002
+    M Dispose  rva=0x0051d8 flags=0xfffe sig=200001
+    M Reset  rva=0x005218 flags=0xfffe sig=200001
+
+=== [42] HighScoreTable  (methods=9 fields=4)
+    M .ctor  rva=0x005220 flags=0xfffe sig=200001
+    M Awake  rva=0x005234 flags=0xfffe sig=200001
+    M LoadEntries  rva=0x005244 flags=0xfffe sig=200001
+    M SaveEntries  rva=0x00533c flags=0xfffe sig=200001
+    M CalculateNameText  rva=0x0053c4 flags=0xfffe sig=20000e
+    M CalculateScoreText  rva=0x005450 flags=0xfffe sig=20000e
+    M RenderHighscoreTableToText  rva=0x0054e4 flags=0xfffe sig=200001
+    M InsertEntry  rva=0x005514 flags=0xfffe sig=2001081280b0
+    M ChangeName  rva=0x005584 flags=0xfffe sig=200201080e
+
+=== [43] CompareEntry  (methods=2 fields=0)
+    M .ctor  rva=0x0055b8 flags=0xfffe sig=200001
+    M System.Collections.IComparer.Compare  rva=0x0055c0 flags=0xfffe sig=2002081c1c
+
+=== [44] Entry  (methods=1 fields=2)
+    M .ctor  rva=0x005604 flags=0xfffe sig=200001
+
+=== [45] LevelHighScoreInfo  (methods=0 fields=4)
+
+=== [46] LevelHighScore  (methods=4 fields=14)
+    M .ctor  rva=0x00560c flags=0xfffe sig=200001
+    M DisplayHighScore  rva=0x005614 flags=0xfffe sig=2001011180b4
+    M LapRecordsString  rva=0x005688 flags=0xfffe sig=00020e0e0c
+    M CoroutineUpdate  rva=0x00569c flags=0xfffe sig=20001259
+
+=== [47] <>c__CompilerGenerated2  (methods=5 fields=11)
+    M .ctor  rva=0x0056c4 flags=0xfffe sig=200201081280b8
+    M System.Collections.IEnumerator.get_Current  rva=0x0056e0 flags=0xfffe sig=20001c
+    M MoveNext  rva=0x005704 flags=0xfffe sig=200002
+    M Dispose  rva=0x005e24 flags=0xfffe sig=200001
+    M Reset  rva=0x005e64 flags=0xfffe sig=200001
+
+=== [48] GamePlayMenu  (methods=5 fields=0)
+    M .ctor  rva=0x005e6c flags=0xfffe sig=200001
+    M BackToMapScreen  rva=0x005e74 flags=0xfffe sig=200001
+    M ContinuePlaying  rva=0x005ea8 flags=0xfffe sig=200001
+    M BackToDemoLoop  rva=0x005edc flags=0xfffe sig=200001
+    M SetupMenu  rva=0x005f10 flags=0xfffe sig=200001
+
+=== [49] MenuController  (methods=19 fields=22)
+    M .ctor  rva=0x006128 flags=0xfffe sig=200001
+    M get_singleton  rva=0x006138 flags=0xfffe sig=00001280c4
+    M Awake  rva=0x006150 flags=0xfffe sig=200001
+    M Reset  rva=0x006168 flags=0xfffe sig=200001
+    M LateUpdate  rva=0x006174 flags=0xfffe sig=200001
+    M SelectPrevious  rva=0x0062c0 flags=0xfffe sig=200001
+    M SelectNext  rva=0x006330 flags=0xfffe sig=200001
+    M PrepareMenus  rva=0x0063ac flags=0xfffe sig=20010108
+    M AddMenu  rva=0x0063fc flags=0xfffe sig=2002010e1180e0
+    M AddItem  rva=0x006450 flags=0xfffe sig=2001011280c8
+    M SetEscapeItem  rva=0x006488 flags=0xfffe sig=2001011280c8
+    M SetSelectedItem  rva=0x006498 flags=0xfffe sig=20010108
+    M EndMenus  rva=0x0064a8 flags=0xfffe sig=200001
+    M EndMenu  rva=0x0064c0 flags=0xfffe sig=200001
+    M SetUseMouse  rva=0x006528 flags=0xfffe sig=20010102
+    M SwitchTo  rva=0x0065a8 flags=0xfffe sig=2001010e
+    M SwitchTo  rva=0x0065f4 flags=0xfffe sig=20010108
+    M SetActiveItem  rva=0x006b60 flags=0xfffe sig=20010108
+    M SetupMenu  rva=0x000000 flags=0xfffe sig=200001
+
+=== [50] MenuItem  (methods=8 fields=4)
+    M .ctor  rva=0x006bbc flags=0xfffe sig=2001010e
+    M MouseEnter  rva=0x006bd4 flags=0xfffe sig=200001
+    M MouseExit  rva=0x006c08 flags=0xfffe sig=200001
+    M Highlight  rva=0x006c0c flags=0xfffe sig=200001
+    M UnHighlight  rva=0x006c60 flags=0xfffe sig=200001
+    M MouseClick  rva=0x006c7c flags=0xfffe sig=200001
+    M AcceptFocus  rva=0x006c9c flags=0xfffe sig=200002
+    M Activated  rva=0x000000 flags=0xfffe sig=200001
+
+=== [51] MenuToggle  (methods=4 fields=4)
+    M .ctor  rva=0x006ca0 flags=0xfffe sig=2002010e1d0e
+    M .ctor  rva=0x006cf0 flags=0xfffe sig=2003010e1d0e0e
+    M Activated  rva=0x006d40 flags=0xfffe sig=200001
+    M UpdateToggleText  rva=0x006d9c flags=0xfffe sig=200001
+
+=== [52] MenuCommand  (methods=2 fields=1)
+    M .ctor  rva=0x006db8 flags=0xfffe sig=2002010e0e
+    M Activated  rva=0x006dc8 flags=0xfffe sig=200001
+
+=== [53] MenuInactiveItem  (methods=5 fields=0)
+    M .ctor  rva=0x006de8 flags=0xfffe sig=2001010e
+    M Activated  rva=0x006df4 flags=0xfffe sig=200001
+    M Highlight  rva=0x006df8 flags=0xfffe sig=200001
+    M UnHighlight  rva=0x006dfc flags=0xfffe sig=200001
+    M AcceptFocus  rva=0x006e18 flags=0xfffe sig=200002
+
+=== [54] MenuCommandMessage  (methods=2 fields=1)
+    M .ctor  rva=0x006e1c flags=0xfffe sig=2002010e0e
+    M Activated  rva=0x006e2c flags=0xfffe sig=200001
+
+=== [55] MenuGoto  (methods=2 fields=1)
+    M .ctor  rva=0x006e40 flags=0xfffe sig=2002010e0e
+    M Activated  rva=0x006e50 flags=0xfffe sig=200001
+
+=== [56] Layout  (methods=0 fields=4)
+
+=== [57] IntroLogos  (methods=3 fields=5)
+    M .ctor  rva=0x006e64 flags=0xfffe sig=200001
+    M Awake  rva=0x006e6c flags=0xfffe sig=200001
+    M CoroutineUpdate  rva=0x006e7c flags=0xfffe sig=20001259
+
+=== [58] <>c__CompilerGenerated3  (methods=5 fields=4)
+    M .ctor  rva=0x006ea4 flags=0xfffe sig=200201081280e4
+    M System.Collections.IEnumerator.get_Current  rva=0x006ec0 flags=0xfffe sig=20001c
+    M MoveNext  rva=0x006ee4 flags=0xfffe sig=200002
+    M Dispose  rva=0x007138 flags=0xfffe sig=200001
+    M Reset  rva=0x00716c flags=0xfffe sig=200001
+
+=== [59] MainMenu  (methods=4 fields=0)
+    M .ctor  rva=0x007174 flags=0xfffe sig=200001
+    M SetupMenu  rva=0x00717c flags=0xfffe sig=200001
+    M RegisterNow  rva=0x007534 flags=0xfffe sig=200001
+    M DownloadLatest  rva=0x007564 flags=0xfffe sig=200001
+
+=== [60] MainMenuMouseGUI  (methods=4 fields=3)
+    M .ctor  rva=0x007574 flags=0xfffe sig=200001
+    M MouseClick  rva=0x00757c flags=0xfffe sig=200001
+    M MouseEnter  rva=0x0075ac flags=0xfffe sig=200001
+    M MouseExit  rva=0x007600 flags=0xfffe sig=200001
+
+=== [61] MouseForwarder  (methods=4 fields=1)
+    M .ctor  rva=0x007614 flags=0xfffe sig=200001
+    M MouseEnter  rva=0x00761c flags=0xfffe sig=200001
+    M MouseExit  rva=0x00762c flags=0xfffe sig=200001
+    M MouseClick  rva=0x00763c flags=0xfffe sig=200001
+
+=== [62] MapScreenState  (methods=0 fields=1)
+
+=== [63] Mode  (methods=0 fields=3)
+
+=== [64] Level  (methods=1 fields=7)
+    M .ctor  rva=0x00764c flags=0xfffe sig=200001
+
+=== [65] World  (methods=0 fields=7)
+
+=== [66] State  (methods=0 fields=4)
+
+=== [67] MapScreen  (methods=20 fields=171)
+    M .ctor  rva=0x007654 flags=0xfffe sig=200001
+    M Awake  rva=0x007684 flags=0xfffe sig=200001
+    M Reset  rva=0x007704 flags=0xfffe sig=200001
+    M StopPlay  rva=0x007710 flags=0xfffe sig=200001
+    M CurrentDeselectedMaterial  rva=0x007718 flags=0xfffe sig=2001121d08
+    M CurrentSelectedMaterial  rva=0x007748 flags=0xfffe sig=2001121d08
+    M RolloverInfoClear  rva=0x007750 flags=0xfffe sig=200001
+    M RolloverInfoDisplay  rva=0x007780 flags=0xfffe sig=200101128100
+    M Update  rva=0x007838 flags=0xfffe sig=200001
+    M SelectNext  rva=0x007b24 flags=0xfffe sig=20010808
+    M SelectPrevious  rva=0x007c0c flags=0xfffe sig=20010808
+    M SelectPracticeLevel  rva=0x007cf8 flags=0xfffe sig=2002011181041281f4
+    M SetHighlighted  rva=0x007e1c flags=0xfffe sig=200101128100
+    M AssignTexture  rva=0x007ed4 flags=0xfffe sig=2001011221
+    M PrepareBackground  rva=0x007eec flags=0xfffe sig=200101118104
+    M FlushLines  rva=0x007f8c flags=0xfffe sig=200001
+    M ProcessLevels  rva=0x007fc4 flags=0xfffe sig=0001011d128100
+    M ProcessLevelDots  rva=0x0080a8 flags=0xfffe sig=200001
+    M VisualizeLevels  rva=0x0081f0 flags=0xfffe sig=200001
+    M HarvestLevelDots  rva=0x0082d8 flags=0xfffe sig=200001
+
+=== [68] MapInfo  (methods=23 fields=9)
+    M .ctor  rva=0x008bbc flags=0xfffe sig=200001
+    M .cctor  rva=0x008bc4 flags=0xfffe sig=000001
+    M get_levels  rva=0x008c04 flags=0xfffe sig=00001d128100
+    M AddChapter  rva=0x008c1c flags=0xfffe sig=0002010e118104
+    M AddLevel  rva=0x008c54 flags=0xfffe sig=0002010e08
+    M ThatWasTheFinalLevel  rva=0x008dc8 flags=0xfffe sig=000001
+    M SetupLevels  rva=0x008de0 flags=0xfffe sig=000001
+    M GetWorld  rva=0x0091c0 flags=0xfffe sig=0000118104
+    M GetWorld  rva=0x0091e0 flags=0xfffe sig=000111810408
+    M GetWorldForGlowHack  rva=0x009210 flags=0xfffe sig=0000118104
+    M GetTitle  rva=0x009248 flags=0xfffe sig=00000e
+    M GetTitle  rva=0x009278 flags=0xfffe sig=00010e08
+    M GetFirstLevel  rva=0x009290 flags=0xfffe sig=00010808
+    M IsFinalLevel  rva=0x0092ac flags=0xfffe sig=00010208
+    M IsFirstLevelInChapter  rva=0x0092c4 flags=0xfffe sig=00010208
+    M LastUnlockedChapter  rva=0x0092f4 flags=0xfffe sig=000008
+    M HasAnyLevelFrom  rva=0x00933c flags=0xfffe sig=000102118104
+    M NextLevel  rva=0x0093a0 flags=0xfffe sig=000008
+    M NextLevel  rva=0x0093cc flags=0xfffe sig=00010808
+    M LevelWithIndex  rva=0x0093fc flags=0xfffe sig=000112810008
+    M RandomLevel  rva=0x009454 flags=0xfffe sig=000008
+    M GetChapterTitle  rva=0x0094d4 flags=0xfffe sig=00000e
+    M GetChapterTitle  rva=0x009504 flags=0xfffe sig=00010e08
+
+=== [69] MapScreenStarNotifier  (methods=3 fields=2)
+    M .ctor  rva=0x009520 flags=0xfffe sig=200001
+    M Queue  rva=0x009534 flags=0xfffe sig=2001011280d1
+    M Update  rva=0x00954c flags=0xfffe sig=200001
+
+=== [70] SequenceController  (methods=46 fields=23)
+    M .ctor  rva=0x009614 flags=0xfffe sig=200001
+    M get_singleton  rva=0x00961c flags=0xfffe sig=0000128118
+    M GetPracticeWorld  rva=0x009664 flags=0xfffe sig=2000118104
+    M IsLocked  rva=0x00966c flags=0xfffe sig=200002
+    M AttemptSequence  rva=0x009674 flags=0xfffe sig=2002020e125d
+    M AttemptSequence  rva=0x009680 flags=0xfffe sig=2003020e125d1c
+    M SavePlayerState  rva=0x009718 flags=0xfffe sig=20010102
+    M LevelIsFinished  rva=0x009754 flags=0xfffe sig=200001
+    M ContinueAfterChapterWelcome  rva=0x00985c flags=0xfffe sig=200001
+    M FromPracticeToMapScreen  rva=0x009880 flags=0xfffe sig=200001
+    M StartTravelmodeGame  rva=0x0098cc flags=0xfffe sig=200001
+    M StartHardcoreGame  rva=0x00990c flags=0xfffe sig=200001
+    M StartAdventureGame  rva=0x00994c flags=0xfffe sig=200001
+    M StartChapter  rva=0x0099e4 flags=0xfffe sig=200001
+    M StartPracticeNewMexico  rva=0x009a40 flags=0xfffe sig=200001
+    M StartPracticeUnderwater  rva=0x009a4c flags=0xfffe sig=200001
+    M StartPracticeMontezuma  rva=0x009a58 flags=0xfffe sig=200001
+    M StartPracticeScreampark  rva=0x009a64 flags=0xfffe sig=200001
+    M StartPracticeTheMonster  rva=0x009a70 flags=0xfffe sig=200001
+    M StartPracticeAncient  rva=0x009a7c flags=0xfffe sig=200001
+    M StartPractice  rva=0x009a88 flags=0xfffe sig=200101118104
+    M MapScreenDidSelectLevel  rva=0x009adc flags=0xfffe sig=200001
+    M GameOverToPracticeMode  rva=0x009b0c flags=0xfffe sig=200001
+    M EnterDemoLoop  rva=0x009b84 flags=0xfffe sig=200001
+    M DemoLoopFinished  rva=0x009bc8 flags=0xfffe sig=200001
+    M BackToMainMenu  rva=0x009be4 flags=0xfffe sig=200001
+    M BackToPracticeWorldSelection  rva=0x009c00 flags=0xfffe sig=200001
+    M SelectHiScore  rva=0x009c1c flags=0xfffe sig=200001
+    M GameOver  rva=0x009c64 flags=0xfffe sig=200001
+    M GameCompleted  rva=0x009cf0 flags=0xfffe sig=200001
+    M DemoCompleted  rva=0x009d7c flags=0xfffe sig=200001
+    M DemoCompletedDisplayDemoLevels  rva=0x009e08 flags=0xfffe sig=200001
+    M SelectQuit  rva=0x009e38 flags=0xfffe sig=200001
+    M ShowTitleScreen  rva=0x009e4c flags=0xfffe sig=000001
+    M ShowLevel  rva=0x009e60 flags=0xfffe sig=000001
+    M Update  rva=0x009e80 flags=0xfffe sig=200001
+    M Awake  rva=0x009eb0 flags=0xfffe sig=200001
+    M StartMainMenu  rva=0x009f34 flags=0xfffe sig=2001010e
+    M StartDemoLoop  rva=0x009fa4 flags=0xfffe sig=200001
+    M DeactivateDeep  rva=0x00a028 flags=0xfffe sig=200101125d
+    M KillSender  rva=0x00a0a8 flags=0xfffe sig=200101125d
+    M StartLevel  rva=0x00a0c4 flags=0xfffe sig=20010108
+    M OnLevelWasLoaded  rva=0x00a0e4 flags=0xfffe sig=20010108
+    M DontDisplayBackgroundLevel  rva=0x00a1b4 flags=0xfffe sig=200001
+    M DisplayNewBackgroundLevel  rva=0x00a1c4 flags=0xfffe sig=200002
+    M LoadRandomLevel  rva=0x00a1dc flags=0xfffe sig=200001
+
+=== [71] State  (methods=0 fields=11)
+
+=== [72] MyApplication  (methods=3 fields=0)
+    M .ctor  rva=0x00a1ec flags=0xfffe sig=200001
+    M get_isEditor  rva=0x00a1f4 flags=0xfffe sig=000002
+    M get_isPlayer  rva=0x00a20c flags=0xfffe sig=000002
+
+=== [73] ShaderReload  (methods=2 fields=1)
+    M .ctor  rva=0x00a224 flags=0xfffe sig=200001
+    M Update  rva=0x00a238 flags=0xfffe sig=200001
+
+=== [74] FXGlow  (methods=9 fields=25)
+    M .ctor  rva=0x00a258 flags=0xfffe sig=200001
+    M Awake  rva=0x00a2dc flags=0xfffe sig=200001
+    M Setup  rva=0x00a310 flags=0xfffe sig=200001
+    M DrawQuad  rva=0x00a564 flags=0xfffe sig=200001
+    M DrawBlur  rva=0x00a618 flags=0xfffe sig=2003011d11812c121d02
+    M BlurQuad  rva=0x00a8ec flags=0xfffe sig=2008010c0c0c0c121d11809911809902
+    M OnRenderImage  rva=0x00aa78 flags=0xfffe sig=200201120d120d
+    M CleanupRenderTex  rva=0x00b024 flags=0xfffe sig=200001
+    M RemoveFromManager  rva=0x00b078 flags=0xfffe sig=200001
+
+=== [75] BlurData  (methods=2 fields=5)
+    M .ctor  rva=0x00b07c flags=0xfffe sig=2005010c0c0c0c118099
+    M ToString  rva=0x00b0b0 flags=0xfffe sig=20000e
+
+=== [76] Mode  (methods=0 fields=5)
+
+=== [77] FadeInGlow  (methods=4 fields=4)
+    M .ctor  rva=0x00b154 flags=0xfffe sig=200001
+    M EnterBlur  rva=0x00b180 flags=0xfffe sig=200001
+    M ExitBlur  rva=0x00b190 flags=0xfffe sig=200001
+    M Update  rva=0x00b1a0 flags=0xfffe sig=200001
+
+=== [78] ReflectionRenderTexture  (methods=10 fields=6)
+    M .ctor  rva=0x00b33c flags=0xfffe sig=200001
+    M ShouldReflect  rva=0x00b34c flags=0xfffe sig=200002
+    M CalculateReflectionMatrix  rva=0x00b35c flags=0xfffe sig=2002011011351180fd
+    M LateUpdate  rva=0x00b514 flags=0xfffe sig=200001
+    M OnPreCull  rva=0x00b5b8 flags=0xfffe sig=200001
+    M CalculateTextureMatrix  rva=0x00b6b4 flags=0xfffe sig=200101101135
+    M OnPreRender  rva=0x00b7c0 flags=0xfffe sig=200001
+    M OnPostRender  rva=0x00b89c flags=0xfffe sig=200001
+    M sgn  rva=0x00b8f8 flags=0xfffe sig=00010c0c
+    M CalculateObliqueMatrix  rva=0x00b924 flags=0xfffe sig=0002011011351180fd
+
+=== [79] TestRenderTex  (methods=5 fields=2)
+    M .ctor  rva=0x00ba00 flags=0xfffe sig=200001
+    M PreRender  rva=0x00ba10 flags=0xfffe sig=200001
+    M PostRender  rva=0x00ba78 flags=0xfffe sig=200001
+    M AddToManager  rva=0x00ba80 flags=0xfffe sig=200001
+    M RemoveFromManager  rva=0x00ba84 flags=0xfffe sig=200001
+
+=== [80] ActivateTrigger  (methods=6 fields=7)
+    M .ctor  rva=0x00ba94 flags=0xfffe sig=200001
+    M DoActivateTrigger  rva=0x00bab4 flags=0xfffe sig=200001
+    M DeactivateCollisionTriggerDelayed  rva=0x00bac8 flags=0xfffe sig=200001
+    M ActivateDelayed  rva=0x00bae4 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x00bc48 flags=0xfffe sig=200102128091
+    M OnTriggerEnter  rva=0x00bc78 flags=0xfffe sig=200101128091
+
+=== [81] Mode  (methods=0 fields=7)
+
+=== [82] ApplySettings  (methods=7 fields=1)
+    M .ctor  rva=0x00bc84 flags=0xfffe sig=200001
+    M Awake  rva=0x00bc94 flags=0xfffe sig=200001
+    M PrefsToSoundVolume  rva=0x00bca4 flags=0xfffe sig=20010c08
+    M PrintToStatsFile  rva=0x00bcec flags=0xfffe sig=200001
+    M Apply  rva=0x00bcf0 flags=0xfffe sig=200001
+    M OnLevelWasLoaded  rva=0x00bf5c flags=0xfffe sig=200001
+    M SetMeshLod  rva=0x00bf64 flags=0xfffe sig=00010102
+
+=== [83] AreaAction  (methods=6 fields=0)
+    M .ctor  rva=0x00bf68 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x00bf70 flags=0xfffe sig=200102128091
+    M OnTriggerEnter  rva=0x00bfa8 flags=0xfffe sig=200101128091
+    M OnTriggerStay  rva=0x00bfb4 flags=0xfffe sig=200101128091
+    M OnCollisionEnter  rva=0x00bfc0 flags=0xfffe sig=200101128095
+    M Action  rva=0x000000 flags=0xfffe sig=200101128109
+
+=== [84] BallController  (methods=58 fields=106)
+    M .ctor  rva=0x00bfd0 flags=0xfffe sig=200001
+    M Start  rva=0x00c02c flags=0xfffe sig=200001
+    M Update  rva=0x00c1f0 flags=0xfffe sig=200001
+    M LateUpdate  rva=0x00c268 flags=0xfffe sig=200001
+    M FixedUpdate  rva=0x00c278 flags=0xfffe sig=200001
+    M FixedColliderSetup  rva=0x00c478 flags=0xfffe sig=200001
+    M FixedCalculateContactNormal  rva=0x00c504 flags=0xfffe sig=200001
+    M FixedDoGravity  rva=0x00c9cc flags=0xfffe sig=200001
+    M FixedDoConstantDrag  rva=0x00cadc flags=0xfffe sig=200001
+    M FixedSteerBall  rva=0x00cb60 flags=0xfffe sig=200001
+    M FixedStick  rva=0x00cf38 flags=0xfffe sig=200001
+    M FixedDoJump  rva=0x00d198 flags=0xfffe sig=200001
+    M UnStick  rva=0x00d2dc flags=0xfffe sig=200001
+    M FixedDidBump  rva=0x00d328 flags=0xfffe sig=200001
+    M UpdateFwd  rva=0x00d3a4 flags=0xfffe sig=200001
+    M UpdateCritter  rva=0x00d74c flags=0xfffe sig=200001
+    M UpdateRollFX  rva=0x00d9ac flags=0xfffe sig=200001
+    M UpdateBallSurface  rva=0x00dbcc flags=0xfffe sig=200001
+    M FixedUpdateState  rva=0x00dc9c flags=0xfffe sig=200001
+    M UpdateLattice  rva=0x00df98 flags=0xfffe sig=200001
+    M UpdateTiltLevel  rva=0x00e1ac flags=0xfffe sig=200001
+    M FixedInJump  rva=0x00e3b8 flags=0xfffe sig=200001
+    M MemorizeDefaults  rva=0x00e410 flags=0xfffe sig=200001
+    M FactorOutLevelTilt  rva=0x00e4c4 flags=0xfffe sig=200111311131
+    M GoingOutOfStickyMode  rva=0x00e4d8 flags=0xfffe sig=200002
+    M MaxSpeedScale  rva=0x00e4f8 flags=0xfffe sig=20040c113111310c0c
+    M DebugOutput  rva=0x00e53c flags=0xfffe sig=200001
+    M GenericCollisionEvent  rva=0x00e694 flags=0xfffe sig=200001
+    M GooballCollision  rva=0x00e6f0 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x00e6f8 flags=0xfffe sig=200101128095
+    M OnCollisionEnter  rva=0x00e784 flags=0xfffe sig=200101128095
+    M OnCollisionStay  rva=0x00e790 flags=0xfffe sig=200101128095
+    M StartPlay  rva=0x00e79c flags=0xfffe sig=200001
+    M StopPlay  rva=0x00e7ac flags=0xfffe sig=20010102
+    M CalculateJumpDirection  rva=0x00e7d4 flags=0xfffe sig=20001131
+    M IsSticky  rva=0x00e8f0 flags=0xfffe sig=200002
+    M GetState  rva=0x00e8f8 flags=0xfffe sig=200011822c
+    M GetSoundState  rva=0x00e908 flags=0xfffe sig=2000128160
+    M HasGroundContact  rva=0x00e9a0 flags=0xfffe sig=200002
+    M SetCameraTC  rva=0x00e9d4 flags=0xfffe sig=200101122d
+    M SetParticleGOs  rva=0x00e9e0 flags=0xfffe sig=200301125d125d128085
+    M GetContactNormal  rva=0x00e9f8 flags=0xfffe sig=20001131
+    M GetContactNormalUntilted  rva=0x00ea00 flags=0xfffe sig=20001131
+    M GetCrawlNormalUntilted  rva=0x00ea08 flags=0xfffe sig=20001131
+    M GetInAirTime  rva=0x00ea18 flags=0xfffe sig=20000c
+    M GetJumpDirection  rva=0x00ea20 flags=0xfffe sig=20001131
+    M PreparingForJump  rva=0x00ea28 flags=0xfffe sig=20000c
+    M GetCritterFwd  rva=0x00ea48 flags=0xfffe sig=20001131
+    M GetStickyness  rva=0x00ea50 flags=0xfffe sig=20000c
+    M GetRadius  rva=0x00ea58 flags=0xfffe sig=20000c
+    M GetSteerAcceleration  rva=0x00ea74 flags=0xfffe sig=20001131
+    M GetRecentVelocity  rva=0x00ea7c flags=0xfffe sig=20001131
+    M IsSteering  rva=0x00ea84 flags=0xfffe sig=200002
+    M IsActive  rva=0x00eabc flags=0xfffe sig=200002
+    M GetBall  rva=0x00eac4 flags=0xfffe sig=0000128150
+    M SetTravelMode  rva=0x00eacc flags=0xfffe sig=200001
+    M SetSleeping  rva=0x00ead8 flags=0xfffe sig=20010102
+    M IsSleeping  rva=0x00eae4 flags=0xfffe sig=200002
+
+=== [85] BumpInfo  (methods=0 fields=2)
+
+=== [86] ContactPoint  (methods=0 fields=3)
+
+=== [87] AvgPenetration  (methods=0 fields=3)
+
+=== [88] SoundState  (methods=1 fields=3)
+    M .ctor  rva=0x00eaec flags=0xfffe sig=200001
+
+=== [89] BallCritterController  (methods=13 fields=33)
+    M .ctor  rva=0x00eaf4 flags=0xfffe sig=200001
+    M PlayRandomized  rva=0x00eb20 flags=0xfffe sig=2001011d1280d9
+    M Awake  rva=0x00eb4c flags=0xfffe sig=200001
+    M BallBumped  rva=0x00eb88 flags=0xfffe sig=200101118154
+    M LevelComplete  rva=0x00ebe4 flags=0xfffe sig=200001
+    M FallOut  rva=0x00ec24 flags=0xfffe sig=200001
+    M Play  rva=0x00ec74 flags=0xfffe sig=2001010e
+    M PlayQueued  rva=0x00ec88 flags=0xfffe sig=2001010e
+    M StopAnimation  rva=0x00ec9c flags=0xfffe sig=200001
+    M Update  rva=0x00ecb0 flags=0xfffe sig=200001
+    M IdleStarts  rva=0x00ee58 flags=0xfffe sig=200001
+    M SleepingStarts  rva=0x00eee0 flags=0xfffe sig=200001
+    M SleepingEnds  rva=0x00ef3c flags=0xfffe sig=200001
+
+=== [90] BallSoundController  (methods=13 fields=57)
+    M .ctor  rva=0x00ef5c flags=0xfffe sig=200001
+    M AddSoundSource  rva=0x00f074 flags=0xfffe sig=2002011280d908
+    M Awake  rva=0x00f118 flags=0xfffe sig=200001
+    M BallBumped  rva=0x00f230 flags=0xfffe sig=200101118154
+    M BallJumped  rva=0x00f2bc flags=0xfffe sig=20010102
+    M BecomingSticky  rva=0x00f2d0 flags=0xfffe sig=200001
+    M BecomingHard  rva=0x00f2e4 flags=0xfffe sig=200001
+    M LateUpdate  rva=0x00f2f8 flags=0xfffe sig=200001
+    M SetSounds  rva=0x00f480 flags=0xfffe sig=200201080c
+    M FadeTo  rva=0x00f4d4 flags=0xfffe sig=200201080c
+    M OneShotChooser  rva=0x00f560 flags=0xfffe sig=2007010c1280d91280d91280d90c0c0c
+    M OneShotSelector  rva=0x00f5c4 flags=0xfffe sig=2009010c0c0808080c0c0c0c
+    M SoundSelector  rva=0x00f700 flags=0xfffe sig=2009010c0c0808080c0c0c0c
+
+=== [91] AutoHeightRespawn  (methods=2 fields=0)
+    M .ctor  rva=0x00f7e4 flags=0xfffe sig=200001
+    M Reset  rva=0x00f7ec flags=0xfffe sig=200001
+
+=== [92] CameraManager  (methods=10 fields=16)
+    M .ctor  rva=0x00f848 flags=0xfffe sig=200001
+    M Awake  rva=0x00f8c0 flags=0xfffe sig=200001
+    M StartPlay  rva=0x00f8cc flags=0xfffe sig=200001
+    M SetBall  rva=0x00f8d8 flags=0xfffe sig=200201128150122d
+    M StartupCamera  rva=0x00f8f0 flags=0xfffe sig=200001
+    M ExtrapolateBallPosition  rva=0x00fa44 flags=0xfffe sig=20011131128109
+    M LateUpdate  rva=0x00fa5c flags=0xfffe sig=200001
+    M UpdateMinMaxCameraCenter  rva=0x00fb90 flags=0xfffe sig=200001
+    M CalculateDistance  rva=0x00fbe4 flags=0xfffe sig=20000c
+    M CalculateDirection  rva=0x00fbec flags=0xfffe sig=20001131
+
+=== [93] ConstrainToPlane  (methods=6 fields=3)
+    M .ctor  rva=0x00fcb4 flags=0xfffe sig=200001
+    M EnterTrigger  rva=0x00fd54 flags=0xfffe sig=200001
+    M ExitTrigger  rva=0x00fd7c flags=0xfffe sig=200001
+    M ConstrainPosition  rva=0x00fda4 flags=0xfffe sig=200111311131
+    M ConstrainRotation  rva=0x00fe70 flags=0xfffe sig=20041145113111450c0c
+    M DrawGizmos  rva=0x00ff38 flags=0xfffe sig=200001
+
+=== [94] EnterExitTrigger  (methods=7 fields=1)
+    M .ctor  rva=0x00ff94 flags=0xfffe sig=200001
+    M Reset  rva=0x00ffa4 flags=0xfffe sig=200001
+    M Update  rva=0x00ffb0 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x00fffc flags=0xfffe sig=200102128091
+    M OnTriggerEnter  rva=0x010024 flags=0xfffe sig=200101128091
+    M EnterTrigger  rva=0x010058 flags=0xfffe sig=200001
+    M ExitTrigger  rva=0x01005c flags=0xfffe sig=200001
+
+=== [95] ConstrainMode  (methods=0 fields=5)
+
+=== [96] Plane  (methods=3 fields=2)
+    M .ctor  rva=0x010060 flags=0xfffe sig=20020111311131
+    M ProjectPoint  rva=0x01008c flags=0xfffe sig=200111311131
+    M GetDistance  rva=0x0100c0 flags=0xfffe sig=20010c1131
+
+=== [97] EulerHelper  (methods=4 fields=0)
+    M .ctor  rva=0x0100d8 flags=0xfffe sig=200001
+    M XAngleFromDirection  rva=0x0100e0 flags=0xfffe sig=00010c1131
+    M XYAngleFromDirection  rva=0x01015c flags=0xfffe sig=000111311131
+    M FixAngle  rva=0x010224 flags=0xfffe sig=0002010c100c
+
+=== [98] FixCamera  (methods=6 fields=2)
+    M .ctor  rva=0x010268 flags=0xfffe sig=200001
+    M StartConstrain  rva=0x010278 flags=0xfffe sig=200101128174
+    M EndConstrain  rva=0x010284 flags=0xfffe sig=200001
+    M IsConstraining  rva=0x010290 flags=0xfffe sig=200002
+    M UpdatePosition  rva=0x0102a0 flags=0xfffe sig=20031131113111310c
+    M UpdateRotation  rva=0x0102b0 flags=0xfffe sig=2003114511310c0c
+
+=== [99] LooseCameraRotator  (methods=3 fields=3)
+    M .ctor  rva=0x0102d8 flags=0xfffe sig=200001
+    M UpdateRotation  rva=0x0102f8 flags=0xfffe sig=2003114511310c0c
+    M CalculateTiltAngle  rva=0x0103e4 flags=0xfffe sig=20040c0c0c11311145
+
+=== [100] PositionEuler  (methods=7 fields=10)
+    M .ctor  rva=0x0104b8 flags=0xfffe sig=200001
+    M Awake  rva=0x010510 flags=0xfffe sig=200001
+    M SetCurrentPosition  rva=0x010520 flags=0xfffe sig=200301113111311131
+    M UpdatePosition  rva=0x01058c flags=0xfffe sig=20041131113111310c02
+    M RotateSmoothly  rva=0x0105d4 flags=0xfffe sig=2001011131
+    M SmoothHeight  rva=0x01065c flags=0xfffe sig=200401113111310c02
+    M UpdatePlacement  rva=0x0106d8 flags=0xfffe sig=200111311131
+
+=== [101] CameraAnimator  (methods=13 fields=18)
+    M .ctor  rva=0x010734 flags=0xfffe sig=200001
+    M Awake  rva=0x010748 flags=0xfffe sig=200001
+    M AncestorMessage  rva=0x0107b8 flags=0xfffe sig=2001010e
+    M AdvanceTimer  rva=0x0107f0 flags=0xfffe sig=20010c0c
+    M PlaceIntroCamera  rva=0x010890 flags=0xfffe sig=2001010c
+    M LateUpdate  rva=0x010b0c flags=0xfffe sig=200001
+    M SetMode  rva=0x010dd8 flags=0xfffe sig=20010108
+    M LevelStart  rva=0x010e10 flags=0xfffe sig=200001
+    M RespawnBall  rva=0x010e1c flags=0xfffe sig=200001
+    M FallOut  rva=0x010e28 flags=0xfffe sig=200001
+    M TimeOut  rva=0x010e44 flags=0xfffe sig=200001
+    M LevelComplete  rva=0x010e60 flags=0xfffe sig=200001
+    M FadeOut  rva=0x010e74 flags=0xfffe sig=200001
+
+=== [102] CameraParticles  (methods=2 fields=1)
+    M .ctor  rva=0x010e78 flags=0xfffe sig=200001
+    M Update  rva=0x010e8c flags=0xfffe sig=200001
+
+=== [103] WorldDependantInstancer  (methods=2 fields=6)
+    M .ctor  rva=0x010ee4 flags=0xfffe sig=200001
+    M Awake  rva=0x010eec flags=0xfffe sig=200001
+
+=== [104] CameraStreaks  (methods=2 fields=2)
+    M .ctor  rva=0x010fcc flags=0xfffe sig=200001
+    M Update  rva=0x010fe0 flags=0xfffe sig=200001
+
+=== [105] CatapultAction  (methods=3 fields=5)
+    M .ctor  rva=0x010fe4 flags=0xfffe sig=200001
+    M Action  rva=0x011004 flags=0xfffe sig=200101128109
+    M DrawGizmos  rva=0x011094 flags=0xfffe sig=200001
+
+=== [106] CoolMoveBegin  (methods=4 fields=1)
+    M .ctor  rva=0x0110d8 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x0110ec flags=0xfffe sig=200102128091
+    M OnCollisionEnter  rva=0x0110fc flags=0xfffe sig=200101128095
+    M OnTriggerEnter  rva=0x01110c flags=0xfffe sig=200101128091
+
+=== [107] CoolMoveEnd  (methods=6 fields=11)
+    M .ctor  rva=0x011118 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x011154 flags=0xfffe sig=200102128091
+    M OnCollisionEnter  rva=0x0111d8 flags=0xfffe sig=200101128095
+    M OnTriggerEnter  rva=0x0111e8 flags=0xfffe sig=200101128091
+    M PlaceStars  rva=0x0111f4 flags=0xfffe sig=200001
+    M RemoveStars  rva=0x011314 flags=0xfffe sig=200001
+
+=== [108] DelayedTrigger  (methods=2 fields=1)
+    M .ctor  rva=0x011328 flags=0xfffe sig=200001
+    M Awake  rva=0x01133c flags=0xfffe sig=200001
+
+=== [109] EventSoundController  (methods=9 fields=12)
+    M .ctor  rva=0x011350 flags=0xfffe sig=200001
+    M Awake  rva=0x011370 flags=0xfffe sig=200001
+    M PlayRandom  rva=0x0113d4 flags=0xfffe sig=2001011d1280d9
+    M GetReady  rva=0x0113fc flags=0xfffe sig=200001
+    M LevelComplete  rva=0x01140c flags=0xfffe sig=200001
+    M FallOut  rva=0x01141c flags=0xfffe sig=200001
+    M TimeOut  rva=0x011430 flags=0xfffe sig=200001
+    M HurryUp  rva=0x011444 flags=0xfffe sig=200001
+    M ExtraLife  rva=0x011474 flags=0xfffe sig=200001
+
+=== [110] Fadeout  (methods=11 fields=7)
+    M .ctor  rva=0x0114a4 flags=0xfffe sig=200001
+    M get_singleton  rva=0x0114c0 flags=0xfffe sig=00001281b8
+    M Reset  rva=0x0114c8 flags=0xfffe sig=200001
+    M Fade  rva=0x0114f4 flags=0xfffe sig=00000c
+    M Fade  rva=0x01150c flags=0xfffe sig=00010c0c
+    M Fade  rva=0x011518 flags=0xfffe sig=00010c118099
+    M Fade  rva=0x011554 flags=0xfffe sig=0003011180990c0c
+    M Fade  rva=0x011580 flags=0xfffe sig=0002010c0c
+    M Awake  rva=0x0115b4 flags=0xfffe sig=200001
+    M StartFade  rva=0x0115f8 flags=0xfffe sig=2003011180990c0c
+    M Update  rva=0x011624 flags=0xfffe sig=200001
+
+=== [111] FalloutCollider  (methods=5 fields=0)
+    M .ctor  rva=0x011780 flags=0xfffe sig=200001
+    M Reset  rva=0x011788 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x011798 flags=0xfffe sig=200002
+    M OnCollisionEnter  rva=0x0117a8 flags=0xfffe sig=200101128095
+    M OnTriggerEnter  rva=0x0117b4 flags=0xfffe sig=200101128091
+
+=== [112] GameManager  (methods=26 fields=23)
+    M .ctor  rva=0x0117c0 flags=0xfffe sig=200001
+    M get_singleton  rva=0x0117f4 flags=0xfffe sig=00001281c0
+    M DestroyRecursive  rva=0x0117fc flags=0xfffe sig=200101125d
+    M MyFindObjectsOfTypeRecursion  rva=0x011878 flags=0xfffe sig=200301124d125d1280d1
+    M MyFindObjectsOfType  rva=0x011930 flags=0xfffe sig=20011d1209124d
+    M FixGoobalUnity  rva=0x011964 flags=0xfffe sig=200001
+    M Start  rva=0x011e78 flags=0xfffe sig=200001
+    M GetLives  rva=0x011eb0 flags=0xfffe sig=200008
+    M GetStars  rva=0x011eb8 flags=0xfffe sig=200008
+    M GetBonusScore  rva=0x011ec0 flags=0xfffe sig=200008
+    M FalloutColliderWasHit  rva=0x011ec8 flags=0xfffe sig=200001
+    M Update  rva=0x011ed4 flags=0xfffe sig=200001
+    M ReachedGoal  rva=0x012068 flags=0xfffe sig=200001
+    M StopPlay  rva=0x01216c flags=0xfffe sig=20010102
+    M StartPlay  rva=0x012178 flags=0xfffe sig=200001
+    M KillChildren  rva=0x012184 flags=0xfffe sig=200001
+    M RespawnBall  rva=0x01220c flags=0xfffe sig=200001
+    M TimeOut  rva=0x01264c flags=0xfffe sig=200001
+    M PlayerDie  rva=0x012660 flags=0xfffe sig=200001
+    M TimeOutDone  rva=0x0126e8 flags=0xfffe sig=200001
+    M FallOutDone  rva=0x0126f0 flags=0xfffe sig=200001
+    M FallOut  rva=0x0126f8 flags=0xfffe sig=200001
+    M SetFinishTime  rva=0x01270c flags=0xfffe sig=2001010c
+    M PickedupStar  rva=0x012718 flags=0xfffe sig=200001
+    M AddBonusScore  rva=0x0127d4 flags=0xfffe sig=20010108
+    M Initialize  rva=0x0127e4 flags=0xfffe sig=2001011281f4
+
+=== [113] GameOverCamera  (methods=7 fields=9)
+    M .ctor  rva=0x012914 flags=0xfffe sig=200001
+    M Awake  rva=0x012934 flags=0xfffe sig=200001
+    M Update  rva=0x012a10 flags=0xfffe sig=200001
+    M Repeat  rva=0x012b04 flags=0xfffe sig=00020c0c0c
+    M PingPong  rva=0x012b14 flags=0xfffe sig=00020c0c0c
+    M UnitPingPong  rva=0x012b30 flags=0xfffe sig=00020c0c0c
+    M SmoothUnitPingPong  rva=0x012b3c flags=0xfffe sig=00020c0c0c
+
+=== [114] GoalTrigger  (methods=3 fields=0)
+    M .ctor  rva=0x012b78 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x012b80 flags=0xfffe sig=200102128091
+    M OnTriggerEnter  rva=0x012b90 flags=0xfffe sig=200101128091
+
+=== [115] GooPickup  (methods=2 fields=1)
+    M .ctor  rva=0x012b9c flags=0xfffe sig=200001
+    M DidPickup  rva=0x012bb0 flags=0xfffe sig=2001011281c0
+
+=== [116] PickupController  (methods=7 fields=9)
+    M .ctor  rva=0x012bb4 flags=0xfffe sig=200001
+    M Reset  rva=0x012bc8 flags=0xfffe sig=200001
+    M Start  rva=0x012bd4 flags=0xfffe sig=200001
+    M CollisionEvent  rva=0x012bf0 flags=0xfffe sig=200102128091
+    M OnTriggerEnter  rva=0x012cd8 flags=0xfffe sig=200101128091
+    M Update  rva=0x012ce4 flags=0xfffe sig=200001
+    M DidPickup  rva=0x000000 flags=0xfffe sig=2001011281c0
+
+=== [117] ObjectMover  (methods=2 fields=2)
+    M .ctor  rva=0x012dbc flags=0xfffe sig=200001
+    M Update  rva=0x012dc4 flags=0xfffe sig=200001
+
+=== [118] GradientMaterialColor  (methods=7 fields=10)
+    M .ctor  rva=0x012e68 flags=0xfffe sig=200001
+    M Start  rva=0x012ec8 flags=0xfffe sig=200001
+    M Update  rva=0x012f8c flags=0xfffe sig=200001
+    M Repeat  rva=0x013008 flags=0xfffe sig=00020c0c0c
+    M PingPong  rva=0x013018 flags=0xfffe sig=00020c0c0c
+    M UnitPingPong  rva=0x013034 flags=0xfffe sig=00020c0c0c
+    M SmoothUnitPingPong  rva=0x013040 flags=0xfffe sig=00020c0c0c
+
+=== [119] Gradient  (methods=2 fields=1)
+    M .ctor  rva=0x01307c flags=0xfffe sig=200001
+    M Sample  rva=0x0130f0 flags=0xfffe sig=20011180990c
+
+=== [120] LevelInfo  (methods=2 fields=9)
+    M .ctor  rva=0x013158 flags=0xfffe sig=200001
+    M DrawGizmos  rva=0x0131a8 flags=0xfffe sig=200001
+
+=== [121] LevelTilter  (methods=4 fields=1)
+    M .ctor  rva=0x0131d8 flags=0xfffe sig=200001
+    M Awake  rva=0x0131e0 flags=0xfffe sig=200001
+    M DoReset  rva=0x0131e8 flags=0xfffe sig=200001
+    M Tilt  rva=0x013284 flags=0xfffe sig=20020111311145
+
+=== [122] MoviePlayer  (methods=3 fields=2)
+    M .ctor  rva=0x01334c flags=0xfffe sig=200001
+    M Update  rva=0x013360 flags=0xfffe sig=200001
+    M Repeat  rva=0x0133c0 flags=0xfffe sig=00020c0c0c
+
+=== [123] MusicPlayer  (methods=10 fields=12)
+    M .ctor  rva=0x0133d0 flags=0xfffe sig=200001
+    M SetVolume  rva=0x013400 flags=0xfffe sig=2001010c
+    M FallOut  rva=0x013444 flags=0xfffe sig=200001
+    M GetReady  rva=0x013458 flags=0xfffe sig=200001
+    M GameOver  rva=0x013470 flags=0xfffe sig=200001
+    M GetMusic  rva=0x0134ac flags=0xfffe sig=20011280d9118104
+    M StartWorld  rva=0x01350c flags=0xfffe sig=200101118104
+    M Awake  rva=0x013588 flags=0xfffe sig=200001
+    M StartPlay  rva=0x0135c0 flags=0xfffe sig=200001
+    M Update  rva=0x0135dc flags=0xfffe sig=200001
+
+=== [124] MusicPlayerForwarder  (methods=4 fields=0)
+    M .ctor  rva=0x013660 flags=0xfffe sig=200001
+    M FallOut  rva=0x013668 flags=0xfffe sig=200001
+    M GetReady  rva=0x013684 flags=0xfffe sig=200001
+    M GameOver  rva=0x0136a0 flags=0xfffe sig=200001
+
+=== [125] PlayerState  (methods=15 fields=10)
+    M .ctor  rva=0x0136bc flags=0xfffe sig=200001
+    M get_playPoints  rva=0x0136dc flags=0xfffe sig=200008
+    M set_playPoints  rva=0x0136e8 flags=0xfffe sig=20010108
+    M Awake  rva=0x013704 flags=0xfffe sig=200001
+    M ResetPlayerState  rva=0x01370c flags=0xfffe sig=200001
+    M AddLapRecord  rva=0x01373c flags=0xfffe sig=2002010c0e
+    M GetLapRecord  rva=0x013780 flags=0xfffe sig=20000c
+    M DoesLapRecordExist  rva=0x0137a4 flags=0xfffe sig=200002
+    M GetLapRecordName  rva=0x0137d8 flags=0xfffe sig=20000e
+    M AddPlayedLevel  rva=0x0137f4 flags=0xfffe sig=20010108
+    M IsLevelPlayed  rva=0x013824 flags=0xfffe sig=20010208
+    M GetCurrentWorld  rva=0x013844 flags=0xfffe sig=2000118104
+    M HasPracticeMode  rva=0x01387c flags=0xfffe sig=200002
+    M HasTravelMode  rva=0x01388c flags=0xfffe sig=200002
+    M HasHardcore  rva=0x0138a4 flags=0xfffe sig=200002
+
+=== [126] SlowmoPickup  (methods=2 fields=1)
+    M .ctor  rva=0x0138c0 flags=0xfffe sig=200001
+    M DidPickup  rva=0x0138d4 flags=0xfffe sig=2001011281c0
+
+=== [127] SoundTrigger  (methods=4 fields=2)
+    M .ctor  rva=0x013904 flags=0xfffe sig=200001
+    M Reset  rva=0x013924 flags=0xfffe sig=200001
+    M DoActivateTrigger  rva=0x013978 flags=0xfffe sig=200001
+    M PlaySound  rva=0x0139d4 flags=0xfffe sig=200001
+
+=== [128] StarPickup  (methods=2 fields=0)
+    M .ctor  rva=0x0139e4 flags=0xfffe sig=200001
+    M DidPickup  rva=0x0139ec flags=0xfffe sig=2001011281c0
+
+=== [129] StatsFile  (methods=15 fields=9)
+    M .ctor  rva=0x0139f4 flags=0xfffe sig=200001
+    M get_singleton  rva=0x013a74 flags=0xfffe sig=0000128204
+    M Save  rva=0x013aa8 flags=0xfffe sig=200001
+    M Load  rva=0x013d34 flags=0xfffe sig=200001
+    M UpdateFramerate  rva=0x013e7c flags=0xfffe sig=200001
+    M LevelName  rva=0x013ee4 flags=0xfffe sig=00000e
+    M LevelNameBraced  rva=0x013ef8 flags=0xfffe sig=00000e
+    M Fallout  rva=0x013f18 flags=0xfffe sig=200001
+    M Timeout  rva=0x013f60 flags=0xfffe sig=200001
+    M AddStar  rva=0x013fa8 flags=0xfffe sig=200001
+    M BonusLife  rva=0x013fb8 flags=0xfffe sig=200001
+    M EscapePlay  rva=0x013fc8 flags=0xfffe sig=200001
+    M StartLevel  rva=0x013fdc flags=0xfffe sig=200001
+    M StartingUpgame  rva=0x014008 flags=0xfffe sig=200001
+    M FinishedLevel  rva=0x01400c flags=0xfffe sig=2003010c080c
+
+=== [130] FloatStat  (methods=3 fields=4)
+    M Add  rva=0x014074 flags=0xfffe sig=2001010c
+    M Save  rva=0x0140e0 flags=0xfffe sig=2001010e
+    M Load  rva=0x014158 flags=0xfffe sig=2001010e
+
+=== [131] TimeScaleManager  (methods=14 fields=10)
+    M .ctor  rva=0x0141d4 flags=0xfffe sig=200001
+    M Reset  rva=0x014244 flags=0xfffe sig=200001
+    M Awake  rva=0x014250 flags=0xfffe sig=200001
+    M SetHardcore  rva=0x0142a0 flags=0xfffe sig=20010102
+    M SetGoal  rva=0x0142b8 flags=0xfffe sig=2001010c
+    M ResetToDifficultyBase  rva=0x0142e0 flags=0xfffe sig=20010108
+    M PickedupSlowmo  rva=0x014308 flags=0xfffe sig=2001010c
+    M FixedUpdate  rva=0x014348 flags=0xfffe sig=200001
+    M FadeBackToMasterTimeScale  rva=0x0143d0 flags=0xfffe sig=200001
+    M StartPlay  rva=0x0143e8 flags=0xfffe sig=200001
+    M StopPlay  rva=0x0143f0 flags=0xfffe sig=200001
+    M SetMasterTimeScale  rva=0x0143f8 flags=0xfffe sig=2001010c
+    M SwitchToBaseTimeScale  rva=0x014414 flags=0xfffe sig=200001
+    M PausePlay  rva=0x014438 flags=0xfffe sig=20010102
+
+=== [132] TriggerPickup  (methods=2 fields=1)
+    M .ctor  rva=0x014478 flags=0xfffe sig=200001
+    M DidPickup  rva=0x014480 flags=0xfffe sig=2001011281c0
+
+=== [133] VariationHolder  (methods=5 fields=24)
+    M .ctor  rva=0x0144a4 flags=0xfffe sig=200001
+    M InstantiateVariationSoft  rva=0x0144ac flags=0xfffe sig=200112090e
+    M InstantiateVariationSoft  rva=0x014618 flags=0xfffe sig=200312090e11311145
+    M InstantiateGameObject  rva=0x01479c flags=0xfffe sig=2001125d0e
+    M InstantiateGameObject  rva=0x0147d4 flags=0xfffe sig=2003125d0e11311145
+
+=== [134] VolumeFader  (methods=3 fields=3)
+    M .ctor  rva=0x014810 flags=0xfffe sig=200001
+    M Awake  rva=0x014830 flags=0xfffe sig=200001
+    M Update  rva=0x014860 flags=0xfffe sig=200001
+
+=== [135] WindArea  (methods=3 fields=1)
+    M .ctor  rva=0x0148e4 flags=0xfffe sig=200001
+    M Action  rva=0x0148ec flags=0xfffe sig=200101128109
+    M DrawGizmos  rva=0x01491c flags=0xfffe sig=200001
+
+=== [136] WorldDependantGlow  (methods=5 fields=42)
+    M .ctor  rva=0x014954 flags=0xfffe sig=200001
+    M Update  rva=0x01495c flags=0xfffe sig=200001
+    M Apply  rva=0x014960 flags=0xfffe sig=200101128128
+    M Awake  rva=0x014adc flags=0xfffe sig=200001
+    M Apply  rva=0x014b08 flags=0xfffe sig=2008011281280c0c0c0c0c0c0c
+
+=== [137] Help  (methods=4 fields=3)
+    M .ctor  rva=0x014b4c flags=0xfffe sig=200001
+    M EnterTrigger  rva=0x014b6c flags=0xfffe sig=200001
+    M ExitTrigger  rva=0x014ba0 flags=0xfffe sig=200001
+    M RemoveHelp  rva=0x014bd8 flags=0xfffe sig=200001
+
+=== [138] HelpRenderer  (methods=6 fields=5)
+    M .ctor  rva=0x014c00 flags=0xfffe sig=200001
+    M IsShowingHelp  rva=0x014c1c flags=0xfffe sig=2001020e
+    M Awake  rva=0x014c2c flags=0xfffe sig=200001
+    M ShowHelp  rva=0x014c5c flags=0xfffe sig=2001010e
+    M RemoveHelp  rva=0x014cac flags=0xfffe sig=2001010e
+    M Update  rva=0x014cd4 flags=0xfffe sig=200001
+
+=== [139] BallState  (methods=0 fields=5)
+
+=== [140] PlayMode  (methods=0 fields=6)
+
+=== [141] <>c__CompilerGenerated4  (methods=1 fields=1)
+    M .ctor  rva=0x014dc8 flags=0xfffe sig=200001
+
+=== [142] <>c__CompilerGenerated5  (methods=1 fields=1)
+    M .ctor  rva=0x014dd0 flags=0xfffe sig=200001
+
+=== [143] <>c__CompilerGenerated6  (methods=1 fields=1)
+    M .ctor  rva=0x014dd8 flags=0xfffe sig=200001

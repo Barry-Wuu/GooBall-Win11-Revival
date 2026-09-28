@@ -1,0 +1,24 @@
+FalloutHeight
+NM_kaktus
+flare
+flare
+flare
+Plane
+Plane.001
+Plane.001
+Plane.002
+Plane
+NM_kaktus
+  water plane
+nm_canyon
+step6
+flare
+flare
+flare
+flare
+flare
+flare
+step6
+flare
+background clouds
+flare

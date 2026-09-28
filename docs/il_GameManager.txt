@@ -1,0 +1,1406 @@
+
+//// GameManager::.ctor  rva=0x0117c0
+  .maxstack 2  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.1     
+  IL_0002: stfld        kPlayIntro
+  IL_0007: ldarg.0      
+  IL_0008: ldc.i4.m1    
+  IL_0009: stfld        m_Lives
+  IL_000e: ldarg.0      
+  IL_000f: ldc.i4.5     
+  IL_0010: stfld        m_BonusScore
+  IL_0015: ldarg.0      
+  IL_0016: ldc.r4       0.0
+  IL_001b: stfld        m_StatsAvgFrames
+  IL_0020: ldarg.0      
+  IL_0021: call         UnityEngine.MonoBehaviour::.ctor
+  IL_0026: ret          
+
+//// GameManager::get_singleton  rva=0x0117f4
+  .maxstack 8
+  IL_0000: ldsfld       m_Singleton
+  IL_0005: ret          
+
+//// GameManager::DestroyRecursive  rva=0x0117fc
+  .maxstack 15  locals=0x110000b3
+  IL_0000: ldarg.1      
+  IL_0001: callvirt     UnityEngine.GameObject::get_transform
+  IL_0006: callvirt     UnityEngine.Transform::GetEnumerator
+  IL_000b: stloc.1      
+  IL_000c: br           IL_0028
+  IL_0011: ldloc.1      
+  IL_0012: callvirt     System.Collections.IEnumerator::get_Current
+  IL_0017: castclass    UnityEngine.Transform
+  IL_001c: stloc.0      
+  IL_001d: ldloc.0      
+  IL_001e: callvirt     UnityEngine.Component::get_gameObject
+  IL_0023: call         UnityEngine.Object::DestroyObject
+  IL_0028: ldloc.1      
+  IL_0029: callvirt     System.Collections.IEnumerator::MoveNext
+  IL_002e: brtrue       IL_0011
+  IL_0033: leave        IL_004d
+  IL_0038: ldloc.1      
+  IL_0039: isinst       System.IDisposable
+  IL_003e: dup          
+  IL_003f: brtrue.s     IL_0047
+  IL_0041: pop          
+  IL_0042: br           IL_004c
+  IL_0047: callvirt     System.IDisposable::Dispose
+  IL_004c: endfinally   
+  IL_004d: ldarg.1      
+  IL_004e: call         UnityEngine.Object::DestroyObject
+  IL_0053: ret          
+
+//// GameManager::MyFindObjectsOfTypeRecursion  rva=0x011878
+  .maxstack 20  locals=0x110000b4
+  IL_0000: ldarg.2      
+  IL_0001: ldnull       
+  IL_0002: call         UnityEngine.Object::op_Equality
+  IL_0007: brfalse      IL_000d
+  IL_000c: ret          
+  IL_000d: ldarg.2      
+  IL_000e: ldarg.1      
+  IL_000f: callvirt     UnityEngine.GameObject::GetComponents
+  IL_0014: stloc.1      
+  IL_0015: ldloc.1      
+  IL_0016: ldlen        
+  IL_0017: conv.i4      
+  IL_0018: stloc.3      
+  IL_0019: ldc.i4.0     
+  IL_001a: stloc.2      
+  IL_001b: br           IL_0030
+  IL_0020: ldloc.1      
+  IL_0021: ldloc.2      
+  IL_0022: ldelem.ref   
+  IL_0023: stloc.0      
+  IL_0024: ldarg.3      
+  IL_0025: ldloc.0      
+  IL_0026: callvirt     System.Collections.ArrayList::Add
+  IL_002b: pop          
+  IL_002c: ldloc.2      
+  IL_002d: ldc.i4.1     
+  IL_002e: add          
+  IL_002f: stloc.2      
+  IL_0030: ldloc.2      
+  IL_0031: ldloc.3      
+  IL_0032: blt          IL_0020
+  IL_0037: ldarg.2      
+  IL_0038: callvirt     UnityEngine.GameObject::get_transform
+  IL_003d: callvirt     UnityEngine.Transform::GetEnumerator
+  IL_0042: stloc.s      5
+  IL_0044: br           IL_0066
+  IL_0049: ldloc.s      5
+  IL_004b: callvirt     System.Collections.IEnumerator::get_Current
+  IL_0050: castclass    UnityEngine.Transform
+  IL_0055: stloc.s      4
+  IL_0057: ldarg.0      
+  IL_0058: ldarg.1      
+  IL_0059: ldloc.s      4
+  IL_005b: callvirt     UnityEngine.Component::get_gameObject
+  IL_0060: ldarg.3      
+  IL_0061: call         MyFindObjectsOfTypeRecursion
+  IL_0066: ldloc.s      5
+  IL_0068: callvirt     System.Collections.IEnumerator::MoveNext
+  IL_006d: brtrue       IL_0049
+  IL_0072: leave        IL_008d
+  IL_0077: ldloc.s      5
+  IL_0079: isinst       System.IDisposable
+  IL_007e: dup          
+  IL_007f: brtrue.s     IL_0087
+  IL_0081: pop          
+  IL_0082: br           IL_008c
+  IL_0087: callvirt     System.IDisposable::Dispose
+  IL_008c: endfinally   
+  IL_008d: ret          
+
+//// GameManager::MyFindObjectsOfType  rva=0x011930
+  .maxstack 7  locals=0x110000b5
+  IL_0000: ldstr        "/Level Pivot"
+  IL_0005: call         UnityEngine.GameObject::Find
+  IL_000a: stloc.0      
+  IL_000b: newobj       System.Collections.ArrayList::.ctor
+  IL_0010: stloc.1      
+  IL_0011: ldarg.0      
+  IL_0012: ldarg.1      
+  IL_0013: ldloc.0      
+  IL_0014: ldloc.1      
+  IL_0015: call         MyFindObjectsOfTypeRecursion
+  IL_001a: ldloc.1      
+  IL_001b: ldarg.1      
+  IL_001c: callvirt     System.Collections.ArrayList::ToArray
+  IL_0021: castclass    Type[000003]
+  IL_0026: ret          
+
+//// GameManager::FixGoobalUnity  rva=0x011964
+  .maxstack 171  locals=0x110000b6
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        m_GlobalSpecCube
+  IL_0006: ldnull       
+  IL_0007: call         UnityEngine.Object::op_Inequality
+  IL_000c: brfalse      IL_0021
+  IL_0011: ldstr        "_SpecCube0"
+  IL_0016: ldarg.0      
+  IL_0017: ldfld        m_GlobalSpecCube
+  IL_001c: call         UnityEngine.Shader::SetGlobalTexture
+  IL_0021: ldarg.0      
+  IL_0022: ldtoken      UnityEngine.MeshCollider
+  IL_0027: call         System.Type::GetTypeFromHandle
+  IL_002c: call         MyFindObjectsOfType
+  IL_0031: castclass    Type[000004]
+  IL_0036: stloc.0      
+  IL_0037: ldloc.0      
+  IL_0038: stloc.2      
+  IL_0039: ldloc.2      
+  IL_003a: ldlen        
+  IL_003b: conv.i4      
+  IL_003c: stloc.s      4
+  IL_003e: ldc.i4.0     
+  IL_003f: stloc.3      
+  IL_0040: br           IL_0091
+  IL_0045: ldloc.2      
+  IL_0046: ldloc.3      
+  IL_0047: ldelem.ref   
+  IL_0048: stloc.1      
+  IL_0049: ldloc.1      
+  IL_004a: callvirt     UnityEngine.MeshCollider::get_sharedMesh
+  IL_004f: ldnull       
+  IL_0050: call         UnityEngine.Object::op_Inequality
+  IL_0055: brfalse      IL_008d
+  IL_005a: ldloc.1      
+  IL_005b: callvirt     UnityEngine.MeshCollider::get_sharedMesh
+  IL_0060: callvirt     UnityEngine.Mesh::get_triangles
+  IL_0065: ldnull       
+  IL_0066: beq          IL_0081
+  IL_006b: ldloc.1      
+  IL_006c: callvirt     UnityEngine.MeshCollider::get_sharedMesh
+  IL_0071: ldloc.1      
+  IL_0072: callvirt     UnityEngine.MeshCollider::get_sharedMesh
+  IL_0077: callvirt     UnityEngine.Mesh::get_triangles
+  IL_007c: callvirt     UnityEngine.Mesh::set_triangles
+  IL_0081: ldloc.1      
+  IL_0082: ldloc.1      
+  IL_0083: callvirt     UnityEngine.MeshCollider::get_sharedMesh
+  IL_0088: callvirt     UnityEngine.MeshCollider::set_sharedMesh
+  IL_008d: ldloc.3      
+  IL_008e: ldc.i4.1     
+  IL_008f: add          
+  IL_0090: stloc.3      
+  IL_0091: ldloc.3      
+  IL_0092: ldloc.s      4
+  IL_0094: blt          IL_0045
+  IL_0099: ldarg.0      
+  IL_009a: ldtoken      ActivateTrigger
+  IL_009f: call         System.Type::GetTypeFromHandle
+  IL_00a4: call         MyFindObjectsOfType
+  IL_00a9: castclass    Type[000005]
+  IL_00ae: stloc.s      5
+  IL_00b0: ldloc.s      5
+  IL_00b2: stloc.s      7
+  IL_00b4: ldloc.s      7
+  IL_00b6: ldlen        
+  IL_00b7: conv.i4      
+  IL_00b8: stloc.s      9
+  IL_00ba: ldc.i4.0     
+  IL_00bb: stloc.s      8
+  IL_00bd: br           IL_0117
+  IL_00c2: ldloc.s      7
+  IL_00c4: ldloc.s      8
+  IL_00c6: ldelem.ref   
+  IL_00c7: stloc.s      6
+  IL_00c9: ldloc.s      6
+  IL_00cb: ldtoken      UnityEngine.MeshCollider
+  IL_00d0: call         System.Type::GetTypeFromHandle
+  IL_00d5: callvirt     UnityEngine.Component::GetComponent
+  IL_00da: ldnull       
+  IL_00db: call         UnityEngine.Object::op_Equality
+  IL_00e0: brfalse      IL_0111
+  IL_00e5: ldloc.s      6
+  IL_00e7: callvirt     UnityEngine.Component::get_collider
+  IL_00ec: ldnull       
+  IL_00ed: call         UnityEngine.Object::op_Inequality
+  IL_00f2: brfalse      IL_0104
+  IL_00f7: ldloc.s      6
+  IL_00f9: callvirt     UnityEngine.Component::get_collider
+  IL_00fe: ldc.i4.1     
+  IL_00ff: callvirt     UnityEngine.Collider::set_isTrigger
+  IL_0104: ldloc.s      6
+  IL_0106: callvirt     UnityEngine.Component::get_gameObject
+  IL_010b: ldc.i4.2     
+  IL_010c: callvirt     UnityEngine.GameObject::set_layer
+  IL_0111: ldloc.s      8
+  IL_0113: ldc.i4.1     
+  IL_0114: add          
+  IL_0115: stloc.s      8
+  IL_0117: ldloc.s      8
+  IL_0119: ldloc.s      9
+  IL_011b: blt          IL_00c2
+  IL_0120: ldarg.0      
+  IL_0121: ldtoken      EnterExitTrigger
+  IL_0126: call         System.Type::GetTypeFromHandle
+  IL_012b: call         MyFindObjectsOfType
+  IL_0130: castclass    Type[000005]
+  IL_0135: stloc.s      5
+  IL_0137: ldloc.s      5
+  IL_0139: stloc.s      11
+  IL_013b: ldloc.s      11
+  IL_013d: ldlen        
+  IL_013e: conv.i4      
+  IL_013f: stloc.s      13
+  IL_0141: ldc.i4.0     
+  IL_0142: stloc.s      12
+  IL_0144: br           IL_0182
+  IL_0149: ldloc.s      11
+  IL_014b: ldloc.s      12
+  IL_014d: ldelem.ref   
+  IL_014e: stloc.s      10
+  IL_0150: ldloc.s      10
+  IL_0152: callvirt     UnityEngine.Component::get_collider
+  IL_0157: ldnull       
+  IL_0158: call         UnityEngine.Object::op_Inequality
+  IL_015d: brfalse      IL_016f
+  IL_0162: ldloc.s      10
+  IL_0164: callvirt     UnityEngine.Component::get_collider
+  IL_0169: ldc.i4.1     
+  IL_016a: callvirt     UnityEngine.Collider::set_isTrigger
+  IL_016f: ldloc.s      10
+  IL_0171: callvirt     UnityEngine.Component::get_gameObject
+  IL_0176: ldc.i4.2     
+  IL_0177: callvirt     UnityEngine.GameObject::set_layer
+  IL_017c: ldloc.s      12
+  IL_017e: ldc.i4.1     
+  IL_017f: add          
+  IL_0180: stloc.s      12
+  IL_0182: ldloc.s      12
+  IL_0184: ldloc.s      13
+  IL_0186: blt          IL_0149
+  IL_018b: ldarg.0      
+  IL_018c: ldtoken      GoalTrigger
+  IL_0191: call         System.Type::GetTypeFromHandle
+  IL_0196: call         MyFindObjectsOfType
+  IL_019b: castclass    Type[000005]
+  IL_01a0: stloc.s      5
+  IL_01a2: ldloc.s      5
+  IL_01a4: stloc.s      15
+  IL_01a6: ldloc.s      15
+  IL_01a8: ldlen        
+  IL_01a9: conv.i4      
+  IL_01aa: stloc.s      17
+  IL_01ac: ldc.i4.0     
+  IL_01ad: stloc.s      16
+  IL_01af: br           IL_01ed
+  IL_01b4: ldloc.s      15
+  IL_01b6: ldloc.s      16
+  IL_01b8: ldelem.ref   
+  IL_01b9: stloc.s      14
+  IL_01bb: ldloc.s      14
+  IL_01bd: callvirt     UnityEngine.Component::get_collider
+  IL_01c2: ldnull       
+  IL_01c3: call         UnityEngine.Object::op_Inequality
+  IL_01c8: brfalse      IL_01da
+  IL_01cd: ldloc.s      14
+  IL_01cf: callvirt     UnityEngine.Component::get_collider
+  IL_01d4: ldc.i4.1     
+  IL_01d5: callvirt     UnityEngine.Collider::set_isTrigger
+  IL_01da: ldloc.s      14
+  IL_01dc: callvirt     UnityEngine.Component::get_gameObject
+  IL_01e1: ldc.i4.2     
+  IL_01e2: callvirt     UnityEngine.GameObject::set_layer
+  IL_01e7: ldloc.s      16
+  IL_01e9: ldc.i4.1     
+  IL_01ea: add          
+  IL_01eb: stloc.s      16
+  IL_01ed: ldloc.s      16
+  IL_01ef: ldloc.s      17
+  IL_01f1: blt          IL_01b4
+  IL_01f6: ldarg.0      
+  IL_01f7: ldtoken      StarPickup
+  IL_01fc: call         System.Type::GetTypeFromHandle
+  IL_0201: call         MyFindObjectsOfType
+  IL_0206: castclass    Type[000005]
+  IL_020b: stloc.s      5
+  IL_020d: ldloc.s      5
+  IL_020f: stloc.s      19
+  IL_0211: ldloc.s      19
+  IL_0213: ldlen        
+  IL_0214: conv.i4      
+  IL_0215: stloc.s      21
+  IL_0217: ldc.i4.0     
+  IL_0218: stloc.s      20
+  IL_021a: br           IL_02c6
+  IL_021f: ldloc.s      19
+  IL_0221: ldloc.s      20
+  IL_0223: ldelem.ref   
+  IL_0224: stloc.s      18
+  IL_0226: ldloc.s      18
+  IL_0228: ldtoken      UnityEngine.SphereCollider
+  IL_022d: call         System.Type::GetTypeFromHandle
+  IL_0232: callvirt     UnityEngine.Component::GetComponent
+  IL_0237: ldnull       
+  IL_0238: call         UnityEngine.Object::op_Equality
+  IL_023d: brfalse      IL_02b3
+  IL_0242: ldloc.s      18
+  IL_0244: callvirt     UnityEngine.Component::get_collider
+  IL_0249: ldnull       
+  IL_024a: call         UnityEngine.Object::op_Inequality
+  IL_024f: brfalse      IL_02b3
+  IL_0254: ldloc.s      18
+  IL_0256: callvirt     UnityEngine.Component::get_collider
+  IL_025b: call         UnityEngine.Object::Destroy
+  IL_0260: ldloc.s      18
+  IL_0262: callvirt     UnityEngine.Component::get_gameObject
+  IL_0267: ldtoken      UnityEngine.SphereCollider
+  IL_026c: call         System.Type::GetTypeFromHandle
+  IL_0271: callvirt     UnityEngine.GameObject::AddComponent
+  IL_0276: pop          
+  IL_0277: ldloc.s      18
+  IL_0279: ldtoken      UnityEngine.SphereCollider
+  IL_027e: call         System.Type::GetTypeFromHandle
+  IL_0283: callvirt     UnityEngine.Component::GetComponent
+  IL_0288: castclass    UnityEngine.SphereCollider
+  IL_028d: ldc.r4       0.3700000047683716
+  IL_0292: callvirt     UnityEngine.SphereCollider::set_radius
+  IL_0297: ldloc.s      18
+  IL_0299: ldtoken      UnityEngine.SphereCollider
+  IL_029e: call         System.Type::GetTypeFromHandle
+  IL_02a3: callvirt     UnityEngine.Component::GetComponent
+  IL_02a8: castclass    UnityEngine.SphereCollider
+  IL_02ad: ldc.i4.1     
+  IL_02ae: callvirt     UnityEngine.Collider::set_isTrigger
+  IL_02b3: ldloc.s      18
+  IL_02b5: callvirt     UnityEngine.Component::get_gameObject
+  IL_02ba: ldc.i4.2     
+  IL_02bb: callvirt     UnityEngine.GameObject::set_layer
+  IL_02c0: ldloc.s      20
+  IL_02c2: ldc.i4.1     
+  IL_02c3: add          
+  IL_02c4: stloc.s      20
+  IL_02c6: ldloc.s      20
+  IL_02c8: ldloc.s      21
+  IL_02ca: blt          IL_021f
+  IL_02cf: ldarg.0      
+  IL_02d0: ldtoken      WindArea
+  IL_02d5: call         System.Type::GetTypeFromHandle
+  IL_02da: call         MyFindObjectsOfType
+  IL_02df: castclass    Type[000005]
+  IL_02e4: stloc.s      5
+  IL_02e6: ldloc.s      5
+  IL_02e8: stloc.s      23
+  IL_02ea: ldloc.s      23
+  IL_02ec: ldlen        
+  IL_02ed: conv.i4      
+  IL_02ee: stloc.s      25
+  IL_02f0: ldc.i4.0     
+  IL_02f1: stloc.s      24
+  IL_02f3: br           IL_0331
+  IL_02f8: ldloc.s      23
+  IL_02fa: ldloc.s      24
+  IL_02fc: ldelem.ref   
+  IL_02fd: stloc.s      22
+  IL_02ff: ldloc.s      22
+  IL_0301: callvirt     UnityEngine.Component::get_collider
+  IL_0306: ldnull       
+  IL_0307: call         UnityEngine.Object::op_Inequality
+  IL_030c: brfalse      IL_031e
+  IL_0311: ldloc.s      22
+  IL_0313: callvirt     UnityEngine.Component::get_collider
+  IL_0318: ldc.i4.1     
+  IL_0319: callvirt     UnityEngine.Collider::set_isTrigger
+  IL_031e: ldloc.s      22
+  IL_0320: callvirt     UnityEngine.Component::get_gameObject
+  IL_0325: ldc.i4.2     
+  IL_0326: callvirt     UnityEngine.GameObject::set_layer
+  IL_032b: ldloc.s      24
+  IL_032d: ldc.i4.1     
+  IL_032e: add          
+  IL_032f: stloc.s      24
+  IL_0331: ldloc.s      24
+  IL_0333: ldloc.s      25
+  IL_0335: blt          IL_02f8
+  IL_033a: ldarg.0      
+  IL_033b: ldtoken      CatapultAction
+  IL_0340: call         System.Type::GetTypeFromHandle
+  IL_0345: call         MyFindObjectsOfType
+  IL_034a: castclass    Type[000005]
+  IL_034f: stloc.s      5
+  IL_0351: ldloc.s      5
+  IL_0353: stloc.s      27
+  IL_0355: ldloc.s      27
+  IL_0357: ldlen        
+  IL_0358: conv.i4      
+  IL_0359: stloc.s      29
+  IL_035b: ldc.i4.0     
+  IL_035c: stloc.s      28
+  IL_035e: br           IL_039c
+  IL_0363: ldloc.s      27
+  IL_0365: ldloc.s      28
+  IL_0367: ldelem.ref   
+  IL_0368: stloc.s      26
+  IL_036a: ldloc.s      26
+  IL_036c: callvirt     UnityEngine.Component::get_collider
+  IL_0371: ldnull       
+  IL_0372: call         UnityEngine.Object::op_Inequality
+  IL_0377: brfalse      IL_0389
+  IL_037c: ldloc.s      26
+  IL_037e: callvirt     UnityEngine.Component::get_collider
+  IL_0383: ldc.i4.1     
+  IL_0384: callvirt     UnityEngine.Collider::set_isTrigger
+  IL_0389: ldloc.s      26
+  IL_038b: callvirt     UnityEngine.Component::get_gameObject
+  IL_0390: ldc.i4.2     
+  IL_0391: callvirt     UnityEngine.GameObject::set_layer
+  IL_0396: ldloc.s      28
+  IL_0398: ldc.i4.1     
+  IL_0399: add          
+  IL_039a: stloc.s      28
+  IL_039c: ldloc.s      28
+  IL_039e: ldloc.s      29
+  IL_03a0: blt          IL_0363
+  IL_03a5: ldarg.0      
+  IL_03a6: ldtoken      TriggerPickup
+  IL_03ab: call         System.Type::GetTypeFromHandle
+  IL_03b0: call         MyFindObjectsOfType
+  IL_03b5: castclass    Type[000005]
+  IL_03ba: stloc.s      5
+  IL_03bc: ldloc.s      5
+  IL_03be: stloc.s      31
+  IL_03c0: ldloc.s      31
+  IL_03c2: ldlen        
+  IL_03c3: conv.i4      
+  IL_03c4: stloc.s      33
+  IL_03c6: ldc.i4.0     
+  IL_03c7: stloc.s      32
+  IL_03c9: br           IL_0475
+  IL_03ce: ldloc.s      31
+  IL_03d0: ldloc.s      32
+  IL_03d2: ldelem.ref   
+  IL_03d3: stloc.s      30
+  IL_03d5: ldloc.s      30
+  IL_03d7: ldtoken      UnityEngine.SphereCollider
+  IL_03dc: call         System.Type::GetTypeFromHandle
+  IL_03e1: callvirt     UnityEngine.Component::GetComponent
+  IL_03e6: ldnull       
+  IL_03e7: call         UnityEngine.Object::op_Equality
+  IL_03ec: brfalse      IL_0462
+  IL_03f1: ldloc.s      30
+  IL_03f3: callvirt     UnityEngine.Component::get_collider
+  IL_03f8: ldnull       
+  IL_03f9: call         UnityEngine.Object::op_Inequality
+  IL_03fe: brfalse      IL_0462
+  IL_0403: ldloc.s      30
+  IL_0405: callvirt     UnityEngine.Component::get_collider
+  IL_040a: call         UnityEngine.Object::Destroy
+  IL_040f: ldloc.s      30
+  IL_0411: callvirt     UnityEngine.Component::get_gameObject
+  IL_0416: ldtoken      UnityEngine.SphereCollider
+  IL_041b: call         System.Type::GetTypeFromHandle
+  IL_0420: callvirt     UnityEngine.GameObject::AddComponent
+  IL_0425: pop          
+  IL_0426: ldloc.s      30
+  IL_0428: ldtoken      UnityEngine.SphereCollider
+  IL_042d: call         System.Type::GetTypeFromHandle
+  IL_0432: callvirt     UnityEngine.Component::GetComponent
+  IL_0437: castclass    UnityEngine.SphereCollider
+  IL_043c: ldc.r4       0.1599999964237213
+  IL_0441: callvirt     UnityEngine.SphereCollider::set_radius
+  IL_0446: ldloc.s      30
+  IL_0448: ldtoken      UnityEngine.SphereCollider
+  IL_044d: call         System.Type::GetTypeFromHandle
+  IL_0452: callvirt     UnityEngine.Component::GetComponent
+  IL_0457: castclass    UnityEngine.SphereCollider
+  IL_045c: ldc.i4.1     
+  IL_045d: callvirt     UnityEngine.Collider::set_isTrigger
+  IL_0462: ldloc.s      30
+  IL_0464: callvirt     UnityEngine.Component::get_gameObject
+  IL_0469: ldc.i4.2     
+  IL_046a: callvirt     UnityEngine.GameObject::set_layer
+  IL_046f: ldloc.s      32
+  IL_0471: ldc.i4.1     
+  IL_0472: add          
+  IL_0473: stloc.s      32
+  IL_0475: ldloc.s      32
+  IL_0477: ldloc.s      33
+  IL_0479: blt          IL_03ce
+  IL_047e: ldarg.0      
+  IL_047f: ldtoken      UnityEngine.Transform
+  IL_0484: call         System.Type::GetTypeFromHandle
+  IL_0489: call         MyFindObjectsOfType
+  IL_048e: castclass    Type[000006]
+  IL_0493: stloc.s      34
+  IL_0495: ldloc.s      34
+  IL_0497: stloc.s      36
+  IL_0499: ldloc.s      36
+  IL_049b: ldlen        
+  IL_049c: conv.i4      
+  IL_049d: stloc.s      38
+  IL_049f: ldc.i4.0     
+  IL_04a0: stloc.s      37
+  IL_04a2: br           IL_04e2
+  IL_04a7: ldloc.s      36
+  IL_04a9: ldloc.s      37
+  IL_04ab: ldelem.ref   
+  IL_04ac: stloc.s      35
+  IL_04ae: ldloc.s      35
+  IL_04b0: callvirt     UnityEngine.Component::get_tag
+  IL_04b5: stloc.s      39
+  IL_04b7: ldloc.s      39
+  IL_04b9: ldstr        "no unused variable warning"
+  IL_04be: call         System.String::Concat
+  IL_04c3: stloc.s      39
+  IL_04c5: leave        IL_04dc
+  IL_04ca: pop          
+  IL_04cb: ldloc.s      35
+  IL_04cd: ldstr        "Untagged"
+  IL_04d2: callvirt     UnityEngine.Component::set_tag
+  IL_04d7: leave        IL_04dc
+  IL_04dc: ldloc.s      37
+  IL_04de: ldc.i4.1     
+  IL_04df: add          
+  IL_04e0: stloc.s      37
+  IL_04e2: ldloc.s      37
+  IL_04e4: ldloc.s      38
+  IL_04e6: blt          IL_04a7
+  IL_04eb: ret          
+
+//// GameManager::Start  rva=0x011e78
+  .maxstack 6  locals=0x110000b7
+  IL_0000: call         get_isEditor
+  IL_0005: brfalse      IL_001d
+  IL_000a: newobj       .ctor
+  IL_000f: stloc.0      
+  IL_0010: ldarg.0      
+  IL_0011: ldloc.0      
+  IL_0012: call         Initialize
+  IL_0017: ldc.i4.1     
+  IL_0018: call         SetMeshLod
+  IL_001d: ldarg.0      
+  IL_001e: stsfld       m_Singleton
+  IL_0023: ldarg.0      
+  IL_0024: call         FixGoobalUnity
+  IL_0029: ret          
+
+//// GameManager::GetLives  rva=0x011eb0
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        m_Lives
+  IL_0006: ret          
+
+//// GameManager::GetStars  rva=0x011eb8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        m_StarCount
+  IL_0006: ret          
+
+//// GameManager::GetBonusScore  rva=0x011ec0
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        m_BonusScore
+  IL_0006: ret          
+
+//// GameManager::FalloutColliderWasHit  rva=0x011ec8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.1     
+  IL_0002: stfld        m_FalloutColliderWasHit
+  IL_0007: ret          
+
+//// GameManager::Update  rva=0x011ed4
+  .maxstack 43  locals=0x110000b8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        m_IsGameRunning
+  IL_0006: brfalse      IL_011c
+  IL_000b: ldarg.0      
+  IL_000c: ldfld        m_FalloutHeight
+  IL_0011: ldnull       
+  IL_0012: call         UnityEngine.Object::op_Equality
+  IL_0017: brfalse      IL_0027
+  IL_001c: ldstr        "You need to create a transform component with tag Fallout height!"
+  IL_0021: newobj       System.Exception::.ctor
+  IL_0026: throw        
+  IL_0027: ldarg.0      
+  IL_0028: ldfld        m_FalloutColliderWasHit
+  IL_002d: brtrue       IL_0071
+  IL_0032: ldarg.0      
+  IL_0033: ldfld        m_CurrentBall
+  IL_0038: callvirt     UnityEngine.Component::get_transform
+  IL_003d: callvirt     UnityEngine.Transform::get_position
+  IL_0042: ldarg.0      
+  IL_0043: ldfld        m_FalloutHeight
+  IL_0048: callvirt     UnityEngine.Transform::get_position
+  IL_004d: call         UnityEngine.Vector3::op_Subtraction
+  IL_0052: ldarg.0      
+  IL_0053: ldfld        m_FalloutHeight
+  IL_0058: call         UnityEngine.Vector3::get_up
+  IL_005d: callvirt     UnityEngine.Transform::TransformDirection
+  IL_0062: call         UnityEngine.Vector3::Dot
+  IL_0067: ldc.r4       0.0
+  IL_006c: bge.un       IL_0086
+  IL_0071: ldarg.0      
+  IL_0072: ldstr        "FallOut"
+  IL_0077: call         UnityEngine.Component::BroadcastMessage
+  IL_007c: call         get_singleton
+  IL_0081: callvirt     Fallout
+  IL_0086: ldarg.0      
+  IL_0087: dup          
+  IL_0088: ldfld        m_Time
+  IL_008d: call         UnityEngine.Time::get_deltaTime
+  IL_0092: sub          
+  IL_0093: stfld        m_Time
+  IL_0098: ldarg.0      
+  IL_0099: ldfld        m_Time
+  IL_009e: ldc.r4       -0.20000000298023224
+  IL_00a3: bgt.un       IL_00bd
+  IL_00a8: ldarg.0      
+  IL_00a9: ldstr        "TimeOut"
+  IL_00ae: call         UnityEngine.Component::BroadcastMessage
+  IL_00b3: call         get_singleton
+  IL_00b8: callvirt     Timeout
+  IL_00bd: ldarg.0      
+  IL_00be: dup          
+  IL_00bf: ldfld        m_StatsAvgFrames
+  IL_00c4: ldc.r4       1.0
+  IL_00c9: add          
+  IL_00ca: stfld        m_StatsAvgFrames
+  IL_00cf: ldarg.0      
+  IL_00d0: dup          
+  IL_00d1: ldfld        m_StatsAvgTime
+  IL_00d6: call         UnityEngine.Time::get_deltaTime
+  IL_00db: add          
+  IL_00dc: stfld        m_StatsAvgTime
+  IL_00e1: call         get_singleton
+  IL_00e6: callvirt     UpdateFramerate
+  IL_00eb: ldstr        "escape"
+  IL_00f0: call         UnityEngine.Input::GetKeyDown
+  IL_00f5: brfalse      IL_011c
+  IL_00fa: ldarg.0      
+  IL_00fb: ldfld        m_GameMenuPrefab
+  IL_0100: call         UnityEngine.Object::Instantiate
+  IL_0105: castclass    UnityEngine.GameObject
+  IL_010a: stloc.0      
+  IL_010b: ldloc.0      
+  IL_010c: callvirt     UnityEngine.GameObject::get_transform
+  IL_0111: ldarg.0      
+  IL_0112: call         UnityEngine.Component::get_transform
+  IL_0117: callvirt     UnityEngine.Transform::set_parent
+  IL_011c: ldstr        "o"
+  IL_0121: call         UnityEngine.Input::GetKey
+  IL_0126: brfalse      IL_0187
+  IL_012b: ldstr        "t"
+  IL_0130: call         UnityEngine.Input::GetKey
+  IL_0135: brfalse      IL_0187
+  IL_013a: ldstr        "e"
+  IL_013f: call         UnityEngine.Input::GetKey
+  IL_0144: brfalse      IL_0187
+  IL_0149: ldstr        "space"
+  IL_014e: call         UnityEngine.Input::GetKey
+  IL_0153: brfalse      IL_0187
+  IL_0158: ldstr        "r"
+  IL_015d: call         UnityEngine.Input::GetKey
+  IL_0162: brtrue       IL_0187
+  IL_0167: ldstr        "i"
+  IL_016c: call         UnityEngine.Input::GetKey
+  IL_0171: brtrue       IL_0187
+  IL_0176: ldarg.0      
+  IL_0177: ldc.r4       -1.0
+  IL_017c: stfld        m_Time
+  IL_0181: ldarg.0      
+  IL_0182: call         ReachedGoal
+  IL_0187: ret          
+
+//// GameManager::ReachedGoal  rva=0x012068
+  .maxstack 23  locals=0x110000b9
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        m_IsGameRunning
+  IL_0006: brtrue       IL_000c
+  IL_000b: ret          
+  IL_000c: ldarg.0      
+  IL_000d: ldstr        "StopPlay"
+  IL_0012: ldc.i4.0     
+  IL_0013: box          System.Boolean
+  IL_0018: call         UnityEngine.Component::BroadcastMessage
+  IL_001d: ldarg.0      
+  IL_001e: ldstr        "LevelComplete"
+  IL_0023: call         UnityEngine.Component::BroadcastMessage
+  IL_0028: ldloca.s     0
+  IL_002a: ldarg.0      
+  IL_002b: ldfld        m_StarsCollected
+  IL_0030: stfld        stars
+  IL_0035: ldloca.s     0
+  IL_0037: ldarg.0      
+  IL_0038: ldfld        m_Time
+  IL_003d: ldc.r4       0.0
+  IL_0042: call         UnityEngine.Mathf::Max
+  IL_0047: stfld        timeLeft
+  IL_004c: ldloca.s     0
+  IL_004e: ldarg.0      
+  IL_004f: ldfld        m_BonusScore
+  IL_0054: stfld        bonusPoints
+  IL_0059: ldloca.s     0
+  IL_005b: ldsfld       singleton
+  IL_0060: ldfld        completionTime
+  IL_0065: ldloca.s     0
+  IL_0067: ldfld        timeLeft
+  IL_006c: sub          
+  IL_006d: stfld        completionTime
+  IL_0072: ldstr        "DIFFICULTY"
+  IL_0077: ldc.i4.1     
+  IL_0078: call         UnityEngine.PlayerPrefs::GetInt
+  IL_007d: stloc.1      
+  IL_007e: ldloc.1      
+  IL_007f: brtrue       IL_0097
+  IL_0084: ldloca.s     0
+  IL_0086: dup          
+  IL_0087: ldfld        completionTime
+  IL_008c: ldc.r4       15.0
+  IL_0091: add          
+  IL_0092: stfld        completionTime
+  IL_0097: ldarg.0      
+  IL_0098: ldfld        kVariation
+  IL_009d: ldstr        "levelhighscore"
+  IL_00a2: callvirt     InstantiateGameObject
+  IL_00a7: stloc.2      
+  IL_00a8: ldloc.2      
+  IL_00a9: callvirt     UnityEngine.GameObject::get_transform
+  IL_00ae: callvirt     UnityEngine.Component::get_transform
+  IL_00b3: ldarg.0      
+  IL_00b4: call         UnityEngine.Component::get_transform
+  IL_00b9: callvirt     UnityEngine.Transform::set_parent
+  IL_00be: call         get_singleton
+  IL_00c3: ldloca.s     0
+  IL_00c5: ldfld        completionTime
+  IL_00ca: ldloca.s     0
+  IL_00cc: ldfld        stars
+  IL_00d1: ldarg.0      
+  IL_00d2: ldfld        m_StatsAvgFrames
+  IL_00d7: ldarg.0      
+  IL_00d8: ldfld        m_StatsAvgTime
+  IL_00dd: div          
+  IL_00de: callvirt     FinishedLevel
+  IL_00e3: ldarg.0      
+  IL_00e4: ldstr        "DisplayHighScore"
+  IL_00e9: ldloc.0      
+  IL_00ea: box          LevelHighScoreInfo
+  IL_00ef: call         UnityEngine.Component::BroadcastMessage
+  IL_00f4: ret          
+
+//// GameManager::StopPlay  rva=0x01216c
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.0     
+  IL_0002: stfld        m_IsGameRunning
+  IL_0007: ret          
+
+//// GameManager::StartPlay  rva=0x012178
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.1     
+  IL_0002: stfld        m_IsGameRunning
+  IL_0007: ret          
+
+//// GameManager::KillChildren  rva=0x012184
+  .maxstack 16  locals=0x110000ba
+  IL_0000: ldarg.0      
+  IL_0001: call         UnityEngine.Component::get_transform
+  IL_0006: callvirt     UnityEngine.Transform::GetEnumerator
+  IL_000b: stloc.1      
+  IL_000c: br           IL_0038
+  IL_0011: ldloc.1      
+  IL_0012: callvirt     System.Collections.IEnumerator::get_Current
+  IL_0017: castclass    UnityEngine.Transform
+  IL_001c: stloc.0      
+  IL_001d: ldloc.0      
+  IL_001e: ldstr        "DontRespawn"
+  IL_0023: callvirt     UnityEngine.Component::CompareTag
+  IL_0028: brtrue       IL_0038
+  IL_002d: ldloc.0      
+  IL_002e: callvirt     UnityEngine.Component::get_gameObject
+  IL_0033: call         UnityEngine.Object::DestroyObject
+  IL_0038: ldloc.1      
+  IL_0039: callvirt     System.Collections.IEnumerator::MoveNext
+  IL_003e: brtrue       IL_0011
+  IL_0043: leave        IL_005d
+  IL_0048: ldloc.1      
+  IL_0049: isinst       System.IDisposable
+  IL_004e: dup          
+  IL_004f: brtrue.s     IL_0057
+  IL_0051: pop          
+  IL_0052: br           IL_005c
+  IL_0057: callvirt     System.IDisposable::Dispose
+  IL_005c: endfinally   
+  IL_005d: ret          
+
+//// GameManager::RespawnBall  rva=0x01220c
+  .maxstack 153  locals=0x110000bb
+  IL_0000: ldarg.0      
+  IL_0001: call         KillChildren
+  IL_0006: ldarg.0      
+  IL_0007: ldfld        m_Respawned
+  IL_000c: ldnull       
+  IL_000d: beq          IL_0046
+  IL_0012: ldarg.0      
+  IL_0013: ldfld        m_Respawned
+  IL_0018: stloc.1      
+  IL_0019: ldloc.1      
+  IL_001a: ldlen        
+  IL_001b: conv.i4      
+  IL_001c: stloc.3      
+  IL_001d: ldc.i4.0     
+  IL_001e: stloc.2      
+  IL_001f: br           IL_003f
+  IL_0024: ldloc.1      
+  IL_0025: ldloc.2      
+  IL_0026: ldelem.ref   
+  IL_0027: stloc.0      
+  IL_0028: ldloc.0      
+  IL_0029: ldnull       
+  IL_002a: call         UnityEngine.Object::op_Inequality
+  IL_002f: brfalse      IL_003b
+  IL_0034: ldarg.0      
+  IL_0035: ldloc.0      
+  IL_0036: call         DestroyRecursive
+  IL_003b: ldloc.2      
+  IL_003c: ldc.i4.1     
+  IL_003d: add          
+  IL_003e: stloc.2      
+  IL_003f: ldloc.2      
+  IL_0040: ldloc.3      
+  IL_0041: blt          IL_0024
+  IL_0046: ldarg.0      
+  IL_0047: ldarg.0      
+  IL_0048: ldfld        m_Respawnable
+  IL_004d: ldlen        
+  IL_004e: conv.i4      
+  IL_004f: newarr       UnityEngine.GameObject
+  IL_0054: stfld        m_Respawned
+  IL_0059: ldc.i4.0     
+  IL_005a: stloc.s      4
+  IL_005c: br           IL_0104
+  IL_0061: ldarg.0      
+  IL_0062: ldfld        m_Respawned
+  IL_0067: ldloc.s      4
+  IL_0069: ldarg.0      
+  IL_006a: ldfld        m_Respawnable
+  IL_006f: ldloc.s      4
+  IL_0071: ldelem.ref   
+  IL_0072: call         UnityEngine.Object::Instantiate
+  IL_0077: castclass    UnityEngine.GameObject
+  IL_007c: stelem.ref   
+  IL_007d: ldarg.0      
+  IL_007e: ldfld        m_Respawned
+  IL_0083: ldloc.s      4
+  IL_0085: ldelem.ref   
+  IL_0086: callvirt     UnityEngine.GameObject::get_transform
+  IL_008b: ldarg.0      
+  IL_008c: ldfld        m_Respawnable
+  IL_0091: ldloc.s      4
+  IL_0093: ldelem.ref   
+  IL_0094: callvirt     UnityEngine.GameObject::get_transform
+  IL_0099: callvirt     UnityEngine.Transform::get_parent
+  IL_009e: callvirt     UnityEngine.Transform::set_parent
+  IL_00a3: ldarg.0      
+  IL_00a4: ldfld        m_Respawned
+  IL_00a9: ldloc.s      4
+  IL_00ab: ldelem.ref   
+  IL_00ac: callvirt     UnityEngine.GameObject::get_transform
+  IL_00b1: ldarg.0      
+  IL_00b2: ldfld        m_Respawnable
+  IL_00b7: ldloc.s      4
+  IL_00b9: ldelem.ref   
+  IL_00ba: callvirt     UnityEngine.GameObject::get_transform
+  IL_00bf: callvirt     UnityEngine.Transform::get_position
+  IL_00c4: callvirt     UnityEngine.Transform::set_position
+  IL_00c9: ldarg.0      
+  IL_00ca: ldfld        m_Respawned
+  IL_00cf: ldloc.s      4
+  IL_00d1: ldelem.ref   
+  IL_00d2: callvirt     UnityEngine.GameObject::get_transform
+  IL_00d7: ldarg.0      
+  IL_00d8: ldfld        m_Respawnable
+  IL_00dd: ldloc.s      4
+  IL_00df: ldelem.ref   
+  IL_00e0: callvirt     UnityEngine.GameObject::get_transform
+  IL_00e5: callvirt     UnityEngine.Transform::get_rotation
+  IL_00ea: callvirt     UnityEngine.Transform::set_rotation
+  IL_00ef: ldarg.0      
+  IL_00f0: ldfld        m_Respawned
+  IL_00f5: ldloc.s      4
+  IL_00f7: ldelem.ref   
+  IL_00f8: ldc.i4.1     
+  IL_00f9: callvirt     UnityEngine.GameObject::SetActiveRecursively
+  IL_00fe: ldloc.s      4
+  IL_0100: ldc.i4.1     
+  IL_0101: add          
+  IL_0102: stloc.s      4
+  IL_0104: ldloc.s      4
+  IL_0106: ldarg.0      
+  IL_0107: ldfld        m_Respawnable
+  IL_010c: ldlen        
+  IL_010d: conv.i4      
+  IL_010e: blt          IL_0061
+  IL_0113: ldstr        "GooLevelPivot"
+  IL_0118: call         UnityEngine.GameObject::FindGameObjectWithTag
+  IL_011d: ldtoken      LevelTilter
+  IL_0122: call         System.Type::GetTypeFromHandle
+  IL_0127: callvirt     UnityEngine.GameObject::GetComponent
+  IL_012c: isinst       LevelTilter
+  IL_0131: stloc.s      5
+  IL_0133: ldloc.s      5
+  IL_0135: ldnull       
+  IL_0136: call         UnityEngine.Object::op_Equality
+  IL_013b: brfalse      IL_014b
+  IL_0140: ldstr        "No level tilter class found in Goo Level pivot"
+  IL_0145: newobj       System.Exception::.ctor
+  IL_014a: throw        
+  IL_014b: ldloc.s      5
+  IL_014d: callvirt     DoReset
+  IL_0152: ldarg.0      
+  IL_0153: ldstr        "Respawn"
+  IL_0158: call         UnityEngine.GameObject::FindGameObjectWithTag
+  IL_015d: callvirt     UnityEngine.GameObject::get_transform
+  IL_0162: stfld        m_RespawnTransform
+  IL_0167: ldarg.0      
+  IL_0168: ldfld        kVariation
+  IL_016d: ldstr        "player"
+  IL_0172: ldarg.0      
+  IL_0173: ldfld        m_RespawnTransform
+  IL_0178: callvirt     UnityEngine.Transform::get_position
+  IL_017d: ldarg.0      
+  IL_017e: ldfld        m_RespawnTransform
+  IL_0183: callvirt     UnityEngine.Transform::get_rotation
+  IL_0188: callvirt     InstantiateGameObject
+  IL_018d: stloc.s      6
+  IL_018f: ldloc.s      6
+  IL_0191: ldtoken      BallController
+  IL_0196: call         System.Type::GetTypeFromHandle
+  IL_019b: callvirt     UnityEngine.GameObject::GetComponentInChildren
+  IL_01a0: isinst       BallController
+  IL_01a5: stloc.s      7
+  IL_01a7: ldarg.0      
+  IL_01a8: ldfld        kVariation
+  IL_01ad: ldstr        "camera"
+  IL_01b2: ldarg.0      
+  IL_01b3: ldfld        m_RespawnTransform
+  IL_01b8: callvirt     UnityEngine.Transform::get_position
+  IL_01bd: ldarg.0      
+  IL_01be: ldfld        m_RespawnTransform
+  IL_01c3: callvirt     UnityEngine.Transform::get_rotation
+  IL_01c8: callvirt     InstantiateGameObject
+  IL_01cd: stloc.s      8
+  IL_01cf: ldloc.s      8
+  IL_01d1: ldtoken      CameraManager
+  IL_01d6: call         System.Type::GetTypeFromHandle
+  IL_01db: callvirt     UnityEngine.GameObject::GetComponent
+  IL_01e0: isinst       CameraManager
+  IL_01e5: stloc.s      9
+  IL_01e7: ldarg.0      
+  IL_01e8: ldfld        kVariation
+  IL_01ed: ldstr        "soundcontroller"
+  IL_01f2: ldarg.0      
+  IL_01f3: ldfld        m_RespawnTransform
+  IL_01f8: callvirt     UnityEngine.Transform::get_position
+  IL_01fd: ldarg.0      
+  IL_01fe: ldfld        m_RespawnTransform
+  IL_0203: callvirt     UnityEngine.Transform::get_rotation
+  IL_0208: callvirt     InstantiateGameObject
+  IL_020d: stloc.s      10
+  IL_020f: ldarg.0      
+  IL_0210: ldfld        kVariation
+  IL_0215: ldstr        "eventsoundcontroller"
+  IL_021a: ldarg.0      
+  IL_021b: ldfld        m_RespawnTransform
+  IL_0220: callvirt     UnityEngine.Transform::get_position
+  IL_0225: ldarg.0      
+  IL_0226: ldfld        m_RespawnTransform
+  IL_022b: callvirt     UnityEngine.Transform::get_rotation
+  IL_0230: callvirt     InstantiateGameObject
+  IL_0235: stloc.s      11
+  IL_0237: ldarg.0      
+  IL_0238: ldfld        kVariation
+  IL_023d: ldstr        "rollsparks"
+  IL_0242: ldarg.0      
+  IL_0243: ldfld        m_RespawnTransform
+  IL_0248: callvirt     UnityEngine.Transform::get_position
+  IL_024d: ldarg.0      
+  IL_024e: ldfld        m_RespawnTransform
+  IL_0253: callvirt     UnityEngine.Transform::get_rotation
+  IL_0258: callvirt     InstantiateGameObject
+  IL_025d: stloc.s      12
+  IL_025f: ldarg.0      
+  IL_0260: ldfld        kVariation
+  IL_0265: ldstr        "rollsplats"
+  IL_026a: ldarg.0      
+  IL_026b: ldfld        m_RespawnTransform
+  IL_0270: callvirt     UnityEngine.Transform::get_position
+  IL_0275: ldarg.0      
+  IL_0276: ldfld        m_RespawnTransform
+  IL_027b: callvirt     UnityEngine.Transform::get_rotation
+  IL_0280: callvirt     InstantiateGameObject
+  IL_0285: stloc.s      13
+  IL_0287: ldarg.0      
+  IL_0288: ldfld        kVariation
+  IL_028d: ldstr        "rollsparksAnim"
+  IL_0292: callvirt     InstantiateVariationSoft
+  IL_0297: castclass    UnityEngine.AnimationClip
+  IL_029c: stloc.s      14
+  IL_029e: ldloc.s      7
+  IL_02a0: ldloc.s      9
+  IL_02a2: callvirt     UnityEngine.Component::get_transform
+  IL_02a7: callvirt     SetCameraTC
+  IL_02ac: ldloc.s      7
+  IL_02ae: ldloc.s      12
+  IL_02b0: ldloc.s      13
+  IL_02b2: ldloc.s      14
+  IL_02b4: callvirt     SetParticleGOs
+  IL_02b9: ldloc.s      9
+  IL_02bb: ldloc.s      7
+  IL_02bd: ldloc.s      5
+  IL_02bf: callvirt     UnityEngine.Component::get_transform
+  IL_02c4: callvirt     SetBall
+  IL_02c9: ldsfld       singleton
+  IL_02ce: ldfld        playmode
+  IL_02d3: ldc.i4.3     
+  IL_02d4: bne.un       IL_02e5
+  IL_02d9: ldloc.s      7
+  IL_02db: callvirt     SetTravelMode
+  IL_02e0: br           IL_0300
+  IL_02e5: ldsfld       singleton
+  IL_02ea: ldfld        playmode
+  IL_02ef: ldc.i4.4     
+  IL_02f0: bne.un       IL_0300
+  IL_02f5: ldsfld       singleton
+  IL_02fa: ldc.i4.1     
+  IL_02fb: callvirt     SetHardcore
+  IL_0300: ldarg.0      
+  IL_0301: ldloc.s      7
+  IL_0303: stfld        m_CurrentBall
+  IL_0308: ldc.r4       60.0
+  IL_030d: stloc.s      15
+  IL_030f: ldsfld       singleton
+  IL_0314: stloc.s      16
+  IL_0316: ldloc.s      9
+  IL_0318: ldtoken      UnityEngine.Skybox
+  IL_031d: call         System.Type::GetTypeFromHandle
+  IL_0322: callvirt     UnityEngine.Component::GetComponentInChildren
+  IL_0327: isinst       UnityEngine.Skybox
+  IL_032c: stloc.s      17
+  IL_032e: ldloc.s      16
+  IL_0330: ldnull       
+  IL_0331: call         UnityEngine.Object::op_Inequality
+  IL_0336: brfalse      IL_0375
+  IL_033b: ldloc.s      16
+  IL_033d: ldfld        completionTime
+  IL_0342: stloc.s      15
+  IL_0344: ldstr        "DIFFICULTY"
+  IL_0349: ldc.i4.1     
+  IL_034a: call         UnityEngine.PlayerPrefs::GetInt
+  IL_034f: stloc.s      18
+  IL_0351: ldloc.s      18
+  IL_0353: brtrue       IL_0362
+  IL_0358: ldloc.s      15
+  IL_035a: ldc.r4       15.0
+  IL_035f: add          
+  IL_0360: stloc.s      15
+  IL_0362: ldloc.s      17
+  IL_0364: ldloc.s      16
+  IL_0366: ldfld        skybox
+  IL_036b: callvirt     UnityEngine.Skybox::set_material
+  IL_0370: br           IL_037d
+  IL_0375: ldloc.s      17
+  IL_0377: ldnull       
+  IL_0378: callvirt     UnityEngine.Skybox::set_material
+  IL_037d: ldloc.s      6
+  IL_037f: callvirt     UnityEngine.GameObject::get_transform
+  IL_0384: ldarg.0      
+  IL_0385: call         UnityEngine.Component::get_transform
+  IL_038a: callvirt     UnityEngine.Transform::set_parent
+  IL_038f: ldloc.s      9
+  IL_0391: callvirt     UnityEngine.Component::get_transform
+  IL_0396: ldarg.0      
+  IL_0397: call         UnityEngine.Component::get_transform
+  IL_039c: callvirt     UnityEngine.Transform::set_parent
+  IL_03a1: ldloc.s      12
+  IL_03a3: callvirt     UnityEngine.GameObject::get_transform
+  IL_03a8: ldarg.0      
+  IL_03a9: call         UnityEngine.Component::get_transform
+  IL_03ae: callvirt     UnityEngine.Transform::set_parent
+  IL_03b3: ldloc.s      13
+  IL_03b5: callvirt     UnityEngine.GameObject::get_transform
+  IL_03ba: ldarg.0      
+  IL_03bb: call         UnityEngine.Component::get_transform
+  IL_03c0: callvirt     UnityEngine.Transform::set_parent
+  IL_03c5: ldloc.s      10
+  IL_03c7: callvirt     UnityEngine.GameObject::get_transform
+  IL_03cc: ldloc.s      7
+  IL_03ce: callvirt     UnityEngine.Component::get_transform
+  IL_03d3: callvirt     UnityEngine.Transform::set_parent
+  IL_03d8: ldloc.s      11
+  IL_03da: callvirt     UnityEngine.GameObject::get_transform
+  IL_03df: ldloc.s      9
+  IL_03e1: callvirt     UnityEngine.Component::get_transform
+  IL_03e6: callvirt     UnityEngine.Transform::set_parent
+  IL_03eb: ldarg.0      
+  IL_03ec: ldstr        "SetLifeCounter"
+  IL_03f1: ldarg.0      
+  IL_03f2: ldfld        m_Lives
+  IL_03f7: box          System.Int32
+  IL_03fc: call         UnityEngine.Component::BroadcastMessage
+  IL_0401: ldarg.0      
+  IL_0402: ldstr        "SetFinishTime"
+  IL_0407: ldloc.s      15
+  IL_0409: box          System.Single
+  IL_040e: call         UnityEngine.Component::BroadcastMessage
+  IL_0413: ldarg.0      
+  IL_0414: ldstr        "SetStars"
+  IL_0419: ldarg.0      
+  IL_041a: ldfld        m_StarCount
+  IL_041f: box          System.Int32
+  IL_0424: call         UnityEngine.Component::BroadcastMessage
+  IL_0429: ldarg.0      
+  IL_042a: ldc.i4.0     
+  IL_042b: stfld        m_FalloutColliderWasHit
+  IL_0430: ret          
+
+//// GameManager::TimeOut  rva=0x01264c
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldstr        "StopPlay"
+  IL_0006: ldc.i4.0     
+  IL_0007: box          System.Boolean
+  IL_000c: call         UnityEngine.Component::BroadcastMessage
+  IL_0011: ret          
+
+//// GameManager::PlayerDie  rva=0x012660
+  .maxstack 13  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        m_Lives
+  IL_0006: brtrue       IL_0015
+  IL_000b: call         get_isEditor
+  IL_0010: brfalse      IL_0063
+  IL_0015: call         get_isPlayer
+  IL_001a: brfalse      IL_003d
+  IL_001f: ldsfld       singleton
+  IL_0024: ldfld        playmode
+  IL_0029: ldc.i4.2     
+  IL_002a: beq          IL_003d
+  IL_002f: ldarg.0      
+  IL_0030: dup          
+  IL_0031: ldfld        m_Lives
+  IL_0036: ldc.i4.1     
+  IL_0037: sub          
+  IL_0038: stfld        m_Lives
+  IL_003d: ldarg.0      
+  IL_003e: ldstr        "SetLifeCounter"
+  IL_0043: ldarg.0      
+  IL_0044: ldfld        m_Lives
+  IL_0049: box          System.Int32
+  IL_004e: call         UnityEngine.Component::BroadcastMessage
+  IL_0053: ldarg.0      
+  IL_0054: ldstr        "RespawnBall"
+  IL_0059: call         UnityEngine.Component::BroadcastMessage
+  IL_005e: br           IL_0079
+  IL_0063: call         get_singleton
+  IL_0068: ldstr        "GameOver"
+  IL_006d: ldarg.0      
+  IL_006e: call         UnityEngine.Component::get_gameObject
+  IL_0073: callvirt     AttemptSequence
+  IL_0078: pop          
+  IL_0079: ret          
+
+//// GameManager::TimeOutDone  rva=0x0126e8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: call         PlayerDie
+  IL_0006: ret          
+
+//// GameManager::FallOutDone  rva=0x0126f0
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: call         PlayerDie
+  IL_0006: ret          
+
+//// GameManager::FallOut  rva=0x0126f8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldstr        "StopPlay"
+  IL_0006: ldc.i4.1     
+  IL_0007: box          System.Boolean
+  IL_000c: call         UnityEngine.Component::BroadcastMessage
+  IL_0011: ret          
+
+//// GameManager::SetFinishTime  rva=0x01270c
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.1      
+  IL_0002: stfld        m_Time
+  IL_0007: ret          
+
+//// GameManager::PickedupStar  rva=0x012718
+  .maxstack 14  locals=0x110000bc
+  IL_0000: ldarg.0      
+  IL_0001: dup          
+  IL_0002: ldfld        m_StarCount
+  IL_0007: ldc.i4.1     
+  IL_0008: add          
+  IL_0009: stfld        m_StarCount
+  IL_000e: ldarg.0      
+  IL_000f: dup          
+  IL_0010: ldfld        m_StarsCollected
+  IL_0015: ldc.i4.1     
+  IL_0016: add          
+  IL_0017: stfld        m_StarsCollected
+  IL_001c: ldarg.0      
+  IL_001d: ldfld        m_StarCount
+  IL_0022: ldc.i4.s     10
+  IL_0024: div          
+  IL_0025: stloc.0      
+  IL_0026: ldloc.0      
+  IL_0027: ldc.i4.0     
+  IL_0028: ble          IL_007d
+  IL_002d: ldarg.0      
+  IL_002e: dup          
+  IL_002f: ldfld        m_Lives
+  IL_0034: ldloc.0      
+  IL_0035: add          
+  IL_0036: stfld        m_Lives
+  IL_003b: ldarg.0      
+  IL_003c: dup          
+  IL_003d: ldfld        m_StarCount
+  IL_0042: ldloc.0      
+  IL_0043: ldc.i4.s     10
+  IL_0045: mul          
+  IL_0046: sub          
+  IL_0047: stfld        m_StarCount
+  IL_004c: ldarg.0      
+  IL_004d: ldstr        "SetLifeCounter"
+  IL_0052: ldarg.0      
+  IL_0053: ldfld        m_Lives
+  IL_0058: box          System.Int32
+  IL_005d: call         UnityEngine.Component::BroadcastMessage
+  IL_0062: ldarg.0      
+  IL_0063: ldstr        "ExtraLife"
+  IL_0068: ldloc.0      
+  IL_0069: box          System.Int32
+  IL_006e: call         UnityEngine.Component::BroadcastMessage
+  IL_0073: call         get_singleton
+  IL_0078: callvirt     BonusLife
+  IL_007d: ldarg.0      
+  IL_007e: ldstr        "SetStars"
+  IL_0083: ldarg.0      
+  IL_0084: ldfld        m_StarCount
+  IL_0089: box          System.Int32
+  IL_008e: call         UnityEngine.Component::BroadcastMessage
+  IL_0093: ldarg.0      
+  IL_0094: ldstr        "AddStar"
+  IL_0099: ldc.i4.1     
+  IL_009a: box          System.Int32
+  IL_009f: call         UnityEngine.Component::BroadcastMessage
+  IL_00a4: call         get_singleton
+  IL_00a9: callvirt     AddStar
+  IL_00ae: ret          
+
+//// GameManager::AddBonusScore  rva=0x0127d4
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: dup          
+  IL_0002: ldfld        m_BonusScore
+  IL_0007: ldarg.1      
+  IL_0008: add          
+  IL_0009: stfld        m_BonusScore
+  IL_000e: ret          
+
+//// GameManager::Initialize  rva=0x0127e4
+  .maxstack 34  locals=0x110000bd
+  IL_0000: ldarg.0      
+  IL_0001: ldstr        "Respawnable"
+  IL_0006: call         UnityEngine.GameObject::FindGameObjectsWithTag
+  IL_000b: stfld        m_Respawnable
+  IL_0010: ldarg.0      
+  IL_0011: ldfld        m_Respawnable
+  IL_0016: stloc.1      
+  IL_0017: ldloc.1      
+  IL_0018: ldlen        
+  IL_0019: conv.i4      
+  IL_001a: stloc.3      
+  IL_001b: ldc.i4.0     
+  IL_001c: stloc.2      
+  IL_001d: br           IL_0031
+  IL_0022: ldloc.1      
+  IL_0023: ldloc.2      
+  IL_0024: ldelem.ref   
+  IL_0025: stloc.0      
+  IL_0026: ldloc.0      
+  IL_0027: ldc.i4.0     
+  IL_0028: callvirt     UnityEngine.GameObject::SetActiveRecursively
+  IL_002d: ldloc.2      
+  IL_002e: ldc.i4.1     
+  IL_002f: add          
+  IL_0030: stloc.2      
+  IL_0031: ldloc.2      
+  IL_0032: ldloc.3      
+  IL_0033: blt          IL_0022
+  IL_0038: ldarg.0      
+  IL_0039: ldc.i4.0     
+  IL_003a: stfld        m_BonusScore
+  IL_003f: ldarg.0      
+  IL_0040: ldarg.1      
+  IL_0041: ldfld        lives
+  IL_0046: stfld        m_Lives
+  IL_004b: ldarg.0      
+  IL_004c: ldarg.1      
+  IL_004d: ldfld        stars
+  IL_0052: stfld        m_StarCount
+  IL_0057: ldstr        "FalloutHeight"
+  IL_005c: call         UnityEngine.GameObject::FindGameObjectWithTag
+  IL_0061: stloc.s      4
+  IL_0063: ldloc.s      4
+  IL_0065: ldnull       
+  IL_0066: call         UnityEngine.Object::op_Inequality
+  IL_006b: brfalse      IL_0082
+  IL_0070: ldarg.0      
+  IL_0071: ldloc.s      4
+  IL_0073: callvirt     UnityEngine.GameObject::get_transform
+  IL_0078: stfld        m_FalloutHeight
+  IL_007d: br           IL_0089
+  IL_0082: ldarg.0      
+  IL_0083: ldnull       
+  IL_0084: stfld        m_FalloutHeight
+  IL_0089: ldarg.0      
+  IL_008a: ldfld        kVariation
+  IL_008f: ldstr        "textcontroller"
+  IL_0094: callvirt     InstantiateGameObject
+  IL_0099: stloc.s      5
+  IL_009b: ldloc.s      5
+  IL_009d: callvirt     UnityEngine.GameObject::get_transform
+  IL_00a2: ldarg.0      
+  IL_00a3: call         UnityEngine.Component::get_transform
+  IL_00a8: callvirt     UnityEngine.Transform::set_parent
+  IL_00ad: ldarg.0      
+  IL_00ae: ldfld        kVariation
+  IL_00b3: ldstr        "helpsystem"
+  IL_00b8: callvirt     InstantiateGameObject
+  IL_00bd: stloc.s      6
+  IL_00bf: ldloc.s      6
+  IL_00c1: callvirt     UnityEngine.GameObject::get_transform
+  IL_00c6: ldarg.0      
+  IL_00c7: call         UnityEngine.Component::get_transform
+  IL_00cc: callvirt     UnityEngine.Transform::set_parent
+  IL_00d1: ldarg.0      
+  IL_00d2: ldstr        "RespawnBall"
+  IL_00d7: call         UnityEngine.Component::BroadcastMessage
+  IL_00dc: ldarg.0      
+  IL_00dd: ldfld        kPlayIntro
+  IL_00e2: brfalse      IL_0116
+  IL_00e7: call         get_isPlayer
+  IL_00ec: brfalse      IL_0106
+  IL_00f1: ldarg.0      
+  IL_00f2: ldstr        "LevelStart"
+  IL_00f7: call         GetTitle
+  IL_00fc: call         UnityEngine.Component::BroadcastMessage
+  IL_0101: br           IL_0116
+  IL_0106: ldarg.0      
+  IL_0107: ldstr        "LevelStart"
+  IL_010c: ldstr        "Title Here!"
+  IL_0111: call         UnityEngine.Component::BroadcastMessage
+  IL_0116: call         get_singleton
+  IL_011b: callvirt     StartLevel
+  IL_0120: ret          

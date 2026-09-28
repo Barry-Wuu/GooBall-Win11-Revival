@@ -1,0 +1,3455 @@
+
+//// BallController::.ctor  rva=0x00bfd0
+  .maxstack 4  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: ldc.r4       1.600000023841858
+  IL_0006: stfld        steerMaxSpeedStickyTravelmode
+  IL_000b: ldarg.0      
+  IL_000c: ldc.r4       45.0
+  IL_0011: stfld        stickyLoseGripAngle
+  IL_0016: ldarg.0      
+  IL_0017: ldc.r4       0.07000000029802322
+  IL_001c: stfld        baseConstantDrag
+  IL_0021: ldarg.0      
+  IL_0022: ldc.r4       0.0
+  IL_0027: stfld        horiz
+  IL_002c: ldarg.0      
+  IL_002d: ldc.r4       0.0
+  IL_0032: stfld        vert
+  IL_0037: ldarg.0      
+  IL_0038: call         UnityEngine.Vector3::get_up
+  IL_003d: stfld        jumpDirection
+  IL_0042: ldarg.0      
+  IL_0043: call         UnityEngine.MonoBehaviour::.ctor
+  IL_0048: ldarg.0      
+  IL_0049: stsfld       currentBall
+  IL_004e: ret          
+
+//// BallController::Start  rva=0x00c02c
+  .maxstack 24  locals=0x1100006d
+  IL_0000: ldsfld       singleton
+  IL_0005: ldfld        playmode
+  IL_000a: ldc.i4.4     
+  IL_000b: beq          IL_002e
+  IL_0010: ldarg.0      
+  IL_0011: ldc.r4       10.0
+  IL_0016: ldstr        "DIFFICULTY"
+  IL_001b: ldc.i4.1     
+  IL_001c: call         UnityEngine.PlayerPrefs::GetInt
+  IL_0021: conv.r4      
+  IL_0022: ldc.r4       1.5
+  IL_0027: mul          
+  IL_0028: add          
+  IL_0029: stfld        steerTiltDeg
+  IL_002e: call         get_isPlayer
+  IL_0033: brfalse      IL_0053
+  IL_0038: ldsfld       singleton
+  IL_003d: ldfld        playmode
+  IL_0042: ldc.i4.4     
+  IL_0043: bne.un       IL_0053
+  IL_0048: ldarg.0      
+  IL_0049: ldc.r4       18.0
+  IL_004e: stfld        steerTiltDeg
+  IL_0053: ldarg.0      
+  IL_0054: ldc.i4.0     
+  IL_0055: stfld        isSticky
+  IL_005a: ldarg.0      
+  IL_005b: ldc.r4       0.0
+  IL_0060: stfld        stickyness
+  IL_0065: ldarg.0      
+  IL_0066: ldc.r4       0.0
+  IL_006b: stfld        stickynessLook
+  IL_0070: ldarg.0      
+  IL_0071: ldc.i4.0     
+  IL_0072: stfld        isActive
+  IL_0077: ldarg.0      
+  IL_0078: ldc.i4.s     25
+  IL_007a: stfld        stillWait
+  IL_007f: ldarg.0      
+  IL_0080: ldc.i4.1     
+  IL_0081: stfld        beforePlay
+  IL_0086: ldarg.0      
+  IL_0087: ldc.r4       0.0
+  IL_008c: stfld        inAirTimer
+  IL_0091: ldarg.0      
+  IL_0092: ldc.r4       0.0
+  IL_0097: stfld        jumpTimer
+  IL_009c: call         UnityEngine.Vector3::get_zero
+  IL_00a1: stloc.1      
+  IL_00a2: ldarg.0      
+  IL_00a3: ldloc.1      
+  IL_00a4: stfld        surfaceAngularVel
+  IL_00a9: ldloc.1      
+  IL_00aa: stloc.1      
+  IL_00ab: ldarg.0      
+  IL_00ac: ldloc.1      
+  IL_00ad: stfld        lastVelocity
+  IL_00b2: ldloc.1      
+  IL_00b3: stloc.1      
+  IL_00b4: ldarg.0      
+  IL_00b5: ldloc.1      
+  IL_00b6: stfld        lastVelFixed
+  IL_00bb: ldarg.0      
+  IL_00bc: ldloc.1      
+  IL_00bd: stfld        contactPosition
+  IL_00c2: ldarg.0      
+  IL_00c3: ldc.i4.0     
+  IL_00c4: stfld        collisionSinceLastFrame
+  IL_00c9: ldarg.0      
+  IL_00ca: ldc.i4.0     
+  IL_00cb: stfld        stopPlayFalling
+  IL_00d0: ldarg.0      
+  IL_00d1: ldc.i4.0     
+  IL_00d2: stfld        jumpButtonSavedState
+  IL_00d7: ldarg.0      
+  IL_00d8: ldc.i4.0     
+  IL_00d9: stfld        inJump
+  IL_00de: ldarg.0      
+  IL_00df: ldc.i4.0     
+  IL_00e0: stfld        didCollide
+  IL_00e5: ldarg.0      
+  IL_00e6: ldc.i4.0     
+  IL_00e7: stfld        count
+  IL_00ec: ldarg.0      
+  IL_00ed: call         UnityEngine.Vector3::get_up
+  IL_00f2: stfld        contactNormal
+  IL_00f7: ldarg.0      
+  IL_00f8: ldarg.0      
+  IL_00f9: ldfld        contactNormal
+  IL_00fe: stfld        contactNormalUntilted
+  IL_0103: ldarg.0      
+  IL_0104: ldarg.0      
+  IL_0105: ldfld        contactNormal
+  IL_010a: stfld        crawlNormal
+  IL_010f: ldarg.0      
+  IL_0110: ldc.i4.1     
+  IL_0111: stfld        contactNormalDefined
+  IL_0116: ldarg.0      
+  IL_0117: call         UnityEngine.Quaternion::get_identity
+  IL_011c: stfld        levelPivotTilt
+  IL_0121: ldarg.0      
+  IL_0122: ldarg.0      
+  IL_0123: ldfld        critterPivot
+  IL_0128: ldc.i4.0     
+  IL_0129: callvirt     UnityEngine.Transform::GetChild
+  IL_012e: stfld        critterPivotInverse
+  IL_0133: ldarg.0      
+  IL_0134: ldarg.0      
+  IL_0135: ldfld        critterPivotInverse
+  IL_013a: ldc.i4.0     
+  IL_013b: callvirt     UnityEngine.Transform::GetChild
+  IL_0140: stfld        critter
+  IL_0145: ldstr        "GooLevelPivot"
+  IL_014a: call         UnityEngine.GameObject::FindGameObjectWithTag
+  IL_014f: stloc.0      
+  IL_0150: ldarg.0      
+  IL_0151: ldloc.0      
+  IL_0152: ldtoken      LevelTilter
+  IL_0157: call         System.Type::GetTypeFromHandle
+  IL_015c: callvirt     UnityEngine.GameObject::GetComponent
+  IL_0161: isinst       LevelTilter
+  IL_0166: stfld        levelPivot
+  IL_016b: ldarg.0      
+  IL_016c: call         MemorizeDefaults
+  IL_0171: ldarg.0      
+  IL_0172: ldflda       tumbleAngularVel
+  IL_0177: ldc.r4       8.0
+  IL_017c: ldc.r4       0.0
+  IL_0181: ldc.r4       -6.0
+  IL_0186: call         UnityEngine.Vector3::.ctor
+  IL_018b: ldarg.0      
+  IL_018c: ldarg.0      
+  IL_018d: call         UnityEngine.Component::get_transform
+  IL_0192: call         UnityEngine.Vector3::get_forward
+  IL_0197: callvirt     UnityEngine.Transform::TransformDirection
+  IL_019c: stfld        fwd
+  IL_01a1: ldarg.0      
+  IL_01a2: ldc.r4       0.0
+  IL_01a7: stfld        horiz
+  IL_01ac: ldarg.0      
+  IL_01ad: ldc.r4       0.0
+  IL_01b2: stfld        vert
+  IL_01b7: ret          
+
+//// BallController::Update  rva=0x00c1f0
+  .maxstack 25  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: call         UnityEngine.Component::get_rigidbody
+  IL_0006: ldnull       
+  IL_0007: call         UnityEngine.Object::op_Equality
+  IL_000c: brfalse      IL_0012
+  IL_0011: ret          
+  IL_0012: ldarg.0      
+  IL_0013: call         UpdateBallSurface
+  IL_0018: ldarg.0      
+  IL_0019: call         UpdateCritter
+  IL_001e: ldarg.0      
+  IL_001f: call         UpdateRollFX
+  IL_0024: ldarg.0      
+  IL_0025: ldfld        isActive
+  IL_002a: brtrue       IL_0040
+  IL_002f: ldarg.0      
+  IL_0030: call         UnityEngine.Component::get_rigidbody
+  IL_0035: call         UnityEngine.Vector3::get_zero
+  IL_003a: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_003f: ret          
+  IL_0040: ldarg.0      
+  IL_0041: call         UpdateLattice
+  IL_0046: ldarg.0      
+  IL_0047: call         CalculateJumpDirection
+  IL_004c: pop          
+  IL_004d: ldarg.0      
+  IL_004e: ldarg.0      
+  IL_004f: call         UnityEngine.Component::get_rigidbody
+  IL_0054: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0059: stfld        lastVelocity
+  IL_005e: ldarg.0      
+  IL_005f: call         UnityEngine.Vector3::get_zero
+  IL_0064: stfld        contactPosition
+  IL_0069: ret          
+
+//// BallController::LateUpdate  rva=0x00c268
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.0     
+  IL_0002: stfld        didCollide
+  IL_0007: ldarg.0      
+  IL_0008: ldc.i4.0     
+  IL_0009: stfld        collisionSinceLastFrame
+  IL_000e: ret          
+
+//// BallController::FixedUpdate  rva=0x00c278
+  .maxstack 66  locals=0x1100006e
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isActive
+  IL_0006: brtrue       IL_0016
+  IL_000b: ldarg.0      
+  IL_000c: ldfld        stopPlayFalling
+  IL_0011: brfalse      IL_0027
+  IL_0016: ldarg.0      
+  IL_0017: ldfld        stillWait
+  IL_001c: brtrue       IL_0027
+  IL_0021: ldarg.0      
+  IL_0022: call         FixedDoGravity
+  IL_0027: ldarg.0      
+  IL_0028: ldfld        stillWait
+  IL_002d: brfalse      IL_0040
+  IL_0032: ldarg.0      
+  IL_0033: dup          
+  IL_0034: ldfld        stillWait
+  IL_0039: ldc.i4.1     
+  IL_003a: sub          
+  IL_003b: stfld        stillWait
+  IL_0040: ldarg.0      
+  IL_0041: call         FixedDoConstantDrag
+  IL_0046: ldarg.0      
+  IL_0047: call         UpdateFwd
+  IL_004c: ldarg.0      
+  IL_004d: call         UnityEngine.Component::get_rigidbody
+  IL_0052: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0057: stloc.2      
+  IL_0058: ldloca.s     2
+  IL_005a: call         UnityEngine.Vector3::get_magnitude
+  IL_005f: stloc.0      
+  IL_0060: ldloc.0      
+  IL_0061: ldarg.0      
+  IL_0062: ldfld        maxSpeed
+  IL_0067: ble.un       IL_008a
+  IL_006c: ldarg.0      
+  IL_006d: call         UnityEngine.Component::get_rigidbody
+  IL_0072: dup          
+  IL_0073: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0078: ldarg.0      
+  IL_0079: ldfld        maxSpeed
+  IL_007e: ldloc.0      
+  IL_007f: div          
+  IL_0080: call         UnityEngine.Vector3::op_Multiply
+  IL_0085: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_008a: ldarg.0      
+  IL_008b: ldfld        isActive
+  IL_0090: brtrue       IL_0096
+  IL_0095: ret          
+  IL_0096: ldarg.0      
+  IL_0097: call         UpdateTiltLevel
+  IL_009c: ldarg.0      
+  IL_009d: call         FixedUpdateState
+  IL_00a2: ldarg.0      
+  IL_00a3: call         FixedColliderSetup
+  IL_00a8: ldarg.0      
+  IL_00a9: call         FixedInJump
+  IL_00ae: ldarg.0      
+  IL_00af: call         FixedCalculateContactNormal
+  IL_00b4: ldarg.0      
+  IL_00b5: ldfld        contactNormalDefined
+  IL_00ba: brfalse      IL_00ec
+  IL_00bf: ldarg.0      
+  IL_00c0: ldfld        isSticky
+  IL_00c5: brfalse      IL_00ec
+  IL_00ca: ldarg.0      
+  IL_00cb: call         HasGroundContact
+  IL_00d0: brfalse      IL_00ec
+  IL_00d5: ldarg.0      
+  IL_00d6: dup          
+  IL_00d7: ldfld        stickTimer
+  IL_00dc: call         UnityEngine.Time::get_deltaTime
+  IL_00e1: add          
+  IL_00e2: stfld        stickTimer
+  IL_00e7: br           IL_00f7
+  IL_00ec: ldarg.0      
+  IL_00ed: ldc.r4       0.0
+  IL_00f2: stfld        stickTimer
+  IL_00f7: ldarg.0      
+  IL_00f8: ldfld        isSticky
+  IL_00fd: brfalse      IL_0139
+  IL_0102: ldarg.0      
+  IL_0103: call         UnityEngine.Component::get_rigidbody
+  IL_0108: ldarg.0      
+  IL_0109: ldfld        contactNormal
+  IL_010e: ldarg.0      
+  IL_010f: ldfld        contactNormal
+  IL_0114: ldarg.0      
+  IL_0115: call         UnityEngine.Component::get_rigidbody
+  IL_011a: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_011f: call         UnityEngine.Vector3::Exclude
+  IL_0124: call         UnityEngine.Vector3::Cross
+  IL_0129: ldarg.0      
+  IL_012a: call         GetRadius
+  IL_012f: call         UnityEngine.Vector3::op_Division
+  IL_0134: callvirt     UnityEngine.Rigidbody::set_angularVelocity
+  IL_0139: ldarg.0      
+  IL_013a: call         FixedSteerBall
+  IL_013f: ldarg.0      
+  IL_0140: call         FixedStick
+  IL_0145: ldarg.0      
+  IL_0146: ldfld        contactNormalDefined
+  IL_014b: brfalse      IL_0156
+  IL_0150: ldarg.0      
+  IL_0151: call         GenericCollisionEvent
+  IL_0156: ldstr        "StateUp"
+  IL_015b: call         UnityEngine.Input::GetButton
+  IL_0160: stloc.1      
+  IL_0161: ldloc.1      
+  IL_0162: brfalse      IL_0178
+  IL_0167: ldarg.0      
+  IL_0168: ldfld        jumpButtonSavedState
+  IL_016d: brtrue       IL_0178
+  IL_0172: ldarg.0      
+  IL_0173: call         FixedDoJump
+  IL_0178: ldarg.0      
+  IL_0179: ldloc.1      
+  IL_017a: stfld        jumpButtonSavedState
+  IL_017f: ldarg.0      
+  IL_0180: call         FixedDidBump
+  IL_0185: ldarg.0      
+  IL_0186: dup          
+  IL_0187: ldfld        inAirTimer
+  IL_018c: call         UnityEngine.Time::get_deltaTime
+  IL_0191: add          
+  IL_0192: stfld        inAirTimer
+  IL_0197: ldarg.0      
+  IL_0198: ldarg.0      
+  IL_0199: call         UnityEngine.Component::get_rigidbody
+  IL_019e: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_01a3: stfld        lastVelFixed
+  IL_01a8: ldarg.0      
+  IL_01a9: ldfld        isSticky
+  IL_01ae: brtrue       IL_01d3
+  IL_01b3: ldarg.0      
+  IL_01b4: ldfld        stickyness
+  IL_01b9: ldc.r4       0.0
+  IL_01be: ble.un       IL_01d3
+  IL_01c3: ldarg.0      
+  IL_01c4: call         HasGroundContact
+  IL_01c9: brfalse      IL_01d3
+  IL_01ce: br           IL_01df
+  IL_01d3: ldarg.0      
+  IL_01d4: ldarg.0      
+  IL_01d5: ldfld        baseConstantDrag
+  IL_01da: stfld        currentConstantDrag
+  IL_01df: ldarg.0      
+  IL_01e0: ldfld        debug
+  IL_01e5: brfalse      IL_01f0
+  IL_01ea: ldarg.0      
+  IL_01eb: call         DebugOutput
+  IL_01f0: ret          
+
+//// BallController::FixedColliderSetup  rva=0x00c478
+  .maxstack 16  locals=0x1100006f
+  IL_0000: ldarg.0      
+  IL_0001: call         GetRadius
+  IL_0006: stloc.0      
+  IL_0007: ldc.r4       1.0
+  IL_000c: ldarg.0      
+  IL_000d: ldfld        stickynessLook
+  IL_0012: ldc.r4       1.0
+  IL_0017: ldarg.0      
+  IL_0018: ldfld        stickyColliderSquash
+  IL_001d: sub          
+  IL_001e: mul          
+  IL_001f: sub          
+  IL_0020: ldarg.0      
+  IL_0021: ldfld        baseRadius
+  IL_0026: mul          
+  IL_0027: stloc.1      
+  IL_0028: ldloc.1      
+  IL_0029: ldloc.0      
+  IL_002a: sub          
+  IL_002b: ldloc.0      
+  IL_002c: div          
+  IL_002d: stloc.2      
+  IL_002e: ldloc.2      
+  IL_002f: call         UnityEngine.Mathf::Abs
+  IL_0034: ldc.r4       1.401298464324817e-45
+  IL_0039: ble.un       IL_0061
+  IL_003e: ldarg.0      
+  IL_003f: call         UnityEngine.Component::get_rigidbody
+  IL_0044: dup          
+  IL_0045: callvirt     UnityEngine.Rigidbody::get_angularVelocity
+  IL_004a: ldc.r4       1.0
+  IL_004f: ldc.r4       1.0
+  IL_0054: ldloc.2      
+  IL_0055: add          
+  IL_0056: div          
+  IL_0057: call         UnityEngine.Vector3::op_Multiply
+  IL_005c: callvirt     UnityEngine.Rigidbody::set_angularVelocity
+  IL_0061: ldarg.0      
+  IL_0062: ldtoken      UnityEngine.SphereCollider
+  IL_0067: call         System.Type::GetTypeFromHandle
+  IL_006c: call         UnityEngine.Component::GetComponent
+  IL_0071: isinst       UnityEngine.SphereCollider
+  IL_0076: ldloc.1      
+  IL_0077: callvirt     UnityEngine.SphereCollider::set_radius
+  IL_007c: ret          
+
+//// BallController::FixedCalculateContactNormal  rva=0x00c504
+  .maxstack 109  locals=0x11000070
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isSticky
+  IL_0006: brfalse      IL_022b
+  IL_000b: call         UnityEngine.Vector3::get_zero
+  IL_0010: stloc.1      
+  IL_0011: ldarg.0      
+  IL_0012: call         UnityEngine.Vector3::get_down
+  IL_0017: stfld        minContactNormalUntilted
+  IL_001c: newobj       System.Collections.ArrayList::.ctor
+  IL_0021: stloc.2      
+  IL_0022: ldc.i4.0     
+  IL_0023: stloc.3      
+  IL_0024: br           IL_010c
+  IL_0029: ldc.i4.s     10
+  IL_002b: stloc.s      4
+  IL_002d: ldloc.3      
+  IL_002e: brfalse      IL_003a
+  IL_0033: ldloc.3      
+  IL_0034: ldc.i4.7     
+  IL_0035: bne.un       IL_003d
+  IL_003a: ldc.i4.1     
+  IL_003b: stloc.s      4
+  IL_003d: ldc.i4.0     
+  IL_003e: stloc.s      5
+  IL_0040: br           IL_00ff
+  IL_0045: ldc.r4       -90.0
+  IL_004a: ldloc.3      
+  IL_004b: conv.r4      
+  IL_004c: ldc.r4       180.0
+  IL_0051: mul          
+  IL_0052: ldc.r4       4.0
+  IL_0057: div          
+  IL_0058: add          
+  IL_0059: ldloc.s      5
+  IL_005b: conv.r4      
+  IL_005c: ldc.r4       360.0
+  IL_0061: mul          
+  IL_0062: ldc.r4       4.0
+  IL_0067: div          
+  IL_0068: ldc.r4       0.0
+  IL_006d: call         UnityEngine.Quaternion::Euler
+  IL_0072: stloc.s      7
+  IL_0074: ldarg.0      
+  IL_0075: call         UnityEngine.Component::get_transform
+  IL_007a: callvirt     UnityEngine.Transform::get_position
+  IL_007f: ldloc.s      7
+  IL_0081: call         UnityEngine.Vector3::get_forward
+  IL_0086: call         UnityEngine.Quaternion::op_Multiply
+  IL_008b: ldloca.s     6
+  IL_008d: ldarg.0      
+  IL_008e: ldfld        baseRadius
+  IL_0093: ldc.i4.1     
+  IL_0094: call         UnityEngine.Physics::Raycast
+  IL_0099: brfalse      IL_00f9
+  IL_009e: ldloca.s     6
+  IL_00a0: call         UnityEngine.RaycastHit::get_collider
+  IL_00a5: callvirt     UnityEngine.Collider::get_isTrigger
+  IL_00aa: brtrue       IL_00f9
+  IL_00af: ldloc.2      
+  IL_00b0: ldloca.s     6
+  IL_00b2: call         UnityEngine.RaycastHit::get_collider
+  IL_00b7: callvirt     System.Collections.ArrayList::Add
+  IL_00bc: pop          
+  IL_00bd: ldloc.1      
+  IL_00be: ldloca.s     6
+  IL_00c0: call         UnityEngine.RaycastHit::get_normal
+  IL_00c5: call         UnityEngine.Vector3::op_Addition
+  IL_00ca: stloc.1      
+  IL_00cb: ldarg.0      
+  IL_00cc: ldloca.s     6
+  IL_00ce: call         UnityEngine.RaycastHit::get_normal
+  IL_00d3: call         FactorOutLevelTilt
+  IL_00d8: stloc.s      8
+  IL_00da: ldloca.s     8
+  IL_00dc: ldfld        UnityEngine.Vector3::y
+  IL_00e1: ldarg.0      
+  IL_00e2: ldflda       minContactNormalUntilted
+  IL_00e7: ldfld        UnityEngine.Vector3::y
+  IL_00ec: ble.un       IL_00f9
+  IL_00f1: ldarg.0      
+  IL_00f2: ldloc.s      8
+  IL_00f4: stfld        minContactNormalUntilted
+  IL_00f9: ldloc.s      5
+  IL_00fb: ldc.i4.1     
+  IL_00fc: add          
+  IL_00fd: stloc.s      5
+  IL_00ff: ldloc.s      5
+  IL_0101: ldloc.s      4
+  IL_0103: blt          IL_0045
+  IL_0108: ldloc.3      
+  IL_0109: ldc.i4.1     
+  IL_010a: add          
+  IL_010b: stloc.3      
+  IL_010c: ldloc.3      
+  IL_010d: ldc.i4.8     
+  IL_010e: blt          IL_0029
+  IL_0113: ldloc.2      
+  IL_0114: ldtoken      UnityEngine.Collider
+  IL_0119: call         System.Type::GetTypeFromHandle
+  IL_011e: callvirt     System.Collections.ArrayList::ToArray
+  IL_0123: castclass    Type[000002]
+  IL_0128: stloc.0      
+  IL_0129: ldloc.0      
+  IL_012a: ldlen        
+  IL_012b: conv.i4      
+  IL_012c: ldc.i4.0     
+  IL_012d: ble          IL_018d
+  IL_0132: ldarg.0      
+  IL_0133: ldc.i4.1     
+  IL_0134: stfld        contactNormalDefined
+  IL_0139: ldarg.0      
+  IL_013a: ldloc.1      
+  IL_013b: ldc.r4       1.0
+  IL_0140: ldloc.0      
+  IL_0141: ldlen        
+  IL_0142: conv.i4      
+  IL_0143: conv.r4      
+  IL_0144: div          
+  IL_0145: call         UnityEngine.Vector3::op_Multiply
+  IL_014a: stfld        contactNormal
+  IL_014f: ldarg.0      
+  IL_0150: ldarg.0      
+  IL_0151: ldarg.0      
+  IL_0152: ldfld        contactNormal
+  IL_0157: call         FactorOutLevelTilt
+  IL_015c: stfld        contactNormalUntilted
+  IL_0161: ldarg.0      
+  IL_0162: ldarg.0      
+  IL_0163: ldfld        crawlNormal
+  IL_0168: ldarg.0      
+  IL_0169: ldfld        contactNormal
+  IL_016e: ldc.r4       1.0471975803375244
+  IL_0173: call         UnityEngine.Time::get_deltaTime
+  IL_0178: mul          
+  IL_0179: ldc.r4       0.0
+  IL_017e: call         UnityEngine.Vector3::RotateTowards
+  IL_0183: stfld        crawlNormal
+  IL_0188: br           IL_01b7
+  IL_018d: ldarg.0      
+  IL_018e: ldc.i4.0     
+  IL_018f: stfld        contactNormalDefined
+  IL_0194: ldarg.0      
+  IL_0195: call         UnityEngine.Vector3::get_up
+  IL_019a: stfld        contactNormal
+  IL_019f: ldarg.0      
+  IL_01a0: ldarg.0      
+  IL_01a1: ldfld        contactNormal
+  IL_01a6: stfld        contactNormalUntilted
+  IL_01ab: ldarg.0      
+  IL_01ac: ldarg.0      
+  IL_01ad: ldfld        contactNormal
+  IL_01b2: stfld        crawlNormal
+  IL_01b7: ldc.i4.1     
+  IL_01b8: stloc.s      9
+  IL_01ba: ldc.i4.1     
+  IL_01bb: stloc.s      10
+  IL_01bd: ldloc.0      
+  IL_01be: stloc.s      12
+  IL_01c0: ldloc.s      12
+  IL_01c2: ldlen        
+  IL_01c3: conv.i4      
+  IL_01c4: stloc.s      14
+  IL_01c6: ldc.i4.0     
+  IL_01c7: stloc.s      13
+  IL_01c9: br           IL_020d
+  IL_01ce: ldloc.s      12
+  IL_01d0: ldloc.s      13
+  IL_01d2: ldelem.ref   
+  IL_01d3: stloc.s      11
+  IL_01d5: ldloc.s      11
+  IL_01d7: callvirt     UnityEngine.Component::get_tag
+  IL_01dc: ldstr        "Nonsticky"
+  IL_01e1: call         System.String::op_Inequality
+  IL_01e6: brfalse      IL_01ee
+  IL_01eb: ldc.i4.0     
+  IL_01ec: stloc.s      9
+  IL_01ee: ldloc.s      11
+  IL_01f0: callvirt     UnityEngine.Component::get_tag
+  IL_01f5: ldstr        "Semisticky"
+  IL_01fa: call         System.String::op_Inequality
+  IL_01ff: brfalse      IL_0207
+  IL_0204: ldc.i4.0     
+  IL_0205: stloc.s      10
+  IL_0207: ldloc.s      13
+  IL_0209: ldc.i4.1     
+  IL_020a: add          
+  IL_020b: stloc.s      13
+  IL_020d: ldloc.s      13
+  IL_020f: ldloc.s      14
+  IL_0211: blt          IL_01ce
+  IL_0216: ldarg.0      
+  IL_0217: ldloc.s      9
+  IL_0219: stfld        onNonstickySurface
+  IL_021e: ldarg.0      
+  IL_021f: ldloc.s      10
+  IL_0221: stfld        onSemistickySurface
+  IL_0226: br           IL_02d6
+  IL_022b: ldarg.0      
+  IL_022c: call         GetRadius
+  IL_0231: stloc.s      15
+  IL_0233: ldc.i4.0     
+  IL_0234: newarr       UnityEngine.Collider
+  IL_0239: stloc.0      
+  IL_023a: ldarg.0      
+  IL_023b: ldc.i4.0     
+  IL_023c: stfld        contactNormalDefined
+  IL_0241: ldarg.0      
+  IL_0242: call         UnityEngine.Component::get_transform
+  IL_0247: callvirt     UnityEngine.Transform::get_position
+  IL_024c: call         UnityEngine.Vector3::get_up
+  IL_0251: ldloc.s      15
+  IL_0253: call         UnityEngine.Vector3::op_Multiply
+  IL_0258: call         UnityEngine.Vector3::op_Addition
+  IL_025d: call         UnityEngine.Vector3::get_up
+  IL_0262: call         UnityEngine.Vector3::op_UnaryNegation
+  IL_0267: ldloca.s     16
+  IL_0269: ldloc.s      15
+  IL_026b: ldc.r4       2.0999999046325684
+  IL_0270: mul          
+  IL_0271: ldc.i4.1     
+  IL_0272: call         UnityEngine.Physics::Raycast
+  IL_0277: brfalse      IL_02a5
+  IL_027c: ldloca.s     16
+  IL_027e: call         UnityEngine.RaycastHit::get_collider
+  IL_0283: callvirt     UnityEngine.Collider::get_isTrigger
+  IL_0288: brtrue       IL_02a5
+  IL_028d: ldc.i4.1     
+  IL_028e: newarr       UnityEngine.Collider
+  IL_0293: stloc.0      
+  IL_0294: ldloc.0      
+  IL_0295: ldc.i4.0     
+  IL_0296: ldloca.s     16
+  IL_0298: call         UnityEngine.RaycastHit::get_collider
+  IL_029d: stelem.ref   
+  IL_029e: ldarg.0      
+  IL_029f: ldc.i4.1     
+  IL_02a0: stfld        contactNormalDefined
+  IL_02a5: call         UnityEngine.Vector3::get_up
+  IL_02aa: stloc.s      26
+  IL_02ac: ldarg.0      
+  IL_02ad: ldloc.s      26
+  IL_02af: stfld        contactNormal
+  IL_02b4: ldarg.0      
+  IL_02b5: ldloc.s      26
+  IL_02b7: stfld        crawlNormal
+  IL_02bc: ldarg.0      
+  IL_02bd: ldarg.0      
+  IL_02be: ldfld        contactNormal
+  IL_02c3: stfld        contactNormalUntilted
+  IL_02c8: ldarg.0      
+  IL_02c9: ldc.i4.0     
+  IL_02ca: stfld        onNonstickySurface
+  IL_02cf: ldarg.0      
+  IL_02d0: ldc.i4.0     
+  IL_02d1: stfld        onSemistickySurface
+  IL_02d6: ldloc.0      
+  IL_02d7: ldlen        
+  IL_02d8: conv.i4      
+  IL_02d9: ldc.i4.0     
+  IL_02da: ble          IL_04b1
+  IL_02df: ldloc.0      
+  IL_02e0: ldc.i4.0     
+  IL_02e1: ldelem.ref   
+  IL_02e2: callvirt     UnityEngine.Component::get_gameObject
+  IL_02e7: stloc.s      17
+  IL_02e9: ldloc.0      
+  IL_02ea: stloc.s      19
+  IL_02ec: ldloc.s      19
+  IL_02ee: ldlen        
+  IL_02ef: conv.i4      
+  IL_02f0: stloc.s      21
+  IL_02f2: ldc.i4.0     
+  IL_02f3: stloc.s      20
+  IL_02f5: br           IL_0322
+  IL_02fa: ldloc.s      19
+  IL_02fc: ldloc.s      20
+  IL_02fe: ldelem.ref   
+  IL_02ff: stloc.s      18
+  IL_0301: ldloc.s      18
+  IL_0303: callvirt     UnityEngine.Component::get_gameObject
+  IL_0308: ldloc.s      17
+  IL_030a: call         UnityEngine.Object::op_Inequality
+  IL_030f: brfalse      IL_031c
+  IL_0314: ldnull       
+  IL_0315: stloc.s      17
+  IL_0317: br           IL_032b
+  IL_031c: ldloc.s      20
+  IL_031e: ldc.i4.1     
+  IL_031f: add          
+  IL_0320: stloc.s      20
+  IL_0322: ldloc.s      20
+  IL_0324: ldloc.s      21
+  IL_0326: blt          IL_02fa
+  IL_032b: ldloc.s      17
+  IL_032d: ldnull       
+  IL_032e: call         UnityEngine.Object::op_Inequality
+  IL_0333: brfalse      IL_04a4
+  IL_0338: ldloc.s      17
+  IL_033a: ldarg.0      
+  IL_033b: ldfld        standingOn
+  IL_0340: call         UnityEngine.Object::op_Equality
+  IL_0345: brfalse      IL_047b
+  IL_034a: ldloc.s      17
+  IL_034c: callvirt     UnityEngine.GameObject::get_transform
+  IL_0351: ldarg.0      
+  IL_0352: ldfld        standingOnLocalPos
+  IL_0357: callvirt     UnityEngine.Transform::TransformPoint
+  IL_035c: stloc.s      22
+  IL_035e: ldloc.s      22
+  IL_0360: ldarg.0      
+  IL_0361: ldfld        standingOnPos
+  IL_0366: call         UnityEngine.Vector3::op_Subtraction
+  IL_036b: stloc.s      23
+  IL_036d: ldarg.0      
+  IL_036e: ldfld        stickyness
+  IL_0373: conv.r8      
+  IL_0374: ldc.r8       0.8
+  IL_037d: ble.un       IL_03c0
+  IL_0382: ldloc.s      17
+  IL_0384: callvirt     UnityEngine.GameObject::get_transform
+  IL_0389: callvirt     UnityEngine.Transform::get_rotation
+  IL_038e: ldarg.0      
+  IL_038f: ldfld        standingOnLocalPos
+  IL_0394: call         UnityEngine.Quaternion::op_Multiply
+  IL_0399: stloc.s      24
+  IL_039b: ldloc.s      24
+  IL_039d: ldloc.s      24
+  IL_039f: ldloc.s      23
+  IL_03a1: call         UnityEngine.Vector3::op_Addition
+  IL_03a6: call         UnityEngine.Quaternion::FromToRotation
+  IL_03ab: stloc.s      25
+  IL_03ad: ldarg.0      
+  IL_03ae: ldloc.s      25
+  IL_03b0: ldarg.0      
+  IL_03b1: ldfld        fwd
+  IL_03b6: call         UnityEngine.Quaternion::op_Multiply
+  IL_03bb: stfld        fwd
+  IL_03c0: ldarg.0      
+  IL_03c1: ldloc.s      23
+  IL_03c3: call         UnityEngine.Time::get_deltaTime
+  IL_03c8: call         UnityEngine.Vector3::op_Division
+  IL_03cd: stfld        surfaceVelocity
+  IL_03d2: ldloca.s     23
+  IL_03d4: dup          
+  IL_03d5: ldfld        UnityEngine.Vector3::x
+  IL_03da: ldarg.0      
+  IL_03db: ldfld        stickyness
+  IL_03e0: ldc.r4       0.8999999761581421
+  IL_03e5: mul          
+  IL_03e6: ldc.r4       0.10000000149011612
+  IL_03eb: add          
+  IL_03ec: mul          
+  IL_03ed: stfld        UnityEngine.Vector3::x
+  IL_03f2: ldloca.s     23
+  IL_03f4: dup          
+  IL_03f5: ldfld        UnityEngine.Vector3::z
+  IL_03fa: ldarg.0      
+  IL_03fb: ldfld        stickyness
+  IL_0400: ldc.r4       0.8999999761581421
+  IL_0405: mul          
+  IL_0406: ldc.r4       0.10000000149011612
+  IL_040b: add          
+  IL_040c: mul          
+  IL_040d: stfld        UnityEngine.Vector3::z
+  IL_0412: ldarg.0      
+  IL_0413: call         UnityEngine.Component::get_transform
+  IL_0418: dup          
+  IL_0419: callvirt     UnityEngine.Transform::get_position
+  IL_041e: ldloc.s      23
+  IL_0420: call         UnityEngine.Vector3::op_Addition
+  IL_0425: callvirt     UnityEngine.Transform::set_position
+  IL_042a: ldarg.0      
+  IL_042b: ldfld        stickyness
+  IL_0430: ldc.r4       0.20000000298023224
+  IL_0435: bge.un       IL_047b
+  IL_043a: ldarg.0      
+  IL_043b: call         UnityEngine.Component::get_rigidbody
+  IL_0440: dup          
+  IL_0441: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0446: ldarg.0      
+  IL_0447: ldfld        surfaceVelocity
+  IL_044c: call         UnityEngine.Time::get_deltaTime
+  IL_0451: call         UnityEngine.Vector3::op_Multiply
+  IL_0456: ldc.r4       0.30000001192092896
+  IL_045b: call         UnityEngine.Vector3::op_Multiply
+  IL_0460: ldc.r4       1.0
+  IL_0465: ldarg.0      
+  IL_0466: ldfld        stickyness
+  IL_046b: sub          
+  IL_046c: call         UnityEngine.Vector3::op_Multiply
+  IL_0471: call         UnityEngine.Vector3::op_Addition
+  IL_0476: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_047b: ldarg.0      
+  IL_047c: ldarg.0      
+  IL_047d: call         UnityEngine.Component::get_transform
+  IL_0482: callvirt     UnityEngine.Transform::get_position
+  IL_0487: stfld        standingOnPos
+  IL_048c: ldarg.0      
+  IL_048d: ldloc.s      17
+  IL_048f: callvirt     UnityEngine.GameObject::get_transform
+  IL_0494: ldarg.0      
+  IL_0495: ldfld        standingOnPos
+  IL_049a: callvirt     UnityEngine.Transform::InverseTransformPoint
+  IL_049f: stfld        standingOnLocalPos
+  IL_04a4: ldarg.0      
+  IL_04a5: ldloc.s      17
+  IL_04a7: stfld        standingOn
+  IL_04ac: br           IL_04b8
+  IL_04b1: ldarg.0      
+  IL_04b2: ldnull       
+  IL_04b3: stfld        standingOn
+  IL_04b8: ret          
+
+//// BallController::FixedDoGravity  rva=0x00c9cc
+  .maxstack 21  locals=0x11000071
+  IL_0000: ldc.r4       0.15000000596046448
+  IL_0005: stloc.0      
+  IL_0006: ldarg.0      
+  IL_0007: ldfld        inAirTimer
+  IL_000c: ldloc.0      
+  IL_000d: div          
+  IL_000e: ldc.r4       0.0
+  IL_0013: ldc.r4       1.0
+  IL_0018: call         UnityEngine.Mathf::Clamp
+  IL_001d: stloc.1      
+  IL_001e: ldarg.0      
+  IL_001f: ldfld        inJump
+  IL_0024: brfalse      IL_002f
+  IL_0029: ldc.r4       1.0
+  IL_002e: stloc.1      
+  IL_002f: ldarg.0      
+  IL_0030: ldfld        gravityOnGround
+  IL_0035: ldarg.0      
+  IL_0036: ldfld        gravityInAir
+  IL_003b: ldloc.1      
+  IL_003c: call         UnityEngine.Mathf::Lerp
+  IL_0041: stloc.2      
+  IL_0042: ldarg.0      
+  IL_0043: ldfld        inAirTimer
+  IL_0048: ldarg.0      
+  IL_0049: ldfld        groundContactBias
+  IL_004e: bge.un       IL_008b
+  IL_0053: ldarg.0      
+  IL_0054: ldfld        stickTimer
+  IL_0059: ldc.r4       0.0
+  IL_005e: ble.un       IL_008b
+  IL_0063: ldarg.0      
+  IL_0064: ldfld        onNonstickySurface
+  IL_0069: brfalse      IL_0080
+  IL_006e: ldarg.0      
+  IL_006f: ldfld        gravityStickyFactor
+  IL_0074: ldc.r4       5.0
+  IL_0079: mul          
+  IL_007a: stloc.3      
+  IL_007b: br           IL_0086
+  IL_0080: ldc.r4       0.0
+  IL_0085: stloc.3      
+  IL_0086: br           IL_00ce
+  IL_008b: ldc.r4       1.0
+  IL_0090: stloc.s      4
+  IL_0092: ldarg.0      
+  IL_0093: call         HasGroundContact
+  IL_0098: brfalse      IL_00cb
+  IL_009d: ldloc.s      4
+  IL_009f: ldarg.0      
+  IL_00a0: call         UnityEngine.Component::get_rigidbody
+  IL_00a5: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_00aa: stloc.s      6
+  IL_00ac: ldloca.s     6
+  IL_00ae: ldfld        UnityEngine.Vector3::y
+  IL_00b3: ldc.r4       3.0
+  IL_00b8: ldc.r4       2.0
+  IL_00bd: call         UnityEngine.Mathf::Gamma
+  IL_00c2: ldc.r4       30.0
+  IL_00c7: div          
+  IL_00c8: sub          
+  IL_00c9: stloc.s      4
+  IL_00cb: ldloc.s      4
+  IL_00cd: stloc.3      
+  IL_00ce: ldloc.2      
+  IL_00cf: ldloc.3      
+  IL_00d0: mul          
+  IL_00d1: stloc.s      5
+  IL_00d3: ldarg.0      
+  IL_00d4: call         UnityEngine.Component::get_rigidbody
+  IL_00d9: ldloca.s     7
+  IL_00db: ldc.r4       0.0
+  IL_00e0: ldloc.s      5
+  IL_00e2: neg          
+  IL_00e3: ldarg.0      
+  IL_00e4: call         UnityEngine.Component::get_rigidbody
+  IL_00e9: callvirt     UnityEngine.Rigidbody::get_mass
+  IL_00ee: mul          
+  IL_00ef: ldc.r4       0.0
+  IL_00f4: call         UnityEngine.Vector3::.ctor
+  IL_00f9: ldloc.s      7
+  IL_00fb: callvirt     UnityEngine.Rigidbody::AddForce
+  IL_0100: ret          
+
+//// BallController::FixedDoConstantDrag  rva=0x00cadc
+  .maxstack 31  locals=0x11000072
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        currentConstantDrag
+  IL_0006: neg          
+  IL_0007: ldarg.0      
+  IL_0008: call         UnityEngine.Component::get_rigidbody
+  IL_000d: callvirt     UnityEngine.Rigidbody::get_mass
+  IL_0012: mul          
+  IL_0013: stloc.0      
+  IL_0014: ldarg.0      
+  IL_0015: call         UnityEngine.Component::get_rigidbody
+  IL_001a: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_001f: ldarg.0      
+  IL_0020: call         UnityEngine.Component::get_rigidbody
+  IL_0025: callvirt     UnityEngine.Rigidbody::get_mass
+  IL_002a: neg          
+  IL_002b: call         UnityEngine.Vector3::op_Multiply
+  IL_0030: call         UnityEngine.Time::get_fixedDeltaTime
+  IL_0035: call         UnityEngine.Vector3::op_Division
+  IL_003a: stloc.2      
+  IL_003b: ldloc.0      
+  IL_003c: ldarg.0      
+  IL_003d: call         UnityEngine.Component::get_rigidbody
+  IL_0042: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0047: stloc.3      
+  IL_0048: ldloca.s     3
+  IL_004a: call         UnityEngine.Vector3::get_normalized
+  IL_004f: call         UnityEngine.Vector3::op_Multiply
+  IL_0054: stloc.1      
+  IL_0055: ldloca.s     1
+  IL_0057: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_005c: ldloca.s     2
+  IL_005e: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_0063: ble.un       IL_006a
+  IL_0068: ldloc.2      
+  IL_0069: stloc.1      
+  IL_006a: ldarg.0      
+  IL_006b: call         UnityEngine.Component::get_rigidbody
+  IL_0070: ldloc.1      
+  IL_0071: callvirt     UnityEngine.Rigidbody::AddForce
+  IL_0076: ret          
+
+//// BallController::FixedSteerBall  rva=0x00cb60
+  .maxstack 120  locals=0x11000073
+  IL_0000: ldstr        "Vertical"
+  IL_0005: call         UnityEngine.Input::GetAxis
+  IL_000a: ldc.r4       -1.0
+  IL_000f: ldc.r4       1.0
+  IL_0014: call         UnityEngine.Mathf::Clamp
+  IL_0019: stloc.0      
+  IL_001a: ldstr        "Horizontal"
+  IL_001f: call         UnityEngine.Input::GetAxis
+  IL_0024: ldc.r4       -1.0
+  IL_0029: ldc.r4       1.0
+  IL_002e: call         UnityEngine.Mathf::Clamp
+  IL_0033: stloc.1      
+  IL_0034: ldarg.0      
+  IL_0035: call         UnityEngine.Vector3::get_zero
+  IL_003a: stfld        steerAcceleration
+  IL_003f: call         UnityEngine.Vector3::get_zero
+  IL_0044: stloc.2      
+  IL_0045: ldloc.1      
+  IL_0046: ldloc.1      
+  IL_0047: mul          
+  IL_0048: ldloc.0      
+  IL_0049: ldloc.0      
+  IL_004a: mul          
+  IL_004b: add          
+  IL_004c: call         UnityEngine.Mathf::Sqrt
+  IL_0051: stloc.3      
+  IL_0052: ldloc.3      
+  IL_0053: ldc.r4       1.0
+  IL_0058: ble.un       IL_0065
+  IL_005d: ldloc.0      
+  IL_005e: ldloc.3      
+  IL_005f: div          
+  IL_0060: stloc.0      
+  IL_0061: ldloc.1      
+  IL_0062: ldloc.3      
+  IL_0063: div          
+  IL_0064: stloc.1      
+  IL_0065: ldarg.0      
+  IL_0066: ldfld        stickTimer
+  IL_006b: ldc.r4       0.0
+  IL_0070: ble.un       IL_0203
+  IL_0075: ldarg.0      
+  IL_0076: ldfld        jumpTimer
+  IL_007b: ldc.r4       0.0
+  IL_0080: bne.un       IL_0203
+  IL_0085: ldarg.0      
+  IL_0086: ldfld        crawlNormal
+  IL_008b: ldarg.0      
+  IL_008c: ldfld        cameraTransform
+  IL_0091: call         UnityEngine.Vector3::get_right
+  IL_0096: callvirt     UnityEngine.Transform::TransformDirection
+  IL_009b: call         UnityEngine.Vector3::Cross
+  IL_00a0: call         UnityEngine.Vector3::Normalize
+  IL_00a5: stloc.s      4
+  IL_00a7: ldloc.s      4
+  IL_00a9: ldarg.0      
+  IL_00aa: ldfld        crawlNormal
+  IL_00af: call         UnityEngine.Vector3::Cross
+  IL_00b4: call         UnityEngine.Vector3::Normalize
+  IL_00b9: stloc.s      5
+  IL_00bb: ldloc.1      
+  IL_00bc: ldc.r4       0.5
+  IL_00c1: ldc.r4       2.0
+  IL_00c6: call         UnityEngine.Mathf::Gamma
+  IL_00cb: ldloc.s      5
+  IL_00cd: call         UnityEngine.Vector3::op_Multiply
+  IL_00d2: ldloc.0      
+  IL_00d3: ldc.r4       0.5
+  IL_00d8: ldc.r4       2.0
+  IL_00dd: call         UnityEngine.Mathf::Gamma
+  IL_00e2: neg          
+  IL_00e3: ldloc.s      4
+  IL_00e5: call         UnityEngine.Vector3::op_Multiply
+  IL_00ea: call         UnityEngine.Vector3::op_Addition
+  IL_00ef: stloc.s      6
+  IL_00f1: ldarg.0      
+  IL_00f2: ldfld        travelMode
+  IL_00f7: brfalse      IL_0110
+  IL_00fc: ldloc.s      6
+  IL_00fe: ldarg.0      
+  IL_00ff: ldfld        steerMaxSpeedStickyTravelmode
+  IL_0104: call         UnityEngine.Vector3::op_Multiply
+  IL_0109: stloc.s      6
+  IL_010b: br           IL_011f
+  IL_0110: ldloc.s      6
+  IL_0112: ldarg.0      
+  IL_0113: ldfld        steerMaxSpeedSticky
+  IL_0118: call         UnityEngine.Vector3::op_Multiply
+  IL_011d: stloc.s      6
+  IL_011f: ldarg.0      
+  IL_0120: call         UnityEngine.Component::get_rigidbody
+  IL_0125: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_012a: stloc.s      16
+  IL_012c: ldloca.s     16
+  IL_012e: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_0133: ldloca.s     6
+  IL_0135: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_013a: bge.un       IL_0151
+  IL_013f: ldarg.0      
+  IL_0140: call         UnityEngine.Component::get_rigidbody
+  IL_0145: ldloc.s      6
+  IL_0147: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_014c: br           IL_0194
+  IL_0151: ldloc.s      6
+  IL_0153: ldarg.0      
+  IL_0154: call         UnityEngine.Component::get_rigidbody
+  IL_0159: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_015e: call         UnityEngine.Vector3::op_Subtraction
+  IL_0163: stloc.s      7
+  IL_0165: ldarg.0      
+  IL_0166: call         UnityEngine.Component::get_rigidbody
+  IL_016b: dup          
+  IL_016c: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0171: call         UnityEngine.Time::get_deltaTime
+  IL_0176: ldc.r4       3.0
+  IL_017b: mul          
+  IL_017c: ldarg.0      
+  IL_017d: ldfld        stickyness
+  IL_0182: mul          
+  IL_0183: ldloc.s      7
+  IL_0185: call         UnityEngine.Vector3::op_Multiply
+  IL_018a: call         UnityEngine.Vector3::op_Addition
+  IL_018f: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_0194: ldarg.0      
+  IL_0195: ldfld        onNonstickySurface
+  IL_019a: brfalse      IL_01fe
+  IL_019f: ldarg.0      
+  IL_01a0: call         UnityEngine.Component::get_rigidbody
+  IL_01a5: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_01aa: stloc.s      17
+  IL_01ac: ldloca.s     17
+  IL_01ae: ldfld        UnityEngine.Vector3::y
+  IL_01b3: ldc.r4       -0.5
+  IL_01b8: ble.un       IL_01fe
+  IL_01bd: ldarg.0      
+  IL_01be: call         UnityEngine.Component::get_rigidbody
+  IL_01c3: ldloca.s     18
+  IL_01c5: ldarg.0      
+  IL_01c6: call         UnityEngine.Component::get_rigidbody
+  IL_01cb: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_01d0: stloc.s      19
+  IL_01d2: ldloca.s     19
+  IL_01d4: ldfld        UnityEngine.Vector3::x
+  IL_01d9: ldc.r4       -0.5
+  IL_01de: ldarg.0      
+  IL_01df: call         UnityEngine.Component::get_rigidbody
+  IL_01e4: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_01e9: stloc.s      20
+  IL_01eb: ldloca.s     20
+  IL_01ed: ldfld        UnityEngine.Vector3::z
+  IL_01f2: call         UnityEngine.Vector3::.ctor
+  IL_01f7: ldloc.s      18
+  IL_01f9: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_01fe: br           IL_03ca
+  IL_0203: ldarg.0      
+  IL_0204: call         HasGroundContact
+  IL_0209: brfalse      IL_03a9
+  IL_020e: ldarg.0      
+  IL_020f: ldfld        cameraTransform
+  IL_0214: call         UnityEngine.Vector3::get_forward
+  IL_0219: callvirt     UnityEngine.Transform::TransformDirection
+  IL_021e: stloc.s      8
+  IL_0220: ldloc.1      
+  IL_0221: ldc.r4       0.0
+  IL_0226: beq          IL_029a
+  IL_022b: ldarg.0      
+  IL_022c: ldfld        cameraTransform
+  IL_0231: call         UnityEngine.Vector3::get_right
+  IL_0236: callvirt     UnityEngine.Transform::TransformDirection
+  IL_023b: stloc.s      9
+  IL_023d: ldloca.s     9
+  IL_023f: ldc.r4       0.0
+  IL_0244: stfld        UnityEngine.Vector3::y
+  IL_0249: ldarg.0      
+  IL_024a: ldarg.0      
+  IL_024b: call         UnityEngine.Component::get_rigidbody
+  IL_0250: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0255: ldloc.s      9
+  IL_0257: ldloc.1      
+  IL_0258: ldarg.0      
+  IL_0259: ldfld        steerMaxSideSpeed
+  IL_025e: ldarg.0      
+  IL_025f: call         UnityEngine.Component::get_rigidbody
+  IL_0264: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0269: ldloc.s      8
+  IL_026b: call         UnityEngine.Vector3::Dot
+  IL_0270: mul          
+  IL_0271: ldc.r4       3.0
+  IL_0276: mul          
+  IL_0277: call         MaxSpeedScale
+  IL_027c: stloc.s      10
+  IL_027e: ldloc.s      10
+  IL_0280: ldc.r4       0.0
+  IL_0285: ble.un       IL_029a
+  IL_028a: ldloc.1      
+  IL_028b: ldloc.s      9
+  IL_028d: call         UnityEngine.Vector3::op_Multiply
+  IL_0292: ldloc.s      10
+  IL_0294: call         UnityEngine.Vector3::op_Multiply
+  IL_0299: stloc.2      
+  IL_029a: ldloc.0      
+  IL_029b: ldc.r4       0.0
+  IL_02a0: beq          IL_0382
+  IL_02a5: ldloca.s     8
+  IL_02a7: ldc.r4       0.0
+  IL_02ac: stfld        UnityEngine.Vector3::y
+  IL_02b1: ldloca.s     8
+  IL_02b3: call         UnityEngine.Vector3::get_magnitude
+  IL_02b8: stloc.s      11
+  IL_02ba: ldloc.s      11
+  IL_02bc: ldc.r4       0.10000000149011612
+  IL_02c1: ble.un       IL_02d1
+  IL_02c6: ldloc.s      8
+  IL_02c8: ldloc.s      11
+  IL_02ca: call         UnityEngine.Vector3::op_Division
+  IL_02cf: stloc.s      8
+  IL_02d1: ldarg.0      
+  IL_02d2: call         UnityEngine.Component::get_rigidbody
+  IL_02d7: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_02dc: ldloc.s      8
+  IL_02de: call         UnityEngine.Vector3::Dot
+  IL_02e3: stloc.s      12
+  IL_02e5: ldc.r4       1.0
+  IL_02ea: stloc.s      13
+  IL_02ec: ldloc.0      
+  IL_02ed: ldc.r4       0.0
+  IL_02f2: ble.un       IL_0305
+  IL_02f7: ldloc.s      12
+  IL_02f9: ldc.r4       0.0
+  IL_02fe: cgt          
+  IL_0300: br           IL_0306
+  IL_0305: ldc.i4.0     
+  IL_0306: stloc.s      14
+  IL_0308: ldloc.0      
+  IL_0309: ldc.r4       0.0
+  IL_030e: bge.un       IL_0321
+  IL_0313: ldloc.s      12
+  IL_0315: ldc.r4       0.0
+  IL_031a: clt          
+  IL_031c: br           IL_0322
+  IL_0321: ldc.i4.0     
+  IL_0322: stloc.s      15
+  IL_0324: ldloc.s      14
+  IL_0326: brfalse      IL_0351
+  IL_032b: ldarg.0      
+  IL_032c: ldfld        steerMaxFwdSpeed
+  IL_0331: ldloc.s      12
+  IL_0333: sub          
+  IL_0334: ldarg.0      
+  IL_0335: ldfld        steerMaxFwdSpeed
+  IL_033a: div          
+  IL_033b: ldc.r4       0.0
+  IL_0340: ldc.r4       1.0
+  IL_0345: call         UnityEngine.Mathf::Clamp
+  IL_034a: stloc.s      13
+  IL_034c: br           IL_036c
+  IL_0351: ldloc.s      15
+  IL_0353: brfalse      IL_0364
+  IL_0358: ldc.r4       0.0
+  IL_035d: stloc.s      13
+  IL_035f: br           IL_036c
+  IL_0364: ldarg.0      
+  IL_0365: ldfld        steerBreakingFactor
+  IL_036a: stloc.s      13
+  IL_036c: ldloc.2      
+  IL_036d: ldloc.0      
+  IL_036e: ldloc.s      8
+  IL_0370: call         UnityEngine.Vector3::op_Multiply
+  IL_0375: ldloc.s      13
+  IL_0377: call         UnityEngine.Vector3::op_Multiply
+  IL_037c: call         UnityEngine.Vector3::op_Addition
+  IL_0381: stloc.2      
+  IL_0382: ldarg.0      
+  IL_0383: call         UnityEngine.Component::get_rigidbody
+  IL_0388: ldloc.2      
+  IL_0389: ldarg.0      
+  IL_038a: ldfld        steerPower
+  IL_038f: call         UnityEngine.Vector3::op_Multiply
+  IL_0394: ldarg.0      
+  IL_0395: call         UnityEngine.Component::get_rigidbody
+  IL_039a: callvirt     UnityEngine.Rigidbody::get_mass
+  IL_039f: call         UnityEngine.Vector3::op_Multiply
+  IL_03a4: callvirt     UnityEngine.Rigidbody::AddForce
+  IL_03a9: ldarg.0      
+  IL_03aa: ldloc.2      
+  IL_03ab: ldarg.0      
+  IL_03ac: call         UnityEngine.Component::get_rigidbody
+  IL_03b1: callvirt     UnityEngine.Rigidbody::get_mass
+  IL_03b6: call         UnityEngine.Vector3::op_Division
+  IL_03bb: call         UnityEngine.Time::get_deltaTime
+  IL_03c0: call         UnityEngine.Vector3::op_Multiply
+  IL_03c5: stfld        steerAcceleration
+  IL_03ca: ret          
+
+//// BallController::FixedStick  rva=0x00cf38
+  .maxstack 75  locals=0x11000074
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        contactNormalDefined
+  IL_0006: brfalse      IL_0251
+  IL_000b: ldarg.0      
+  IL_000c: ldfld        isSticky
+  IL_0011: brfalse      IL_0251
+  IL_0016: ldarg.0      
+  IL_0017: ldfld        jumpTimer
+  IL_001c: ldc.r4       0.0
+  IL_0021: bne.un       IL_0251
+  IL_0026: ldarg.0      
+  IL_0027: ldfld        inAirTimer
+  IL_002c: ldarg.0      
+  IL_002d: ldfld        groundContactBias
+  IL_0032: ble.un       IL_009a
+  IL_0037: ldarg.0      
+  IL_0038: call         UnityEngine.Component::get_rigidbody
+  IL_003d: ldarg.0      
+  IL_003e: ldfld        contactNormal
+  IL_0043: ldarg.0      
+  IL_0044: call         UnityEngine.Component::get_rigidbody
+  IL_0049: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_004e: call         UnityEngine.Vector3::Exclude
+  IL_0053: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_0058: ldarg.0      
+  IL_0059: call         UnityEngine.Component::get_rigidbody
+  IL_005e: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0063: stloc.s      12
+  IL_0065: ldloca.s     12
+  IL_0067: call         UnityEngine.Vector3::get_magnitude
+  IL_006c: stloc.0      
+  IL_006d: ldloc.0      
+  IL_006e: ldc.r4       4.0
+  IL_0073: ble.un       IL_0095
+  IL_0078: ldarg.0      
+  IL_0079: call         UnityEngine.Component::get_rigidbody
+  IL_007e: dup          
+  IL_007f: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0084: ldloc.0      
+  IL_0085: ldc.r4       4.0
+  IL_008a: mul          
+  IL_008b: call         UnityEngine.Vector3::op_Division
+  IL_0090: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_0095: br           IL_0251
+  IL_009a: ldarg.0      
+  IL_009b: ldfld        contactNormal
+  IL_00a0: ldarg.0      
+  IL_00a1: call         UnityEngine.Component::get_rigidbody
+  IL_00a6: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_00ab: call         UnityEngine.Vector3::Exclude
+  IL_00b0: stloc.1      
+  IL_00b1: ldarg.0      
+  IL_00b2: call         UnityEngine.Component::get_rigidbody
+  IL_00b7: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_00bc: stloc.s      13
+  IL_00be: ldloca.s     13
+  IL_00c0: call         UnityEngine.Vector3::get_magnitude
+  IL_00c5: stloc.2      
+  IL_00c6: ldloc.1      
+  IL_00c7: call         UnityEngine.Vector3::Normalize
+  IL_00cc: ldloc.2      
+  IL_00cd: call         UnityEngine.Vector3::op_Multiply
+  IL_00d2: stloc.3      
+  IL_00d3: ldloca.s     3
+  IL_00d5: call         UnityEngine.Vector3::get_magnitude
+  IL_00da: stloc.s      4
+  IL_00dc: ldloc.2      
+  IL_00dd: ldc.r4       1.401298464324817e-45
+  IL_00e2: bge.un       IL_00f2
+  IL_00e7: call         UnityEngine.Vector3::get_zero
+  IL_00ec: stloc.3      
+  IL_00ed: br           IL_0105
+  IL_00f2: ldloc.s      4
+  IL_00f4: ldloc.2      
+  IL_00f5: ble.un       IL_0105
+  IL_00fa: ldloc.3      
+  IL_00fb: ldloc.2      
+  IL_00fc: ldloc.s      4
+  IL_00fe: div          
+  IL_00ff: call         UnityEngine.Vector3::op_Multiply
+  IL_0104: stloc.3      
+  IL_0105: ldarg.0      
+  IL_0106: call         UnityEngine.Component::get_rigidbody
+  IL_010b: ldloc.3      
+  IL_010c: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_0111: ldarg.0      
+  IL_0112: ldfld        travelMode
+  IL_0117: brtrue       IL_0142
+  IL_011c: ldarg.0      
+  IL_011d: ldfld        minContactNormalUntilted
+  IL_0122: call         UnityEngine.Vector3::get_down
+  IL_0127: call         UnityEngine.Vector3::Angle
+  IL_012c: ldarg.0      
+  IL_012d: ldfld        stickyLoseGripAngle
+  IL_0132: bge.un       IL_0142
+  IL_0137: ldarg.0      
+  IL_0138: call         UnStick
+  IL_013d: br           IL_0251
+  IL_0142: newobj       System.Collections.ArrayList::.ctor
+  IL_0147: stloc.s      5
+  IL_0149: ldc.i4.0     
+  IL_014a: stloc.s      6
+  IL_014c: br           IL_01fd
+  IL_0151: ldc.i4.s     10
+  IL_0153: stloc.s      7
+  IL_0155: ldloc.s      6
+  IL_0157: brfalse      IL_0164
+  IL_015c: ldloc.s      6
+  IL_015e: ldc.i4.7     
+  IL_015f: bne.un       IL_0167
+  IL_0164: ldc.i4.1     
+  IL_0165: stloc.s      7
+  IL_0167: ldc.i4.0     
+  IL_0168: stloc.s      8
+  IL_016a: br           IL_01ee
+  IL_016f: ldc.r4       -90.0
+  IL_0174: ldloc.s      6
+  IL_0176: conv.r4      
+  IL_0177: ldc.r4       180.0
+  IL_017c: mul          
+  IL_017d: ldc.r4       4.0
+  IL_0182: div          
+  IL_0183: add          
+  IL_0184: ldloc.s      8
+  IL_0186: conv.r4      
+  IL_0187: ldc.r4       360.0
+  IL_018c: mul          
+  IL_018d: ldc.r4       4.0
+  IL_0192: div          
+  IL_0193: ldc.r4       0.0
+  IL_0198: call         UnityEngine.Quaternion::Euler
+  IL_019d: stloc.s      10
+  IL_019f: ldarg.0      
+  IL_01a0: call         UnityEngine.Component::get_transform
+  IL_01a5: callvirt     UnityEngine.Transform::get_position
+  IL_01aa: ldloc.s      10
+  IL_01ac: call         UnityEngine.Vector3::get_forward
+  IL_01b1: call         UnityEngine.Quaternion::op_Multiply
+  IL_01b6: ldloca.s     9
+  IL_01b8: ldarg.0      
+  IL_01b9: call         GetRadius
+  IL_01be: ldarg.0      
+  IL_01bf: ldfld        baseRadius
+  IL_01c4: ldc.r4       0.5
+  IL_01c9: call         UnityEngine.Mathf::Lerp
+  IL_01ce: ldc.i4.1     
+  IL_01cf: call         UnityEngine.Physics::Raycast
+  IL_01d4: brfalse      IL_01e8
+  IL_01d9: ldloc.s      5
+  IL_01db: ldloca.s     9
+  IL_01dd: call         UnityEngine.RaycastHit::get_collider
+  IL_01e2: callvirt     System.Collections.ArrayList::Add
+  IL_01e7: pop          
+  IL_01e8: ldloc.s      8
+  IL_01ea: ldc.i4.1     
+  IL_01eb: add          
+  IL_01ec: stloc.s      8
+  IL_01ee: ldloc.s      8
+  IL_01f0: ldloc.s      7
+  IL_01f2: blt          IL_016f
+  IL_01f7: ldloc.s      6
+  IL_01f9: ldc.i4.1     
+  IL_01fa: add          
+  IL_01fb: stloc.s      6
+  IL_01fd: ldloc.s      6
+  IL_01ff: ldc.i4.8     
+  IL_0200: blt          IL_0151
+  IL_0205: ldloc.s      5
+  IL_0207: ldtoken      UnityEngine.Collider
+  IL_020c: call         System.Type::GetTypeFromHandle
+  IL_0211: callvirt     System.Collections.ArrayList::ToArray
+  IL_0216: castclass    Type[000002]
+  IL_021b: stloc.s      11
+  IL_021d: ldloc.s      11
+  IL_021f: ldlen        
+  IL_0220: conv.i4      
+  IL_0221: brtrue       IL_0251
+  IL_0226: ldarg.0      
+  IL_0227: call         UnityEngine.Component::get_rigidbody
+  IL_022c: dup          
+  IL_022d: callvirt     UnityEngine.Rigidbody::get_position
+  IL_0232: ldarg.0      
+  IL_0233: ldfld        contactNormal
+  IL_0238: call         UnityEngine.Vector3::op_UnaryNegation
+  IL_023d: ldc.r4       0.004999999888241291
+  IL_0242: call         UnityEngine.Vector3::op_Multiply
+  IL_0247: call         UnityEngine.Vector3::op_Addition
+  IL_024c: callvirt     UnityEngine.Rigidbody::set_position
+  IL_0251: ret          
+
+//// BallController::FixedDoJump  rva=0x00d198
+  .maxstack 44  locals=0x11000075
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        inAirTimer
+  IL_0006: ldarg.0      
+  IL_0007: ldfld        groundContactBias
+  IL_000c: bge.un       IL_0136
+  IL_0011: ldarg.0      
+  IL_0012: ldc.i4.1     
+  IL_0013: stfld        inJump
+  IL_0018: ldarg.0      
+  IL_0019: ldfld        isSticky
+  IL_001e: brfalse      IL_0094
+  IL_0023: ldarg.0      
+  IL_0024: call         UnityEngine.Component::get_rigidbody
+  IL_0029: ldloca.s     1
+  IL_002b: ldarg.0      
+  IL_002c: call         UnityEngine.Component::get_rigidbody
+  IL_0031: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0036: stloc.2      
+  IL_0037: ldloca.s     2
+  IL_0039: ldfld        UnityEngine.Vector3::x
+  IL_003e: ldc.r4       0.0
+  IL_0043: ldarg.0      
+  IL_0044: call         UnityEngine.Component::get_rigidbody
+  IL_0049: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_004e: stloc.3      
+  IL_004f: ldloca.s     3
+  IL_0051: ldfld        UnityEngine.Vector3::z
+  IL_0056: call         UnityEngine.Vector3::.ctor
+  IL_005b: ldloc.1      
+  IL_005c: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_0061: ldarg.0      
+  IL_0062: ldfld        jumpDirection
+  IL_0067: ldarg.0      
+  IL_0068: ldfld        jumpForceSticky
+  IL_006d: call         UnityEngine.Vector3::op_Multiply
+  IL_0072: stloc.0      
+  IL_0073: ldarg.0      
+  IL_0074: ldarg.0      
+  IL_0075: ldfld        fwd
+  IL_007a: ldarg.0      
+  IL_007b: ldfld        jumpDirection
+  IL_0080: ldc.r4       0.800000011920929
+  IL_0085: call         UnityEngine.Vector3::Slerp
+  IL_008a: stfld        fwd
+  IL_008f: br           IL_00a5
+  IL_0094: call         UnityEngine.Vector3::get_up
+  IL_0099: ldarg.0      
+  IL_009a: ldfld        jumpForceHard
+  IL_009f: call         UnityEngine.Vector3::op_Multiply
+  IL_00a4: stloc.0      
+  IL_00a5: ldarg.0      
+  IL_00a6: call         UnStick
+  IL_00ab: ldarg.0      
+  IL_00ac: ldfld        standingOn
+  IL_00b1: ldnull       
+  IL_00b2: call         UnityEngine.Object::op_Inequality
+  IL_00b7: brfalse      IL_00f5
+  IL_00bc: ldarg.0      
+  IL_00bd: ldfld        isSticky
+  IL_00c2: brfalse      IL_00e3
+  IL_00c7: ldarg.0      
+  IL_00c8: call         UnityEngine.Component::get_rigidbody
+  IL_00cd: dup          
+  IL_00ce: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_00d3: ldarg.0      
+  IL_00d4: ldfld        surfaceVelocity
+  IL_00d9: call         UnityEngine.Vector3::op_Addition
+  IL_00de: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_00e3: ldarg.0      
+  IL_00e4: call         UnityEngine.Vector3::get_zero
+  IL_00e9: stfld        surfaceVelocity
+  IL_00ee: ldarg.0      
+  IL_00ef: ldnull       
+  IL_00f0: stfld        standingOn
+  IL_00f5: ldarg.0      
+  IL_00f6: call         UnityEngine.Component::get_rigidbody
+  IL_00fb: ldloc.0      
+  IL_00fc: ldarg.0      
+  IL_00fd: call         UnityEngine.Component::get_rigidbody
+  IL_0102: callvirt     UnityEngine.Rigidbody::get_mass
+  IL_0107: call         UnityEngine.Vector3::op_Multiply
+  IL_010c: call         UnityEngine.Time::get_deltaTime
+  IL_0111: call         UnityEngine.Vector3::op_Division
+  IL_0116: callvirt     UnityEngine.Rigidbody::AddForce
+  IL_011b: ldarg.0      
+  IL_011c: ldstr        "BallJumped"
+  IL_0121: ldarg.0      
+  IL_0122: ldfld        isSticky
+  IL_0127: box          System.Boolean
+  IL_012c: call         UnityEngine.Component::BroadcastMessage
+  IL_0131: br           IL_0136
+  IL_0136: ret          
+
+//// BallController::UnStick  rva=0x00d2dc
+  .maxstack 4  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.0      
+  IL_0002: ldfld        groundContactBias
+  IL_0007: ldc.r4       0.0010000000474974513
+  IL_000c: add          
+  IL_000d: stfld        inAirTimer
+  IL_0012: ldarg.0      
+  IL_0013: ldc.r4       0.0
+  IL_0018: stfld        stickTimer
+  IL_001d: ldarg.0      
+  IL_001e: ldc.r4       0.0
+  IL_0023: stfld        currentConstantDrag
+  IL_0028: ldarg.0      
+  IL_0029: ldc.r4       0.0
+  IL_002e: stfld        noSteerTimer
+  IL_0033: ldarg.0      
+  IL_0034: ldc.r4       0.15000000596046448
+  IL_0039: stfld        jumpTimer
+  IL_003e: ret          
+
+//// BallController::FixedDidBump  rva=0x00d328
+  .maxstack 15  locals=0x11000076
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        lastVelFixed
+  IL_0006: ldarg.0      
+  IL_0007: call         UnityEngine.Component::get_rigidbody
+  IL_000c: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0011: call         UnityEngine.Vector3::op_Subtraction
+  IL_0016: stloc.2      
+  IL_0017: ldloca.s     2
+  IL_0019: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_001e: stloc.0      
+  IL_001f: ldloc.0      
+  IL_0020: ldarg.0      
+  IL_0021: ldfld        sqrBumpSpeed
+  IL_0026: ble.un       IL_006c
+  IL_002b: ldarg.0      
+  IL_002c: call         HasGroundContact
+  IL_0031: brfalse      IL_006c
+  IL_0036: ldloca.s     1
+  IL_0038: ldloc.0      
+  IL_0039: stfld        speed
+  IL_003e: ldloca.s     1
+  IL_0040: ldarg.0      
+  IL_0041: call         GetState
+  IL_0046: stfld        state
+  IL_004b: ldarg.0      
+  IL_004c: ldstr        "BallBumped"
+  IL_0051: ldloc.1      
+  IL_0052: box          BumpInfo
+  IL_0057: call         UnityEngine.Component::BroadcastMessage
+  IL_005c: ldarg.0      
+  IL_005d: ldfld        isSticky
+  IL_0062: brfalse      IL_006c
+  IL_0067: br           IL_006c
+  IL_006c: ret          
+
+//// BallController::UpdateFwd  rva=0x00d3a4
+  .maxstack 67  locals=0x11000077
+  IL_0000: ldstr        "Vertical"
+  IL_0005: call         UnityEngine.Input::GetAxis
+  IL_000a: ldc.r4       -1.0
+  IL_000f: ldc.r4       1.0
+  IL_0014: call         UnityEngine.Mathf::Clamp
+  IL_0019: stloc.0      
+  IL_001a: ldstr        "Horizontal"
+  IL_001f: call         UnityEngine.Input::GetAxis
+  IL_0024: ldc.r4       -1.0
+  IL_0029: ldc.r4       1.0
+  IL_002e: call         UnityEngine.Mathf::Clamp
+  IL_0033: stloc.1      
+  IL_0034: ldloc.0      
+  IL_0035: call         System.Math::Abs
+  IL_003a: ldc.r4       0.10000000149011612
+  IL_003f: cgt          
+  IL_0041: stloc.2      
+  IL_0042: ldloc.1      
+  IL_0043: call         System.Math::Abs
+  IL_0048: ldc.r4       0.10000000149011612
+  IL_004d: cgt          
+  IL_004f: stloc.3      
+  IL_0050: ldloc.3      
+  IL_0051: brtrue       IL_005c
+  IL_0056: ldloc.2      
+  IL_0057: br           IL_005d
+  IL_005c: ldc.i4.1     
+  IL_005d: stloc.s      4
+  IL_005f: ldloc.2      
+  IL_0060: brfalse      IL_006e
+  IL_0065: ldloc.3      
+  IL_0066: ldc.i4.0     
+  IL_0067: ceq          
+  IL_0069: br           IL_006f
+  IL_006e: ldc.i4.0     
+  IL_006f: stloc.s      5
+  IL_0071: ldarg.0      
+  IL_0072: call         UnityEngine.Component::get_rigidbody
+  IL_0077: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_007c: stloc.s      16
+  IL_007e: ldloca.s     16
+  IL_0080: call         UnityEngine.Vector3::get_magnitude
+  IL_0085: stloc.s      6
+  IL_0087: ldloc.s      6
+  IL_0089: ldc.r4       0.009999999776482582
+  IL_008e: ble.un       IL_022d
+  IL_0093: ldarg.0      
+  IL_0094: call         UnityEngine.Component::get_rigidbody
+  IL_0099: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_009e: stloc.s      7
+  IL_00a0: ldarg.0      
+  IL_00a1: call         UnityEngine.Component::get_rigidbody
+  IL_00a6: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_00ab: ldloc.s      6
+  IL_00ad: call         UnityEngine.Vector3::op_Division
+  IL_00b2: stloc.s      8
+  IL_00b4: ldloca.s     7
+  IL_00b6: ldc.r4       0.0
+  IL_00bb: stfld        UnityEngine.Vector3::y
+  IL_00c0: ldloca.s     7
+  IL_00c2: call         UnityEngine.Vector3::get_magnitude
+  IL_00c7: stloc.s      9
+  IL_00c9: ldarg.0      
+  IL_00ca: call         HasGroundContact
+  IL_00cf: brtrue       IL_0115
+  IL_00d4: ldarg.0      
+  IL_00d5: ldfld        fwd
+  IL_00da: call         UnityEngine.Vector3::get_up
+  IL_00df: call         UnityEngine.Vector3::Dot
+  IL_00e4: ldc.r4       0.800000011920929
+  IL_00e9: bge.un       IL_0110
+  IL_00ee: ldarg.0      
+  IL_00ef: ldarg.0      
+  IL_00f0: ldfld        fwd
+  IL_00f5: ldloc.s      8
+  IL_00f7: ldloc.s      6
+  IL_00f9: ldarg.0      
+  IL_00fa: ldfld        directionChangeSpeed
+  IL_00ff: mul          
+  IL_0100: call         UnityEngine.Time::get_deltaTime
+  IL_0105: mul          
+  IL_0106: call         UnityEngine.Vector3::Slerp
+  IL_010b: stfld        fwd
+  IL_0110: br           IL_022d
+  IL_0115: ldarg.0      
+  IL_0116: ldfld        isSticky
+  IL_011b: brfalse      IL_0127
+  IL_0120: ldloc.s      4
+  IL_0122: brfalse      IL_022d
+  IL_0127: ldloc.s      9
+  IL_0129: ldc.r4       0.009999999776482582
+  IL_012e: ble.un       IL_022d
+  IL_0133: ldloc.s      5
+  IL_0135: brfalse      IL_0147
+  IL_013a: ldarg.0      
+  IL_013b: ldfld        directionSpeedGammaFwd
+  IL_0140: stloc.s      10
+  IL_0142: br           IL_0184
+  IL_0147: ldloc.s      4
+  IL_0149: brfalse      IL_017c
+  IL_014e: ldloc.1      
+  IL_014f: ldarg.0      
+  IL_0150: call         UnityEngine.Component::get_rigidbody
+  IL_0155: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_015a: call         UnityEngine.Vector3::get_right
+  IL_015f: call         UnityEngine.Vector3::Dot
+  IL_0164: mul          
+  IL_0165: ldc.r4       0.0
+  IL_016a: ble.un       IL_017c
+  IL_016f: ldarg.0      
+  IL_0170: ldfld        directionSpeedGamma
+  IL_0175: stloc.s      10
+  IL_0177: br           IL_0184
+  IL_017c: ldarg.0      
+  IL_017d: ldfld        directionSpeedGammaNosteer
+  IL_0182: stloc.s      10
+  IL_0184: ldloc.s      6
+  IL_0186: ldc.r4       1.0
+  IL_018b: ldloc.s      10
+  IL_018d: call         UnityEngine.Mathf::Gamma
+  IL_0192: ldc.r4       0.03999999910593033
+  IL_0197: sub          
+  IL_0198: ldc.r4       0.0
+  IL_019d: ldc.r4       3.0
+  IL_01a2: call         UnityEngine.Mathf::Clamp
+  IL_01a7: stloc.s      11
+  IL_01a9: ldarg.0      
+  IL_01aa: ldfld        fwd
+  IL_01af: ldloc.s      8
+  IL_01b1: call         UnityEngine.Vector3::Dot
+  IL_01b6: stloc.s      12
+  IL_01b8: ldc.r4       0.6000000238418579
+  IL_01bd: stloc.s      13
+  IL_01bf: ldloc.1      
+  IL_01c0: call         UnityEngine.Mathf::Abs
+  IL_01c5: ldc.r4       0.10000000149011612
+  IL_01ca: bge.un       IL_01f2
+  IL_01cf: ldloc.0      
+  IL_01d0: call         UnityEngine.Mathf::Abs
+  IL_01d5: ldc.r4       0.0
+  IL_01da: ble.un       IL_01f2
+  IL_01df: ldloc.s      12
+  IL_01e1: ldc.r4       -0.925000011920929
+  IL_01e6: bge.un       IL_01f2
+  IL_01eb: ldc.r4       -1.0
+  IL_01f0: stloc.s      12
+  IL_01f2: ldc.r4       1.0
+  IL_01f7: ldloc.s      12
+  IL_01f9: add          
+  IL_01fa: ldc.r4       2.0
+  IL_01ff: ldloc.s      13
+  IL_0201: call         UnityEngine.Mathf::Gamma
+  IL_0206: stloc.s      14
+  IL_0208: ldarg.0      
+  IL_0209: ldarg.0      
+  IL_020a: ldfld        fwd
+  IL_020f: ldloc.s      8
+  IL_0211: ldloc.s      11
+  IL_0213: ldloc.s      14
+  IL_0215: mul          
+  IL_0216: ldarg.0      
+  IL_0217: ldfld        directionChangeSpeed
+  IL_021c: mul          
+  IL_021d: call         UnityEngine.Time::get_deltaTime
+  IL_0222: mul          
+  IL_0223: call         UnityEngine.Vector3::Slerp
+  IL_0228: stfld        fwd
+  IL_022d: ldarg.0      
+  IL_022e: ldfld        inAirTimer
+  IL_0233: ldarg.0      
+  IL_0234: ldfld        groundContactBias
+  IL_0239: bge.un       IL_02e0
+  IL_023e: ldarg.0      
+  IL_023f: ldfld        contactNormalUntilted
+  IL_0244: ldarg.0      
+  IL_0245: ldfld        fwd
+  IL_024a: call         UnityEngine.Vector3::Cross
+  IL_024f: ldarg.0      
+  IL_0250: ldfld        contactNormalUntilted
+  IL_0255: call         UnityEngine.Vector3::Cross
+  IL_025a: call         UnityEngine.Vector3::Normalize
+  IL_025f: stloc.s      15
+  IL_0261: ldloca.s     15
+  IL_0263: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_0268: ldc.r4       1.401298464324817e-45
+  IL_026d: ble.un       IL_029a
+  IL_0272: ldarg.0      
+  IL_0273: ldarg.0      
+  IL_0274: ldfld        fwd
+  IL_0279: ldloc.s      15
+  IL_027b: call         UnityEngine.Time::get_deltaTime
+  IL_0280: ldc.r4       2.0
+  IL_0285: mul          
+  IL_0286: ldc.r4       0.0
+  IL_028b: call         UnityEngine.Vector3::RotateTowards
+  IL_0290: stfld        fwd
+  IL_0295: br           IL_02e0
+  IL_029a: ldarg.0      
+  IL_029b: ldfld        contactNormalUntilted
+  IL_02a0: ldarg.0      
+  IL_02a1: ldfld        cameraTransform
+  IL_02a6: call         UnityEngine.Vector3::get_forward
+  IL_02ab: callvirt     UnityEngine.Transform::TransformDirection
+  IL_02b0: call         UnityEngine.Vector3::Cross
+  IL_02b5: ldarg.0      
+  IL_02b6: ldfld        contactNormalUntilted
+  IL_02bb: call         UnityEngine.Vector3::Cross
+  IL_02c0: stloc.s      15
+  IL_02c2: ldloca.s     15
+  IL_02c4: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_02c9: ldc.r4       1.401298464324817e-45
+  IL_02ce: ble.un       IL_02e0
+  IL_02d3: ldarg.0      
+  IL_02d4: ldloc.s      15
+  IL_02d6: stfld        fwd
+  IL_02db: br           IL_02e0
+  IL_02e0: ldarg.0      
+  IL_02e1: ldarg.0      
+  IL_02e2: ldfld        fwd
+  IL_02e7: call         UnityEngine.Vector3::Normalize
+  IL_02ec: stfld        fwd
+  IL_02f1: ldarg.0      
+  IL_02f2: ldfld        stickTimer
+  IL_02f7: ldc.r4       0.0
+  IL_02fc: bne.un       IL_0311
+  IL_0301: ldarg.0      
+  IL_0302: ldc.r4       0.0
+  IL_0307: stfld        noSteerTimer
+  IL_030c: br           IL_037d
+  IL_0311: ldloc.s      4
+  IL_0313: brfalse      IL_0350
+  IL_0318: ldarg.0      
+  IL_0319: dup          
+  IL_031a: ldfld        noSteerTimer
+  IL_031f: call         UnityEngine.Time::get_deltaTime
+  IL_0324: ldc.r4       2.0
+  IL_0329: mul          
+  IL_032a: sub          
+  IL_032b: stfld        noSteerTimer
+  IL_0330: ldarg.0      
+  IL_0331: ldfld        noSteerTimer
+  IL_0336: ldc.r4       2.0
+  IL_033b: bge.un       IL_034b
+  IL_0340: ldarg.0      
+  IL_0341: ldc.r4       0.0
+  IL_0346: stfld        noSteerTimer
+  IL_034b: br           IL_037d
+  IL_0350: ldarg.0      
+  IL_0351: dup          
+  IL_0352: ldfld        noSteerTimer
+  IL_0357: call         UnityEngine.Time::get_deltaTime
+  IL_035c: add          
+  IL_035d: stfld        noSteerTimer
+  IL_0362: ldarg.0      
+  IL_0363: ldfld        noSteerTimer
+  IL_0368: ldc.r4       2.0
+  IL_036d: ble.un       IL_037d
+  IL_0372: ldarg.0      
+  IL_0373: ldc.r4       4.0
+  IL_0378: stfld        noSteerTimer
+  IL_037d: ldarg.0      
+  IL_037e: ldarg.0      
+  IL_037f: ldfld        noSteerTimer
+  IL_0384: ldc.r4       0.0
+  IL_0389: ldc.r4       4.0
+  IL_038e: call         UnityEngine.Mathf::Clamp
+  IL_0393: stfld        noSteerTimer
+  IL_0398: ret          
+
+//// BallController::UpdateCritter  rva=0x00d74c
+  .maxstack 71  locals=0x11000078
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isSticky
+  IL_0006: brfalse      IL_00f5
+  IL_000b: ldarg.0      
+  IL_000c: ldfld        isSleeping
+  IL_0011: brtrue       IL_00f5
+  IL_0016: ldstr        "Vertical"
+  IL_001b: call         UnityEngine.Input::GetAxis
+  IL_0020: ldc.r4       -1.0
+  IL_0025: ldc.r4       1.0
+  IL_002a: call         UnityEngine.Mathf::Clamp
+  IL_002f: stloc.0      
+  IL_0030: ldstr        "Horizontal"
+  IL_0035: call         UnityEngine.Input::GetAxis
+  IL_003a: ldc.r4       -1.0
+  IL_003f: ldc.r4       1.0
+  IL_0044: call         UnityEngine.Mathf::Clamp
+  IL_0049: stloc.1      
+  IL_004a: ldarg.0      
+  IL_004b: ldflda       tumbleAngularVel
+  IL_0050: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_0055: ldarg.0      
+  IL_0056: ldfld        sqrCritterTumbleSpeed
+  IL_005b: bge.un       IL_00f0
+  IL_0060: ldarg.0      
+  IL_0061: ldfld        inAirTimer
+  IL_0066: ldarg.0      
+  IL_0067: ldfld        groundContactBias
+  IL_006c: bge.un       IL_00f0
+  IL_0071: ldloc.0      
+  IL_0072: call         UnityEngine.Mathf::Abs
+  IL_0077: ldc.r4       0.10000000149011612
+  IL_007c: blt.un       IL_0091
+  IL_0081: ldloc.1      
+  IL_0082: call         UnityEngine.Mathf::Abs
+  IL_0087: ldc.r4       0.10000000149011612
+  IL_008c: ble.un       IL_00f0
+  IL_0091: ldarg.0      
+  IL_0092: ldfld        fwd
+  IL_0097: call         UnityEngine.Vector3::op_UnaryNegation
+  IL_009c: call         UnityEngine.Vector3::get_up
+  IL_00a1: ldc.r4       0.9900000095367432
+  IL_00a6: call         UnityEngine.Vector3::Lerp
+  IL_00ab: stloc.2      
+  IL_00ac: ldarg.0      
+  IL_00ad: ldfld        jumpDirection
+  IL_00b2: call         UnityEngine.Vector3::op_UnaryNegation
+  IL_00b7: ldloc.2      
+  IL_00b8: call         UnityEngine.Quaternion::LookRotation
+  IL_00bd: stloc.3      
+  IL_00be: ldarg.0      
+  IL_00bf: ldfld        critter
+  IL_00c4: callvirt     UnityEngine.Component::get_transform
+  IL_00c9: ldarg.0      
+  IL_00ca: ldfld        critter
+  IL_00cf: callvirt     UnityEngine.Component::get_transform
+  IL_00d4: callvirt     UnityEngine.Transform::get_rotation
+  IL_00d9: ldloc.3      
+  IL_00da: ldarg.0      
+  IL_00db: ldfld        critterLevelSpeed
+  IL_00e0: call         UnityEngine.Time::get_deltaTime
+  IL_00e5: mul          
+  IL_00e6: call         UnityEngine.Quaternion::Lerp
+  IL_00eb: callvirt     UnityEngine.Transform::set_rotation
+  IL_00f0: br           IL_0161
+  IL_00f5: ldarg.0      
+  IL_00f6: ldflda       tumbleAngularVel
+  IL_00fb: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_0100: ldarg.0      
+  IL_0101: ldfld        sqrCritterTumbleSpeed
+  IL_0106: bge.un       IL_0161
+  IL_010b: ldarg.0      
+  IL_010c: ldfld        inAirTimer
+  IL_0111: ldarg.0      
+  IL_0112: ldfld        groundContactBias
+  IL_0117: bge.un       IL_0161
+  IL_011c: ldarg.0      
+  IL_011d: ldfld        fwd
+  IL_0122: call         UnityEngine.Vector3::get_up
+  IL_0127: call         UnityEngine.Quaternion::LookRotation
+  IL_012c: stloc.s      4
+  IL_012e: ldarg.0      
+  IL_012f: ldfld        critter
+  IL_0134: callvirt     UnityEngine.Component::get_transform
+  IL_0139: ldarg.0      
+  IL_013a: ldfld        critter
+  IL_013f: callvirt     UnityEngine.Component::get_transform
+  IL_0144: callvirt     UnityEngine.Transform::get_rotation
+  IL_0149: ldloc.s      4
+  IL_014b: ldarg.0      
+  IL_014c: ldfld        critterLevelSpeed
+  IL_0151: call         UnityEngine.Time::get_deltaTime
+  IL_0156: mul          
+  IL_0157: call         UnityEngine.Quaternion::Lerp
+  IL_015c: callvirt     UnityEngine.Transform::set_rotation
+  IL_0161: ldarg.0      
+  IL_0162: ldfld        surfaceAngularVel
+  IL_0167: ldarg.0      
+  IL_0168: ldfld        tumbleAngularVel
+  IL_016d: call         UnityEngine.Vector3::op_Subtraction
+  IL_0172: stloc.s      5
+  IL_0174: ldarg.0      
+  IL_0175: ldfld        isSticky
+  IL_017a: brfalse      IL_01ac
+  IL_017f: ldarg.0      
+  IL_0180: dup          
+  IL_0181: ldfld        tumbleAngularVel
+  IL_0186: ldloc.s      5
+  IL_0188: ldarg.0      
+  IL_0189: ldfld        critterStickyDrag
+  IL_018e: call         UnityEngine.Vector3::op_Multiply
+  IL_0193: call         UnityEngine.Time::get_deltaTime
+  IL_0198: call         UnityEngine.Vector3::op_Multiply
+  IL_019d: call         UnityEngine.Vector3::op_Addition
+  IL_01a2: stfld        tumbleAngularVel
+  IL_01a7: br           IL_01d4
+  IL_01ac: ldarg.0      
+  IL_01ad: dup          
+  IL_01ae: ldfld        tumbleAngularVel
+  IL_01b3: ldloc.s      5
+  IL_01b5: ldarg.0      
+  IL_01b6: ldfld        critterDrag
+  IL_01bb: call         UnityEngine.Vector3::op_Multiply
+  IL_01c0: call         UnityEngine.Time::get_deltaTime
+  IL_01c5: call         UnityEngine.Vector3::op_Multiply
+  IL_01ca: call         UnityEngine.Vector3::op_Addition
+  IL_01cf: stfld        tumbleAngularVel
+  IL_01d4: ldarg.0      
+  IL_01d5: ldfld        critter
+  IL_01da: callvirt     UnityEngine.Component::get_transform
+  IL_01df: ldarg.0      
+  IL_01e0: ldfld        tumbleAngularVel
+  IL_01e5: ldarg.0      
+  IL_01e6: ldflda       tumbleAngularVel
+  IL_01eb: call         UnityEngine.Vector3::get_magnitude
+  IL_01f0: call         UnityEngine.Time::get_deltaTime
+  IL_01f5: mul          
+  IL_01f6: callvirt     UnityEngine.Transform::RotateAround
+  IL_01fb: ldarg.0      
+  IL_01fc: ldfld        critterPivot
+  IL_0201: callvirt     UnityEngine.Component::get_transform
+  IL_0206: ldarg.0      
+  IL_0207: call         UnityEngine.Component::get_transform
+  IL_020c: callvirt     UnityEngine.Transform::get_position
+  IL_0211: callvirt     UnityEngine.Transform::set_position
+  IL_0216: ldarg.0      
+  IL_0217: ldfld        critterPivot
+  IL_021c: callvirt     UnityEngine.Transform::get_rotation
+  IL_0221: stloc.s      6
+  IL_0223: ldloca.s     6
+  IL_0225: ldarg.0      
+  IL_0226: ldfld        crawlNormal
+  IL_022b: ldc.r4       0.0
+  IL_0230: call         UnityEngine.Quaternion::SetAxisAngle
+  IL_0235: ldarg.0      
+  IL_0236: ldfld        critterPivotInverse
+  IL_023b: ldarg.0      
+  IL_023c: ldfld        critterPivot
+  IL_0241: callvirt     UnityEngine.Transform::get_rotation
+  IL_0246: call         UnityEngine.Quaternion::Inverse
+  IL_024b: callvirt     UnityEngine.Transform::set_rotation
+  IL_0250: ret          
+
+//// BallController::UpdateRollFX  rva=0x00d9ac
+  .maxstack 88  locals=0x11000079
+  IL_0000: ldarg.0      
+  IL_0001: call         HasGroundContact
+  IL_0006: brfalse      IL_01bc
+  IL_000b: ldarg.0      
+  IL_000c: call         UnityEngine.Component::get_rigidbody
+  IL_0011: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0016: ldarg.0      
+  IL_0017: ldfld        surfaceVelocity
+  IL_001c: ldc.r4       1.0
+  IL_0021: ldarg.0      
+  IL_0022: ldfld        stickynessLook
+  IL_0027: sub          
+  IL_0028: call         UnityEngine.Vector3::op_Multiply
+  IL_002d: call         UnityEngine.Vector3::op_Subtraction
+  IL_0032: stloc.0      
+  IL_0033: ldloca.s     0
+  IL_0035: call         UnityEngine.Vector3::get_magnitude
+  IL_003a: ldarg.0      
+  IL_003b: ldfld        rollSparksThreshold
+  IL_0040: sub          
+  IL_0041: ldarg.0      
+  IL_0042: ldfld        rollSparksTop
+  IL_0047: ldarg.0      
+  IL_0048: ldfld        rollSparksThreshold
+  IL_004d: sub          
+  IL_004e: div          
+  IL_004f: ldc.i4.0     
+  IL_0050: ldc.i4.1     
+  IL_0051: call         UnityEngine.Mathf::Clamp
+  IL_0056: stloc.1      
+  IL_0057: ldarg.0      
+  IL_0058: ldfld        isSticky
+  IL_005d: brfalse      IL_00bf
+  IL_0062: ldarg.0      
+  IL_0063: ldfld        rollSparks
+  IL_0068: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_006d: ldc.r4       0.0
+  IL_0072: callvirt     UnityEngine.ParticleEmitter::set_minEmission
+  IL_0077: ldarg.0      
+  IL_0078: ldfld        rollSplats
+  IL_007d: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_0082: ldc.r4       100.0
+  IL_0087: ldloc.1      
+  IL_0088: mul          
+  IL_0089: callvirt     UnityEngine.ParticleEmitter::set_minEmission
+  IL_008e: ldarg.0      
+  IL_008f: ldfld        rollSparks
+  IL_0094: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_0099: ldc.r4       0.0
+  IL_009e: callvirt     UnityEngine.ParticleEmitter::set_maxEmission
+  IL_00a3: ldarg.0      
+  IL_00a4: ldfld        rollSplats
+  IL_00a9: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_00ae: ldc.r4       100.0
+  IL_00b3: ldloc.1      
+  IL_00b4: mul          
+  IL_00b5: callvirt     UnityEngine.ParticleEmitter::set_maxEmission
+  IL_00ba: br           IL_0117
+  IL_00bf: ldarg.0      
+  IL_00c0: ldfld        rollSparks
+  IL_00c5: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_00ca: ldc.r4       100.0
+  IL_00cf: ldloc.1      
+  IL_00d0: mul          
+  IL_00d1: callvirt     UnityEngine.ParticleEmitter::set_minEmission
+  IL_00d6: ldarg.0      
+  IL_00d7: ldfld        rollSplats
+  IL_00dc: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_00e1: ldc.r4       0.0
+  IL_00e6: callvirt     UnityEngine.ParticleEmitter::set_minEmission
+  IL_00eb: ldarg.0      
+  IL_00ec: ldfld        rollSparks
+  IL_00f1: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_00f6: ldc.r4       100.0
+  IL_00fb: ldloc.1      
+  IL_00fc: mul          
+  IL_00fd: callvirt     UnityEngine.ParticleEmitter::set_maxEmission
+  IL_0102: ldarg.0      
+  IL_0103: ldfld        rollSplats
+  IL_0108: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_010d: ldc.r4       0.0
+  IL_0112: callvirt     UnityEngine.ParticleEmitter::set_maxEmission
+  IL_0117: ldloca.s     0
+  IL_0119: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_011e: ldc.r4       0.0010000000474974513
+  IL_0123: ble.un       IL_0176
+  IL_0128: ldarg.0      
+  IL_0129: ldfld        rollSparks
+  IL_012e: callvirt     UnityEngine.GameObject::get_transform
+  IL_0133: ldloc.0      
+  IL_0134: ldloc.0      
+  IL_0135: call         UnityEngine.Vector3::get_up
+  IL_013a: call         UnityEngine.Vector3::Cross
+  IL_013f: ldloc.0      
+  IL_0140: call         UnityEngine.Vector3::Cross
+  IL_0145: call         UnityEngine.Quaternion::LookRotation
+  IL_014a: callvirt     UnityEngine.Transform::set_rotation
+  IL_014f: ldarg.0      
+  IL_0150: ldfld        rollSplats
+  IL_0155: callvirt     UnityEngine.GameObject::get_transform
+  IL_015a: ldloc.0      
+  IL_015b: ldloc.0      
+  IL_015c: call         UnityEngine.Vector3::get_up
+  IL_0161: call         UnityEngine.Vector3::Cross
+  IL_0166: ldloc.0      
+  IL_0167: call         UnityEngine.Vector3::Cross
+  IL_016c: call         UnityEngine.Quaternion::LookRotation
+  IL_0171: callvirt     UnityEngine.Transform::set_rotation
+  IL_0176: ldarg.0      
+  IL_0177: ldfld        contactPosition
+  IL_017c: call         UnityEngine.Vector3::get_zero
+  IL_0181: call         UnityEngine.Vector3::op_Inequality
+  IL_0186: brfalse      IL_01b7
+  IL_018b: ldarg.0      
+  IL_018c: ldfld        rollSparks
+  IL_0191: callvirt     UnityEngine.GameObject::get_transform
+  IL_0196: ldarg.0      
+  IL_0197: ldfld        contactPosition
+  IL_019c: callvirt     UnityEngine.Transform::set_position
+  IL_01a1: ldarg.0      
+  IL_01a2: ldfld        rollSplats
+  IL_01a7: callvirt     UnityEngine.GameObject::get_transform
+  IL_01ac: ldarg.0      
+  IL_01ad: ldfld        contactPosition
+  IL_01b2: callvirt     UnityEngine.Transform::set_position
+  IL_01b7: br           IL_0210
+  IL_01bc: ldarg.0      
+  IL_01bd: ldfld        rollSparks
+  IL_01c2: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_01c7: ldc.r4       0.0
+  IL_01cc: callvirt     UnityEngine.ParticleEmitter::set_minEmission
+  IL_01d1: ldarg.0      
+  IL_01d2: ldfld        rollSplats
+  IL_01d7: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_01dc: ldc.r4       0.0
+  IL_01e1: callvirt     UnityEngine.ParticleEmitter::set_minEmission
+  IL_01e6: ldarg.0      
+  IL_01e7: ldfld        rollSparks
+  IL_01ec: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_01f1: ldc.r4       0.0
+  IL_01f6: callvirt     UnityEngine.ParticleEmitter::set_maxEmission
+  IL_01fb: ldarg.0      
+  IL_01fc: ldfld        rollSplats
+  IL_0201: callvirt     UnityEngine.GameObject::get_particleEmitter
+  IL_0206: ldc.r4       0.0
+  IL_020b: callvirt     UnityEngine.ParticleEmitter::set_maxEmission
+  IL_0210: ret          
+
+//// BallController::UpdateBallSurface  rva=0x00dbcc
+  .maxstack 25  locals=0x1100007a
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        inAirTimer
+  IL_0006: ldarg.0      
+  IL_0007: ldfld        groundContactBias
+  IL_000c: bge.un       IL_0080
+  IL_0011: ldarg.0      
+  IL_0012: call         UnityEngine.Component::get_rigidbody
+  IL_0017: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_001c: ldarg.0      
+  IL_001d: ldfld        surfaceVelocity
+  IL_0022: ldc.r4       1.0
+  IL_0027: ldarg.0      
+  IL_0028: ldfld        stickynessLook
+  IL_002d: sub          
+  IL_002e: call         UnityEngine.Vector3::op_Multiply
+  IL_0033: call         UnityEngine.Vector3::op_Subtraction
+  IL_0038: stloc.0      
+  IL_0039: ldarg.0      
+  IL_003a: ldfld        contactNormal
+  IL_003f: ldloc.0      
+  IL_0040: ldarg.0      
+  IL_0041: ldfld        baseCircumference
+  IL_0046: call         UnityEngine.Vector3::op_Division
+  IL_004b: call         UnityEngine.Vector3::Cross
+  IL_0050: stloc.1      
+  IL_0051: ldarg.0      
+  IL_0052: ldfld        isSticky
+  IL_0057: brfalse      IL_0068
+  IL_005c: ldarg.0      
+  IL_005d: ldloc.1      
+  IL_005e: stfld        surfaceAngularVel
+  IL_0063: br           IL_0080
+  IL_0068: ldarg.0      
+  IL_0069: ldarg.0      
+  IL_006a: ldfld        surfaceAngularVel
+  IL_006f: ldloc.1      
+  IL_0070: ldarg.0      
+  IL_0071: ldfld        surfaceSlideWhenHard
+  IL_0076: call         UnityEngine.Vector3::Lerp
+  IL_007b: stfld        surfaceAngularVel
+  IL_0080: ldarg.0      
+  IL_0081: ldfld        surface
+  IL_0086: callvirt     UnityEngine.GameObject::get_transform
+  IL_008b: ldarg.0      
+  IL_008c: ldfld        surfaceAngularVel
+  IL_0091: ldarg.0      
+  IL_0092: ldflda       surfaceAngularVel
+  IL_0097: call         UnityEngine.Vector3::get_magnitude
+  IL_009c: call         UnityEngine.Time::get_deltaTime
+  IL_00a1: mul          
+  IL_00a2: callvirt     UnityEngine.Transform::RotateAround
+  IL_00a7: ldarg.0      
+  IL_00a8: ldfld        surface
+  IL_00ad: callvirt     UnityEngine.GameObject::get_transform
+  IL_00b2: ldarg.0      
+  IL_00b3: call         UnityEngine.Component::get_transform
+  IL_00b8: callvirt     UnityEngine.Transform::get_position
+  IL_00bd: callvirt     UnityEngine.Transform::set_position
+  IL_00c2: ret          
+
+//// BallController::FixedUpdateState  rva=0x00dc9c
+  .maxstack 97  locals=0x1100007b
+  IL_0000: ldstr        "StateDown"
+  IL_0005: call         UnityEngine.Input::GetButton
+  IL_000a: stloc.0      
+  IL_000b: ldloc.0      
+  IL_000c: brfalse      IL_00dc
+  IL_0011: ldarg.0      
+  IL_0012: ldfld        isSticky
+  IL_0017: brtrue       IL_00dc
+  IL_001c: ldarg.0      
+  IL_001d: ldc.i4.1     
+  IL_001e: stfld        isSticky
+  IL_0023: ldarg.0      
+  IL_0024: ldstr        "BecomingSticky"
+  IL_0029: call         UnityEngine.Component::BroadcastMessage
+  IL_002e: ldarg.0      
+  IL_002f: ldfld        surface
+  IL_0034: ldtoken      UnityEngine.GooLattice
+  IL_0039: call         System.Type::GetTypeFromHandle
+  IL_003e: callvirt     UnityEngine.GameObject::GetComponent
+  IL_0043: castclass    UnityEngine.GooLattice
+  IL_0048: ldc.i4.1     
+  IL_0049: callvirt     UnityEngine.GooLattice::set_enabled
+  IL_004e: ldarg.0      
+  IL_004f: ldfld        surface
+  IL_0054: ldtoken      UnityEngine.GooballCollider
+  IL_0059: call         System.Type::GetTypeFromHandle
+  IL_005e: callvirt     UnityEngine.GameObject::GetComponent
+  IL_0063: castclass    UnityEngine.GooballCollider
+  IL_0068: ldc.i4.1     
+  IL_0069: callvirt     UnityEngine.GooballCollider::set_enabled
+  IL_006e: ldarg.0      
+  IL_006f: call         UnityEngine.Component::get_collider
+  IL_0074: callvirt     UnityEngine.Collider::get_material
+  IL_0079: ldc.r4       0.0
+  IL_007e: callvirt     UnityEngine.PhysicMaterial::set_dynamicFriction
+  IL_0083: ldarg.0      
+  IL_0084: call         UnityEngine.Component::get_collider
+  IL_0089: callvirt     UnityEngine.Collider::get_material
+  IL_008e: ldc.r4       0.0
+  IL_0093: callvirt     UnityEngine.PhysicMaterial::set_staticFriction
+  IL_0098: ldarg.0      
+  IL_0099: call         UnityEngine.Component::get_collider
+  IL_009e: callvirt     UnityEngine.Collider::get_material
+  IL_00a3: ldc.i4.2     
+  IL_00a4: callvirt     UnityEngine.PhysicMaterial::set_frictionCombine
+  IL_00a9: ldarg.0      
+  IL_00aa: call         UnityEngine.Component::get_collider
+  IL_00af: callvirt     UnityEngine.Collider::get_material
+  IL_00b4: ldc.i4.2     
+  IL_00b5: callvirt     UnityEngine.PhysicMaterial::set_bounceCombine
+  IL_00ba: ldarg.0      
+  IL_00bb: call         HasGroundContact
+  IL_00c0: brfalse      IL_00d7
+  IL_00c5: ldarg.0      
+  IL_00c6: dup          
+  IL_00c7: ldfld        stickTimer
+  IL_00cc: ldc.r4       1.0
+  IL_00d1: add          
+  IL_00d2: stfld        stickTimer
+  IL_00d7: br           IL_0173
+  IL_00dc: ldloc.0      
+  IL_00dd: brtrue       IL_0173
+  IL_00e2: ldarg.0      
+  IL_00e3: ldfld        isSticky
+  IL_00e8: brfalse      IL_0173
+  IL_00ed: ldarg.0      
+  IL_00ee: ldc.i4.0     
+  IL_00ef: stfld        isSticky
+  IL_00f4: ldarg.0      
+  IL_00f5: ldstr        "BecomingHard"
+  IL_00fa: call         UnityEngine.Component::BroadcastMessage
+  IL_00ff: ldarg.0      
+  IL_0100: ldfld        standingOn
+  IL_0105: ldnull       
+  IL_0106: call         UnityEngine.Object::op_Inequality
+  IL_010b: brfalse      IL_0156
+  IL_0110: ldarg.0      
+  IL_0111: ldflda       surfaceVelocity
+  IL_0116: call         UnityEngine.Vector3::get_sqrMagnitude
+  IL_011b: ldc.r4       0.009999999776482582
+  IL_0120: ble.un       IL_014b
+  IL_0125: ldarg.0      
+  IL_0126: call         UnityEngine.Component::get_rigidbody
+  IL_012b: dup          
+  IL_012c: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0131: ldarg.0      
+  IL_0132: ldfld        surfaceVelocity
+  IL_0137: ldc.r4       0.800000011920929
+  IL_013c: call         UnityEngine.Vector3::op_Multiply
+  IL_0141: call         UnityEngine.Vector3::op_Addition
+  IL_0146: callvirt     UnityEngine.Rigidbody::set_velocity
+  IL_014b: ldarg.0      
+  IL_014c: call         UnityEngine.Vector3::get_zero
+  IL_0151: stfld        surfaceVelocity
+  IL_0156: ldarg.0      
+  IL_0157: ldarg.0      
+  IL_0158: ldfld        fwd
+  IL_015d: ldarg.0      
+  IL_015e: ldfld        contactNormalUntilted
+  IL_0163: ldarg.0      
+  IL_0164: call         PreparingForJump
+  IL_0169: call         UnityEngine.Vector3::Lerp
+  IL_016e: stfld        fwd
+  IL_0173: ldloc.0      
+  IL_0174: brfalse      IL_01c5
+  IL_0179: ldarg.0      
+  IL_017a: ldfld        isSticky
+  IL_017f: brfalse      IL_01c5
+  IL_0184: call         UnityEngine.Time::get_deltaTime
+  IL_0189: ldarg.0      
+  IL_018a: ldfld        stickyStartTime
+  IL_018f: div          
+  IL_0190: stloc.1      
+  IL_0191: ldarg.0      
+  IL_0192: call         HasGroundContact
+  IL_0197: brtrue       IL_01a4
+  IL_019c: ldloc.1      
+  IL_019d: ldc.r4       5.0
+  IL_01a2: mul          
+  IL_01a3: stloc.1      
+  IL_01a4: ldarg.0      
+  IL_01a5: dup          
+  IL_01a6: ldfld        stickyness
+  IL_01ab: ldloc.1      
+  IL_01ac: add          
+  IL_01ad: stfld        stickyness
+  IL_01b2: ldarg.0      
+  IL_01b3: dup          
+  IL_01b4: ldfld        stickynessLook
+  IL_01b9: ldloc.1      
+  IL_01ba: add          
+  IL_01bb: stfld        stickynessLook
+  IL_01c0: br           IL_01f4
+  IL_01c5: call         UnityEngine.Time::get_deltaTime
+  IL_01ca: ldarg.0      
+  IL_01cb: ldfld        stickyStopTime
+  IL_01d0: div          
+  IL_01d1: stloc.2      
+  IL_01d2: ldarg.0      
+  IL_01d3: dup          
+  IL_01d4: ldfld        stickyness
+  IL_01d9: ldloc.2      
+  IL_01da: ldc.r4       2.0
+  IL_01df: mul          
+  IL_01e0: sub          
+  IL_01e1: stfld        stickyness
+  IL_01e6: ldarg.0      
+  IL_01e7: dup          
+  IL_01e8: ldfld        stickynessLook
+  IL_01ed: ldloc.2      
+  IL_01ee: sub          
+  IL_01ef: stfld        stickynessLook
+  IL_01f4: ldarg.0      
+  IL_01f5: ldarg.0      
+  IL_01f6: ldfld        stickyness
+  IL_01fb: ldc.r4       0.0
+  IL_0200: ldc.r4       1.0
+  IL_0205: call         UnityEngine.Mathf::Clamp
+  IL_020a: stfld        stickyness
+  IL_020f: ldarg.0      
+  IL_0210: ldarg.0      
+  IL_0211: ldfld        stickynessLook
+  IL_0216: ldc.r4       0.0
+  IL_021b: ldc.r4       1.0
+  IL_0220: call         UnityEngine.Mathf::Clamp
+  IL_0225: stfld        stickynessLook
+  IL_022a: ldarg.0      
+  IL_022b: ldfld        stickynessLook
+  IL_0230: ldc.r4       0.0
+  IL_0235: bne.un       IL_027a
+  IL_023a: ldarg.0      
+  IL_023b: ldfld        surface
+  IL_0240: ldtoken      UnityEngine.GooLattice
+  IL_0245: call         System.Type::GetTypeFromHandle
+  IL_024a: callvirt     UnityEngine.GameObject::GetComponent
+  IL_024f: castclass    UnityEngine.GooLattice
+  IL_0254: ldc.i4.0     
+  IL_0255: callvirt     UnityEngine.GooLattice::set_enabled
+  IL_025a: ldarg.0      
+  IL_025b: ldfld        surface
+  IL_0260: ldtoken      UnityEngine.GooballCollider
+  IL_0265: call         System.Type::GetTypeFromHandle
+  IL_026a: callvirt     UnityEngine.GameObject::GetComponent
+  IL_026f: castclass    UnityEngine.GooballCollider
+  IL_0274: ldc.i4.0     
+  IL_0275: callvirt     UnityEngine.GooballCollider::set_enabled
+  IL_027a: ldarg.0      
+  IL_027b: ldfld        isSticky
+  IL_0280: brtrue       IL_02ed
+  IL_0285: ldarg.0      
+  IL_0286: call         UnityEngine.Component::get_collider
+  IL_028b: callvirt     UnityEngine.Collider::get_material
+  IL_0290: ldarg.0      
+  IL_0291: ldfld        baseFriction
+  IL_0296: ldc.r4       1.0
+  IL_029b: ldarg.0      
+  IL_029c: ldfld        stickyness
+  IL_02a1: sub          
+  IL_02a2: mul          
+  IL_02a3: callvirt     UnityEngine.PhysicMaterial::set_dynamicFriction
+  IL_02a8: ldarg.0      
+  IL_02a9: call         UnityEngine.Component::get_collider
+  IL_02ae: callvirt     UnityEngine.Collider::get_material
+  IL_02b3: ldarg.0      
+  IL_02b4: ldfld        baseFriction
+  IL_02b9: ldc.r4       1.0
+  IL_02be: ldarg.0      
+  IL_02bf: ldfld        stickyness
+  IL_02c4: sub          
+  IL_02c5: mul          
+  IL_02c6: callvirt     UnityEngine.PhysicMaterial::set_staticFriction
+  IL_02cb: ldarg.0      
+  IL_02cc: call         UnityEngine.Component::get_collider
+  IL_02d1: callvirt     UnityEngine.Collider::get_material
+  IL_02d6: ldc.i4.2     
+  IL_02d7: callvirt     UnityEngine.PhysicMaterial::set_frictionCombine
+  IL_02dc: ldarg.0      
+  IL_02dd: call         UnityEngine.Component::get_collider
+  IL_02e2: callvirt     UnityEngine.Collider::get_material
+  IL_02e7: ldc.i4.2     
+  IL_02e8: callvirt     UnityEngine.PhysicMaterial::set_bounceCombine
+  IL_02ed: ret          
+
+//// BallController::UpdateLattice  rva=0x00df98
+  .maxstack 48  locals=0x1100007c
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.0      
+  IL_0002: ldfld        latticeUp
+  IL_0007: ldarg.0      
+  IL_0008: ldfld        contactNormal
+  IL_000d: call         UnityEngine.Time::get_deltaTime
+  IL_0012: ldc.r4       2.0
+  IL_0017: mul          
+  IL_0018: call         UnityEngine.Vector3::Lerp
+  IL_001d: stfld        latticeUp
+  IL_0022: ldarg.0      
+  IL_0023: ldfld        surface
+  IL_0028: ldtoken      UnityEngine.GooLattice
+  IL_002d: call         System.Type::GetTypeFromHandle
+  IL_0032: callvirt     UnityEngine.GameObject::GetComponent
+  IL_0037: castclass    UnityEngine.GooLattice
+  IL_003c: ldarg.0      
+  IL_003d: ldfld        latticeUp
+  IL_0042: callvirt     UnityEngine.GooLattice::SetUpVector
+  IL_0047: ldarg.0      
+  IL_0048: ldfld        stickynessLook
+  IL_004d: ldc.r4       1.0
+  IL_0052: ldc.r4       0.5
+  IL_0057: call         UnityEngine.Mathf::Gamma
+  IL_005c: stloc.0      
+  IL_005d: ldarg.0      
+  IL_005e: ldfld        surface
+  IL_0063: ldtoken      UnityEngine.GooLattice
+  IL_0068: call         System.Type::GetTypeFromHandle
+  IL_006d: callvirt     UnityEngine.GameObject::GetComponent
+  IL_0072: castclass    UnityEngine.GooLattice
+  IL_0077: ldc.r4       1.0
+  IL_007c: ldarg.0      
+  IL_007d: ldfld        latticeWidthBase
+  IL_0082: ldloc.0      
+  IL_0083: call         UnityEngine.Mathf::Lerp
+  IL_0088: callvirt     UnityEngine.GooLattice::set_baseSize
+  IL_008d: ldarg.0      
+  IL_008e: ldfld        surface
+  IL_0093: ldtoken      UnityEngine.GooLattice
+  IL_0098: call         System.Type::GetTypeFromHandle
+  IL_009d: callvirt     UnityEngine.GameObject::GetComponent
+  IL_00a2: castclass    UnityEngine.GooLattice
+  IL_00a7: ldc.r4       1.0
+  IL_00ac: ldarg.0      
+  IL_00ad: ldfld        latticeWidthMid
+  IL_00b2: ldloc.0      
+  IL_00b3: call         UnityEngine.Mathf::Lerp
+  IL_00b8: callvirt     UnityEngine.GooLattice::set_midSize
+  IL_00bd: ldarg.0      
+  IL_00be: ldfld        surface
+  IL_00c3: ldtoken      UnityEngine.GooLattice
+  IL_00c8: call         System.Type::GetTypeFromHandle
+  IL_00cd: callvirt     UnityEngine.GameObject::GetComponent
+  IL_00d2: castclass    UnityEngine.GooLattice
+  IL_00d7: ldc.r4       1.0
+  IL_00dc: ldarg.0      
+  IL_00dd: ldfld        latticeWidthTop
+  IL_00e2: ldloc.0      
+  IL_00e3: call         UnityEngine.Mathf::Lerp
+  IL_00e8: callvirt     UnityEngine.GooLattice::set_topSize
+  IL_00ed: ldarg.0      
+  IL_00ee: ldfld        surface
+  IL_00f3: ldtoken      UnityEngine.GooLattice
+  IL_00f8: call         System.Type::GetTypeFromHandle
+  IL_00fd: callvirt     UnityEngine.GameObject::GetComponent
+  IL_0102: castclass    UnityEngine.GooLattice
+  IL_0107: ldc.r4       1.0
+  IL_010c: ldarg.0      
+  IL_010d: ldfld        stickySnapBack
+  IL_0112: ldloc.0      
+  IL_0113: call         UnityEngine.Mathf::Lerp
+  IL_0118: callvirt     UnityEngine.GooLattice::set_snapBack
+  IL_011d: ldarg.0      
+  IL_011e: ldfld        lastVelocity
+  IL_0123: ldarg.0      
+  IL_0124: call         UnityEngine.Component::get_rigidbody
+  IL_0129: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_012e: call         UnityEngine.Vector3::op_Subtraction
+  IL_0133: stloc.1      
+  IL_0134: ldloca.s     1
+  IL_0136: ldfld        UnityEngine.Vector3::y
+  IL_013b: ldc.r4       0.0
+  IL_0140: ble.un       IL_017a
+  IL_0145: ldloca.s     1
+  IL_0147: dup          
+  IL_0148: ldfld        UnityEngine.Vector3::y
+  IL_014d: ldc.r4       1.0
+  IL_0152: sub          
+  IL_0153: stfld        UnityEngine.Vector3::y
+  IL_0158: ldloca.s     1
+  IL_015a: ldfld        UnityEngine.Vector3::y
+  IL_015f: ldc.r4       0.0
+  IL_0164: bge.un       IL_0175
+  IL_0169: ldloca.s     1
+  IL_016b: ldc.r4       0.0
+  IL_0170: stfld        UnityEngine.Vector3::y
+  IL_0175: br           IL_01aa
+  IL_017a: ldloca.s     1
+  IL_017c: dup          
+  IL_017d: ldfld        UnityEngine.Vector3::y
+  IL_0182: ldc.r4       1.0
+  IL_0187: add          
+  IL_0188: stfld        UnityEngine.Vector3::y
+  IL_018d: ldloca.s     1
+  IL_018f: ldfld        UnityEngine.Vector3::y
+  IL_0194: ldc.r4       1.0
+  IL_0199: ble.un       IL_01aa
+  IL_019e: ldloca.s     1
+  IL_01a0: ldc.r4       0.0
+  IL_01a5: stfld        UnityEngine.Vector3::y
+  IL_01aa: ldloc.1      
+  IL_01ab: ldarg.0      
+  IL_01ac: ldfld        stickyForceScale
+  IL_01b1: call         UnityEngine.Vector3::op_Multiply
+  IL_01b6: stloc.1      
+  IL_01b7: ldloca.s     1
+  IL_01b9: call         UnityEngine.Vector3::get_magnitude
+  IL_01be: stloc.2      
+  IL_01bf: ldloc.2      
+  IL_01c0: ldc.r4       0.0
+  IL_01c5: ble.un       IL_0207
+  IL_01ca: ldloc.2      
+  IL_01cb: ldc.r4       10.0
+  IL_01d0: ble.un       IL_01e7
+  IL_01d5: ldloc.1      
+  IL_01d6: ldloc.2      
+  IL_01d7: call         UnityEngine.Vector3::op_Division
+  IL_01dc: ldc.r4       10.0
+  IL_01e1: call         UnityEngine.Vector3::op_Multiply
+  IL_01e6: stloc.1      
+  IL_01e7: ldarg.0      
+  IL_01e8: ldfld        surface
+  IL_01ed: ldtoken      UnityEngine.GooLattice
+  IL_01f2: call         System.Type::GetTypeFromHandle
+  IL_01f7: callvirt     UnityEngine.GameObject::GetComponent
+  IL_01fc: castclass    UnityEngine.GooLattice
+  IL_0201: ldloc.1      
+  IL_0202: callvirt     UnityEngine.GooLattice::AddForce
+  IL_0207: ret          
+
+//// BallController::UpdateTiltLevel  rva=0x00e1ac
+  .maxstack 46  locals=0x1100007d
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        cameraTransform
+  IL_0006: call         UnityEngine.Vector3::get_right
+  IL_000b: callvirt     UnityEngine.Transform::TransformDirection
+  IL_0010: stloc.0      
+  IL_0011: ldloca.s     0
+  IL_0013: ldc.r4       0.0
+  IL_0018: stfld        UnityEngine.Vector3::y
+  IL_001d: ldarg.0      
+  IL_001e: ldfld        cameraTransform
+  IL_0023: call         UnityEngine.Vector3::get_forward
+  IL_0028: callvirt     UnityEngine.Transform::TransformDirection
+  IL_002d: stloc.1      
+  IL_002e: ldloca.s     1
+  IL_0030: ldc.r4       0.0
+  IL_0035: stfld        UnityEngine.Vector3::y
+  IL_003a: ldstr        "VerticalTilt"
+  IL_003f: call         UnityEngine.Input::GetAxis
+  IL_0044: ldc.r4       -1.0
+  IL_0049: ldc.r4       1.0
+  IL_004e: call         UnityEngine.Mathf::Clamp
+  IL_0053: stloc.2      
+  IL_0054: ldarg.0      
+  IL_0055: dup          
+  IL_0056: ldfld        vert
+  IL_005b: ldarg.0      
+  IL_005c: ldfld        vert
+  IL_0061: ldloc.2      
+  IL_0062: sub          
+  IL_0063: call         UnityEngine.Mathf::Sign
+  IL_0068: ldc.r4       2.0
+  IL_006d: mul          
+  IL_006e: call         UnityEngine.Time::get_deltaTime
+  IL_0073: mul          
+  IL_0074: ldarg.0      
+  IL_0075: ldfld        vert
+  IL_007a: ldloc.2      
+  IL_007b: sub          
+  IL_007c: call         UnityEngine.Mathf::Abs
+  IL_0081: neg          
+  IL_0082: ldarg.0      
+  IL_0083: ldfld        vert
+  IL_0088: ldloc.2      
+  IL_0089: sub          
+  IL_008a: call         UnityEngine.Mathf::Abs
+  IL_008f: call         UnityEngine.Mathf::Clamp
+  IL_0094: sub          
+  IL_0095: stfld        vert
+  IL_009a: ldstr        "HorizontalTilt"
+  IL_009f: call         UnityEngine.Input::GetAxis
+  IL_00a4: ldc.r4       -1.0
+  IL_00a9: ldc.r4       1.0
+  IL_00ae: call         UnityEngine.Mathf::Clamp
+  IL_00b3: stloc.3      
+  IL_00b4: ldloc.3      
+  IL_00b5: call         UnityEngine.Mathf::Abs
+  IL_00ba: ldarg.0      
+  IL_00bb: ldfld        horiz
+  IL_00c0: call         UnityEngine.Mathf::Abs
+  IL_00c5: bgt.un       IL_00e0
+  IL_00ca: ldloc.3      
+  IL_00cb: call         UnityEngine.Mathf::Sign
+  IL_00d0: ldarg.0      
+  IL_00d1: ldfld        horiz
+  IL_00d6: call         UnityEngine.Mathf::Sign
+  IL_00db: beq          IL_0124
+  IL_00e0: ldarg.0      
+  IL_00e1: dup          
+  IL_00e2: ldfld        horiz
+  IL_00e7: ldloc.3      
+  IL_00e8: call         UnityEngine.Mathf::Sign
+  IL_00ed: ldc.r4       8.0
+  IL_00f2: mul          
+  IL_00f3: call         UnityEngine.Time::get_deltaTime
+  IL_00f8: mul          
+  IL_00f9: ldarg.0      
+  IL_00fa: ldfld        horiz
+  IL_00ff: ldloc.3      
+  IL_0100: sub          
+  IL_0101: call         UnityEngine.Mathf::Abs
+  IL_0106: neg          
+  IL_0107: ldarg.0      
+  IL_0108: ldfld        horiz
+  IL_010d: ldloc.3      
+  IL_010e: sub          
+  IL_010f: call         UnityEngine.Mathf::Abs
+  IL_0114: call         UnityEngine.Mathf::Clamp
+  IL_0119: add          
+  IL_011a: stfld        horiz
+  IL_011f: br           IL_0171
+  IL_0124: ldarg.0      
+  IL_0125: ldfld        horiz
+  IL_012a: call         UnityEngine.Mathf::Abs
+  IL_012f: ldloc.3      
+  IL_0130: call         UnityEngine.Mathf::Abs
+  IL_0135: ble.un       IL_0171
+  IL_013a: ldarg.0      
+  IL_013b: dup          
+  IL_013c: ldfld        horiz
+  IL_0141: ldarg.0      
+  IL_0142: ldfld        horiz
+  IL_0147: call         UnityEngine.Mathf::Sign
+  IL_014c: ldc.r4       2.0
+  IL_0151: mul          
+  IL_0152: call         UnityEngine.Time::get_deltaTime
+  IL_0157: mul          
+  IL_0158: ldc.i4.0     
+  IL_0159: ldarg.0      
+  IL_015a: ldfld        horiz
+  IL_015f: ldloc.3      
+  IL_0160: sub          
+  IL_0161: call         UnityEngine.Mathf::Abs
+  IL_0166: call         UnityEngine.Mathf::Clamp
+  IL_016b: sub          
+  IL_016c: stfld        horiz
+  IL_0171: ldarg.0      
+  IL_0172: ldfld        vert
+  IL_0177: ldarg.0      
+  IL_0178: ldfld        steerTiltDeg
+  IL_017d: mul          
+  IL_017e: ldloc.0      
+  IL_017f: call         UnityEngine.Quaternion::AngleAxis
+  IL_0184: stloc.s      4
+  IL_0186: ldarg.0      
+  IL_0187: ldfld        horiz
+  IL_018c: ldarg.0      
+  IL_018d: ldfld        steerTiltDeg
+  IL_0192: mul          
+  IL_0193: ldloc.1      
+  IL_0194: call         UnityEngine.Vector3::op_UnaryNegation
+  IL_0199: call         UnityEngine.Quaternion::AngleAxis
+  IL_019e: stloc.s      5
+  IL_01a0: ldarg.0      
+  IL_01a1: ldloc.s      4
+  IL_01a3: ldloc.s      5
+  IL_01a5: call         UnityEngine.Quaternion::op_Multiply
+  IL_01aa: stfld        levelPivotTilt
+  IL_01af: ldarg.0      
+  IL_01b0: ldfld        contactPosition
+  IL_01b5: call         UnityEngine.Vector3::get_zero
+  IL_01ba: call         UnityEngine.Vector3::op_Equality
+  IL_01bf: brfalse      IL_01e5
+  IL_01c4: ldarg.0      
+  IL_01c5: ldfld        levelPivot
+  IL_01ca: ldarg.0      
+  IL_01cb: call         UnityEngine.Component::get_transform
+  IL_01d0: callvirt     UnityEngine.Transform::get_position
+  IL_01d5: ldarg.0      
+  IL_01d6: ldfld        levelPivotTilt
+  IL_01db: callvirt     Tilt
+  IL_01e0: br           IL_01fc
+  IL_01e5: ldarg.0      
+  IL_01e6: ldfld        levelPivot
+  IL_01eb: ldarg.0      
+  IL_01ec: ldfld        contactPosition
+  IL_01f1: ldarg.0      
+  IL_01f2: ldfld        levelPivotTilt
+  IL_01f7: callvirt     Tilt
+  IL_01fc: ret          
+
+//// BallController::FixedInJump  rva=0x00e3b8
+  .maxstack 5  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        jumpTimer
+  IL_0006: ldc.r4       0.0
+  IL_000b: ble.un       IL_0048
+  IL_0010: ldarg.0      
+  IL_0011: dup          
+  IL_0012: ldfld        jumpTimer
+  IL_0017: call         UnityEngine.Time::get_deltaTime
+  IL_001c: sub          
+  IL_001d: stfld        jumpTimer
+  IL_0022: ldarg.0      
+  IL_0023: ldfld        jumpTimer
+  IL_0028: ldc.r4       0.0
+  IL_002d: bge.un       IL_003d
+  IL_0032: ldarg.0      
+  IL_0033: ldc.r4       0.0
+  IL_0038: stfld        jumpTimer
+  IL_003d: ldarg.0      
+  IL_003e: ldc.r4       0.0
+  IL_0043: stfld        stickTimer
+  IL_0048: ret          
+
+//// BallController::MemorizeDefaults  rva=0x00e410
+  .maxstack 21  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.0      
+  IL_0002: ldfld        surface
+  IL_0007: ldtoken      UnityEngine.GooLattice
+  IL_000c: call         System.Type::GetTypeFromHandle
+  IL_0011: callvirt     UnityEngine.GameObject::GetComponent
+  IL_0016: castclass    UnityEngine.GooLattice
+  IL_001b: callvirt     UnityEngine.GooLattice::get_elasticity
+  IL_0020: stfld        baseElasticity
+  IL_0025: ldarg.0      
+  IL_0026: ldarg.0      
+  IL_0027: call         UnityEngine.Component::get_collider
+  IL_002c: callvirt     UnityEngine.Collider::get_material
+  IL_0031: callvirt     UnityEngine.PhysicMaterial::get_bouncyness
+  IL_0036: stfld        baseBounce
+  IL_003b: ldarg.0      
+  IL_003c: ldarg.0      
+  IL_003d: call         GetRadius
+  IL_0042: stfld        baseRadius
+  IL_0047: ldarg.0      
+  IL_0048: ldc.r4       6.2831854820251465
+  IL_004d: ldarg.0      
+  IL_004e: ldfld        baseRadius
+  IL_0053: mul          
+  IL_0054: ldarg.0      
+  IL_0055: ldfld        baseRadius
+  IL_005a: mul          
+  IL_005b: stfld        baseCircumference
+  IL_0060: ldarg.0      
+  IL_0061: ldarg.0      
+  IL_0062: ldfld        bumpSpeed
+  IL_0067: ldarg.0      
+  IL_0068: ldfld        bumpSpeed
+  IL_006d: mul          
+  IL_006e: stfld        sqrBumpSpeed
+  IL_0073: ldarg.0      
+  IL_0074: ldarg.0      
+  IL_0075: ldfld        critterTumbleSpeed
+  IL_007a: ldarg.0      
+  IL_007b: ldfld        critterTumbleSpeed
+  IL_0080: mul          
+  IL_0081: stfld        sqrCritterTumbleSpeed
+  IL_0086: ldarg.0      
+  IL_0087: ldarg.0      
+  IL_0088: call         UnityEngine.Component::get_collider
+  IL_008d: callvirt     UnityEngine.Collider::get_material
+  IL_0092: callvirt     UnityEngine.PhysicMaterial::get_dynamicFriction
+  IL_0097: stfld        baseFriction
+  IL_009c: ldarg.0      
+  IL_009d: ldc.r4       0.10000000149011612
+  IL_00a2: stfld        baseFriction
+  IL_00a7: ret          
+
+//// BallController::FactorOutLevelTilt  rva=0x00e4c4
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        levelPivotTilt
+  IL_0006: call         UnityEngine.Quaternion::Inverse
+  IL_000b: ldarg.1      
+  IL_000c: call         UnityEngine.Quaternion::op_Multiply
+  IL_0011: ret          
+
+//// BallController::GoingOutOfStickyMode  rva=0x00e4d8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isSticky
+  IL_0006: brtrue       IL_001d
+  IL_000b: ldarg.0      
+  IL_000c: ldfld        stickyness
+  IL_0011: ldc.r4       0.0
+  IL_0016: cgt          
+  IL_0018: br           IL_001e
+  IL_001d: ldc.i4.0     
+  IL_001e: ret          
+
+//// BallController::MaxSpeedScale  rva=0x00e4f8
+  .maxstack 8  locals=0x1100007e
+  IL_0000: ldarg.0      
+  IL_0001: call         UnityEngine.Component::get_rigidbody
+  IL_0006: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_000b: ldarg.2      
+  IL_000c: call         UnityEngine.Vector3::Dot
+  IL_0011: stloc.0      
+  IL_0012: ldarg.3      
+  IL_0013: ldc.r4       0.0
+  IL_0018: bge.un       IL_0020
+  IL_001d: ldloc.0      
+  IL_001e: neg          
+  IL_001f: stloc.0      
+  IL_0020: ldarg.s      4
+  IL_0022: ldloc.0      
+  IL_0023: sub          
+  IL_0024: ldarg.s      4
+  IL_0026: div          
+  IL_0027: stloc.1      
+  IL_0028: ldc.r4       1.0
+  IL_002d: ldloc.1      
+  IL_002e: call         UnityEngine.Mathf::Min
+  IL_0033: stloc.1      
+  IL_0034: ldloc.1      
+  IL_0035: ret          
+
+//// BallController::DebugOutput  rva=0x00e53c
+  .maxstack 47  locals=0x1100007f
+  IL_0000: ldarg.0      
+  IL_0001: call         UnityEngine.Component::get_transform
+  IL_0006: callvirt     UnityEngine.Transform::get_position
+  IL_000b: ldarg.0      
+  IL_000c: ldfld        contactNormal
+  IL_0011: call         UnityEngine.Color::get_blue
+  IL_0016: ldc.r4       0.5
+  IL_001b: call         UnityEngine.Color::op_Multiply
+  IL_0020: call         UnityEngine.Debug::DrawRay
+  IL_0025: ldarg.0      
+  IL_0026: call         UnityEngine.Component::get_transform
+  IL_002b: callvirt     UnityEngine.Transform::get_position
+  IL_0030: ldarg.0      
+  IL_0031: ldfld        crawlNormal
+  IL_0036: call         UnityEngine.Color::get_blue
+  IL_003b: call         UnityEngine.Debug::DrawRay
+  IL_0040: ldarg.0      
+  IL_0041: call         UnityEngine.Component::get_transform
+  IL_0046: callvirt     UnityEngine.Transform::get_position
+  IL_004b: ldarg.0      
+  IL_004c: ldfld        fwd
+  IL_0051: call         UnityEngine.Color::get_green
+  IL_0056: call         UnityEngine.Debug::DrawRay
+  IL_005b: ldarg.0      
+  IL_005c: ldfld        count
+  IL_0061: ldc.i4.1     
+  IL_0062: rem          
+  IL_0063: ldc.i4.s     66
+  IL_0065: bne.un       IL_013c
+  IL_006a: ldstr        "OnGround: {0:S}, IsSticking: {1:S}, speed: {2:F3}, angVel: {5:F3}, state: {3:S}, inAirTimer: {4:F2}, "
+  IL_006f: ldarg.0      
+  IL_0070: call         UnityEngine.Component::get_transform
+  IL_0075: callvirt     UnityEngine.Transform::get_position
+  IL_007a: stloc.0      
+  IL_007b: ldloca.s     0
+  IL_007d: ldfld        UnityEngine.Vector3::y
+  IL_0082: box          System.Single
+  IL_0087: call         System.String::Concat
+  IL_008c: ldc.i4.6     
+  IL_008d: newarr       System.Object
+  IL_0092: dup          
+  IL_0093: ldc.i4.0     
+  IL_0094: ldarg.0      
+  IL_0095: call         HasGroundContact
+  IL_009a: brfalse      IL_00a9
+  IL_009f: ldstr        "true"
+  IL_00a4: br           IL_00ae
+  IL_00a9: ldstr        "false"
+  IL_00ae: stelem.ref   
+  IL_00af: dup          
+  IL_00b0: ldc.i4.1     
+  IL_00b1: ldarg.0      
+  IL_00b2: ldfld        stickTimer
+  IL_00b7: ldc.r4       0.0
+  IL_00bc: ble.un       IL_00cb
+  IL_00c1: ldstr        "true"
+  IL_00c6: br           IL_00d0
+  IL_00cb: ldstr        "false"
+  IL_00d0: stelem.ref   
+  IL_00d1: dup          
+  IL_00d2: ldc.i4.2     
+  IL_00d3: ldarg.0      
+  IL_00d4: call         UnityEngine.Component::get_rigidbody
+  IL_00d9: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_00de: stloc.1      
+  IL_00df: ldloca.s     1
+  IL_00e1: call         UnityEngine.Vector3::get_magnitude
+  IL_00e6: box          System.Single
+  IL_00eb: stelem.ref   
+  IL_00ec: dup          
+  IL_00ed: ldc.i4.3     
+  IL_00ee: ldarg.0      
+  IL_00ef: ldfld        isSticky
+  IL_00f4: brfalse      IL_0103
+  IL_00f9: ldstr        "sticky"
+  IL_00fe: br           IL_0108
+  IL_0103: ldstr        "hard"
+  IL_0108: stelem.ref   
+  IL_0109: dup          
+  IL_010a: ldc.i4.4     
+  IL_010b: ldarg.0      
+  IL_010c: ldfld        inAirTimer
+  IL_0111: box          System.Single
+  IL_0116: stelem.ref   
+  IL_0117: dup          
+  IL_0118: ldc.i4.5     
+  IL_0119: ldarg.0      
+  IL_011a: call         UnityEngine.Component::get_rigidbody
+  IL_011f: callvirt     UnityEngine.Rigidbody::get_angularVelocity
+  IL_0124: stloc.2      
+  IL_0125: ldloca.s     2
+  IL_0127: call         UnityEngine.Vector3::get_magnitude
+  IL_012c: box          System.Single
+  IL_0131: stelem.ref   
+  IL_0132: call         System.String::Format
+  IL_0137: call         System.Console::WriteLine
+  IL_013c: ldarg.0      
+  IL_013d: dup          
+  IL_013e: ldfld        count
+  IL_0143: ldc.i4.1     
+  IL_0144: add          
+  IL_0145: stfld        count
+  IL_014a: ret          
+
+//// BallController::GenericCollisionEvent  rva=0x00e694
+  .maxstack 3  locals=0x00000000
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        jumpTimer
+  IL_0006: ldc.r4       0.0
+  IL_000b: bne.un       IL_0029
+  IL_0010: ldarg.0      
+  IL_0011: ldc.r4       0.0
+  IL_0016: stfld        inAirTimer
+  IL_001b: ldarg.0      
+  IL_001c: ldc.i4.1     
+  IL_001d: stfld        collisionSinceLastFrame
+  IL_0022: ldarg.0      
+  IL_0023: ldc.i4.0     
+  IL_0024: stfld        inJump
+  IL_0029: ldarg.0      
+  IL_002a: ldc.i4.1     
+  IL_002b: stfld        didCollide
+  IL_0030: ldarg.0      
+  IL_0031: ldfld        stopPlayFalling
+  IL_0036: brfalse      IL_004e
+  IL_003b: ldarg.0      
+  IL_003c: ldc.i4.0     
+  IL_003d: stfld        stopPlayFalling
+  IL_0042: ldarg.0      
+  IL_0043: ldarg.0      
+  IL_0044: ldfld        stopPlayBrake
+  IL_0049: stfld        currentConstantDrag
+  IL_004e: ret          
+
+//// BallController::GooballCollision  rva=0x00e6f0
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: call         GenericCollisionEvent
+  IL_0006: ret          
+
+//// BallController::CollisionEvent  rva=0x00e6f8
+  .maxstack 22  locals=0x11000080
+  IL_0000: ldarg.1      
+  IL_0001: callvirt     UnityEngine.Collision::get_collider
+  IL_0006: callvirt     UnityEngine.Component::get_gameObject
+  IL_000b: callvirt     UnityEngine.GameObject::get_layer
+  IL_0010: brfalse      IL_0016
+  IL_0015: ret          
+  IL_0016: ldarg.0      
+  IL_0017: call         GenericCollisionEvent
+  IL_001c: ldarg.0      
+  IL_001d: call         UnityEngine.Vector3::get_zero
+  IL_0022: stfld        contactPosition
+  IL_0027: ldarg.1      
+  IL_0028: callvirt     UnityEngine.Collision::get_contacts
+  IL_002d: ldlen        
+  IL_002e: conv.i4      
+  IL_002f: ldc.i4.1     
+  IL_0030: sub          
+  IL_0031: stloc.0      
+  IL_0032: br           IL_005d
+  IL_0037: ldarg.0      
+  IL_0038: dup          
+  IL_0039: ldfld        contactPosition
+  IL_003e: ldarg.1      
+  IL_003f: callvirt     UnityEngine.Collision::get_contacts
+  IL_0044: ldloc.0      
+  IL_0045: ldelema      UnityEngine.ContactPoint
+  IL_004a: call         UnityEngine.ContactPoint::get_point
+  IL_004f: call         UnityEngine.Vector3::op_Addition
+  IL_0054: stfld        contactPosition
+  IL_0059: ldloc.0      
+  IL_005a: ldc.i4.1     
+  IL_005b: sub          
+  IL_005c: stloc.0      
+  IL_005d: ldloc.0      
+  IL_005e: ldc.i4.0     
+  IL_005f: bge          IL_0037
+  IL_0064: ldarg.0      
+  IL_0065: dup          
+  IL_0066: ldfld        contactPosition
+  IL_006b: ldarg.1      
+  IL_006c: callvirt     UnityEngine.Collision::get_contacts
+  IL_0071: ldlen        
+  IL_0072: conv.i4      
+  IL_0073: conv.r4      
+  IL_0074: call         UnityEngine.Vector3::op_Division
+  IL_0079: stfld        contactPosition
+  IL_007e: ret          
+
+//// BallController::OnCollisionEnter  rva=0x00e784
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.1      
+  IL_0002: call         CollisionEvent
+  IL_0007: ret          
+
+//// BallController::OnCollisionStay  rva=0x00e790
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.1      
+  IL_0002: call         CollisionEvent
+  IL_0007: ret          
+
+//// BallController::StartPlay  rva=0x00e79c
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.1     
+  IL_0002: stfld        isActive
+  IL_0007: ldarg.0      
+  IL_0008: ldc.i4.0     
+  IL_0009: stfld        beforePlay
+  IL_000e: ret          
+
+//// BallController::StopPlay  rva=0x00e7ac
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.0     
+  IL_0002: stfld        isActive
+  IL_0007: ldarg.1      
+  IL_0008: brfalse      IL_0019
+  IL_000d: ldarg.0      
+  IL_000e: ldc.i4.1     
+  IL_000f: stfld        stopPlayFalling
+  IL_0014: br           IL_0025
+  IL_0019: ldarg.0      
+  IL_001a: ldarg.0      
+  IL_001b: ldfld        stopPlayBrake
+  IL_0020: stfld        currentConstantDrag
+  IL_0025: ret          
+
+//// BallController::CalculateJumpDirection  rva=0x00e7d4
+  .maxstack 23  locals=0x11000081
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.0      
+  IL_0002: ldfld        contactNormal
+  IL_0007: stfld        jumpDirection
+  IL_000c: ldarg.0      
+  IL_000d: ldarg.0      
+  IL_000e: ldarg.0      
+  IL_000f: ldfld        jumpDirection
+  IL_0014: call         FactorOutLevelTilt
+  IL_0019: stfld        jumpDirection
+  IL_001e: ldarg.0      
+  IL_001f: ldfld        jumpDirection
+  IL_0024: call         UnityEngine.Vector3::get_up
+  IL_0029: call         UnityEngine.Vector3::AngleBetween
+  IL_002e: stloc.0      
+  IL_002f: ldstr        "Vertical"
+  IL_0034: call         UnityEngine.Input::GetAxis
+  IL_0039: ldc.r4       -1.0
+  IL_003e: ldc.r4       1.0
+  IL_0043: call         UnityEngine.Mathf::Clamp
+  IL_0048: stloc.1      
+  IL_0049: ldloc.1      
+  IL_004a: call         UnityEngine.Mathf::Abs
+  IL_004f: ldc.r4       0.0010000000474974513
+  IL_0054: cgt          
+  IL_0056: stloc.2      
+  IL_0057: ldloc.0      
+  IL_0058: ldarg.0      
+  IL_0059: ldfld        jumpUpAngle
+  IL_005e: ldc.r4       0.01745329238474369
+  IL_0063: mul          
+  IL_0064: bge.un       IL_0079
+  IL_0069: ldarg.0      
+  IL_006a: call         UnityEngine.Vector3::get_up
+  IL_006f: stfld        jumpDirection
+  IL_0074: br           IL_00c3
+  IL_0079: ldloc.0      
+  IL_007a: ldc.r4       180.0
+  IL_007f: ldarg.0      
+  IL_0080: ldfld        jumpUpAngle
+  IL_0085: sub          
+  IL_0086: ldc.r4       0.01745329238474369
+  IL_008b: mul          
+  IL_008c: ble.un       IL_00a1
+  IL_0091: ldarg.0      
+  IL_0092: call         UnityEngine.Vector3::get_down
+  IL_0097: stfld        jumpDirection
+  IL_009c: br           IL_00c3
+  IL_00a1: ldarg.0      
+  IL_00a2: ldarg.0      
+  IL_00a3: ldfld        jumpDirection
+  IL_00a8: call         UnityEngine.Vector3::get_up
+  IL_00ad: ldloc.0      
+  IL_00ae: ldc.r4       0.6981316804885864
+  IL_00b3: sub          
+  IL_00b4: ldc.r4       0.0
+  IL_00b9: call         UnityEngine.Vector3::RotateTowards
+  IL_00be: stfld        jumpDirection
+  IL_00c3: ldloc.2      
+  IL_00c4: brfalse      IL_0107
+  IL_00c9: call         UnityEngine.Vector3::get_up
+  IL_00ce: ldarg.0      
+  IL_00cf: ldfld        cameraTransform
+  IL_00d4: call         UnityEngine.Vector3::get_forward
+  IL_00d9: callvirt     UnityEngine.Transform::TransformDirection
+  IL_00de: call         UnityEngine.Vector3::Exclude
+  IL_00e3: stloc.3      
+  IL_00e4: ldarg.0      
+  IL_00e5: ldarg.0      
+  IL_00e6: ldfld        jumpDirection
+  IL_00eb: ldloc.3      
+  IL_00ec: ldc.r4       0.1745329201221466
+  IL_00f1: ldloc.1      
+  IL_00f2: call         UnityEngine.Mathf::Sign
+  IL_00f7: mul          
+  IL_00f8: ldc.r4       0.0
+  IL_00fd: call         UnityEngine.Vector3::RotateTowards
+  IL_0102: stfld        jumpDirection
+  IL_0107: ldarg.0      
+  IL_0108: ldfld        jumpDirection
+  IL_010d: ret          
+
+//// BallController::IsSticky  rva=0x00e8f0
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isSticky
+  IL_0006: ret          
+
+//// BallController::GetState  rva=0x00e8f8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isSticky
+  IL_0006: brfalse      IL_000d
+  IL_000b: ldc.i4.1     
+  IL_000c: ret          
+  IL_000d: ldc.i4.0     
+  IL_000e: ret          
+
+//// BallController::GetSoundState  rva=0x00e908
+  .maxstack 18  locals=0x11000082
+  IL_0000: newobj       .ctor
+  IL_0005: stloc.0      
+  IL_0006: ldloc.0      
+  IL_0007: ldarg.0      
+  IL_0008: call         UnityEngine.Component::get_rigidbody
+  IL_000d: callvirt     UnityEngine.Rigidbody::get_velocity
+  IL_0012: stloc.1      
+  IL_0013: ldloca.s     1
+  IL_0015: call         UnityEngine.Vector3::get_magnitude
+  IL_001a: stfld        speed
+  IL_001f: ldloc.0      
+  IL_0020: ldarg.0      
+  IL_0021: call         UnityEngine.Component::get_rigidbody
+  IL_0026: callvirt     UnityEngine.Rigidbody::get_angularVelocity
+  IL_002b: stloc.2      
+  IL_002c: ldloca.s     2
+  IL_002e: call         UnityEngine.Vector3::get_magnitude
+  IL_0033: stfld        angularSpeed
+  IL_0038: ldarg.0      
+  IL_0039: call         HasGroundContact
+  IL_003e: brtrue       IL_004f
+  IL_0043: ldloc.0      
+  IL_0044: ldc.i4.3     
+  IL_0045: stfld        state
+  IL_004a: br           IL_0087
+  IL_004f: ldloc.0      
+  IL_0050: ldfld        speed
+  IL_0055: ldc.r4       0.0
+  IL_005a: beq          IL_006f
+  IL_005f: ldloc.0      
+  IL_0060: ldfld        angularSpeed
+  IL_0065: ldc.r4       0.0
+  IL_006a: bne.un       IL_007b
+  IL_006f: ldloc.0      
+  IL_0070: ldc.i4.2     
+  IL_0071: stfld        state
+  IL_0076: br           IL_0087
+  IL_007b: ldloc.0      
+  IL_007c: ldarg.0      
+  IL_007d: call         GetState
+  IL_0082: stfld        state
+  IL_0087: ldloc.0      
+  IL_0088: ret          
+
+//// BallController::HasGroundContact  rva=0x00e9a0
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        inAirTimer
+  IL_0006: ldarg.0      
+  IL_0007: ldfld        groundContactBias
+  IL_000c: blt.un       IL_001c
+  IL_0011: ldarg.0      
+  IL_0012: ldfld        didCollide
+  IL_0017: brfalse      IL_002e
+  IL_001c: ldarg.0      
+  IL_001d: ldfld        jumpTimer
+  IL_0022: ldc.r4       0.0
+  IL_0027: ceq          
+  IL_0029: br           IL_002f
+  IL_002e: ldc.i4.0     
+  IL_002f: ret          
+
+//// BallController::SetCameraTC  rva=0x00e9d4
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.1      
+  IL_0002: stfld        cameraTransform
+  IL_0007: ret          
+
+//// BallController::SetParticleGOs  rva=0x00e9e0
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.1      
+  IL_0002: stfld        rollSparks
+  IL_0007: ldarg.0      
+  IL_0008: ldarg.2      
+  IL_0009: stfld        rollSplats
+  IL_000e: ldarg.0      
+  IL_000f: ldarg.3      
+  IL_0010: stfld        rollSparksAnim
+  IL_0015: ret          
+
+//// BallController::GetContactNormal  rva=0x00e9f8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        contactNormal
+  IL_0006: ret          
+
+//// BallController::GetContactNormalUntilted  rva=0x00ea00
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        contactNormalUntilted
+  IL_0006: ret          
+
+//// BallController::GetCrawlNormalUntilted  rva=0x00ea08
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.0      
+  IL_0002: ldfld        crawlNormal
+  IL_0007: call         FactorOutLevelTilt
+  IL_000c: ret          
+
+//// BallController::GetInAirTime  rva=0x00ea18
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        inAirTimer
+  IL_0006: ret          
+
+//// BallController::GetJumpDirection  rva=0x00ea20
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        jumpDirection
+  IL_0006: ret          
+
+//// BallController::PreparingForJump  rva=0x00ea28
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        noSteerTimer
+  IL_0006: ldc.r4       1.0
+  IL_000b: sub          
+  IL_000c: ldc.r4       0.0
+  IL_0011: ldc.r4       1.0
+  IL_0016: call         UnityEngine.Mathf::Clamp
+  IL_001b: ret          
+
+//// BallController::GetCritterFwd  rva=0x00ea48
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        fwd
+  IL_0006: ret          
+
+//// BallController::GetStickyness  rva=0x00ea50
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        stickyness
+  IL_0006: ret          
+
+//// BallController::GetRadius  rva=0x00ea58
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldtoken      UnityEngine.SphereCollider
+  IL_0006: call         System.Type::GetTypeFromHandle
+  IL_000b: call         UnityEngine.Component::GetComponent
+  IL_0010: isinst       UnityEngine.SphereCollider
+  IL_0015: callvirt     UnityEngine.SphereCollider::get_radius
+  IL_001a: ret          
+
+//// BallController::GetSteerAcceleration  rva=0x00ea74
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        steerAcceleration
+  IL_0006: ret          
+
+//// BallController::GetRecentVelocity  rva=0x00ea7c
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        lastVelocity
+  IL_0006: ret          
+
+//// BallController::IsSteering  rva=0x00ea84
+  .maxstack 8
+  IL_0000: ldstr        "Vertical"
+  IL_0005: call         UnityEngine.Input::GetAxis
+  IL_000a: call         System.Math::Abs
+  IL_000f: ldc.r4       0.10000000149011612
+  IL_0014: bgt.un       IL_0034
+  IL_0019: ldstr        "Horizontal"
+  IL_001e: call         UnityEngine.Input::GetAxis
+  IL_0023: call         System.Math::Abs
+  IL_0028: ldc.r4       0.10000000149011612
+  IL_002d: cgt          
+  IL_002f: br           IL_0035
+  IL_0034: ldc.i4.1     
+  IL_0035: ret          
+
+//// BallController::IsActive  rva=0x00eabc
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isActive
+  IL_0006: ret          
+
+//// BallController::GetBall  rva=0x00eac4
+  .maxstack 8
+  IL_0000: ldsfld       currentBall
+  IL_0005: ret          
+
+//// BallController::SetTravelMode  rva=0x00eacc
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldc.i4.1     
+  IL_0002: stfld        travelMode
+  IL_0007: ret          
+
+//// BallController::SetSleeping  rva=0x00ead8
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldarg.1      
+  IL_0002: stfld        isSleeping
+  IL_0007: ret          
+
+//// BallController::IsSleeping  rva=0x00eae4
+  .maxstack 8
+  IL_0000: ldarg.0      
+  IL_0001: ldfld        isSleeping
+  IL_0006: ret          

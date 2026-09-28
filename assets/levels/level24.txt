@@ -1,0 +1,16 @@
+FalloutHeight
+ exit
+flare
+monte_kaballa
+monte_kaballa
+monte_startpillar
+monte_startpillar
+monte_kaballa
+monte_bigtree
+polySurface19
+persp
+monte_kaballa
+flare
+flare
+flare
+flare

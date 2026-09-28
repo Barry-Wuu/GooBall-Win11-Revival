@@ -1,0 +1,35 @@
+FalloutHeight
+scream_exit_light
+polySurface17
+polySurface17
+goallight
+flare
+flare
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+polySurface17
+Cool Move
+Begin Trigger
+flare

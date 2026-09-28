@@ -1,0 +1,19 @@
+FalloutHeight
+step9
+step9
+step9
+step9
+bump anim
+step9
+nm_startplat1
+[D] Light + sound
+nm_pillar_med
+staengler
+alien spawn 1
+flare
+flare
+flare
+flare
+flare
+background clouds
+Alien spawner

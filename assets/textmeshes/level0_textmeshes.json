@@ -1,0 +1,32 @@
+[
+  {
+    "file": "level0",
+    "pathID": 647,
+    "size": 64,
+    "gameObject": {
+      "fileID": 0,
+      "pathID": 645
+    },
+    "text": "SELECT LEVEL TO PRACTICE"
+  },
+  {
+    "file": "level0",
+    "pathID": 653,
+    "size": 52,
+    "gameObject": {
+      "fileID": 0,
+      "pathID": 651
+    },
+    "text": "\"LEVELTITLE\""
+  },
+  {
+    "file": "level0",
+    "pathID": 144,
+    "size": 50,
+    "gameObject": {
+      "fileID": 0,
+      "pathID": 654
+    },
+    "text": "LAP RECORD"
+  }
+]

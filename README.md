@@ -32,6 +32,9 @@
 | AnimationClip | classID 74 | ✅ 157 | `assets/animations/`（原始 + JSON） |
 | 场景层级 | GameObject/Transform | ✅ | `assets/scenes/`（69 关 + mainData + sharedassets） |
 | 关卡数据 | — | ✅ | `assets/levels/` 65 个 level 名称列表 |
+| TextMesh | classID 102 | ✅ 76/76 | `assets/textmeshes/`（72 含文本，54 唯一字符串） |
+| MonoScript | classID 115 | ✅ 105 | `assets/data/monoscripts.json`（脚本清单） |
+| MonoBehaviour | classID 17 / 114 | 🚧 | `assets/data/monobehaviours.json`（5698 实例，脚本关联待解） |
 | 游戏逻辑 | MonoBehaviour | 🚧 | `docs/il_*.txt`（IL）、`docs/GooBall_logic_recovery.md` |
 
 预览：`proof/mesh_preview.png`
@@ -43,7 +46,7 @@
 | 文档 | 内容 |
 |---|---|
 | `docs/Unity1x_serializedfile_v5.md` | SerializedFile v5 对象表布局 |
-| `docs/ASSET_FORMATS.md` | **Asset 二进制格式**：AudioClip / Mesh / Texture2D 精确字段布局（本仓库核心） |
+| `docs/ASSET_FORMATS.md` | **Asset 二进制格式**：AudioClip / Mesh / Texture2D / TextMesh / MonoScript / MonoBehaviour 精确字段布局（本仓库核心） |
 | `docs/GooBall_logic_recovery.md` | Unity C# 层逻辑恢复 |
 
 ### 关键结论
@@ -52,6 +55,10 @@
 - **字节序混合**：头部字段为**大端**（PPC）；但 **PCM 音频样本为小端**、**Mesh 顶点 float 为大端**。
 - **AudioClip 压缩枚举**：`1`=8bit PCM(mono)、`2`=16bit PCM(mono)、`4`=16bit PCM(stereo)、`5`=OggVorbis。**无 MP3**。
 - **Mesh**：`m_LODData → MeshData{faces[trio], strips[tri-strip]} → m_Vertices[big-endian float3] → m_UV`，几何在 faces **或** strips 中。
+- **TextMesh**（classID 102）：`[0:8] m_GameObject PPtr(大端) + [8:12] m_Text len(u32 BE) + [12:] text`。已出土全部游戏内文本，含 `unity 1.6 conversion` 字样（坐实由 Unity 1.6 工具链转换）。
+- **MonoScript**（classID 115）：`[u32BE len + name]×3`（name / className / assembly）。提取 105 个脚本清单。
+- **classID 权威映射**：以 TypeTree 自带文本（`Base\0` 后 +5 字节大端 int32 = classID）为准，**不盲信 UnityPy 现代编号**——本作早期编号存在偏差（如 17=MonoBehaviour 而非 Pipeline）。
+- **⚠️ pathID 32-bit 编码陷阱**：对象表 pathID 为 16-bit（`b0 | b19<<8`）；但 MonoBehaviour 实例数据里的 PPtr 引用是 **32-bit 混合编码**——同一 32-bit 值在不同类型上字节序表现不一致（TextMesh 的 `m_GameObject.pathID` 须大端，MB 的 `m_Script` 须小端才合理）。**MonoBehaviour 实例字段值提取因此被阻断，待彻底厘清 PPtr 字节序后攻克。**
 
 ---
 
@@ -64,6 +71,14 @@ tools/
 ├── ogg_rebuild.py          # 按 serial 重建流式 Ogg
 ├── mesh_extract4.py        # 823 个 Mesh → OBJ（faces/strips 双解）
 ├── extract_textures.py     # Texture2D → PNG
+├── extract_shaders.py      # 50 个 Shader → 源码文本
+├── extract_materials.py    # 250 个 Material → JSON
+├── extract_anim_scene.py   # AnimationClip + 场景层级
+├── textmesh_extract.py     # 76 个 TextMesh → 游戏内文本
+├── extract_mb.py           # MonoScript 清单 + MonoBehaviour 实例
+├── tt_classmap3.py         # TypeTree → 权威 classID→类名映射
+├── census_all.py           # 全文件 classID 普查（41231 对象）
+├── unitypy_types.py        # UnityPy classID 对照（交叉验证）
 ├── verify_ogg.py / verify_audio2.py  # ffmpeg 解码验证
 ├── manifest_audio.py       # 音频清单
 ├── census_classes.py       # classID 普查
@@ -85,6 +100,9 @@ python tools/ogg_rebuild.py
 python tools/mesh_extract4.py
 # 4. 提取纹理
 python tools/extract_textures.py
+# 5. 提取文本 / 脚本 / 行为
+python tools/textmesh_extract.py
+python tools/extract_mb.py
 ```
 
 ---
@@ -94,6 +112,9 @@ python tools/extract_textures.py
 - [x] 对象表解析（SerializedFile v5）
 - [x] Texture2D / AudioClip / Mesh / Shader / Material / AnimationClip 全量提取
 - [x] 场景层级（69 关 + sharedassets）导出
+- [x] 游戏内文本出土（TextMesh 76，含 `unity 1.6 conversion` 证据）
+- [x] MonoScript 清单（105）出土
+- [ ] **MonoBehaviour 实例字段值提取（攻克 32-bit pathID 编码陷阱）**
 - [ ] Material/Shader → Godot 材质转换
 - [ ] Mesh 剩余 14 个退化网格
 - [ ] 在 Godot 4 重建物理 / 输入 / 存档 / 消息契约

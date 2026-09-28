@@ -1,0 +1,632 @@
+{
+  "4": {
+    "name": "CloudMover",
+    "className": "",
+    "assembly": "CloudMover",
+    "file": "sharedassets.assets"
+  },
+  "6": {
+    "name": "GradientMaterialColor",
+    "className": "",
+    "assembly": "GradientMaterialColor",
+    "file": "sharedassets.assets"
+  },
+  "8": {
+    "name": "MapScreen",
+    "className": "",
+    "assembly": "MapScreen",
+    "file": "sharedassets.assets"
+  },
+  "17": {
+    "name": "FXGlow",
+    "className": "",
+    "assembly": "FXGlow",
+    "file": "sharedassets.assets"
+  },
+  "21": {
+    "name": "MapScreenStarNotifier",
+    "className": "",
+    "assembly": "MapScreenStarNotifier",
+    "file": "sharedassets.assets"
+  },
+  "41": {
+    "name": "ChapterSelector",
+    "className": "",
+    "assembly": "ChapterSelector",
+    "file": "sharedassets.assets"
+  },
+  "43": {
+    "name": "MouseClickable",
+    "className": "",
+    "assembly": "MouseClickable",
+    "file": "sharedassets.assets"
+  },
+  "63": {
+    "name": "ChapterItem",
+    "className": "",
+    "assembly": "ChapterItem",
+    "file": "sharedassets.assets"
+  },
+  "71": {
+    "name": "ChapterWelcome",
+    "className": "",
+    "assembly": "ChapterWelcome",
+    "file": "sharedassets.assets"
+  },
+  "72": {
+    "name": "HUDScreenWidth",
+    "className": "",
+    "assembly": "HUDScreenWidth",
+    "file": "sharedassets.assets"
+  },
+  "75": {
+    "name": "EnterExitTrigger",
+    "className": "",
+    "assembly": "EnterExitTrigger",
+    "file": "sharedassets.assets"
+  },
+  "98": {
+    "name": "WaterControl",
+    "className": "",
+    "assembly": "WaterControl",
+    "file": "sharedassets.assets"
+  },
+  "103": {
+    "name": "QualityMaterialSwitcher",
+    "className": "",
+    "assembly": "QualityMaterialSwitcher",
+    "file": "sharedassets.assets"
+  },
+  "108": {
+    "name": "ReflectionRenderTexture",
+    "className": "",
+    "assembly": "ReflectionRenderTexture",
+    "file": "sharedassets.assets"
+  },
+  "114": {
+    "name": "CloudRotator",
+    "className": "",
+    "assembly": "CloudRotator",
+    "file": "sharedassets.assets"
+  },
+  "119": {
+    "name": "FoamController",
+    "className": "",
+    "assembly": "FoamController",
+    "file": "sharedassets.assets"
+  },
+  "148": {
+    "name": "StarPickup",
+    "className": "",
+    "assembly": "StarPickup",
+    "file": "sharedassets.assets"
+  },
+  "156": {
+    "name": "GoalTrigger",
+    "className": "",
+    "assembly": "GoalTrigger",
+    "file": "sharedassets.assets"
+  },
+  "160": {
+    "name": "Help",
+    "className": "",
+    "assembly": "Help",
+    "file": "sharedassets.assets"
+  },
+  "161": {
+    "name": "CameraAnimator",
+    "className": "",
+    "assembly": "CameraAnimator",
+    "file": "sharedassets.assets"
+  },
+  "162": {
+    "name": "LevelInfo",
+    "className": "",
+    "assembly": "LevelInfo",
+    "file": "sharedassets.assets"
+  },
+  "170": {
+    "name": "LevelTilter",
+    "className": "",
+    "assembly": "LevelTilter",
+    "file": "sharedassets.assets"
+  },
+  "188": {
+    "name": "WindArea",
+    "className": "",
+    "assembly": "WindArea",
+    "file": "sharedassets.assets"
+  },
+  "224": {
+    "name": "AutoHeightRespawn",
+    "className": "",
+    "assembly": "AutoHeightRespawn",
+    "file": "sharedassets.assets"
+  },
+  "301": {
+    "name": "DelayedTrigger",
+    "className": "",
+    "assembly": "DelayedTrigger",
+    "file": "sharedassets.assets"
+  },
+  "307": {
+    "name": "ActivateTrigger",
+    "className": "",
+    "assembly": "ActivateTrigger",
+    "file": "sharedassets.assets"
+  },
+  "322": {
+    "name": "VolumeFader",
+    "className": "",
+    "assembly": "VolumeFader",
+    "file": "sharedassets.assets"
+  },
+  "360": {
+    "name": "TriggerPickup",
+    "className": "",
+    "assembly": "TriggerPickup",
+    "file": "sharedassets.assets"
+  },
+  "434": {
+    "name": "SlowmoPickup",
+    "className": "",
+    "assembly": "SlowmoPickup",
+    "file": "sharedassets.assets"
+  },
+  "712": {
+    "name": "FalloutCollider",
+    "className": "",
+    "assembly": "FalloutCollider",
+    "file": "sharedassets.assets"
+  },
+  "871": {
+    "name": "CoolMoveBegin",
+    "className": "",
+    "assembly": "CoolMoveBegin",
+    "file": "sharedassets.assets"
+  },
+  "872": {
+    "name": "CoolMoveEnd",
+    "className": "",
+    "assembly": "CoolMoveEnd",
+    "file": "sharedassets.assets"
+  },
+  "1046": {
+    "name": "CatapultAction",
+    "className": "",
+    "assembly": "CatapultAction",
+    "file": "sharedassets.assets"
+  },
+  "1120": {
+    "name": "Rotator",
+    "className": "",
+    "assembly": "Rotator",
+    "file": "sharedassets.assets"
+  },
+  "1128": {
+    "name": "FaceForward",
+    "className": "",
+    "assembly": "FaceForward",
+    "file": "sharedassets.assets"
+  },
+  "1134": {
+    "name": "WaterPlacer",
+    "className": "",
+    "assembly": "WaterPlacer",
+    "file": "sharedassets.assets"
+  },
+  "1149": {
+    "name": "VerticalLine",
+    "className": "",
+    "assembly": "VerticalLine",
+    "file": "sharedassets.assets"
+  },
+  "1161": {
+    "name": "MoviePlayer",
+    "className": "",
+    "assembly": "MoviePlayer",
+    "file": "sharedassets.assets"
+  },
+  "1168": {
+    "name": "PlatformMover",
+    "className": "",
+    "assembly": "PlatformMover",
+    "file": "sharedassets.assets"
+  },
+  "1293": {
+    "name": "QualityDisabler",
+    "className": "",
+    "assembly": "QualityDisabler",
+    "file": "sharedassets.assets"
+  },
+  "1469": {
+    "name": "HighScoreTable",
+    "className": "",
+    "assembly": "HighScoreTable",
+    "file": "sharedassets.assets"
+  },
+  "1477": {
+    "name": "HUDCountDown",
+    "className": "",
+    "assembly": "HUDCountDown",
+    "file": "sharedassets.assets"
+  },
+  "1479": {
+    "name": "GameManager",
+    "className": "",
+    "assembly": "GameManager",
+    "file": "sharedassets.assets"
+  },
+  "1480": {
+    "name": "HelpRenderer",
+    "className": "",
+    "assembly": "HelpRenderer",
+    "file": "sharedassets.assets"
+  },
+  "1489": {
+    "name": "DemoLoop",
+    "className": "",
+    "assembly": "DemoLoop",
+    "file": "sharedassets.assets"
+  },
+  "1490": {
+    "name": "HUDGooMeter",
+    "className": "",
+    "assembly": "HUDGooMeter",
+    "file": "sharedassets.assets"
+  },
+  "1494": {
+    "name": "DemoCameraAnimator",
+    "className": "",
+    "assembly": "DemoCameraAnimator",
+    "file": "sharedassets.assets"
+  },
+  "1496": {
+    "name": "Shadow",
+    "className": "",
+    "assembly": "Shadow",
+    "file": "sharedassets.assets"
+  },
+  "1501": {
+    "name": "AreaAction",
+    "className": "",
+    "assembly": "AreaAction",
+    "file": "sharedassets.assets"
+  },
+  "1505": {
+    "name": "TestRenderTex",
+    "className": "",
+    "assembly": "TestRenderTex",
+    "file": "sharedassets.assets"
+  },
+  "1513": {
+    "name": "MenuController",
+    "className": "",
+    "assembly": "MenuController",
+    "file": "sharedassets.assets"
+  },
+  "1514": {
+    "name": "GameEndedHighScore",
+    "className": "",
+    "assembly": "GameEndedHighScore",
+    "file": "sharedassets.assets"
+  },
+  "1518": {
+    "name": "MusicPlayer",
+    "className": "",
+    "assembly": "MusicPlayer",
+    "file": "sharedassets.assets"
+  },
+  "1519": {
+    "name": "VariationHolder",
+    "className": "",
+    "assembly": "VariationHolder",
+    "file": "sharedassets.assets"
+  },
+  "1522": {
+    "name": "MusicPlayerForwarder",
+    "className": "",
+    "assembly": "MusicPlayerForwarder",
+    "file": "sharedassets.assets"
+  },
+  "1524": {
+    "name": "WorldDependantInstancer",
+    "className": "",
+    "assembly": "WorldDependantInstancer",
+    "file": "sharedassets.assets"
+  },
+  "1525": {
+    "name": "BackgroundLevelCamera",
+    "className": "",
+    "assembly": "BackgroundLevelCamera",
+    "file": "sharedassets.assets"
+  },
+  "1527": {
+    "name": "LevelHighScore",
+    "className": "",
+    "assembly": "LevelHighScore",
+    "file": "sharedassets.assets"
+  },
+  "1528": {
+    "name": "WaterPlatformHit",
+    "className": "",
+    "assembly": "WaterPlatformHit",
+    "file": "sharedassets.assets"
+  },
+  "1533": {
+    "name": "GodrayGenerator",
+    "className": "",
+    "assembly": "GodrayGenerator",
+    "file": "sharedassets.assets"
+  },
+  "1540": {
+    "name": "HUDLapRecordText",
+    "className": "",
+    "assembly": "HUDLapRecordText",
+    "file": "sharedassets.assets"
+  },
+  "1543": {
+    "name": "HUDStateText",
+    "className": "",
+    "assembly": "HUDStateText",
+    "file": "sharedassets.assets"
+  },
+  "1549": {
+    "name": "WorldDependantGlow",
+    "className": "",
+    "assembly": "WorldDependantGlow",
+    "file": "sharedassets.assets"
+  },
+  "1555": {
+    "name": "Grabber",
+    "className": "",
+    "assembly": "Grabber",
+    "file": "sharedassets.assets"
+  },
+  "1559": {
+    "name": "ApplySettings",
+    "className": "",
+    "assembly": "ApplySettings",
+    "file": "sharedassets.assets"
+  },
+  "1560": {
+    "name": "HUDStarCounter",
+    "className": "",
+    "assembly": "HUDStarCounter",
+    "file": "sharedassets.assets"
+  },
+  "1563": {
+    "name": "PlayerState",
+    "className": "",
+    "assembly": "PlayerState",
+    "file": "sharedassets.assets"
+  },
+  "1565": {
+    "name": "CameraStreaks",
+    "className": "",
+    "assembly": "CameraStreaks",
+    "file": "sharedassets.assets"
+  },
+  "1568": {
+    "name": "TimeScaleManager",
+    "className": "",
+    "assembly": "TimeScaleManager",
+    "file": "sharedassets.assets"
+  },
+  "1570": {
+    "name": "HUDPivot",
+    "className": "",
+    "assembly": "HUDPivot",
+    "file": "sharedassets.assets"
+  },
+  "1572": {
+    "name": "MouseForwarder",
+    "className": "",
+    "assembly": "MouseForwarder",
+    "file": "sharedassets.assets"
+  },
+  "1580": {
+    "name": "GooPickup",
+    "className": "",
+    "assembly": "GooPickup",
+    "file": "sharedassets.assets"
+  },
+  "1645": {
+    "name": "DemoLoopText",
+    "className": "",
+    "assembly": "DemoLoopText",
+    "file": "sharedassets.assets"
+  },
+  "1646": {
+    "name": "FadeInGlow",
+    "className": "",
+    "assembly": "FadeInGlow",
+    "file": "sharedassets.assets"
+  },
+  "1647": {
+    "name": "ShaderReload",
+    "className": "",
+    "assembly": "ShaderReload",
+    "file": "sharedassets.assets"
+  },
+  "1648": {
+    "name": "ObjectMover",
+    "className": "",
+    "assembly": "ObjectMover",
+    "file": "sharedassets.assets"
+  },
+  "1649": {
+    "name": "HUDLevelName",
+    "className": "",
+    "assembly": "HUDLevelName",
+    "file": "sharedassets.assets"
+  },
+  "1685": {
+    "name": "KeyboardNavigation",
+    "className": "",
+    "assembly": "KeyboardNavigation",
+    "file": "sharedassets.assets"
+  },
+  "1686": {
+    "name": "BallSoundController",
+    "className": "",
+    "assembly": "BallSoundController",
+    "file": "sharedassets.assets"
+  },
+  "1694": {
+    "name": "GameOverCamera",
+    "className": "",
+    "assembly": "GameOverCamera",
+    "file": "sharedassets.assets"
+  },
+  "1716": {
+    "name": "SequenceController",
+    "className": "",
+    "assembly": "SequenceController",
+    "file": "sharedassets.assets"
+  },
+  "1718": {
+    "name": "BallController",
+    "className": "",
+    "assembly": "BallController",
+    "file": "sharedassets.assets"
+  },
+  "1719": {
+    "name": "CameraManager",
+    "className": "",
+    "assembly": "CameraManager",
+    "file": "sharedassets.assets"
+  },
+  "1720": {
+    "name": "EulerHelper",
+    "className": "",
+    "assembly": "EulerHelper",
+    "file": "sharedassets.assets"
+  },
+  "1721": {
+    "name": "LooseCameraRotator",
+    "className": "",
+    "assembly": "LooseCameraRotator",
+    "file": "sharedassets.assets"
+  },
+  "1722": {
+    "name": "PositionEuler",
+    "className": "",
+    "assembly": "PositionEuler",
+    "file": "sharedassets.assets"
+  },
+  "1724": {
+    "name": "MyApplication",
+    "className": "",
+    "assembly": "MyApplication",
+    "file": "sharedassets.assets"
+  },
+  "1727": {
+    "name": "IntroLogos",
+    "className": "",
+    "assembly": "IntroLogos",
+    "file": "sharedassets.assets"
+  },
+  "1728": {
+    "name": "CameraParticles",
+    "className": "",
+    "assembly": "CameraParticles",
+    "file": "sharedassets.assets"
+  },
+  "1729": {
+    "name": "MainMenu",
+    "className": "",
+    "assembly": "MainMenu",
+    "file": "sharedassets.assets"
+  },
+  "1730": {
+    "name": "BallCritterController",
+    "className": "",
+    "assembly": "BallCritterController",
+    "file": "sharedassets.assets"
+  },
+  "1738": {
+    "name": "DemoFinishedLoop",
+    "className": "",
+    "assembly": "DemoFinishedLoop",
+    "file": "sharedassets.assets"
+  },
+  "1739": {
+    "name": "EventSoundController",
+    "className": "",
+    "assembly": "EventSoundController",
+    "file": "sharedassets.assets"
+  },
+  "1743": {
+    "name": "SoundTrigger",
+    "className": "",
+    "assembly": "SoundTrigger",
+    "file": "sharedassets.assets"
+  },
+  "1745": {
+    "name": "HUDStarJump",
+    "className": "",
+    "assembly": "HUDStarJump",
+    "file": "sharedassets.assets"
+  },
+  "1754": {
+    "name": "MouseGUI",
+    "className": "",
+    "assembly": "MouseGUI",
+    "file": "sharedassets.assets"
+  },
+  "1756": {
+    "name": "MainMenuMouseGUI",
+    "className": "",
+    "assembly": "MainMenuMouseGUI",
+    "file": "sharedassets.assets"
+  },
+  "1759": {
+    "name": "PickupController",
+    "className": "",
+    "assembly": "PickupController",
+    "file": "sharedassets.assets"
+  },
+  "1760": {
+    "name": "FixCamera",
+    "className": "",
+    "assembly": "FixCamera",
+    "file": "sharedassets.assets"
+  },
+  "1761": {
+    "name": "GamePlayMenu",
+    "className": "",
+    "assembly": "GamePlayMenu",
+    "file": "sharedassets.assets"
+  },
+  "1762": {
+    "name": "Fadeout",
+    "className": "",
+    "assembly": "Fadeout",
+    "file": "sharedassets.assets"
+  },
+  "1767": {
+    "name": "StatsFile",
+    "className": "",
+    "assembly": "StatsFile",
+    "file": "sharedassets.assets"
+  },
+  "1768": {
+    "name": "HUDLifeJump",
+    "className": "",
+    "assembly": "HUDLifeJump",
+    "file": "sharedassets.assets"
+  },
+  "1769": {
+    "name": "HUDLifeCounter",
+    "className": "",
+    "assembly": "HUDLifeCounter",
+    "file": "sharedassets.assets"
+  },
+  "1773": {
+    "name": "ConstrainToPlane",
+    "className": "",
+    "assembly": "ConstrainToPlane",
+    "file": "sharedassets.assets"
+  }
+}

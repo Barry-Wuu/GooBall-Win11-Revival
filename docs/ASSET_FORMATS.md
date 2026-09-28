@@ -171,3 +171,74 @@ u32 BE name_len, name | … 头 | 关键帧 float 序列 | 属性名字符串
 | MeshFilter | `m_GameObject`、`m_Mesh` |
 
 产物：`assets/scenes/levels_scene.json`（69 关 + mainData）、`assets/scenes/sharedassets_scene.json`。
+
+---
+
+## 9. TextMesh（classID 102）—— 76 个
+
+对象内直接存储**游戏内文本**（UI / 关卡名 / 制作名单 / 提示语）：
+
+```
+[0:8]   m_GameObject   PPtr( fileID:i32 BE, pathID:i32 BE )   # 指向所属 GameObject
+[8:12]  m_Text_len     u32 BE
+[12:]   m_Text         utf8 文本
+```
+
+- PPtr 的 `pathID` 在此类型上必须按**大端**解读（实测 `0x00000285` = 645，即该 TextMesh 所属的
+  GameObject 的 pathID）。
+- 76 个实例中 72 个含非空文本，去重后 **54 个唯一字符串**。
+- 出土文本含版本证据字符串 `unity 1.6 conversion`（坐实本资源由 Unity 1.6 工具链转换自更早版本）。
+- 代表性文本：
+  - `SELECT LEVEL TO PRACTICE`、`GAME OVER`、`PRESS ANY KEY TO CONTINUE`
+  - `Press space to register now!`
+  - `60 Levels\n6 Worlds\nEndless fun!`
+  - 完整制作名单（credits）
+
+产物：`assets/textmeshes/{file}_textmeshes.json` + `assets/textmeshes/_all_textmeshes.json`。
+
+---
+
+## 10. MonoScript（classID 115）—— 105 个
+
+记录每个 C# 脚本的元数据（不含 IL，IL 见 `docs/il_*.txt`）：
+
+```
+[ u32 BE len ][ name utf8 ]        # 脚本名（如 BallController）
+[ u32 BE len ][ name utf8 ]        # className（如 BallController）
+[ u32 BE len ][ name utf8 ]        # assembly（如 CSharp / Assembly-CSharp）
+```
+
+- 提取为纯文本扫描，**不依赖 pathID** 解析，全部 105 个稳定出土。
+- 代表性脚本：`BallController`、`GameManager`、`GooPickup`、`HUDCountDown`、`MusicPlayer`、
+  `ChapterSelector`、`CloudMover`、`PlayerState` 等。
+- 列表产物：`assets/data/monoscripts.json`。
+
+---
+
+## 11. MonoBehaviour（classID 17 早期编号 / 114 现代编号）—— 5698 个 🚧
+
+实例骨架（classID 17 实测，size=20 的最小实例）：
+
+```
+[0:8]    m_GameObject   PPtr( fileID:i32, pathID:i32 )   # 所属 GameObject
+[8:16]   m_Script       PPtr( fileID:i32, pathID:i32 )   # 指向 MonoScript(classID 115)
+[16:17]  m_Enabled      u8
+[17:]    自定义序列化字段（按 MonoScript 的 TypeTree 布局，类型相关）
+```
+
+- 实例计数：classID 17 共 4588 + 1447 = **6035**（与 classID 114 的 1447 并存，属早期/现代编号双轨），
+  以实例记录口径计 **5698** 条（去重/合并后）。
+- 产物：`assets/data/monobehaviours.json`（含每个实例的 m_GameObject / m_Script / m_Enabled 原始字段）。
+
+### ⚠️ pathID 32-bit 编码陷阱（当前阻塞点）
+
+**对象表的 pathID 是 16-bit**（`b0 | b19<<8`，如 4 / 6 / 8），但 **MonoBehaviour 实例数据里的 PPtr 引用是 32-bit 混合编码**，同一 32-bit 值在不同类型上的字节序表现不一致：
+
+- `0x01000000` 这 4 字节：**大端**读 = 16777216，**小端**读 = 1。
+- **TextMesh 的 `m_GameObject.pathID` 必须按大端解读才合理**（如 `0x00000285`=645）。
+- **MonoBehaviour 的 `m_Script.pathID` 必须按小端解读才合理**（如 `0x00000001`=1，指向首个 MonoScript）。
+
+因此**通用解析 MonoBehaviour 实例字段值前，必须先彻底厘清 PPtr 的 `fileID/pathID` 字节序与 32-bit pathID 真实编码**——
+目前直接按固定字节序解析会导致 `m_Script` 关联大量失配（出现 `fileID=16777216, pathID=16777216` 等异常值）。
+此问题**不阻塞** TextMesh 文本与 MonoScript 清单提取（两者均不依赖 pathID 解析），
+待编码规则厘清后，可一举提取 5698 个实例的核心逻辑参数（球属性 / 分数阈值 / 相机参数等）。

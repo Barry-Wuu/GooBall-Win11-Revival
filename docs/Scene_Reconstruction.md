@@ -130,11 +130,30 @@ level4 / level51 / level8 / level9`（各 15 种脚本）。
 - `ChapterSelector/camera/aspect pivot/Chapter: ` → 材质 `intro text`（shader `outlined text`，纹理 `gootxt_body`）
 
 注：玩家球本体 GO（`_player/Ball`）无 MeshFilter——其组件为 Transform + Rigidbody(54)
-+ 2×MonoBehaviour + AudioListener(82) + **classID 135（GooBall 专属类）**，球体视觉由子对象渲染。
++ 2×MonoBehaviour + AudioListener(82) + SphereCollider(135, radius=0.3)；
+球体视觉由子对象渲染。
+
+## 6.5 GooBall 私有物理类出土（黏球形变核心）
+
+三者各 1 个实例（sharedassets 模板），全部挂在与 Ball 联动的 **`_player/BallSurface`** 上：
+
+```
+_player/Ball          Transform + Rigidbody(54) + BallController 等 MB + SphereCollider(135)
+  └─ BallSurface      Transform + MeshFilter/Renderer + GooLattice(150)
+                      + GooStickyness(151) + GooballCollider(77) + 2×MB
+```
+
+| 类 | 关键字段（反序列化实测） |
+|---|---|
+| **GooStickyness(151)** | m_BaseRadius=0.3, m_ContactNormalSmoothing=0.5, m_MaxStretch=1.0, m_StickynessStrength≈0.0001, m_ClampStrength=0, m_Drag=0, m_RotationalDrag=0, m_Ball→Ball(1592), m_DrawSprings=0 |
+| **GooLattice(150)** | 1765B/53 节点：m_Verts = Array<Array<[5×Vector3f]>> + Matrix4x4f（可形变点阵，模板全 0，运行时填充） |
+| **GooballCollider(77)** | m_Layers=1, m_Skip=3 |
+
+注：metadata 类型树区的最后一个节点 `bool m_DrawSprings` 正是 GooStickyness 的末字段，
+与此互证。classID 135 确认为标准 SphereCollider（非专属类）。
 
 ## 7. 下一步
 
-- **classID 135 等专属类**：Ball 上发现的未知类，与 150/151/77 一起构成 GooBall 私有引擎层。
-- **Light intensity 字段名补齐**：部分树字段名与预期不同。
 - **AnimationClip**(74) 关键帧解包：4292 个 Animation 已指向 clip，下一步解曲线数据。
-- **物理重建**：GooLattice(150) / GooStickyness(151) 布局用于复现 goo 球黏附/形变物理。
+- **Light intensity 字段名补齐**：部分树字段名与预期不同。
+- **物理重建**：GooLattice 点阵 + GooStickyness 参数已齐，可复现 goo 球黏附/形变物理。

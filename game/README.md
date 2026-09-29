@@ -5,7 +5,7 @@
 
 ## 启动
 
-**双击 `开始游戏.bat`**（游戏根目录下），自动起本地服务器并打开浏览器。
+**双击仓库根目录 / D:\GooBall 下的 `开始游戏.bat`**，自动进入 game/ 起本地服务器并打开浏览器。
 
 > 需要本机有 Python 3（bat 依次尝试 `py` / `python` / `D:\B++\Py313\python.exe`）。
 > 不能直接双击 index.html——浏览器 file:// 下无法 fetch 资产，必须走 HTTP。

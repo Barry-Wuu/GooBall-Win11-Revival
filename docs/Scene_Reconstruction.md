@@ -106,11 +106,35 @@ level4 / level51 / level8 / level9`（各 15 种脚本）。
 
 ---
 
-## 6. 下一步
+## 6. 渲染链打通（GO → 网格/材质/纹理）
 
-- **Mesh/Material 实体解析**：用 `mesh_pid` / `material_pids` 跨文件追到 sharedassets 的
-  Mesh(43)/Material(21) 实体，打通「GO → 可见网格」渲染链。
-- **光照与阴影**：Light 的 `intensity` 在部分树字段名不同，需补；结合渲染重建。
-- **物理重建**：GooLattice(150) / GooStickyness(151) / GooballCollider(77) 专属引擎类的
-  布局已确认，可用于复现 goo 球的黏附/形变物理。
-- **AnimationClip**(74) 关键帧解包：4292 个 Animation 已指向 clip，下一步解 clip 曲线。
+`render_chain.py` 把场景图里的 pid 引用跨文件解析成实体名：
+
+- `mesh_pid` → sharedassets Mesh(43) 实体名（m_Name 为数据首部长度前缀串）
+- `material_pids` → `assets/materials/materials.json`（250 条，含 shader 名/纹理/属性）
+- 关卡本地材质（level47/48/55 各 1 个）按 sharedassets 的 Material 布局兜底解析
+
+| 指标 | 数值 |
+|---|---|
+| 覆盖文件 | 67 |
+| 渲染链条目 | **5294** |
+| mesh 解析 | 3750/3785（99.1%） |
+| material 解析 | 3830/3846（99.6%） |
+
+最常用材质：`wood2`(372)、`-star red`(183)、`sky`(152)、`monster_pattern2a`(104)；
+最常用网格多为 Maya 导出名：`polySurface23|polySurfaceShape24`(267)、`skyShape4`(152)。
+
+样例：
+
+- `ChapterSelector/Chapter item` → mesh `Plane`，材质 `nmex1`（shader `Self-illumination`，纹理 `nmex1`）
+- `ChapterSelector/camera/aspect pivot/Chapter: ` → 材质 `intro text`（shader `outlined text`，纹理 `gootxt_body`）
+
+注：玩家球本体 GO（`_player/Ball`）无 MeshFilter——其组件为 Transform + Rigidbody(54)
++ 2×MonoBehaviour + AudioListener(82) + **classID 135（GooBall 专属类）**，球体视觉由子对象渲染。
+
+## 7. 下一步
+
+- **classID 135 等专属类**：Ball 上发现的未知类，与 150/151/77 一起构成 GooBall 私有引擎层。
+- **Light intensity 字段名补齐**：部分树字段名与预期不同。
+- **AnimationClip**(74) 关键帧解包：4292 个 Animation 已指向 clip，下一步解曲线数据。
+- **物理重建**：GooLattice(150) / GooStickyness(151) 布局用于复现 goo 球黏附/形变物理。

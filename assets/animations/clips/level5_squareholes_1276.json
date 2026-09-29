@@ -1,0 +1,24 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1276,
+ "name": "level5_squareholes",
+ "sampleRate": 60.0,
+ "size": 82,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": []
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": []
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 0.0,
+ "keyframe_count": 0
+}

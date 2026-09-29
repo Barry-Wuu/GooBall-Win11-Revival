@@ -1,0 +1,60 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1544,
+ "name": "top gui_out",
+ "sampleRate": 60.0,
+ "size": 259,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     1.0,
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      6.8418,
+      10.0
+     ]
+    ],
+    [
+     1.0,
+     [
+      0.0,
+      10.24121,
+      10.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 1.0,
+ "keyframe_count": 4
+}

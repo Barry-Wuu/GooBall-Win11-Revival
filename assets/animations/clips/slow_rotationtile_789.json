@@ -1,0 +1,56 @@
+{
+ "file": "level51",
+ "pathID": 789,
+ "name": "slow rotationtile",
+ "sampleRate": 60.0,
+ "size": 273,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.15,
+     [
+      0.0,
+      0.0,
+      0.17365,
+      0.98481
+     ]
+    ],
+    [
+     0.16667,
+     [
+      0.0,
+      0.0,
+      0.17365,
+      0.98481
+     ]
+    ],
+    [
+     3.98333,
+     [
+      0.0,
+      0.0,
+      -0.17365,
+      0.98481
+     ]
+    ],
+    [
+     4.0,
+     [
+      0.0,
+      0.0,
+      -0.17365,
+      0.98481
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 4.0,
+ "keyframe_count": 4
+}

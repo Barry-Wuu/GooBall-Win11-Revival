@@ -1,0 +1,77 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1554,
+ "name": "maintext_in",
+ "sampleRate": 60.0,
+ "size": 351,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      -0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     1.0,
+     [
+      0.0,
+      -0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     1.16667,
+     [
+      0.0,
+      -0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      -23.31787,
+      0.0,
+      10.89355
+     ]
+    ],
+    [
+     1.0,
+     [
+      1.11963,
+      0.0,
+      10.89355
+     ]
+    ],
+    [
+     1.16667,
+     [
+      0.0,
+      0.0,
+      10.89355
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 1.1667,
+ "keyframe_count": 6
+}

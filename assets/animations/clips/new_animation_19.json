@@ -1,0 +1,63 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 19,
+ "name": "new animation",
+ "sampleRate": 60.0,
+ "size": 235,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": []
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": []
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [
+  {
+   "path": null,
+   "attribute": "minSize",
+   "classID": 15,
+   "keyframes": [
+    [
+     0.0,
+     2.0
+    ],
+    [
+     0.5,
+     4.0
+    ],
+    [
+     1.0,
+     2.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "maxSize",
+   "classID": 15,
+   "keyframes": [
+    [
+     0.0,
+     2.0
+    ],
+    [
+     0.5,
+     4.0
+    ],
+    [
+     1.0,
+     2.0
+    ]
+   ]
+  }
+ ],
+ "childTracks": [],
+ "duration": 1.0,
+ "keyframe_count": 6
+}

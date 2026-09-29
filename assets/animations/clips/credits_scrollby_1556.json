@@ -1,0 +1,60 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1556,
+ "name": "credits scrollby",
+ "sampleRate": 60.0,
+ "size": 264,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     15.0,
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      -4.17285,
+      7.30005
+     ]
+    ],
+    [
+     15.0,
+     [
+      0.0,
+      10.16699,
+      7.30005
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 15.0,
+ "keyframe_count": 4
+}

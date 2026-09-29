@@ -152,8 +152,29 @@ _player/Ball          Transform + Rigidbody(54) + BallController 等 MB + Sphere
 注：metadata 类型树区的最后一个节点 `bool m_DrawSprings` 正是 GooStickyness 的末字段，
 与此互证。classID 135 确认为标准 SphereCollider（非专属类）。
 
-## 7. 下一步
+## 8. AnimationClip 关键帧解包
 
-- **AnimationClip**(74) 关键帧解包：4292 个 Animation 已指向 clip，下一步解曲线数据。
-- **Light intensity 字段名补齐**：部分树字段名与预期不同。
-- **物理重建**：GooLattice 点阵 + GooStickyness 参数已齐，可复现 goo 球黏附/形变物理。
+`animation_clips.py` 用内置类型树反序列化全部 AnimationClip(74)，产出结构化曲线数据。
+类型树为经典 Unity 1.x 布局：`m_Name` + `m_ClassIDToTrack`(map) + `m_ChildTracks`
++ `m_RotationCurves`(QuaternionCurve) + `m_PositionCurves`/`m_ScaleCurves`(Vector3Curve)
++ `m_FloatCurves`(FloatCurve) + `m_SampleRate`；Keyframe = time + value + inSlope + outSlope。
+
+| 指标 | 数值 |
+|---|---|
+| clip 总数 | 357（sharedassets 157、level0 66、其余关卡散布） |
+| 成功解包 | **354（99.2%）** |
+| 总关键帧 | **11911** |
+| 采样率 | 均 60 fps |
+
+最长动画：`convexcube` / `concavecube` / `monstercubes` 各 49.94s（500 帧）；
+`pSphere12` 39.23s、`ufoSphere4`/`pCylinder1` 37.44s。
+
+**已知变体（3/357）**：`kabala1/2/3`（Boss 相关，size 35783/2067/41519）采用不同的
+AnimationCurve 头布局，`m_Curve` size 字段位置不符 → 原样保存为 `clips/anim*.raw.bin`
+留待后续逆向，不影响其余 354 个。
+
+## 9. 下一步
+
+- **kabala 变体布局**：定位 3 个 Boss 动画的不同 `AnimationCurve` 头（可能含额外字段）。
+- **Light intensity 字段名补齐**。
+- **物理复现**：GooLattice 点阵 + GooStickyness 参数已齐，可复现 goo 球黏附/形变。

@@ -1,0 +1,44 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 336,
+ "name": "back alien lift",
+ "sampleRate": 60.0,
+ "size": 183,
+ "rotationCurves": [],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      0.0,
+      -0.0
+     ]
+    ],
+    [
+     6.86667,
+     [
+      0.0,
+      8.65861,
+      -0.0
+     ]
+    ],
+    [
+     12.51667,
+     [
+      0.0,
+      0.0,
+      -0.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 12.5167,
+ "keyframe_count": 3
+}

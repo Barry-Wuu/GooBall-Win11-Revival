@@ -1,0 +1,77 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1468,
+ "name": "shake",
+ "sampleRate": 60.0,
+ "size": 345,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     0.16667,
+     [
+      0.0,
+      -0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     0.33333,
+     [
+      0.0,
+      -0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      -0.0,
+      0.0
+     ]
+    ],
+    [
+     0.16667,
+     [
+      0.2,
+      -0.0,
+      0.0
+     ]
+    ],
+    [
+     0.33333,
+     [
+      0.0,
+      -0.0,
+      0.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 0.3333,
+ "keyframe_count": 6
+}

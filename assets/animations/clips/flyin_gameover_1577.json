@@ -1,0 +1,60 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1577,
+ "name": "flyin gameover",
+ "sampleRate": 60.0,
+ "size": 262,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     0.9,
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      8.31922,
+      -0.0
+     ]
+    ],
+    [
+     0.9,
+     [
+      0.0,
+      0.0,
+      0.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 0.9,
+ "keyframe_count": 4
+}

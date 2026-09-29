@@ -1,0 +1,53 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 385,
+ "name": "ufo fallin part1",
+ "sampleRate": 60.0,
+ "size": 214,
+ "rotationCurves": [],
+ "positionCurves": [],
+ "scaleCurves": [],
+ "floatCurves": [
+  {
+   "path": null,
+   "attribute": "minEmission",
+   "classID": 15,
+   "keyframes": [
+    [
+     0.0,
+     100.0
+    ],
+    [
+     0.83333,
+     100.0
+    ],
+    [
+     1.16667,
+     0.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "maxEmission",
+   "classID": 15,
+   "keyframes": [
+    [
+     0.0,
+     100.0
+    ],
+    [
+     0.83333,
+     41.66667
+    ],
+    [
+     1.16667,
+     0.0
+    ]
+   ]
+  }
+ ],
+ "childTracks": [],
+ "duration": 1.1667,
+ "keyframe_count": 6
+}

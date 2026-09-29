@@ -1,0 +1,77 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1774,
+ "name": "game over swing",
+ "sampleRate": 60.0,
+ "size": 355,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      0.0,
+      0.0,
+      -0.13434,
+      0.99093
+     ]
+    ],
+    [
+     0.75,
+     [
+      -0.0,
+      -0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    [
+     1.56667,
+     [
+      -0.0,
+      0.0,
+      0.10259,
+      0.99472
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      -2.17554,
+      3.835,
+      0.80176
+     ]
+    ],
+    [
+     0.75,
+     [
+      -0.0,
+      2.66119,
+      0.80176
+     ]
+    ],
+    [
+     1.56667,
+     [
+      0.96289,
+      4.02838,
+      0.80176
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 1.5667,
+ "keyframe_count": 6
+}

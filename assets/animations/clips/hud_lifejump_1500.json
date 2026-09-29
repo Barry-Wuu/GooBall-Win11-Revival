@@ -1,0 +1,77 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1500,
+ "name": "hud_lifejump",
+ "sampleRate": 60.0,
+ "size": 352,
+ "rotationCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      -0.70711,
+      0.0,
+      0.0,
+      0.70711
+     ]
+    ],
+    [
+     0.31667,
+     [
+      -0.70711,
+      0.0,
+      0.0,
+      0.70711
+     ]
+    ],
+    [
+     0.71667,
+     [
+      -0.70711,
+      0.0,
+      0.0,
+      0.70711
+     ]
+    ]
+   ]
+  }
+ ],
+ "positionCurves": [
+  {
+   "path": null,
+   "keyframes": [
+    [
+     0.0,
+     [
+      5.75146,
+      -3.13403,
+      0.0
+     ]
+    ],
+    [
+     0.31667,
+     [
+      5.75146,
+      -2.1326,
+      0.0
+     ]
+    ],
+    [
+     0.71667,
+     [
+      5.75146,
+      -3.13403,
+      0.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "scaleCurves": [],
+ "floatCurves": [],
+ "childTracks": [],
+ "duration": 0.7167,
+ "keyframe_count": 6
+}

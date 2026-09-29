@@ -1,0 +1,114 @@
+{
+ "file": "sharedassets.assets",
+ "pathID": 1654,
+ "name": "new animation 1",
+ "sampleRate": 60.0,
+ "size": 506,
+ "rotationCurves": [],
+ "positionCurves": [],
+ "scaleCurves": [],
+ "floatCurves": [
+  {
+   "path": null,
+   "attribute": "m_Scale.e00",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     1.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e10",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     0.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e20",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     0.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e01",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     0.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e11",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     1.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e21",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     0.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e02",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     0.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e12",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     0.0
+    ]
+   ]
+  },
+  {
+   "path": null,
+   "attribute": "m_Scale.e22",
+   "classID": 91,
+   "keyframes": [
+    [
+     0.61667,
+     1.0
+    ]
+   ]
+  }
+ ],
+ "childTracks": [],
+ "duration": 0.6167,
+ "keyframe_count": 9
+}

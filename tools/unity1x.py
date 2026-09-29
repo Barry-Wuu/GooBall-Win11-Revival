@@ -89,15 +89,17 @@ class Unity1x:
         buf, n = self.meta, len(self.meta)
         out = []
         for s in range(0, n - STRIDE * 4):
-            ok = True
+            ok1 = True   # 起始 pathID 低字节 1,2,3,4
+            ok0 = True   # 起始 pathID 低字节 0,1,2,3（容错「表以 pathID 0 开头」）
             for k in range(4):
                 p = s + k * STRIDE
-                # pathID 连续 1..4（低字节），尾 4 字节 0
                 if buf[p] != k + 1 or buf[p + 1] or buf[p + 19] or \
                    buf[p + 16:p + 20] != b"\x00\x00\x00\x00":
-                    ok = False
-                    break
-            if ok:
+                    ok1 = False
+                if buf[p] != k or buf[p + 1] or buf[p + 19] or \
+                   buf[p + 16:p + 20] != b"\x00\x00\x00\x00":
+                    ok0 = False
+            if ok1 or ok0:
                 out.append(s)
         return out
 

@@ -141,10 +141,14 @@ def build_file(fn, mb_by_file):
                 fid2, mesh = pptr_pid(val.get("m_Mesh"))
                 rec["collider_mesh_pid"] = mesh
             elif label == "light":
-                rec["light_type"] = val.get("m_LightType")
-                col = val.get("m_Color")
-                rec["color"] = col
-                rec["intensity"] = val.get("m_Intensity")
+                # Unity 1.x Light 无 m_Intensity；真实参数为 Type/Range/SpotAngle/Attenuate/RenderMode
+                rec["light_type"] = val.get("m_Type")
+                rec["color"] = val.get("m_Color")
+                rec["range"] = val.get("m_Range")
+                rec["spot_angle"] = val.get("m_SpotAngle")
+                rec["attenuate"] = val.get("m_Attenuate")
+                rec["render_mode"] = val.get("m_RenderMode")
+                rec["draw_halo"] = val.get("m_DrawHalo")
             elif label == "animation":
                 anims = [pptr_pid(a)[1] for a in (val.get("m_Animations") or [])]
                 rec["clip_pids"] = anims

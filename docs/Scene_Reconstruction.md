@@ -79,9 +79,13 @@ level4 / level51 / level8 / level9`（各 15 种脚本）。
 
 样例：
 
-- Light `light` → 路径 `mapscreen/light`，颜色 `(0.135, 0.157, 0.206)` 深蓝环境光
+- Light `light` → 路径 `mapscreen/light`：type=Point(1)，颜色 `(0.135, 0.157, 0.206)` 深蓝，range=10，spot=30°，attenuate=1，drawHalo=1
+- Light `cloudlight` → range=300，spot=10°，attenuate=0（大范围无衰减云层光）
 - MeshCollider `NM_kaktus` → 路径 `Level Pivot/Holder/NM_kaktus`，碰撞网格 pid=129
 - Animation `00 - NM Intro1` → 路径 `mapscreen/leveldots/new mexico/00 - NM Intro1`，clip=[127,19]
+
+注：**Unity 1.x 的 Light 没有 `m_Intensity` 字段**（后续版本才加入），真实参数为
+`m_Type / m_Color / m_Range / m_SpotAngle / m_Attenuate / m_RenderMode / m_DrawHalo / m_CullingMask`。
 
 ---
 
@@ -176,5 +180,4 @@ AnimationCurve 头布局，`m_Curve` size 字段位置不符 → 原样保存为
 ## 9. 下一步
 
 - **kabala 变体布局**：定位 3 个 Boss 动画的不同 `AnimationCurve` 头（可能含额外字段）。
-- **Light intensity 字段名补齐**。
 - **物理复现**：GooLattice 点阵 + GooStickyness 参数已齐，可复现 goo 球黏附/形变。

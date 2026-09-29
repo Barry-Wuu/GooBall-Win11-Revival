@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>GooBall Revival — level3 (New Mexico)</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e1a;font-family:"Segoe UI",sans-serif}
+  #hud{position:fixed;top:10px;left:12px;color:#fff;text-shadow:0 1px 3px #000;font-size:18px;z-index:10;pointer-events:none}
+  #hud .big{font-size:26px;font-weight:700}
+  #tip{position:fixed;bottom:12px;left:12px;color:#cfd6ff;opacity:.75;font-size:13px;z-index:10;pointer-events:none}
+  #overlay{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+           background:rgba(5,8,20,.82);color:#fff;z-index:20;text-align:center}
+  #overlay h1{font-size:42px;margin:0 0 10px}
+  #overlay p{color:#aab4d8}
+  #overlay button{margin-top:18px;font-size:18px;padding:10px 28px;border:0;border-radius:8px;cursor:pointer;
+           background:#4f7cff;color:#fff}
+  #overlay.hidden{display:none}
+  #bar{width:280px;height:8px;background:#1c2244;border-radius:4px;margin-top:14px;overflow:hidden}
+  #bar div{height:100%;width:0;background:#4f7cff;transition:width .2s}
+</style>
+</head>
+<body>
+<div id="hud">
+  <div class="big" id="stars">★ 0 / 10</div>
+  <div id="time">0.0 s</div>
+</div>
+<div id="tip">WASD / 方向键 滚动小球 · 空格 跳跃 · R 重开 · 收集★后进入光环</div>
+<div id="overlay">
+  <h1>GOOBALL</h1>
+  <p>Win11 Revival · 2005 原作资产重建 · level3 (New Mexico)</p>
+  <div id="bar"><div></div></div>
+  <p id="loadmsg">正在加载出土资产…</p>
+  <button id="play" style="display:none">开始游戏</button>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>

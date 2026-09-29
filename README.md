@@ -114,11 +114,12 @@ python tools/extract_mb.py
 - [x] 场景层级（69 关 + sharedassets）导出
 - [x] 游戏内文本出土（TextMesh 76，含 `unity 1.6 conversion` 证据）
 - [x] MonoScript 清单（105）出土
-- [ ] **MonoBehaviour 实例字段值提取（攻克 32-bit pathID 编码陷阱）**
+- [x] MonoBehaviour 实例字段值提取（1440/1447，83 脚本类，字节精确）
 - [ ] Material/Shader → Godot 材质转换
 - [ ] Mesh 剩余 14 个退化网格
 - [ ] 在 Godot 4 重建物理 / 输入 / 存档 / 消息契约
 - [ ] Win11 可玩版本发布
+- [x] **可玩 Web 重建原型**：`game/`（Three.js + 出土资产，双击 `开始游戏.bat` 启动）
 
 ---
 

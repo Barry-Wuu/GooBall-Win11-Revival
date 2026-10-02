@@ -34,7 +34,8 @@ function parseOBJ(text) {
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
   if (nor.length === pos.length) g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
-  if (uv.length / 2 === pos.length / 3) g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  // 只有 OBJ 真的带了 vt 才设 uv；否则贴图会退化成采样纹理左上角一个像素（可能是黑的）
+  if (UV.length && uv.length / 2 === pos.length / 3) g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
   if (nor.length !== pos.length) g.computeVertexNormals();
   return g;
 }
@@ -69,7 +70,11 @@ const geoCache = new Map(), texCache = new Map();
 const colliders = [];   // 参与碰撞的网格
 
 function getTex(url) {
-  if (!texCache.has(url)) texCache.set(url, loader.load(url, t => { t.colorSpace = THREE.SRGBColorSpace; }));
+  if (!texCache.has(url)) texCache.set(url, loader.load(url, t => {
+    t.colorSpace = THREE.SRGBColorSpace;
+    t.flipY = false;                    // Unity UV 原点在左下，与 three 默认相反
+    t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  }));
   return texCache.get(url);
 }
 
@@ -85,7 +90,7 @@ async function loadLevel(data) {
       geoCache.set(it.mesh, geo);
     }
     let mat;
-    if (it.textures && it.textures.length)
+    if (it.textures && it.textures.length && geo.hasAttribute('uv'))
       mat = new THREE.MeshLambertMaterial({ map: getTex(it.textures[0]), side: THREE.DoubleSide });
     else {
       const c = it.color ? new THREE.Color(it.color[0], it.color[1], it.color[2]) : new THREE.Color(0x9a8a6a);

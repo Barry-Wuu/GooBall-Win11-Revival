@@ -117,13 +117,22 @@ for o in u.objects:
         cx,cy,cz=ay*bz-az*by, az*bx-ax*bz, ax*by-ay*bx
         return cx*cx+cy*cy+cz*cz >= 1e-12
     tris = [t for t in tris if keep(t)]
-    # UV
+    # UV：m_Vertices 之后先有一个长度 0 的数组（4 字节），再是 [u32 U][U×float2]。
+    # 旧版直接在顶点末尾读长度，读到 0 就放弃，导致导出的 OBJ 全无 vt、
+    # 贴图退化为采样纹理左上角一个像素（水面用的 Water02.png 该像素为纯黑 → 地面发黑）。
     uv = []
-    uoff = p + 4 + V*12
-    if uoff + 4 <= len(R):
-        U = be32(R, uoff)
-        if 0 < U <= V+1 and uoff+4+U*8 <= len(R):
-            uv = [(bef(R,uoff+4+k*8), bef(R,uoff+8+k*8)) for k in range(U)]
+    U = 0
+    ustart = p + 4 + V*12
+    for k in range(6):
+        off = ustart + k*4
+        if off + 4 > len(R): break
+        cand = be32(R, off)
+        if 3 <= cand <= V + 2 and off + 4 + cand*8 <= len(R):
+            sample = [bef(R, off + 4 + j*8) for j in range(min(8, cand*2))]
+            if sum(1 for x in sample if -0.05 <= x <= 1.05) / len(sample) >= 0.6:
+                U = cand
+                uv = [(bef(R, off+4+j*8), bef(R, off+8+j*8)) for j in range(U)]
+                break
     fn = os.path.join(OUT, f"{safe(name)}_{o.pathID}.obj")
     with open(fn, 'w') as f:
         f.write(f"# GooBall mesh {name} pathID={o.pathID} V={V} tris={len(tris)} uv={len(uv)}\n")
@@ -131,8 +140,13 @@ for o in u.objects:
             f.write(f"v {x:.6f} {y:.6f} {z:.6f}\n")
         for x,y in uv:
             f.write(f"vt {x:.6f} {y:.6f}\n")
-        for a,b,c in tris:
-            f.write(f"f {a+1} {b+1} {c+1}\n")
+        if uv:
+            fi = lambda i: min(i + 1, U)      # UV 索引与顶点一一对应
+            for a, b, c in tris:
+                f.write(f"f {a+1}/{fi(a)} {b+1}/{fi(b)} {c+1}/{fi(c)}\n")
+        else:
+            for a, b, c in tris:
+                f.write(f"f {a+1} {b+1} {c+1}\n")
     ok += 1
 
 print(f"Mesh: {ok}  无顶点 {len(novert)}  faces方案 {face_used}  strips方案 {strip_used}  两者都有 {both}")

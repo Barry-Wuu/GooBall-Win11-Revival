@@ -32,8 +32,8 @@ def dxt1_decode(data, w, h):
         for bx in range(bw):
             o = (by * bw + bx) * 8
             blk = data[o:o+8].ljust(8, b'\x00')
-            c0 = int.from_bytes(blk[0:2], 'big')
-            c1 = int.from_bytes(blk[2:4], 'big')
+            c0 = int.from_bytes(blk[0:2], 'little')
+            c1 = int.from_bytes(blk[2:4], 'little')
             idx = int.from_bytes(blk[4:8], 'little')
             cols = [rgb565(c0), rgb565(c1)]
             if c0 > c1:
@@ -70,8 +70,8 @@ def dxt5_decode(data, w, h):
             else:
                 apal = [a0, a1, (4*a0+a1)//5, (3*a0+2*a1)//5, (2*a0+3*a1)//5,
                         (a0+4*a1)//5, 0, 255]
-            c0 = int.from_bytes(blk[8:10], 'big')
-            c1 = int.from_bytes(blk[10:12], 'big')
+            c0 = int.from_bytes(blk[8:10], 'little')
+            c1 = int.from_bytes(blk[10:12], 'little')
             idx = int.from_bytes(blk[12:16], 'little')
             cols = [rgb565(c0), rgb565(c1)]
             if c0 > c1:
@@ -148,13 +148,15 @@ def main():
                 continue
             img = Image.new('RGBA', (w, h))
             img.putdata(px)
-        elif fmt == 10:                                   # DXT1（内联或流洞）
+        elif fmt == 10:                                   # DXT1（内联 + 紧跟对象的流式余量）
             need = ((w+3)//4) * ((h+3)//4) * 8
             data = d[off:off+need]
             if len(data) < need:
-                # 流洞规则（montezuma 实证）：头挤占 2^18 预算，
-                # 数据 = [obj.offset - need + o.size, obj.offset)，尾部可能截断
-                data = u.raw[max(16, o.offset - need + o.size):o.offset]
+                # 流式余量规则（Water02 实证）：缺的数据紧跟对象之后
+                data += u.raw[o.offset + o.size: o.offset + o.size + (need - len(data))]
+            if len(data) < need:
+                # 兜底：montezuma 型流洞（对象之前）
+                data += u.raw[max(16, o.offset - need + o.size):o.offset][:need - len(data)]
             if len(data) < need:
                 data = data.ljust(need, b'\x00')
             img = dxt1_decode(data, w, h)
@@ -162,7 +164,9 @@ def main():
             need = ((w+3)//4) * ((h+3)//4) * 16
             data = d[off:off+need]
             if len(data) < need:
-                data = u.raw[max(16, o.offset - need + o.size):o.offset]
+                data += u.raw[o.offset + o.size: o.offset + o.size + (need - len(data))]
+            if len(data) < need:
+                data += u.raw[max(16, o.offset - need + o.size):o.offset][:need - len(data)]
             if len(data) < need:
                 data = data.ljust(need, b'\x00')
             img = dxt5_decode(data, w, h)

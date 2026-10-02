@@ -21,12 +21,12 @@ def be32(b, i): return int.from_bytes(b[i:i+4], 'big')
 def bef(b, i):  return struct.unpack('>f', b[i:i+4])[0]
 
 def walk(R):
-    """返回 (faces[], strips[], p_after) —— 遍历所有 LOD 的所有 MeshData。"""
+    """返回 (lods, p_after) —— lods: 每个 MeshData 一项 (faces, strips)，不跨 LOD 混合。"""
     L = be32(R, 0)
     if not (1 <= L <= 8):
         return None
     p = 4
-    faces, strips = [], []
+    lods = []
     for _ in range(L):
         if p + 4 > len(R): return None
         n = be32(R, p); p += 4
@@ -35,15 +35,17 @@ def walk(R):
             if p + 4 > len(R): return None
             nf = be32(R, p); p += 4
             if not (0 <= nf <= 200000) or p + nf*6 > len(R): return None
+            faces = []
             for k in range(nf):
                 a = int.from_bytes(R[p:p+2],'big'); b = int.from_bytes(R[p+2:p+4],'big'); c = int.from_bytes(R[p+4:p+6],'big')
                 faces.append((a,b,c)); p += 6
             if p + 4 > len(R): return None
             ns = be32(R, p); p += 4
             if not (0 <= ns <= 500000) or p + ns*2 > len(R): return None
-            strips.extend(int.from_bytes(R[p+2*k:p+2*k+2],'big') for k in range(ns))
+            strips = [int.from_bytes(R[p+2*k:p+2*k+2],'big') for k in range(ns)]
             p += ns*2
-    return faces, strips, p
+            lods.append((faces, strips))
+    return lods, p
 
 def strip_to_tris(s):
     tris = []
@@ -77,7 +79,7 @@ for o in u.objects:
     w = walk(R)
     if w is None:
         novert.append(name); continue
-    faces, strips, p = w
+    lods, p = w
     if p + 4 > len(R): novert.append(name); continue
     V = be32(R, p)
     if not (3 <= V <= 60000) or p+4+V*12 > len(R):
@@ -86,37 +88,24 @@ for o in u.objects:
     if not all(isinstance(bef(R,p+4+j),float) for j in range(0, min(V*12, 4))):
         pass
     verts = [(bef(R,p+4+k*12), bef(R,p+8+k*12), bef(R,p+12+k*12)) for k in range(V)]
-    ftris = [t for t in faces if all(i < V for i in t)]
-    # strips 数据两种解读：三角带 / 三元组
-    cand = []
-    if strips:
-        st = [s for s in strips if s < V or s == 0xFFFF]
-        stris = [t for t in strip_to_tris(st) if all(i < V for i in t)]
-        trip = [ (st[k], st[k+1], st[k+2]) for k in range(0, len(st)-2, 3)
-                 if st[k] < V and st[k+1] < V and st[k+2] < V ]
-        cand.append(stris); cand.append(trip)
-    # 选退化率最低的三角集
-    def degen_ratio(tris):
-        if not tris: return 1.0
-        d = 0
-        for a,b,c in tris:
-            if a==b or b==c or a==c: d += 1
-            else:
-                va,vb,vc = verts[a],verts[b],verts[c]
-                ax,ay,az=vb[0]-va[0],vb[1]-va[1],vb[2]-va[2]
-                bx,by,bz=vc[0]-va[0],vc[1]-va[1],vc[2]-va[2]
-                cx,cy,cz=ay*bz-az*by, az*bx-ax*bz, ax*by-ay*bx
-                if cx*cx+cy*cy+cz*cz < 1e-12: d += 1
-        return d/len(tris)
-    if ftris and cand:
-        allc = [ftris] + cand
-        tris = min(allc, key=degen_ratio)
-    elif cand:
-        tris = min(cand, key=degen_ratio)
-    else:
-        tris = ftris
-    if tris is ftris: face_used += 1
-    else: strip_used += 1
+    # 每个 MeshData 的 faces/strips 是同一几何的两种索引表示；LOD0 精度最高。
+    # faces 非空用 faces；否则 strips 按 Unity 三角带语义展开（相邻共享边 + 绕序交替）。
+    # 旧版按退化率在「三角带 / 三元组」两种解读间二选一，三元组胜出时把大地形
+    # （水面/峡谷/平面）拆成互不相连的棋盘碎片——strips 只有三角带一种正确读法。
+    tris = None
+    for f0, s0 in lods:
+        ftris = [t for t in f0 if all(i < V for i in t)]
+        if ftris:
+            tris = ftris; face_used += 1
+            break
+        if s0:
+            st = [s for s in s0 if s < V or s == 0xFFFF]
+            t2 = [t for t in strip_to_tris(st) if all(i < V for i in t)]
+            if t2:
+                tris = t2; strip_used += 1
+                break
+    if tris is None:
+        novert.append(name); continue
 
     # 剔除退化三角形（重复索引 / 零面积）—— 三角带缝合产生的垃圾
     def keep(t):

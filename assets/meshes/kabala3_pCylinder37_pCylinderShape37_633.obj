@@ -1,4 +1,4 @@
-# GooBall mesh kabala3|pCylinder37|pCylinderShape37 pathID=633 V=58 tris=19 uv=0
+# GooBall mesh kabala3|pCylinder37|pCylinderShape37 pathID=633 V=58 tris=28 uv=0
 v 0.092533 0.196053 -0.348469
 v 0.093840 0.261337 0.306881
 v 0.045729 -0.439973 -0.091639
@@ -65,14 +65,23 @@ f 33 31 32
 f 36 34 35
 f 39 37 38
 f 54 1 56
+f 56 1 53
 f 43 2 44
+f 44 2 42
 f 5 45 46
+f 46 45 47
 f 6 50 51
+f 51 50 55
 f 40 3 41
+f 41 3 9
 f 11 7 10
+f 10 7 4
 f 12 48 49
+f 49 48 52
 f 57 13 58
-f 17 58 18
-f 58 21 20
-f 19 15 16
-f 16 17 19
+f 58 13 14
+f 58 14 15
+f 16 17 58
+f 58 17 18
+f 58 18 19
+f 15 16 58

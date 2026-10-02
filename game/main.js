@@ -248,8 +248,19 @@ async function startLevel(lv) {
   $('subtitle').textContent = `${lv.name} · level${lv.id} · ${lv.chapter}`;
   if (lv.bgm) bgm.src = lv.bgm;
   $('loadmsg').textContent = '正在加载出土资产…';
+  $('loadmsg').style.color = '';
   $('bar').style.display = '';
-  const data = await (await fetch(`data/level${lv.id}.json`)).json();
+  let data;
+  try {
+    const res = await fetch(`data/level${lv.id}.json`);
+    if (!res.ok) throw new Error(`level${lv.id}.json HTTP ${res.status}`);
+    data = await res.json();
+  } catch (e) {
+    $('loadmsg').textContent = `关卡数据加载失败：${e.message}（按 Ctrl+F5 强制刷新后重试）`;
+    $('loadmsg').style.color = '#ff8080';
+    $('menu').style.display = 'block';
+    return;
+  }
   level = await loadLevel(data);
   stars = data.stars.map(makeStar);
   if (data.goals.length) goal = makeGoal(data.goals[0]);
@@ -268,7 +279,16 @@ async function startLevel(lv) {
 }
 
 async function boot() {
-  const meta = await (await fetch('data/levels.json')).json();
+  let meta;
+  try {
+    const res = await fetch('data/levels.json');
+    if (!res.ok) throw new Error(`levels.json HTTP ${res.status}`);
+    meta = await res.json();
+  } catch (e) {
+    $('loadmsg').textContent = `关卡清单加载失败：${e.message}（请按 Ctrl+F5 强制刷新）`;
+    $('loadmsg').style.color = '#ff8080';
+    return;
+  }
   const avail = new Set(meta.generated || []);
   $('bar').style.display = 'none';
   $('loadmsg').textContent = '选择关卡';

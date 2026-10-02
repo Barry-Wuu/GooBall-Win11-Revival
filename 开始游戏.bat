@@ -2,7 +2,7 @@
 rem GooBall Revival launcher (ASCII-only content, encoding-safe)
 rem Game root: this file's directory; game files live in .\game
 cd /d "%~dp0game"
-start "" /b cmd /c "timeout /t 2 /nobreak >nul & start "" http://localhost:8143/index.html"
+start "" /b cmd /c "timeout /t 2 /nobreak >nul & start "" http://localhost:8143/index.html?nocache=%RANDOM%%RANDOM%"
 where py >nul 2>nul
 if %errorlevel%==0 (
   py -m http.server 8143

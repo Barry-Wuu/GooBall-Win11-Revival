@@ -73,8 +73,7 @@ function getTex(url) {
   return texCache.get(url);
 }
 
-async function loadLevel() {
-  const data = await (await fetch('data/level.json')).json();
+async function loadLevel(data) {
   const total = data.objects.length;
   let done = 0;
   for (const it of data.objects) {
@@ -240,10 +239,18 @@ function loop(t) {
   renderer.render(scene, camera);
 }
 
-// ---------- 启动 ----------
-const bgm = new Audio('assets/audio/bgm.ogg'); bgm.loop = true; bgm.volume = 0.8;
-loadLevel().then(data => {
-  level = data;
+// ---------- 启动 / 选关 ----------
+// 关卡表出土自 MapInfo::SetupLevels 的 IL 硬编码（12 章 51 关）
+const bgm = new Audio('assets/audio/techno-jazz.ogg'); bgm.loop = true; bgm.volume = 0.8;
+
+async function startLevel(lv) {
+  $('back').style.display = '';
+  $('subtitle').textContent = `${lv.name} · level${lv.id} · ${lv.chapter}`;
+  if (lv.bgm) bgm.src = lv.bgm;
+  $('loadmsg').textContent = '正在加载出土资产…';
+  $('bar').style.display = '';
+  const data = await (await fetch(`data/level${lv.id}.json`)).json();
+  level = await loadLevel(data);
   stars = data.stars.map(makeStar);
   if (data.goals.length) goal = makeGoal(data.goals[0]);
   spawn.fromArray(data.spawn);
@@ -258,8 +265,32 @@ loadLevel().then(data => {
     respawn(); t0 = performance.now(); playing = true;
     bgm.play().catch(() => { });
   };
-  requestAnimationFrame(loop);
-});
+}
+
+async function boot() {
+  const meta = await (await fetch('data/levels.json')).json();
+  const avail = new Set(meta.generated || []);
+  $('bar').style.display = 'none';
+  $('loadmsg').textContent = '选择关卡';
+  const menu = $('menu');
+  menu.style.display = 'block';
+  for (const ch of meta.chapters) {
+    const list = ch.levels.filter(l => avail.has(l.id));
+    if (!list.length) continue;
+    const h = document.createElement('div');
+    h.className = 'chapter'; h.textContent = ch.name;
+    menu.appendChild(h);
+    for (const lv of list) {
+      const b = document.createElement('button');
+      b.className = 'lvbtn'; b.textContent = lv.name;
+      b.onclick = () => { menu.style.display = 'none'; startLevel({ ...lv, chapter: ch.name, bgm: ch.bgm }); };
+      menu.appendChild(b);
+    }
+  }
+}
+$('back').onclick = () => location.reload();
+requestAnimationFrame(loop);
+boot();
 addEventListener('resize', () => {
   camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);

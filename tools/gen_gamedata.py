@@ -185,14 +185,23 @@ def main():
             stars.append(p)
         elif m["script"] == "GoalTrigger":
             goals.append(p)
-    # 出生点：Level Pivot 位置 + 上方 5；否则场景中心
+    # 出生点：Level Pivot 是关卡原点（球在这里出生）；Respawn 是死亡重生点，兜底。
     spawn = None
     for gpid, go in gos.items():
-        if (go.get("name") or "").lower() in ("level pivot", "levelpivot") :
+        nm = (go.get("name") or "").strip().lower()
+        if nm in ("level pivot", "levelpivot"):
             p = pos_of(int(gpid))
             if p:
                 spawn = [p[0], p[1] + 5, p[2]]
-            break
+                break
+    if spawn is None:
+        for gpid, go in gos.items():
+            nm = (go.get("name") or "").strip().lower()
+            if "respawn" in nm or nm in ("start", "spawn", "ballstart"):
+                p = pos_of(int(gpid))
+                if p:
+                    spawn = [p[0], p[1] + 2, p[2]]
+                    break
     if not spawn:
         ys = [p[1] for p in ([pos_of(int(g)) for g in gos] if False else [])]
         spawn = [0, 10, 0]

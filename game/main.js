@@ -62,7 +62,10 @@ sun.position.set(60, 120, 40);
 scene.add(sun);
 
 const world = new THREE.Group();
-world.rotation.y = Math.PI;          // Unity(左手) → three(右手)
+// Unity(左手系) → three(右手系)：必须翻转一个轴（镜像）才是正确的手性转换。
+// 旧代码用 rotation.y=π 整体转 180°，那是旋转不是镜像——场景前后颠倒、
+// 物体朝向反转（牌子变成背面朝玩家，字左右颠倒）。
+world.scale.z = -1;
 scene.add(world);
 
 const loader = new THREE.TextureLoader();
@@ -270,6 +273,9 @@ async function startLevel(lv) {
   stars = data.stars.map(makeStar);
   if (data.goals.length) goal = makeGoal(data.goals[0]);
   spawn.fromArray(data.spawn);
+  // 场景整体在 world 组里做了 z 翻转，而球直接挂在 scene 上——
+  // 出生点必须同步翻转，否则球会落在 Z 轴镜像的位置（表现为"起点不对"）。
+  spawn.z = -spawn.z;
   respawn();
   $('bar').firstElementChild.style.width = '100%';
   $('loadmsg').textContent = `就绪：${data.objects.length} 对象 · ${stars.length} ★`;

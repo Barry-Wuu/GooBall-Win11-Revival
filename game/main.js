@@ -188,6 +188,8 @@ function physics(dt) {
     }
   }
   if (ball.position.y < -60) respawn();
+  // 落水重生（原版有 WaterControl 脚本，水里是危险区）
+  if (level && level.waterY != null && ball.position.y < level.waterY + 0.05) respawn();
 }
 let ballGrounded = false;
 
@@ -230,15 +232,24 @@ function win() {
 
 // ---------- 主循环 ----------
 let last = 0;
+const camOff = new THREE.Vector3(0, 6, 9);
+const camGoal = new THREE.Vector3(), camDir = new THREE.Vector3();
 function loop(t) {
   requestAnimationFrame(loop);
   const dt = Math.min((t - last) / 1000, 0.05); last = t;
   if (playing) {
     physics(dt);
     updateGame(dt);
-    // 相机跟随
-    tmp.copy(ball.position).add(new THREE.Vector3(0, 6, 9));
-    camera.position.lerp(tmp, 1 - Math.pow(0.001, dt));
+    // 相机跟随 + 防穿墙（否则贴墙时整屏被岩壁糊住）
+    camGoal.copy(ball.position).add(camOff);
+    camDir.copy(camGoal).sub(ball.position);
+    const camDist = camDir.length() || 1;
+    camDir.divideScalar(camDist);
+    ray.set(ball.position, camDir);
+    ray.far = camDist;
+    const ch = ray.intersectObjects(colliders, false)[0];
+    if (ch) camGoal.copy(ball.position).addScaledVector(camDir, Math.max(1.4, ch.distance - 0.5));
+    camera.position.lerp(camGoal, 1 - Math.pow(0.001, dt));
     camera.lookAt(ball.position);
     // 球滚动
     const spin = new THREE.Vector3(ballV.z, 0, -ballV.x).multiplyScalar(dt / R);

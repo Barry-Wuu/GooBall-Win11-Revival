@@ -122,6 +122,7 @@ def main():
 
     items, mesh_map, tex_map = [], {}, {}
     miss_mesh = miss_tex = 0
+    missed = []
     for gpid_s, go in gos.items():
         gpid = int(gpid_s)
         refs = go.get("refs") or {}
@@ -162,6 +163,7 @@ def main():
                         texs.append("assets/textures/" + tf)
                 elif tn:
                     miss_tex += 1
+                    missed.append((go.get("name"), tn))
             e_mats.append({"color": color})
         # 材质信息附到条目（首个材质色作兜底）
         items.append({"name": go.get("name"), "path": go.get("path"),
@@ -185,29 +187,41 @@ def main():
             stars.append(p)
         elif m["script"] == "GoalTrigger":
             goals.append(p)
-    # 出生点：Level Pivot 是关卡原点（球在这里出生）；Respawn 是死亡重生点，兜底。
+    # 出生点：Respawn 标记 = 关卡入口高台（实测与最后一道红箭头 newmex_arrow 重合，
+    # Lagoon 里 Respawn(-15.88,4.74,-51.43) ≈ 红箭头(-13.1,4.7,-50.2)）；
+    # Level Pivot 只是关卡原点，兜底用。
     spawn = None
     for gpid, go in gos.items():
         nm = (go.get("name") or "").strip().lower()
-        if nm in ("level pivot", "levelpivot"):
+        if "respawn" in nm:
             p = pos_of(int(gpid))
             if p:
-                spawn = [p[0], p[1] + 5, p[2]]
+                spawn = [p[0], p[1] + 2, p[2]]
                 break
     if spawn is None:
         for gpid, go in gos.items():
             nm = (go.get("name") or "").strip().lower()
-            if "respawn" in nm or nm in ("start", "spawn", "ballstart"):
+            if nm in ("level pivot", "levelpivot"):
                 p = pos_of(int(gpid))
                 if p:
-                    spawn = [p[0], p[1] + 2, p[2]]
+                    spawn = [p[0], p[1] + 5, p[2]]
                     break
     if not spawn:
         ys = [p[1] for p in ([pos_of(int(g)) for g in gos] if False else [])]
         spawn = [0, 10, 0]
 
+    # 水面高度：找 water plane（落水判定用）
+    water_y = None
+    for gpid, go in gos.items():
+        nm = (go.get("name") or "").strip().lower()
+        if "water" in nm:
+            p = pos_of(int(gpid))
+            if p:
+                water_y = round(p[1], 3)
+                break
+
     out = {"level": LEVEL, "objects": items, "stars": stars, "goals": goals,
-           "spawn": spawn, "ballRadius": 0.3}
+           "spawn": spawn, "ballRadius": 0.3, "waterY": water_y}
     with open(os.path.join(GAME, "data", f"level{LEVELNUM}.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False)
 
@@ -229,7 +243,14 @@ def main():
     print(f"渲染条目={len(items)} 网格复制={len(mesh_map)} 纹理复制={len(tex_map)} "
           f"网格未命中={miss_mesh} 纹理未命中={miss_tex}")
     print(f"星星={len(stars)} 目标={len(goals)} 出生点={spawn}")
-    print(f"已写出 game/data/level{LEVELNUM}.json")
+    if missed:
+        seen = {}
+        for nm, tn in missed:
+            seen.setdefault(tn, []).append(nm)
+        print(f"未命中纹理 {len(seen)} 种：")
+        for tn, objs in sorted(seen.items()):
+            print(f"   {tn:<32} <- {', '.join(sorted(set(objs))[:4])}")
+    print("已写出 game/data/level%s.json" % LEVELNUM)
 
 if __name__ == "__main__":
     main()

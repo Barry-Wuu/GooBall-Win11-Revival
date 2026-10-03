@@ -35,7 +35,7 @@
 | TextMesh | classID 102 | ✅ 76/76 | `assets/textmeshes/`（72 含文本，54 唯一字符串） |
 | MonoScript | classID 115 | ✅ 105 | `assets/data/monoscripts.json`（脚本清单） |
 | MonoBehaviour | classID 17 / 114 | 🚧 | `assets/data/monobehaviours.json`（5698 实例，脚本关联待解） |
-| 游戏逻辑 | MonoBehaviour | 🚧 | `docs/il_*.txt`（IL）、`docs/GooBall_logic_recovery.md` |
+| 游戏逻辑 | MonoBehaviour | 🚧 | `docs/evidence/il_*.txt`（IL）、`docs/003-游戏逻辑恢复.md` |
 
 预览：`proof/mesh_preview.png`
 
@@ -45,9 +45,10 @@
 
 | 文档 | 内容 |
 |---|---|
-| `docs/Unity1x_serializedfile_v5.md` | SerializedFile v5 对象表布局 |
-| `docs/ASSET_FORMATS.md` | **Asset 二进制格式**：AudioClip / Mesh / Texture2D / TextMesh / MonoScript / MonoBehaviour 精确字段布局（本仓库核心） |
-| `docs/GooBall_logic_recovery.md` | Unity C# 层逻辑恢复 |
+| `docs/001-Unity1x序列化文件v5格式.md` | SerializedFile v5 对象表布局 |
+| `docs/002-资产二进制格式总表.md` | **Asset 二进制格式**：AudioClip / Mesh / Texture2D / TextMesh / MonoScript / MonoBehaviour 精确字段布局（本仓库核心） |
+| `docs/003-游戏逻辑恢复.md` | Unity C# 层逻辑恢复 |
+| `docs/006-浏览器可玩重建.md` | **Web 复刻全部逆向结论**：坐标系手性、strips 三角带、m_UV 位置、DXT 端序、关卡映射、出生点 |
 
 ### 关键结论
 

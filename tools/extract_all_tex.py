@@ -124,13 +124,26 @@ def main():
             continue
         off = p + 45
 
-        if fmt in (1, 2, 3, 7):                          # 非压缩：内联
-            store = (w*h*3 if fmt == 3 else
-                     w*h*2 if fmt in (2, 7) else
+        if fmt in (1, 2, 3, 5, 7, 12):                 # 非压缩：内联 + 紧跟对象的流式余量
+            store = (w*h*4 if fmt == 5 else
+                     w*h*3 if fmt == 3 else
+                     w*h*2 if fmt in (2, 7, 12) else
                      mip_chain_bytes(w, h, 1))
             data = d[off:off + store]
+            if len(data) < store:
+                data += u.raw[o.offset + o.size: o.offset + o.size + (store - len(data))]
+            if len(data) < store:
+                data = data.ljust(store, b'\x00')
             px = None
-            if fmt == 7 and len(data) >= w*h*2:
+            if fmt == 5 and len(data) >= w*h*4:      # ARGB32（字节序 ARGB，星球/船体贴图实证）
+                px = [(data[i*4+1], data[i*4+2], data[i*4+3], data[i*4]) for i in range(w*h)]
+            elif fmt == 12 and len(data) >= w*h*2:    # RGBA4444（低字节 RGBA）
+                px = []
+                for i in range(w*h):
+                    v = int.from_bytes(data[i*2:i*2+2], 'little')
+                    px.append((((v & 15)*17, ((v >> 4) & 15)*17,
+                                ((v >> 8) & 15)*17, ((v >> 12) & 15)*17)))
+            elif fmt == 7 and len(data) >= w*h*2:
                 px = [(*rgb565(int.from_bytes(data[i*2:i*2+2], 'big')), 255)
                       for i in range(w*h)]
             elif fmt == 3 and len(data) >= w*h*3:

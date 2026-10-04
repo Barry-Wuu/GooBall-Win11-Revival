@@ -31,6 +31,9 @@
 > 与提取产物（`assets/`、`extract/`、`proof/`）已回收 —— 原版已在手，不再需要复刻。
 > 仓库只留 `docs/`（结论）+ `tools/`（工具）+ `开始游戏.bat`（原版启动器）。
 > 需要资产时用 `tools/` 脚本对着原版 `Data/` 重跑即可（几分钟）。
+> Mac 版原始 dmg（1.0.1 / 1.0.2，256 MB）亦已回收 —— 本项目以 Windows 原版为准。
+> 两者资产层逐字节相同（`sharedassets.assets` 与 69 个关卡 md5 一致），Mac 版只多一份
+> PowerPC Mach-O 播放器。抓取记录见 `docs/evidence/macdmg_*.log`。
 
 | 项 | 值 |
 |---|---|
@@ -118,7 +121,7 @@ tools/
 ## 复现
 
 ```bash
-# 1. 解包原始 .dmg / .app，得到 Data/ 目录（含 sharedassets.assets）
+# 1. 解包 GooBall-Win.zip（或 Mac 版 .dmg），得到 Data/ 目录（含 sharedassets.assets）
 # 2. 提取音频
 python tools/extract_audio_final.py
 python tools/ogg_rebuild.py

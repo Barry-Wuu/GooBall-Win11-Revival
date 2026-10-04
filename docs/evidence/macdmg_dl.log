@@ -1,0 +1,40 @@
+﻿dir ready
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+所在位置 行:1 字符: 70
++ ... mg\dl.log"; & $c -L --connect-timeout 30 -o "D:\GooBall\dmg\GooBall.d ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+100  4543    0  4543    0     0   2304      0 --:--:--  0:00:01 --:--:--  2303
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+所在位置 行:1 字符: 216
++ ... oding utf8; & $c -L --connect-timeout 30 -o "D:\GooBall\dmg\GooBall1. ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  4543    0  4543    0     0   3893      0 --:--:--  0:00:01 --:--:--  3892
+100  4543    0  4543    0     0   3891      0 --:--:--  0:00:01 --:--:--  3889
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+所在位置 行:1 字符: 372
++ ... oding utf8; & $c -L --connect-timeout 30 -o "D:\GooBall\dmg\GooBall-1 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  4543    0  4543    0     0   3583      0 --:--:--  0:00:01 --:--:--  3585
+100  4543    0  4543    0     0   3582      0 --:--:--  0:00:01 --:--:--  3582
+ALL_DONE

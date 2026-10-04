@@ -1,21 +1,20 @@
 @echo off
-rem GooBall Revival launcher (ASCII-only content, encoding-safe)
-rem Game root: this file's directory; game files live in .\game
-cd /d "%~dp0game"
-start "" /b cmd /c "timeout /t 2 /nobreak >nul & start "" http://localhost:8143/index.html?nocache=%RANDOM%%RANDOM%"
-where py >nul 2>nul
-if %errorlevel%==0 (
-  py -m http.server 8143
-) else (
-  where python >nul 2>nul
-  if %errorlevel%==0 (
-    python -m http.server 8143
-  ) else (
-    if exist "D:\B++\Py313\python.exe" (
-      "D:\B++\Py313\python.exe" -m http.server 8143
-    ) else (
-      echo Python not found. Please install Python 3.
-      pause
-    )
-  )
+REM ============================================================
+REM  GooBall 1.0.2  -  Windows original player
+REM  Source: archive.org/item/GooBall  (2007 community upload)
+REM  Engine: Unity 1.x standalone  Renderer: OpenGL  Script: Mono/Boo
+REM
+REM  Controls (after the space-jump patch):
+REM    Arrow keys / Right+Left   = roll the ball
+REM    SPACE                     = jump          (was: Mac Command key)
+REM    Left Alt                  = stick to surface
+REM
+REM  If it black-screens and exits, read Data\output_log.txt
+REM ============================================================
+cd /d "%~dp0win"
+if not exist "GooBall.exe" (
+  echo [ERROR] GooBall.exe not found in %cd%
+  pause
+  exit /b 1
 )
+start "" "GooBall.exe" %*

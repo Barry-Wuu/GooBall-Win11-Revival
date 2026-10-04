@@ -1,4 +1,0 @@
-FalloutHeight
-flare
-flare
-goallight

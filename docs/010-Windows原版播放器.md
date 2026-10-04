@@ -1,7 +1,7 @@
 ﻿# 010 - Windows 原版播放器（7HE-CODE 打法移植）
 
 > 2026-10-05。**本项目最简的结论：原版 Windows 播放器一直存在，不必自己造引擎。**
-> 入口：双击 `D:\GooBall\运行原版.bat`
+> 入口：双击 `D:\GooBall\开始游戏.bat`
 
 ## 一句话
 
@@ -117,7 +117,7 @@ D:\GooBall\win\
 | 路径 | 说明 |
 |---|---|
 | `D:\GooBall\win\` | Windows 原版播放器（解压即玩） |
-| `D:\GooBall\运行原版.bat` | 启动器（纯 ASCII + CRLF，规避 cp936 分词崩溃） |
+| `D:\GooBall\开始游戏.bat` | 启动器（纯 ASCII + CRLF，规避 cp936 分词崩溃） |
 | `D:\GooBall\GooBall-Win.zip` | 原始 zip（71,369,943 B，md5 `d3a0b4520735eab08e29481a9973da99`） |
 
 ## 键位补丁：跳跃键从 Command 改成空格

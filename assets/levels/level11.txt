@@ -1,7 +1,0 @@
-Falloutheight
-persp
-[D] Light + sound
-step9
-flare
-flare
-flare

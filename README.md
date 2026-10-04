@@ -10,8 +10,11 @@
 解压即玩 —— 原版引擎、原版脚本、**69 个关卡全通**、原生 OpenGL 渲染。
 
 ```
-双击 D:\GooBall\运行原版.bat
+双击 D:\GooBall\开始游戏.bat
 ```
+
+> 键位已打补丁：原版跳跃键是 Mac 的 Command 键，Windows 版发布时未重绑，
+> 现已改为 **空格**（见 [`docs/010`](docs/010-Windows原版播放器.md) 与 `tools/patch_input_keys.py`）。
 
 `sharedassets.assets`（91.5 MB）与全部 69 个关卡**与 Mac 版逐字节相同**，
 只有 `UnityEngine.dll` / `Assembly - CSharp.dll` / `unity default resources`
@@ -22,7 +25,12 @@
 ## 本仓库做什么
 
 原版数据已到手后，本仓库的价值转为**完整逆向与保存**：
-把原版资产全量解出（纹理/网格/音频/场景/逻辑），并提供一个浏览器可玩版本。
+以 `docs/` 记录全部二进制格式结论，以 `tools/` 提供可复现的提取工具链。
+
+> **2026-10-05 清理**：Three.js 复刻版（`game/`、`开始游戏.bat`(Web 版)、`gen_gamedata.py`）
+> 与提取产物（`assets/`、`extract/`、`proof/`）已回收 —— 原版已在手，不再需要复刻。
+> 仓库只留 `docs/`（结论）+ `tools/`（工具）+ `开始游戏.bat`（原版启动器）。
+> 需要资产时用 `tools/` 脚本对着原版 `Data/` 重跑即可（几分钟）。
 
 | 项 | 值 |
 |---|---|
@@ -51,7 +59,8 @@
 | MonoBehaviour | classID 17 / 114 | 🚧 | `assets/data/monobehaviours.json`（5698 实例，脚本关联待解） |
 | 游戏逻辑 | MonoBehaviour | 🚧 | `docs/evidence/il_*.txt`（IL）、`docs/003-游戏逻辑恢复.md` |
 
-预览：`proof/mesh_preview.png`
+> 上表 `产出` 列的目录是**当年提取产物，现已回收**（见上）。
+> 复现方式：对着原版 `Data/` 跑 `tools/` 下对应脚本（见「复现」一节）。
 
 ---
 
@@ -134,9 +143,9 @@ python tools/extract_mb.py
 - [x] MonoBehaviour 实例字段值提取（1440/1447，83 脚本类，字节精确）
 - [ ] Material/Shader → Godot 材质转换
 - [ ] Mesh 剩余 14 个退化网格
-- [ ] 在 Godot 4 重建物理 / 输入 / 存档 / 消息契约
-- [ ] Win11 可玩版本发布
-- [x] **可玩 Web 重建原型**：`game/`（Three.js + 出土资产，双击 `开始游戏.bat` 启动）
+- [x] **Win11 可玩版本发布**：原版 Windows 播放器（双击 `开始游戏.bat`）
+- [x] ~~可玩 Web 重建原型（Three.js）~~ → **已回收**（原版到手，复刻不再需要；
+      逆向结论保留在 `docs/006-浏览器可玩重建.md`）
 
 ---
 

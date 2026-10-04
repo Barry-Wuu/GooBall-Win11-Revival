@@ -1,8 +1,0 @@
-FalloutHeight
-flare
-hand1
-flare
-flare
-monte_platformsbridge
-goallight
-flare

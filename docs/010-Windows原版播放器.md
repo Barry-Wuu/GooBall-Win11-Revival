@@ -119,3 +119,56 @@ D:\GooBall\win\
 | `D:\GooBall\win\` | Windows 原版播放器（解压即玩） |
 | `D:\GooBall\运行原版.bat` | 启动器（纯 ASCII + CRLF，规避 cp936 分词崩溃） |
 | `D:\GooBall\GooBall-Win.zip` | 原始 zip（71,369,943 B，md5 `d3a0b4520735eab08e29481a9973da99`） |
+
+## 键位补丁：跳跃键从 Command 改成空格
+
+### 现象
+
+游戏内提示「按 cmd 跳跃」，Windows 键盘上按 Control 不跳、也没有 Command 键。
+
+### 根因
+
+跳跃不是硬编码键码，而是 `BallController::FixedUpdate` 里的
+
+```
+Input.GetButton("StateUp")
+```
+
+`StateUp` 是 **InputManager 虚拟轴**（`mainData` 里 classID 13），实际绑定：
+
+| 轴名 | 正键 | 用途 |
+|---|---|---|
+| Horizontal | right / left | 滚动 |
+| HorizontalTilt | right / left | 倾斜 |
+| Vertical | down / up | 滚动 |
+| VerticalTilt | down / up | 倾斜 |
+| **StateUp** | **left cmd** | **跳跃** |
+| StateDown | left alt | 黏附表面 |
+
+**Win 版与 Mac 版的这份配置逐字节相同** —— 2007 年移植时没有重绑键位。
+Windows 上没有 Command 键，所以 `StateUp` 永远为 false。
+
+### 修复
+
+用 `tools/patch_input_keys.py` 把 `StateUp` 的正键改成 `space`：
+
+```
+python tools/patch_input_keys.py "D:\GooBall\win\Data\mainData" StateUp space
+```
+
+零重排写法（关键）：键名变短会让对象数据缩短，**直接在中间补 0 会污染下一个字段的
+长度前缀**（第一版就踩了这个坑，导致第 6 个轴解析错位）。正确做法是
+**中间紧凑替换 + 对象末尾补等量 0x00**，保持对象 `size` 不变，于是
+offset / 对象表 / 文件头全都不用动：
+
+```
+[u32 8]["left cmd"]  ->  [u32 5]["space"]  +  对象末尾 3 字节 0x00
+```
+
+改后校验：6 个轴全部正常解析，60/60 对象可读，文件仍为 43,795 字节。
+Mac 版保持原样（`left cmd` 在 Mac 上本就正确）。
+
+### 遗留
+
+`StateDown`（黏附表面）仍是 `left alt`。Windows 上按 Alt 会激活窗口菜单栏、
+可能让游戏失焦。需要的话同样用该工具改掉，例如改成 `left shift`。

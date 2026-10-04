@@ -1,0 +1,86 @@
+############################################################################
+# GooBall 托管宿主可行性分析
+############################################################################
+
+[1] 程序集依赖
+  Assembly - CSharp.dll (游戏逻辑)           -> UnityEngine 0.0.0.0, mscorlib 1.0.5000.0
+  UnityEngine.dll (引擎 API)               -> mscorlib 1.0.5000.0, Boo.Lang 1.0.0.0
+
+[2] 方法实现方式（决定「原版代码能否直接复用」）
+  游戏逻辑       MethodDef=759    纯托管=759   (100.0%)  InternalCall=0     PInvoke=0
+  引擎 API     MethodDef=2570   纯托管=1641  (63.9%)  InternalCall=929   PInvoke=0
+  => InternalCall = 方法体在原生 Mach-O 里（Unity 1.x 用 icall 调引擎核）
+
+[3] 引擎核的体量（13MB Mach-O 里的原生实现）
+  原生播放器 GooBall: 13356020 字节 (12.7 MB)
+  其中 icall 方法 929 个 —— 每个都需在宿主里重写
+
+[4] 游戏逻辑 -> UnityEngine 的精确调用面（MemberRef 解引用）
+  引用 UnityEngine 类型 60 个，成员 346 个（非 TypeRef 成员 0 个）
+
+  UnityEngine 类型                         成员  其中icall   估算难度
+  UnityEngine.Vector3                    28        0   托管已有
+  UnityEngine.Matrix4x4                  23        0   托管已有
+  UnityEngine.GameObject                 22        0   托管已有
+  UnityEngine.Transform                  19        0   托管已有
+  UnityEngine.Component                  16        0   托管已有
+  UnityEngine.Camera                     16        0   托管已有
+  UnityEngine.Mathf                      14        0   托管已有
+  UnityEngine.Color                      14        0   托管已有
+  UnityEngine.GL                         11        0   托管已有
+  UnityEngine.Quaternion                 10        0   托管已有
+  UnityEngine.Input                      10        0   托管已有
+  UnityEngine.AudioSource                 9        0   托管已有
+  UnityEngine.Object                      8        0   托管已有
+  UnityEngine.RenderTexture               8        0   托管已有
+  UnityEngine.Application                 8        0   托管已有
+  UnityEngine.Vector4                     8        0   托管已有
+  UnityEngine.Rigidbody                   8        0   托管已有
+  UnityEngine.GooLattice                  8        0   托管已有
+  UnityEngine.Material                    7        0   托管已有
+  UnityEngine.Time                        7        0   托管已有
+  UnityEngine.MonoBehaviour               6        0   托管已有
+  UnityEngine.PlayerPrefs                 6        0   托管已有
+  UnityEngine.PhysicMaterial              6        0   托管已有
+  UnityEngine.Animation                   5        0   托管已有
+  UnityEngine.Shader                      5        0   托管已有
+  UnityEngine.Projector                   4        0   托管已有
+  UnityEngine.LineRenderer                4        0   托管已有
+  UnityEngine.Light                       3        0   托管已有
+  UnityEngine.Debug                       3        0   托管已有
+  UnityEngine.RaycastHit                  3        0   托管已有
+  UnityEngine.Collider                    3        0   托管已有
+  UnityEngine.Gizmos                      3        0   托管已有
+  UnityEngine.Renderer                    2        0   托管已有
+  UnityEngine.Behaviour                   2        0   托管已有
+  UnityEngine.TextMesh                    2        0   托管已有
+  UnityEngine.Collision                   2        0   托管已有
+  UnityEngine.Ray                         2        0   托管已有
+  UnityEngine.Screen                      2        0   托管已有
+  UnityEngine.AudioListener               2        0   托管已有
+  UnityEngine.SphereCollider              2        0   托管已有
+  UnityEngine.ParticleEmitter             2        0   托管已有
+  UnityEngine.ShaderLayer                 2        0   托管已有
+  UnityEngine.MeshCollider                2        0   托管已有
+  UnityEngine.Mesh                        2        0   托管已有
+  UnityEngine.FileTexture                 2        0   托管已有
+  UnityEngine.Vector2                     1        0   托管已有
+  UnityEngine.AnimationClip               1        0   托管已有
+  UnityEngine.RefCounted                  1        0   托管已有
+  UnityEngine.AnimationState              1        0   托管已有
+  UnityEngine.Skybox                      1        0   托管已有
+  UnityEngine.WaitForSeconds              1        0   托管已有
+  UnityEngine.Physics                     1        0   托管已有
+  UnityEngine.BoxCollider                 1        0   托管已有
+  UnityEngine.Random                      1        0   托管已有
+  UnityEngine.Graphics                    1        0   托管已有
+  UnityEngine.Texture                     1        0   托管已有
+  UnityEngine.GooballCollider             1        0   托管已有
+  UnityEngine.ContactPoint                1        0   托管已有
+  UnityEngine.Tilter                      1        0   托管已有
+  UnityEngine.AudioClip                   1        0   托管已有
+
+  小结: 346 个成员中 346 个是托管已有(直接可用)，0 个需在宿主重写(占 0%)
+  涉及的原生实现类型 0 个（ ...）
+
+  API 面已写出: D:/B++/WorkBuddy/spike_gooball/unity_api_surface.txt

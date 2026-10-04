@@ -1,0 +1,298 @@
+==============================================================================
+ GooBall 托管宿主：游戏逻辑可达的 icall 传递闭包
+==============================================================================
+
+游戏逻辑引用的 UnityEngine 成员(去重归一) : 330
+  在 UnityEngine.dll 找到定义            : 316
+
+传递闭包触达 UnityEngine 方法             : 569  (最大调用深度 3)
+  其中 icall —— 宿主必须逐个重写          : 235
+  游戏不可达的 icall —— 可后置            : 694 / 929
+
+== icall 工作面分布 ==
+  GameObject                  20   Internal_CUSTOM_AddComponent, Internal_CUSTOM_BroadcastMessage, Internal_CUSTOM_GetComponent, Internal_CUSTOM_GetComponents, Internal_CUSTOM_SampleAnimation, Internal_CUSTOM_SendMessage ...
+  Transform                   17   Internal_CUSTOM_Find, Internal_CUSTOM_GetChild, Internal_GetLocalPosition, Internal_GetLocalRotation, Internal_GetLocalToWorldMatrix, Internal_GetParent ...
+  Camera                      16   Internal_CUSTOM_GetScreenHeight, Internal_CUSTOM_GetScreenWidth, Internal_CUSTOM_ScreenPointToRay, Internal_CUSTOM_ViewportPointToRay, Internal_GetProjectionMatrix, Internal_GetVelocity ...
+  Component                   16   Internal_CUSTOM_BroadcastMessage, Internal_CUSTOM_CompareTag, Internal_CUSTOM_GetComponent, Internal_CUSTOM_SendMessage, Internal_Get_Custom_PropActive, Internal_Get_Custom_PropAnimation ...
+  GL                          11   Internal_BeginCustom, Internal_EndCustom, Internal_LoadOrthoCustom, Internal_MultiTexColorCustom, Internal_MultiTexCoord2Custom, Internal_PopMatrixCustom ...
+  Input                       10   Internal_GetAxis, Internal_GetButton, Internal_GetKey, Internal_GetKeyDown, Internal_GetMouseButton, Internal_Get_Custom_PropAnyKey ...
+  Application                  8   Internal_DontDestroyOnLoadCustom, Internal_DownloadLatestVersionNow, Internal_Get_Custom_PropLoadedLevel, Internal_IsPanther, Internal_LatestVersionOfGooball, Internal_LoadLevelCustom ...
+  AudioSource                  8   Internal_CUSTOM_PlayOneShot, Internal_GetAudioClip, Internal_GetVolume, Internal_Play, Internal_SetAudioClip, Internal_SetIgnoreListenerVolume ...
+  GooLattice                   8   Internal_AddForce, Internal_GET_DATAPROP_elasticity, Internal_SET_DATAPROP_baseSize, Internal_SET_DATAPROP_midSize, Internal_SET_DATAPROP_snapBack, Internal_SET_DATAPROP_topSize ...
+  Rigidbody                    8   Internal_CUSTOM_AddForce, Internal_GetAngularVelocity, Internal_GetMass, Internal_GetPosition, Internal_GetVelocity, Internal_SetAngularVelocity ...
+  Material                     7   Internal_CUSTOM_SetColor, Internal_CUSTOM_SetMatrix, Internal_CUSTOM_SetTexture, Internal_CUSTOM_SetTextureOffset, Internal_CUSTOM_SetTextureScale, Internal_CreateWithShader ...
+  RenderTexture                7   Internal_CUSTOM_SetBorderColor, Internal_CUSTOM_SetGlobalShaderProperty, Internal_Create, Internal_Get_Custom_PropActive, Internal_Get_Custom_PropEnabled, Internal_Set_Custom_PropActive ...
+  Time                         7   Internal_GetDeltaTime, Internal_GetFixedDeltaTime, Internal_GetFrameCount, Internal_GetSmoothDeltaTime, Internal_GetTimeScale, Internal_Get_Custom_PropTime ...
+  PhysicMaterial               6   Internal_GetBouncyness, Internal_GetDynamicFriction, Internal_SetBounceCombine, Internal_SetDynamicFriction, Internal_SetFrictionCombine, Internal_SetStaticFriction
+  PlayerPrefs                  6   Internal_GetFloatCustom, Internal_GetIntCustom, Internal_GetStringCustom, Internal_SetFloatCustom, Internal_SetIntCustom, Internal_SetStringCustom
+  Quaternion                   6   Internal_AngleAxisCustom, Internal_AxisAngleCustom, Internal_FromToRotationCustom, Internal_InverseCustom, Internal_LerpCustom, Internal_LookRotationCustom
+  MonoBehaviour                5   Internal_CUSTOM_Invoke, Internal_CUSTOM_InvokeRepeating, Internal_CUSTOM_IsInvoking, Internal_CUSTOM_StartCoroutine, Internal_CancelInvokeAll
+  Object                       5   Internal_CompareBaseObjects, Internal_DestroyObjectCustom, Internal_DontDestroyOnLoadCustom, Internal_FindObjectsOfTypeCustom, Internal_InstantiateSingle
+  Shader                       5   Internal_ClearAll, Internal_Get_Custom_PropTextureUnitCount, Internal_SetGlobalColorCustom, Internal_SetGlobalFloatCustom, Internal_SetGlobalTextureCustom
+  Animation                    4   Internal_CUSTOM_PlayQueued, Internal_GetState, Internal_IsPlaying, Internal_Stop
+  LineRenderer                 4   Internal_SetColors, Internal_SetPosition, Internal_SetVertexCount, Internal_SetWidth
+  Projector                    4   Internal_SetFarClipPlane, Internal_SetIsOrthoGraphic, Internal_SetNearClipPlane, Internal_SetOrthoGraphicSize
+  Collider                     3   Internal_GetIsTrigger, Internal_Get_Custom_PropMaterial, Internal_SetIsTrigger
+  Gizmos                       3   Internal_DrawLineCustom, Internal_DrawWireSphereCustom, Internal_Set_Custom_PropColor
+  Light                        3   Internal_GetSpotAngle, Internal_Get_Custom_PropPixelLightCount, Internal_Set_Custom_PropPixelLightCount
+  AudioListener                2   Internal_Set_Custom_PropPause, Internal_Set_Custom_PropVolume
+  Behaviour                    2   Internal_GetEnabled, Internal_SetEnabled
+  Debug                        2   Internal_DrawLineCustom, Internal_Log
+  FileTexture                  2   Internal_GetFrameCount, Internal_SetFrame
+  Matrix4x4                    2   Internal_InverseCustom, Internal_TransposeCustom
+  Mesh                         2   Internal_Get_Custom_PropTriangles, Internal_Set_Custom_PropTriangles
+  MeshCollider                 2   Internal_GetSharedMesh, Internal_SetSharedMesh
+  ParticleEmitter              2   Internal_SetMaxEmission, Internal_SetMinEmission
+  Renderer                     2   Internal_Get_Custom_PropMaterial, Internal_Set_Custom_PropMaterial
+  Screen                       2   Internal_Set_Custom_PropFullScreen, Internal_Set_Custom_PropShowCursor
+  ShaderLayer                  2   Internal_GetMaterial, Internal_SetMaterial
+  SphereCollider               2   Internal_GetRadius, Internal_SetRadius
+  TextMesh                     2   Internal_Get_Custom_PropText, Internal_Set_Custom_PropText
+  Vector3                      2   Internal_RotateTowardsCustom, Internal_SlerpCustom
+  AnimationClip                1   Internal_Get_Custom_PropLength
+  AnimationState               1   Internal_GetClip
+  AudioClip                    1   Internal_GetLength
+  BoxCollider                  1   Internal_SetSize
+  GooballCollider              1   Internal_SetEnabled
+  Graphics                     1   Internal_Get_Custom_PropSupportsVertexProgram
+  Random                       1   Internal_RangeCustom
+  Skybox                       1   Internal_Set_Custom_PropMaterial
+  Texture                      1   Internal_Set_Custom_PropMasterTextureLimit
+  Tilter                       1   Internal_Tilt
+
+== 完整 icall 清单（235 个）==
+  Animation::Internal_CUSTOM_PlayQueued
+  Animation::Internal_GetState
+  Animation::Internal_IsPlaying
+  Animation::Internal_Stop
+  AnimationClip::Internal_Get_Custom_PropLength
+  AnimationState::Internal_GetClip
+  Application::Internal_DontDestroyOnLoadCustom
+  Application::Internal_DownloadLatestVersionNow
+  Application::Internal_Get_Custom_PropLoadedLevel
+  Application::Internal_IsPanther
+  Application::Internal_LatestVersionOfGooball
+  Application::Internal_LoadLevelCustom
+  Application::Internal_QuitCustom
+  Application::Internal_RegisterAmbrosiaNow
+  AudioClip::Internal_GetLength
+  AudioListener::Internal_Set_Custom_PropPause
+  AudioListener::Internal_Set_Custom_PropVolume
+  AudioSource::Internal_CUSTOM_PlayOneShot
+  AudioSource::Internal_GetAudioClip
+  AudioSource::Internal_GetVolume
+  AudioSource::Internal_Play
+  AudioSource::Internal_SetAudioClip
+  AudioSource::Internal_SetIgnoreListenerVolume
+  AudioSource::Internal_SetVolume
+  AudioSource::Internal_Stop
+  Behaviour::Internal_GetEnabled
+  Behaviour::Internal_SetEnabled
+  BoxCollider::Internal_SetSize
+  Camera::Internal_CUSTOM_GetScreenHeight
+  Camera::Internal_CUSTOM_GetScreenWidth
+  Camera::Internal_CUSTOM_ScreenPointToRay
+  Camera::Internal_CUSTOM_ViewportPointToRay
+  Camera::Internal_GetProjectionMatrix
+  Camera::Internal_GetVelocity
+  Camera::Internal_GetWorldToCameraMatrix
+  Camera::Internal_Get_Custom_PropCurrent
+  Camera::Internal_ResetProjectionMatrix
+  Camera::Internal_ResetWorldToCameraMatrix
+  Camera::Internal_SetFov
+  Camera::Internal_SetProjectionMatrix
+  Camera::Internal_SetTargetTexture
+  Camera::Internal_SetWorldToCameraMatrix
+  Camera::Internal_ViewportToWorldPoint
+  Camera::Internal_WorldToViewportPoint
+  Collider::Internal_GetIsTrigger
+  Collider::Internal_Get_Custom_PropMaterial
+  Collider::Internal_SetIsTrigger
+  Component::Internal_CUSTOM_BroadcastMessage
+  Component::Internal_CUSTOM_CompareTag
+  Component::Internal_CUSTOM_GetComponent
+  Component::Internal_CUSTOM_SendMessage
+  Component::Internal_Get_Custom_PropActive
+  Component::Internal_Get_Custom_PropAnimation
+  Component::Internal_Get_Custom_PropAudio
+  Component::Internal_Get_Custom_PropCamera
+  Component::Internal_Get_Custom_PropCollider
+  Component::Internal_Get_Custom_PropGameObject
+  Component::Internal_Get_Custom_PropRenderer
+  Component::Internal_Get_Custom_PropRigidbody
+  Component::Internal_Get_Custom_PropShaderLayer
+  Component::Internal_Get_Custom_PropTag
+  Component::Internal_Get_Custom_PropTransform
+  Component::Internal_Set_Custom_PropTag
+  Debug::Internal_DrawLineCustom
+  Debug::Internal_Log
+  FileTexture::Internal_GetFrameCount
+  FileTexture::Internal_SetFrame
+  GL::Internal_BeginCustom
+  GL::Internal_EndCustom
+  GL::Internal_LoadOrthoCustom
+  GL::Internal_MultiTexColorCustom
+  GL::Internal_MultiTexCoord2Custom
+  GL::Internal_PopMatrixCustom
+  GL::Internal_PushMatrixCustom
+  GL::Internal_SetAppBlendModesCustom
+  GL::Internal_SetRevertBackfacingCustom
+  GL::Internal_TexCoord2Custom
+  GL::Internal_Vertex3Custom
+  GameObject::Internal_CUSTOM_AddComponent
+  GameObject::Internal_CUSTOM_BroadcastMessage
+  GameObject::Internal_CUSTOM_GetComponent
+  GameObject::Internal_CUSTOM_GetComponents
+  GameObject::Internal_CUSTOM_SampleAnimation
+  GameObject::Internal_CUSTOM_SendMessage
+  GameObject::Internal_FindCustom
+  GameObject::Internal_FindGameObjectWithTagCustom
+  GameObject::Internal_FindGameObjectsWithTagCustom
+  GameObject::Internal_GetLayer
+  GameObject::Internal_Get_Custom_PropActive
+  GameObject::Internal_Get_Custom_PropAnimation
+  GameObject::Internal_Get_Custom_PropAudio
+  GameObject::Internal_Get_Custom_PropCamera
+  GameObject::Internal_Get_Custom_PropGuiTexture
+  GameObject::Internal_Get_Custom_PropParticleEmitter
+  GameObject::Internal_Get_Custom_PropRenderer
+  GameObject::Internal_Get_Custom_PropTransform
+  GameObject::Internal_SetLayer
+  GameObject::Internal_Set_Custom_PropActive
+  Gizmos::Internal_DrawLineCustom
+  Gizmos::Internal_DrawWireSphereCustom
+  Gizmos::Internal_Set_Custom_PropColor
+  GooLattice::Internal_AddForce
+  GooLattice::Internal_GET_DATAPROP_elasticity
+  GooLattice::Internal_SET_DATAPROP_baseSize
+  GooLattice::Internal_SET_DATAPROP_midSize
+  GooLattice::Internal_SET_DATAPROP_snapBack
+  GooLattice::Internal_SET_DATAPROP_topSize
+  GooLattice::Internal_SetEnabled
+  GooLattice::Internal_SetUpVector
+  GooballCollider::Internal_SetEnabled
+  Graphics::Internal_Get_Custom_PropSupportsVertexProgram
+  Input::Internal_GetAxis
+  Input::Internal_GetButton
+  Input::Internal_GetKey
+  Input::Internal_GetKeyDown
+  Input::Internal_GetMouseButton
+  Input::Internal_Get_Custom_PropAnyKey
+  Input::Internal_Get_Custom_PropAnyKeyDown
+  Input::Internal_Get_Custom_PropInputString
+  Input::Internal_Get_Custom_PropMousePosition
+  Input::Internal_ResetInputAxesCustom
+  Light::Internal_GetSpotAngle
+  Light::Internal_Get_Custom_PropPixelLightCount
+  Light::Internal_Set_Custom_PropPixelLightCount
+  LineRenderer::Internal_SetColors
+  LineRenderer::Internal_SetPosition
+  LineRenderer::Internal_SetVertexCount
+  LineRenderer::Internal_SetWidth
+  Material::Internal_CUSTOM_SetColor
+  Material::Internal_CUSTOM_SetMatrix
+  Material::Internal_CUSTOM_SetTexture
+  Material::Internal_CUSTOM_SetTextureOffset
+  Material::Internal_CUSTOM_SetTextureScale
+  Material::Internal_CreateWithShader
+  Material::Internal_SetPass
+  Matrix4x4::Internal_InverseCustom
+  Matrix4x4::Internal_TransposeCustom
+  Mesh::Internal_Get_Custom_PropTriangles
+  Mesh::Internal_Set_Custom_PropTriangles
+  MeshCollider::Internal_GetSharedMesh
+  MeshCollider::Internal_SetSharedMesh
+  MonoBehaviour::Internal_CUSTOM_Invoke
+  MonoBehaviour::Internal_CUSTOM_InvokeRepeating
+  MonoBehaviour::Internal_CUSTOM_IsInvoking
+  MonoBehaviour::Internal_CUSTOM_StartCoroutine
+  MonoBehaviour::Internal_CancelInvokeAll
+  Object::Internal_CompareBaseObjects
+  Object::Internal_DestroyObjectCustom
+  Object::Internal_DontDestroyOnLoadCustom
+  Object::Internal_FindObjectsOfTypeCustom
+  Object::Internal_InstantiateSingle
+  ParticleEmitter::Internal_SetMaxEmission
+  ParticleEmitter::Internal_SetMinEmission
+  PhysicMaterial::Internal_GetBouncyness
+  PhysicMaterial::Internal_GetDynamicFriction
+  PhysicMaterial::Internal_SetBounceCombine
+  PhysicMaterial::Internal_SetDynamicFriction
+  PhysicMaterial::Internal_SetFrictionCombine
+  PhysicMaterial::Internal_SetStaticFriction
+  PlayerPrefs::Internal_GetFloatCustom
+  PlayerPrefs::Internal_GetIntCustom
+  PlayerPrefs::Internal_GetStringCustom
+  PlayerPrefs::Internal_SetFloatCustom
+  PlayerPrefs::Internal_SetIntCustom
+  PlayerPrefs::Internal_SetStringCustom
+  Projector::Internal_SetFarClipPlane
+  Projector::Internal_SetIsOrthoGraphic
+  Projector::Internal_SetNearClipPlane
+  Projector::Internal_SetOrthoGraphicSize
+  Quaternion::Internal_AngleAxisCustom
+  Quaternion::Internal_AxisAngleCustom
+  Quaternion::Internal_FromToRotationCustom
+  Quaternion::Internal_InverseCustom
+  Quaternion::Internal_LerpCustom
+  Quaternion::Internal_LookRotationCustom
+  Random::Internal_RangeCustom
+  RenderTexture::Internal_CUSTOM_SetBorderColor
+  RenderTexture::Internal_CUSTOM_SetGlobalShaderProperty
+  RenderTexture::Internal_Create
+  RenderTexture::Internal_Get_Custom_PropActive
+  RenderTexture::Internal_Get_Custom_PropEnabled
+  RenderTexture::Internal_Set_Custom_PropActive
+  RenderTexture::Internal_Set_Custom_PropEnabled
+  Renderer::Internal_Get_Custom_PropMaterial
+  Renderer::Internal_Set_Custom_PropMaterial
+  Rigidbody::Internal_CUSTOM_AddForce
+  Rigidbody::Internal_GetAngularVelocity
+  Rigidbody::Internal_GetMass
+  Rigidbody::Internal_GetPosition
+  Rigidbody::Internal_GetVelocity
+  Rigidbody::Internal_SetAngularVelocity
+  Rigidbody::Internal_SetPosition
+  Rigidbody::Internal_SetVelocity
+  Screen::Internal_Set_Custom_PropFullScreen
+  Screen::Internal_Set_Custom_PropShowCursor
+  Shader::Internal_ClearAll
+  Shader::Internal_Get_Custom_PropTextureUnitCount
+  Shader::Internal_SetGlobalColorCustom
+  Shader::Internal_SetGlobalFloatCustom
+  Shader::Internal_SetGlobalTextureCustom
+  ShaderLayer::Internal_GetMaterial
+  ShaderLayer::Internal_SetMaterial
+  Skybox::Internal_Set_Custom_PropMaterial
+  SphereCollider::Internal_GetRadius
+  SphereCollider::Internal_SetRadius
+  TextMesh::Internal_Get_Custom_PropText
+  TextMesh::Internal_Set_Custom_PropText
+  Texture::Internal_Set_Custom_PropMasterTextureLimit
+  Tilter::Internal_Tilt
+  Time::Internal_GetDeltaTime
+  Time::Internal_GetFixedDeltaTime
+  Time::Internal_GetFrameCount
+  Time::Internal_GetSmoothDeltaTime
+  Time::Internal_GetTimeScale
+  Time::Internal_Get_Custom_PropTime
+  Time::Internal_SetTimeScale
+  Transform::Internal_CUSTOM_Find
+  Transform::Internal_CUSTOM_GetChild
+  Transform::Internal_GetLocalPosition
+  Transform::Internal_GetLocalRotation
+  Transform::Internal_GetLocalToWorldMatrix
+  Transform::Internal_GetParent
+  Transform::Internal_GetPosition
+  Transform::Internal_GetRotation
+  Transform::Internal_Get_Custom_PropRoot
+  Transform::Internal_InverseTransformPoint
+  Transform::Internal_SetLocalPosition
+  Transform::Internal_SetLocalRotationSafe
+  Transform::Internal_SetParent
+  Transform::Internal_SetPosition
+  Transform::Internal_SetRotationSafe
+  Transform::Internal_TransformDirection
+  Transform::Internal_TransformPoint
+  Vector3::Internal_RotateTowardsCustom
+  Vector3::Internal_SlerpCustom

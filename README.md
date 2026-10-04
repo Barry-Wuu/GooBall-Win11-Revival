@@ -49,6 +49,7 @@
 | `docs/002-资产二进制格式总表.md` | **Asset 二进制格式**：AudioClip / Mesh / Texture2D / TextMesh / MonoScript / MonoBehaviour 精确字段布局（本仓库核心） |
 | `docs/003-游戏逻辑恢复.md` | Unity C# 层逻辑恢复 |
 | `docs/006-浏览器可玩重建.md` | **Web 复刻全部逆向结论**：坐标系手性、strips 三角带、m_UV 位置、DXT 端序、关卡映射、出生点 |
+| `docs/009-托管宿主可行性分析.md` | **能否自己写模拟器跑原版**：PE/CLI 元数据实证游戏逻辑 100% 纯托管，可达 icall 仅 235 个 |
 
 ### 关键结论
 

@@ -1,0 +1,100 @@
+[{"stream_name":"stdout","time":1.155364874,"data":"=== 1/2 下载 3 张截图（看清是什么）===\n"}
+,{"stream_name":"stdout","time":3.088968661,"data":"12.PNG -\u003e 847319 字节 (期望 None) OK\n"}
+,{"stream_name":"stdout","time":4.369230406,"data":"56.PNG -\u003e 441237 字节 (期望 None) OK\n"}
+,{"stream_name":"stdout","time":5.160726351,"data":"Capture.1.PNG -\u003e 39799 字节 (期望 None) OK\n"}
+,{"stream_name":"stdout","time":5.161989853,"data":"\n"}
+,{"stream_name":"stdout","time":5.16201081,"data":"=== 2/2 下载 GooBall-Win.zip (71.4MB，写 /tmp) ===\n"}
+,{"stream_name":"stdout","time":9.664687569,"data":"GooBall-Win.zip -\u003e 71369943 字节 (期望 71369943) OK\n"}
+,{"stream_name":"stdout","time":9.666086548,"data":"zip size 71369943\n"}
+,{"stream_name":"stdout","time":9.66886154,"data":"\n"}
+,{"stream_name":"stdout","time":9.668889372,"data":"=== ZIP 内容 (91 项) ===\n"}
+,{"stream_name":"stdout","time":9.668895902,"data":"      91561103  Data/sharedassets.assets\n"}
+,{"stream_name":"stdout","time":9.668900388,"data":"       3178496  GooBall.exe\n"}
+,{"stream_name":"stdout","time":9.668905109,"data":"       2306048  Data/unity/mono-1-vc.dll\n"}
+,{"stream_name":"stdout","time":9.668912079,"data":"       2043392  Data/lib/mscorlib.dll\n"}
+,{"stream_name":"stdout","time":9.668917099,"data":"        773898  Data/unity/unity default resources\n"}
+,{"stream_name":"stdout","time":9.668922366,"data":"        262144  Data/unity/wrap_oal.dll\n"}
+,{"stream_name":"stdout","time":9.668927427,"data":"        196662  Data/ScreenSelector.bmp\n"}
+,{"stream_name":"stdout","time":9.668942549,"data":"        189717  Data/level0\n"}
+,{"stream_name":"stdout","time":9.668968818,"data":"        164864  Data/lib/UnityEngine.dll\n"}
+,{"stream_name":"stdout","time":9.668978606,"data":"        144384  Data/Assembly - CSharp.dll\n"}
+,{"stream_name":"stdout","time":9.669045356,"data":"        128316  Data/level51\n"}
+,{"stream_name":"stdout","time":9.669052548,"data":"        125608  Data/level49\n"}
+,{"stream_name":"stdout","time":9.669056829,"data":"        123158  Data/level6\n"}
+,{"stream_name":"stdout","time":9.669061472,"data":"        112502  Data/level5\n"}
+,{"stream_name":"stdout","time":9.669068009,"data":"        111290  Data/level3\n"}
+,{"stream_name":"stdout","time":9.669105493,"data":"        109555  Data/level46\n"}
+,{"stream_name":"stdout","time":9.669173143,"data":"        107399  Data/level9\n"}
+,{"stream_name":"stdout","time":9.669183483,"data":"        106780  Data/level4\n"}
+,{"stream_name":"stdout","time":9.669275596,"data":"        104240  Data/level8\n"}
+,{"stream_name":"stdout","time":9.669283789,"data":"         99951  Data/level34\n"}
+,{"stream_name":"stdout","time":9.669288658,"data":"         98294  Data/level48\n"}
+,{"stream_name":"stdout","time":9.669317518,"data":"         98128  Data/level47\n"}
+,{"stream_name":"stdout","time":9.669324097,"data":"         97831  Data/level13\n"}
+,{"stream_name":"stdout","time":9.669328886,"data":"         95199  Data/level50\n"}
+,{"stream_name":"stdout","time":9.669367186,"data":"         92591  Data/level36\n"}
+,{"stream_name":"stdout","time":9.669374616,"data":"         90946  Data/level10\n"}
+,{"stream_name":"stdout","time":9.669379121,"data":"         88803  Data/level39\n"}
+,{"stream_name":"stdout","time":9.669383397,"data":"         87837  Data/level37\n"}
+,{"stream_name":"stdout","time":9.669395869,"data":"         83597  Data/level45\n"}
+,{"stream_name":"stdout","time":9.669402146,"data":"         83199  Data/level42\n"}
+,{"stream_name":"stdout","time":9.669534274,"data":"         83116  Data/level19\n"}
+,{"stream_name":"stdout","time":9.669541486,"data":"         81202  Data/level12\n"}
+,{"stream_name":"stdout","time":9.669546048,"data":"         80376  Data/level43\n"}
+,{"stream_name":"stdout","time":9.669550226,"data":"         79061  Data/level44\n"}
+,{"stream_name":"stdout","time":9.669554419,"data":"         78927  Data/level7\n"}
+,{"stream_name":"stdout","time":9.669558585,"data":"         75578  Data/level18\n"}
+,{"stream_name":"stdout","time":9.669562979,"data":"         74496  Data/level67\n"}
+,{"stream_name":"stdout","time":9.669600584,"data":"         73959  Data/level40\n"}
+,{"stream_name":"stdout","time":9.669617036,"data":"         73728  Data/lib/Boo.Lang.dll\n"}
+,{"stream_name":"stdout","time":9.669745959,"data":"         71643  Data/level17\n"}
+,{"stream_name":"stdout","time":9.669753389,"data":"         69421  Data/level24\n"}
+,{"stream_name":"stdout","time":9.669758276,"data":"         68368  Data/level1\n"}
+,{"stream_name":"stdout","time":9.669762976,"data":"         67910  Data/level26\n"}
+,{"stream_name":"stdout","time":9.669767669,"data":"         66085  Data/level22\n"}
+,{"stream_name":"stdout","time":9.669772197,"data":"         65831  Data/level23\n"}
+,{"stream_name":"stdout","time":9.669786679,"data":"         65710  Data/level38\n"}
+,{"stream_name":"stdout","time":9.669791783,"data":"         65543  Data/level21\n"}
+,{"stream_name":"stdout","time":9.669836269,"data":"         64970  Data/level64\n"}
+,{"stream_name":"stdout","time":9.669845058,"data":"         64717  Data/level41\n"}
+,{"stream_name":"stdout","time":9.669858336,"data":"         64690  Data/level33\n"}
+,{"stream_name":"stdout","time":9.669871159,"data":"         64209  Data/level25\n"}
+,{"stream_name":"stdout","time":9.669885971,"data":"         63763  Data/level35\n"}
+,{"stream_name":"stdout","time":9.669900669,"data":"         62584  Data/level65\n"}
+,{"stream_name":"stdout","time":9.669913156,"data":"         60568  Data/level61\n"}
+,{"stream_name":"stdout","time":9.669965019,"data":"         58407  Data/level60\n"}
+,{"stream_name":"stdout","time":9.669972524,"data":"         57579  Data/level20\n"}
+,{"stream_name":"stdout","time":9.66998357,"data":"         56991  Data/level62\n"}
+,{"stream_name":"stdout","time":9.669990163,"data":"         55366  Data/level59\n"}
+,{"stream_name":"stdout","time":9.670048785,"data":"         55001  Data/level11\n"}
+,{"stream_name":"stdout","time":9.670056035,"data":"         53675  Data/level58\n"}
+,{"stream_name":"stdout","time":9.670060594,"data":"         51413  Data/level27\n"}
+,{"stream_name":"stdout","time":9.670073694,"data":"         51378  Data/level57\n"}
+,{"stream_name":"stdout","time":9.670115268,"data":"         50225  Data/level28\n"}
+,{"stream_name":"stdout","time":9.67013717,"data":"         50178  Data/level66\n"}
+,{"stream_name":"stdout","time":9.670189695,"data":"         49758  Data/level53\n"}
+,{"stream_name":"stdout","time":9.670198853,"data":"         48476  Data/level55\n"}
+,{"stream_name":"stdout","time":9.670203669,"data":"         47698  Data/level63\n"}
+,{"stream_name":"stdout","time":9.670226512,"data":"         45585  Data/level31\n"}
+,{"stream_name":"stdout","time":9.670247709,"data":"         44103  Data/level30\n"}
+,{"stream_name":"stdout","time":9.670277542000001,"data":"         44025  Data/level29\n"}
+,{"stream_name":"stdout","time":9.670285387,"data":"         43795  Data/mainData\n"}
+,{"stream_name":"stdout","time":9.670327635,"data":"         40456  Data/level68\n"}
+,{"stream_name":"stdout","time":9.670347021,"data":"         39040  Data/level32\n"}
+,{"stream_name":"stdout","time":9.670352461,"data":"         37458  Data/level56\n"}
+,{"stream_name":"stdout","time":9.670358509,"data":"         37356  Data/level54\n"}
+,{"stream_name":"stdout","time":9.670363705,"data":"         16345  Data/etc/mono/2.0/machine.config\n"}
+,{"stream_name":"stdout","time":9.670371273,"data":"         16164  Data/etc/mono/1.0/machine.config\n"}
+,{"stream_name":"stdout","time":9.670490809,"data":"         12684  Data/level2\n"}
+,{"stream_name":"stdout","time":9.670500707,"data":"          3072  Data/lib/UnityDomainLoad.exe\n"}
+,{"stream_name":"stdout","time":9.670505837,"data":"          2150  Data/level14\n"}
+,{"stream_name":"stdout","time":9.671946055,"data":"===RESULT_START===\n"}
+,{"stream_name":"stdout","time":9.671967432,"data":"{\"zip_size\": 71369943}\n"}
+,{"stream_name":"stdout","time":9.671972643,"data":"===RESULT_END===\n"}
+,{"stream_name":"stderr","time":12.477215888,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":12.477253699,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":12.854989117,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":12.855018236,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":14.415926682,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15.641800934,"data":"[NbConvertApp] Writing 294679 bytes to __results__.html\n"}
+]

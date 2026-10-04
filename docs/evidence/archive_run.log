@@ -1,0 +1,93 @@
+=== 1/2 下载 3 张截图（看清是什么）===
+12.PNG -> 847319 字节 (期望 None) OK
+56.PNG -> 441237 字节 (期望 None) OK
+Capture.1.PNG -> 39799 字节 (期望 None) OK
+
+=== 2/2 下载 GooBall-Win.zip (71.4MB，写 /tmp) ===
+GooBall-Win.zip -> 71369943 字节 (期望 71369943) OK
+zip size 71369943
+
+=== ZIP 内容 (91 项) ===
+      91561103  Data/sharedassets.assets
+       3178496  GooBall.exe
+       2306048  Data/unity/mono-1-vc.dll
+       2043392  Data/lib/mscorlib.dll
+        773898  Data/unity/unity default resources
+        262144  Data/unity/wrap_oal.dll
+        196662  Data/ScreenSelector.bmp
+        189717  Data/level0
+        164864  Data/lib/UnityEngine.dll
+        144384  Data/Assembly - CSharp.dll
+        128316  Data/level51
+        125608  Data/level49
+        123158  Data/level6
+        112502  Data/level5
+        111290  Data/level3
+        109555  Data/level46
+        107399  Data/level9
+        106780  Data/level4
+        104240  Data/level8
+         99951  Data/level34
+         98294  Data/level48
+         98128  Data/level47
+         97831  Data/level13
+         95199  Data/level50
+         92591  Data/level36
+         90946  Data/level10
+         88803  Data/level39
+         87837  Data/level37
+         83597  Data/level45
+         83199  Data/level42
+         83116  Data/level19
+         81202  Data/level12
+         80376  Data/level43
+         79061  Data/level44
+         78927  Data/level7
+         75578  Data/level18
+         74496  Data/level67
+         73959  Data/level40
+         73728  Data/lib/Boo.Lang.dll
+         71643  Data/level17
+         69421  Data/level24
+         68368  Data/level1
+         67910  Data/level26
+         66085  Data/level22
+         65831  Data/level23
+         65710  Data/level38
+         65543  Data/level21
+         64970  Data/level64
+         64717  Data/level41
+         64690  Data/level33
+         64209  Data/level25
+         63763  Data/level35
+         62584  Data/level65
+         60568  Data/level61
+         58407  Data/level60
+         57579  Data/level20
+         56991  Data/level62
+         55366  Data/level59
+         55001  Data/level11
+         53675  Data/level58
+         51413  Data/level27
+         51378  Data/level57
+         50225  Data/level28
+         50178  Data/level66
+         49758  Data/level53
+         48476  Data/level55
+         47698  Data/level63
+         45585  Data/level31
+         44103  Data/level30
+         44025  Data/level29
+         43795  Data/mainData
+         40456  Data/level68
+         39040  Data/level32
+         37458  Data/level56
+         37356  Data/level54
+         16345  Data/etc/mono/2.0/machine.config
+         16164  Data/etc/mono/1.0/machine.config
+         12684  Data/level2
+          3072  Data/lib/UnityDomainLoad.exe
+          2150  Data/level14
+===RESULT_START===
+{"zip_size": 71369943}
+===RESULT_END===

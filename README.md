@@ -1,21 +1,35 @@
 # GooBall Win11 Revival
 
-把 2005 年 Mac 独占游戏 **GooBall** 复活到现代 Windows（Win11）。
+把 2005 年的 Unity 首款游戏 **GooBall** 复活到现代 Windows（Win11）。
 
-> GooBall 是 **史上第一款 Unity 引擎游戏**（Unity 1.x beta，2005，Over The Edge / Ambrosia Software）。
-> 原始平台为 Mac / PowerPC，游戏本体已近乎失传。本仓库对它做二进制级逆向，还原全部资产与逻辑，
-> 目标是在现代 Windows 上以 Godot 4 / Unity 2021 LTS 重建可玩版本。
+> GooBall 是 **史上第一款 Unity 引擎游戏**（Unity 1.x，2005，Over The Edge / Ambrosia Software）。
 
----
+## ★ 最新进展：Windows 原版播放器已找到（2026-10-05）
 
-## 原始文件
+**`archive.org` 存有 2007 年上传的 Windows 原版**（`GooBall-Win.zip`，71.4 MB，CRC 通过）。
+解压即玩 —— 原版引擎、原版脚本、**69 个关卡全通**、原生 OpenGL 渲染。
+
+```
+双击 D:\GooBall\运行原版.bat
+```
+
+`sharedassets.assets`（91.5 MB）与全部 69 个关卡**与 Mac 版逐字节相同**，
+只有 `UnityEngine.dll` / `Assembly - CSharp.dll` / `unity default resources`
+三个平台相关文件不同 —— 无需打桩、无需重编译、无需模拟器。
+
+详见 [`docs/010-Windows原版播放器.md`](docs/010-Windows原版播放器.md)。
+
+## 本仓库做什么
+
+原版数据已到手后，本仓库的价值转为**完整逆向与保存**：
+把原版资产全量解出（纹理/网格/音频/场景/逻辑），并提供一个浏览器可玩版本。
 
 | 项 | 值 |
 |---|---|
-| 版本 | GooBall 1.0.2（2007-04-03 / 1.0.1 为 2007-02-02） |
-| 平台 | Mac OS X / PowerPC（Fat binary：PPC + x86） |
-| 引擎 | Unity 1.x beta，SerializedFile **version 5** |
-| 内容 | 69 个关卡 + mainData + sharedassets.assets（91.5 MB，2962 对象） |
+| 版本 | GooBall 1.0.2（2007，Ambrosia Software） |
+| 平台 | Mac OS X / PowerPC（**另有 Windows 原版，见上**） |
+| 引擎 | Unity 1.x，SerializedFile **version 5** |
+| 内容 | 69 个关卡 + mainData + sharedassets.assets（91.5 MB） |
 
 ---
 
@@ -50,6 +64,7 @@
 | `docs/003-游戏逻辑恢复.md` | Unity C# 层逻辑恢复 |
 | `docs/006-浏览器可玩重建.md` | **Web 复刻全部逆向结论**：坐标系手性、strips 三角带、m_UV 位置、DXT 端序、关卡映射、出生点 |
 | `docs/009-托管宿主可行性分析.md` | **能否自己写模拟器跑原版**：PE/CLI 元数据实证游戏逻辑 100% 纯托管，可达 icall 仅 235 个 |
+| `docs/010-Windows原版播放器.md` | **★ 原版 Windows 播放器已找到**（archive.org 2007 留存）：解压即玩，OpenGL + 69 关全通 |
 
 ### 关键结论
 

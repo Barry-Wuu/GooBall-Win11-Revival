@@ -12,7 +12,7 @@ from collections import Counter
 sys.path.insert(0, ".")
 from unity1x import Unity1x
 
-D = r"D:\GooBall\extract102\raw\GooBall\GooBall\GooBall.app\Contents\Data"
+D = r"D:\GooBall\win\Data"
 
 FILES = [f"level{i}" for i in range(69)] + ["mainData", "sharedassets.assets"]
 

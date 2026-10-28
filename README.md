@@ -1,5 +1,7 @@
 # GooBall Win11 Revival
 
+<b>简体中文</b> ｜ <a href="README.en.md">English</a>
+
 把 2005 年的 Unity 首款游戏 **GooBall** 复活到现代 Windows（Win11）。
 
 > GooBall 是 **史上第一款 Unity 引擎游戏**（Unity 1.x，2005，Over The Edge / Ambrosia Software）。

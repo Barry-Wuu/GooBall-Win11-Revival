@@ -1,4 +1,5 @@
 __pycache__/
 *.pyc
-win/
 GooBall-Win.zip
+# win/ 已纳入仓库跟踪；仅忽略运行时产生的日志
+win/Data/output_log.txt

@@ -27,8 +27,7 @@
 原版数据已到手后，本仓库的价值转为**完整逆向与保存**：
 以 `docs/` 记录全部二进制格式结论，以 `tools/` 提供可复现的提取工具链。
 
-> **2026-10-05 清理**：Three.js 复刻版（`game/`、`开始游戏.bat`(Web 版)、`gen_gamedata.py`）
-> 与提取产物（`assets/`、`extract/`、`proof/`）已回收 —— 原版已在手，不再需要复刻。
+> **2026-10-05 清理**：早期提取产物（`assets/`、`extract/`、`proof/`）已回收 —— 原版已在手。
 > 仓库只留 `docs/`（结论）+ `tools/`（工具）+ `开始游戏.bat`（原版启动器）。
 > 需要资产时用 `tools/` 脚本对着原版 `Data/` 重跑即可（几分钟）。
 > Mac 版原始 dmg（1.0.1 / 1.0.2，256 MB）亦已回收 —— 本项目以 Windows 原版为准。
@@ -101,7 +100,6 @@
 | `docs/001-Unity1x序列化文件v5格式.md` | SerializedFile v5 对象表布局 |
 | `docs/002-资产二进制格式总表.md` | **Asset 二进制格式**：AudioClip / Mesh / Texture2D / TextMesh / MonoScript / MonoBehaviour 精确字段布局（本仓库核心） |
 | `docs/003-游戏逻辑恢复.md` | Unity C# 层逻辑恢复 |
-| `docs/006-浏览器可玩重建.md` | **Web 复刻全部逆向结论**：坐标系手性、strips 三角带、m_UV 位置、DXT 端序、关卡映射、出生点 |
 | `docs/009-托管宿主可行性分析.md` | **能否自己写模拟器跑原版**：PE/CLI 元数据实证游戏逻辑 100% 纯托管，可达 icall 仅 235 个 |
 | `docs/010-Windows原版播放器.md` | **★ 原版 Windows 播放器已找到**（archive.org 2007 留存）：解压即玩，OpenGL + 69 关全通 |
 | `docs/011-各关钻石统计.md` | **11 章 61 关逐关钻石数**（游戏内无此统计）：矩阵表 + 逐关明细 + 未启用场景 |
@@ -177,8 +175,6 @@ python tools/extract_mb.py
 - [ ] Material/Shader → Godot 材质转换
 - [ ] Mesh 剩余 14 个退化网格
 - [x] **Win11 可玩版本发布**：原版 Windows 播放器（双击 `开始游戏.bat`）
-- [x] ~~可玩 Web 重建原型（Three.js）~~ → **已回收**（原版到手，复刻不再需要；
-      逆向结论保留在 `docs/006-浏览器可玩重建.md`）
 
 ---
 

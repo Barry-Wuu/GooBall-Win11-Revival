@@ -16,7 +16,7 @@
 
 前几轮一直在扒 Mac 版 `.app`（`extract102/`），并推断「Unity 1.0 是 Mac 独占、
 1.1 起才有 Windows」，于是把 12.7MB PowerPC Mach-O 的执行问题当成死路，
-转去做 Three.js 复刻和托管宿主分析。
+转去做托管宿主可行性分析。
 
 **实际结论相反**：GooBall 1.0.2（2007-02，Ambrosia）当年就出了 Windows 版，
 只是没在 Mac 包里。**该先搜的是「有没有现成 Windows 版」，不是「怎么在 Windows 上跑 Mac 版」。**
@@ -94,18 +94,16 @@ D:\GooBall\win\
 | 脚本 | Mono 1.x + Boo（`Boo.Lang.dll` 自带） |
 | 显存 | `Ageia.tif` 曾在 Mac 包里；Windows 包用 OpenGL，走软/硬兼容皆可 |
 
-## 与三条旧路线的关系
+## 与两条旧路线的关系
 
 | 路线 | 状态 |
 |---|---|
 | A. QEMU/TigerOS 跑 Mac 版 | **作废**（有原生 Windows 版，无需模拟） |
-| B. Three.js 复刻（`开始游戏.bat`） | 保留作为「Web 版」，但不再是主线 |
 | C. 托管宿主（`docs/009`） | 降级为备选（原版已在手，无需重写引擎核） |
 
-**B 仍有价值**：浏览器直接开、免 32 位兼容层、便于做 B 站素材。
-但**「原版行为 100% 一致」这个目标现在由 Windows 原版直接满足了**。
+**「原版行为 100% 一致」这个目标现在由 Windows 原版直接满足了**。
 
-## 复刻要点
+## 经验要点
 
 - archive.org 抓取一律走 Kaggle（`is_internet_enabled: true`），本机直连必 ProxyError。
 - 大文件回传用「云端切片 + 签名直链小分段多线程」，别用 `kernels output` 整流。

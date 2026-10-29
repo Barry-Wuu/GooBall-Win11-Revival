@@ -1,0 +1,22 @@
+name: RelayReleaseFromGitCode
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Download GooBall-Win.zip from GitCode
+        run: |
+          curl -L -o GooBall-Win.zip -H "PRIVATE-TOKEN: ${{ secrets.GITCODE_TOKEN }}" "https://gitcode.com/Barry_Wu_/GooBall-Win11-Revival/releases/download/v1/GooBall-Win.zip"
+          ls -l GooBall-Win.zip
+          sha256sum GooBall-Win.zip
+          test -s GooBall-Win.zip
+      - name: Upload to GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload v1 GooBall-Win.zip --repo ${{ github.repository }} --clobber
+          gh release view v1 --repo ${{ github.repository }}
